@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>MoDMaps3D - Three Dimensional Molecular Distance Maps</title>
@@ -347,7 +347,7 @@
 		$.ajax({url: "browse.php", success: function(result){
 			// LOAD FILENAMES FROM MAPS DIRECTORY
 			// HARDCODE FILENAMES. ALTERNATIVELY, COMMENT FOLLOWING LINE
-			result = 'animalia01.txt#animalia02.txt#animalia03.txt#animalia04.txt#animalia05.txt#animalia06.txt#animalia06_comp.txt#animalia07.txt#animalia07_comp.txt#animalia08.txt#animalia08_comp.txt#animalia09.txt#animalia09_comp.txt#animalia10.txt#animalia10_comp.txt#animalia10_comp_asm.txt#archaea1.txt#archaea2.txt#archaea3.txt#archaea4.txt#bacteria1.txt#bacteria2.txt#bacteria3.txt#bacteria4.txt#bacteria5.txt#bacteria5_comp.txt#fungi1.txt#fungi2.txt#fungi3.txt#fungi4.txt#fungi5.txt#fungi5_comp.txt#plants1.txt#plants2.txt#plants3.txt#plants4.txt#plants5.txt#plants6.txt#plants7.txt#plants7_comp_cp.txt#plants8.txt#plants8_comp_cp.txt#plants8_comp_cp_mt.txt#plants8_comp_mt.txt#protists1.txt#protists2.txt#protists3.txt#protists4.txt#zz_map2.txt#zz_map8.txt';
+			// result = 'animalia01.txt#animalia02.txt#animalia03.txt#animalia04.txt#animalia05.txt#animalia06.txt#animalia06_comp.txt#animalia07.txt#animalia07_comp.txt#animalia08.txt#animalia08_comp.txt#animalia09.txt#animalia09_comp.txt#animalia10.txt#animalia10_comp.txt#animalia10_comp_asm.txt#archaea1.txt#archaea2.txt#archaea3.txt#archaea4.txt#bacteria1.txt#bacteria2.txt#bacteria3.txt#bacteria4.txt#bacteria5.txt#bacteria5_comp.txt#fungi1.txt#fungi2.txt#fungi3.txt#fungi4.txt#fungi5.txt#fungi5_comp.txt#plants1.txt#plants2.txt#plants3.txt#plants4.txt#plants5.txt#plants6.txt#plants7.txt#plants7_comp_cp.txt#plants8.txt#plants8_comp_cp.txt#plants8_comp_cp_mt.txt#plants8_comp_mt.txt#protists1.txt#protists2.txt#protists3.txt#protists4.txt#zz_map2.txt#zz_map8.txt';
 			var resfetch=result.split("#");
 			var outcome='';
 			for(i=0;i<resfetch.length;i++){outcome+='<a href="#" class="list-group-item">'+resfetch[i]+'</a>';}
@@ -713,13 +713,3 @@
 
 </body>
 </html>
-
-
-<!-- 
-fcgr function
-search is not working
-
-animalia 11 homo chimp
-vertebrates map in explore? name+desfcription
-hardcode results from browse.php for github
--->
