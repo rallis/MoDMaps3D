@@ -5,10 +5,7 @@
 % ----------------------------------------------------------
 % This is a vizualization tool for creating 
 % 3D Molecular Distance Maps (MoDMaps3D). 
-% Please refer to / cite the following paper
-%
-% [TO COMPLETE] 
-%----------------------------------------------------------*/
+% ==========================================================*/
 
 
 var MoDMaps3D = { 'version':'3.0', 
@@ -22,7 +19,7 @@ var dbg = MoDMaps3D['dbg'];
 var gglSearchEnabled = MoDMaps3D['gglSearchEnabled']; 
 var realtimeHighlight = MoDMaps3D['realtimeHighlight'];
 var highlightColor = MoDMaps3D['highlightColor'];   
-var mapsWithReadyFCGRs = {'mapfilename':'fcgrDir'};
+var mapsWithReadyFCGRs = {'mtDNA_Amphibians.txt':'mtDNA', 'mtDNA_Hominidae_Hylobatidae.txt':'mtDNA', 'mtDNA_InsecMamAmph.txt':'mtDNA', 'mtDNA_Insects.txt':'mtDNA', 'mtDNA_Mammals.txt':'mtDNA', 'mtDNA_Primates.txt':'mtDNA', 'mtDNA_Vertebrata.txt':'mtDNA'};
 var mapsWithReadyDistMatrix = {'mapfilename':'distMatrixFilename'};
 var mapid, dim1, dim2, dim3, radius, alldata, distMatrix = [];
 var setOfPoints, colors, numberOfLabels, namesOfLabels, legendColors, legendLabels; 
@@ -270,7 +267,7 @@ function updateInfoDiv() {
 				
 				if(mapid in mapsWithReadyFCGRs){
 					console.log("readyFCGRS!!");
-					fcgrInfo='<a href="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+String(selectedIndex+1)+'.png" target="_blank"><img src="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+String(selectedIndex+1)+'.png" height="230px" width="230px" alt="FCGR IMAGE NOT AVAILABLE" title="Click here to Zoom In"></a>';
+					fcgrInfo='<a href="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" target="_blank"><img src="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" height="200px" width="200px" alt="FCGR IMAGE NOT AVAILABLE" title="Click here to Zoom In"></a>';
 				}else{
 					fcgrInfo="Not Available.";			 
 				}
@@ -279,7 +276,7 @@ function updateInfoDiv() {
 				infoTable=infoTable+'<tr><td>'+namesOfLabels[indLabel]+'</td><td>'+globalPointsLabels[selectedIndex][indLabel]+' (<a href="'+link+'" target="_blank"><font color="yellow">NCBI</font></a>)</td></tr>';
 				if(mapid in mapsWithReadyFCGRs){
 					console.log("readyFCGRS!!");
-					fcgrInfo='<a href="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+String(selectedIndex+1)+'.png" target="_blank"><img src="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+String(selectedIndex+1)+'.png" height="230px" width="230px" alt="FCGR IMAGE NOT AVAILABLE" title="Click here to Zoom In"></a>';
+					fcgrInfo='<a href="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" target="_blank"><img src="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" height="200px" width="200px" alt="FCGR IMAGE NOT AVAILABLE" title="Click here to Zoom In"></a>';
 				}else{
 					fcgrInfo="Not Available.";				 
 				}
@@ -605,7 +602,7 @@ function initGraphics(){
 		"bottom": "0px",
 		"overflow-y": "auto",
 		//"overflow-x": "auto",
-		"max-width": "200px"
+		"max-width": "220px"
 	});
     
 	$("#leftminimized").css({
