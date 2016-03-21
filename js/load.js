@@ -1,7 +1,6 @@
 /*==========================================================
 % MoDMaps3D - THREE DIMENSIONAL MOLECULAR DISTANCE MAPS 
-% Version 2.5
-%
+% Version 3
 % Coded by Rallis Karamichalis, 2016.
 % ----------------------------------------------------------
 % This is a vizualization tool for creating 
@@ -12,16 +11,19 @@
 %----------------------------------------------------------*/
 
 
-var MoDMaps3D = { 'version':'2.5.2', 'dbg':false, 'gglSearchEnabled':false, 'realtimeHighlight':false, 'highlightColor':parseInt("0x28EE2F") };
-// 28EE2F=flashing green E8EE3C=YELLOW  EE22B0=MAGENTA
+var MoDMaps3D = { 'version':'3.0', 
+				'dbg':false, 
+				'gglSearchEnabled':true, 
+				'realtimeHighlight':true, 
+				'highlightColor':parseInt("0x28EE2F") };
 console.log(MoDMaps3D);
 
 var dbg = MoDMaps3D['dbg'];                   
 var gglSearchEnabled = MoDMaps3D['gglSearchEnabled']; 
 var realtimeHighlight = MoDMaps3D['realtimeHighlight'];
 var highlightColor = MoDMaps3D['highlightColor'];   
-var mapsWithReadyFCGRs = {'mapfilename':'folderDir'};
-var mapsWithReadyDistMatrix = {'mapfilename':'distMatrixFilename', 'zz_test62.txt':'dists62.txt'};
+var mapsWithReadyFCGRs = {'mapfilename':'fcgrDir'};
+var mapsWithReadyDistMatrix = {'mapfilename':'distMatrixFilename'};
 var mapid, dim1, dim2, dim3, radius, alldata, distMatrix = [];
 var setOfPoints, colors, numberOfLabels, namesOfLabels, legendColors, legendLabels; 
 var globalScaledPointsCoord, globalPointsLabels;      
@@ -67,20 +69,20 @@ function geturlparamvalue(name) {
 // SEARCH FUNCTION 
 function startSearch(){
 	allSearchHits = [];
-	var queryLen=document.getElementById("tosearch").value.length;
-	var query=document.getElementById("tosearch").value;
-	if(4-queryLen>0){
+	var query = $("#tosearch").val();
+	var queryLen = query.length;
+	if(4-queryLen > 0){
 		// IF LESS THAN 4 CHARACTERS HAVE BEEN ENTERED
 		scene.remove(selectedMesh);
 		var missingLen=4-queryLen;
 		if(missingLen==1){ 
-			document.getElementById("searchstatus").innerHTML="Enter 1 more character.."; 
+			$("#searchstatus").html('Enter 1 more character..'); 
 		}else{
-			document.getElementById("searchstatus").innerHTML="Enter "+missingLen+" more characters.."; 
+			$("#searchstatus").html("Enter "+missingLen+" more characters.."); 
 		}
 	}else{
 		// IF >= 4 CHARACTERS HAVE BEEN ENTERED
-		document.getElementById("searchstatus").innerHTML="";
+		$("#searchstatus").html('');
 		var searchOutput="";
 		var patt,res1,res2,res3,ind1,ind2,ind3,redcol1,redcol2,redcol3,bfr1,bfr2,bfr3,after1,after2,after3;
 		var howManySearchResults=0;
@@ -88,7 +90,6 @@ function startSearch(){
 			//console.log("q=", query);
 			patt=new RegExp(query,'gi');
 			// console.log("patt=", patt);
-			// console.log("accNums=", allAccessionNums);
 			res1=allAccessionNums[i].match(patt);
 			res2=allNames[i].match(patt);
 			if(allBioInfo.length>0){
@@ -97,7 +98,6 @@ function startSearch(){
 				res3=null;
 			}
 			
-			//console.log(res1+'-'+res2+'-'+res3);
 			if((res1!=null)||(res2!=null)||(res3!=null)){
 				allSearchHits.push(i);
 				howManySearchResults++;
@@ -124,12 +124,11 @@ function startSearch(){
 		}
 		
 		if(howManySearchResults==0){
-			document.getElementById("searchstatus").innerHTML='Nothing matches your search.';
+			$("#searchstatus").html('Nothing matches your search.');
 		}else if(howManySearchResults<=20){
-			document.getElementById("searchstatus").innerHTML=searchOutput;
-			//console.log(searchOutput);
+			$("#searchstatus").html(searchOutput);
 		}else{
-			document.getElementById("searchstatus").innerHTML="Found "+howManySearchResults+" matches. To select a specific point, please narrow it down to less than 10 results.";
+			$("#searchstatus").html("Found "+howManySearchResults+" matches. To select a specific point, please narrow it down to less than 10 results.");
 		}            
 
 		if(realtimeHighlight){
@@ -153,7 +152,7 @@ function selectAndFill(id){
 
 // COMPUTE DIST 
 function computeDist(preload){
-	if(dbg){alert("preload= "+preload);}
+	if(dbg){console.log("preload= "+preload);}
 
 	// Load distance matrix if it's first time
 	if(preload==true){ 
@@ -178,7 +177,7 @@ function computeDist(preload){
 			// }
 			// toprint = toprint.substring(0, toprint.length - 1);
 			// toprint+=']';
-			// console.log("Eigenvalues[",toprint,"]");
+			// console.log("matrix= ",toprint);
 			$("#computeDist").html('');
 			distPointsDiv.innerHTML = '<em><strong><font color="yellow" size="4">Distance between Points</font></strong></em><br>\
 					<table border="0">\
@@ -219,17 +218,17 @@ function computeDist(preload){
 			xmlhttp.send();	
 		}
 	}else if(preload==false){
-		var idFrom=document.getElementById("fromHere").value;
-		var idTo=document.getElementById("toHere").value;
+		var idFrom=$("#fromHere").val();
+		var idTo=$("#toHere").val();
 		if((idFrom!="")&&(idTo!="")){
-			document.getElementById("outputDist").value="";
+			$("#outputDist").val('');
 			$("#computeDist").html('<img src="img/loading.gif" height="30">');
 			idFrom=parseFloat(globalPointsLabels[idFrom][0]);
 			idTo=parseFloat(globalPointsLabels[idTo][0]);
 			// old method, only upper triangular
 			// var res=dists[(idFrom-1)*howmany+idTo-1];
 			var res=dists[idFrom][idTo];
-			if(preload!=true){document.getElementById("outputDist").value=res;}
+			if(preload!=true){$("#outputDist").val(res);}
 			$("#computeDist").html('');
 		}
 	}else{
@@ -241,11 +240,11 @@ function computeDist(preload){
 function add(place){
 	if(selectedIndex!=undefined){
 		if(place=='from'){
-			document.getElementById('fromHere').value = selectedIndex;
+			$('#fromHere').val(selectedIndex);
 			fromIndex=selectedIndex;
 		}
 		if(place=='to'){
-			document.getElementById('toHere').value = selectedIndex;
+			$('#toHere').val(selectedIndex);
 			toIndex=selectedIndex;
 		}
 	}
@@ -317,8 +316,8 @@ function updateInfoDiv() {
 	fcgrDiv.innerHTML=fcgrInfo;
 
 	// DISTPOINTS DIV
-	if(document.getElementById("fromHere")!=undefined){document.getElementById("fromHere").value = fromIndex;}
-	if(document.getElementById("toHere")!=undefined){document.getElementById("toHere").value = toIndex;}
+	if(document.getElementById("fromHere")!=undefined){$("#fromHere").val(fromIndex);}
+	if(document.getElementById("toHere")!=undefined){$("#toHere").val(toIndex);}
 }
 
 // CLONE GEOMETRY
@@ -405,46 +404,9 @@ function toggleright(){
 
 // CHANGE HIGHLIGHT COLOR
 function changeHighlightColor(){
-	highlightColor= parseInt('0x'+document.getElementById("pickbtn").value);
+	highlightColor= parseInt('0x'+ $("#pickbtn").val());
 	MoDMaps3D['highlightColor'] = highlightColor;
 	alert("Highlight color has changed!\nClick on any point to see it in action!");
-}
-
-// SHARE LINK FUNCTION
-function shareLink(){
-	dim1selected = document.getElementById("dim1").options[document.getElementById("dim1").selectedIndex].value;
-	dim2selected = document.getElementById("dim2").options[document.getElementById("dim2").selectedIndex].value;
-	dim3selected = document.getElementById("dim3").options[document.getElementById("dim3").selectedIndex].value;
-	radiusSelected = parseFloat(document.getElementById("radius").value);
-	if(dbg){console.log("You selected: "+dim1selected+"-"+dim2selected+"-"+dim3selected+" and radius="+radiusSelected);}
-	var camX = camera.position.x;
-	var camY = camera.position.y;
-	var camZ = camera.position.z;
-	var meshesX = meshes[0].rotation.x;
-	var meshesY = meshes[0].rotation.y; 
-	var baseLink = 'https://dl.dropboxusercontent.com/u/34456847/maps3D/';
-	var shareLink = baseLink+"load.html?mapid="+mapid +"&dim1="+dim1selected+"&dim2="+dim2selected+"&dim3="+dim3selected+"&radius="+radiusSelected+"&cameraX="+camX+"&cameraY="+camY+"&cameraZ="+camZ+"&meshesRotX="+meshesX+"&meshesRotY="+meshesY+"&autonavigate=true";
-
-	if(document.getElementById('tosearch').value.length>=4){
-		shareLink = shareLink + '&search='+document.getElementById('tosearch').value;
-	}
-	
-	var xmlhttp;
-	if (window.XMLHttpRequest){ 
-		// IE7+, Firefox, Chrome, Opera, Safari
-		xmlhttp = new XMLHttpRequest();
-	}else{ 
-		// code for IE6, IE5
-		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.onreadystatechange=function(){
-		if (xmlhttp.readyState==4 && xmlhttp.status==200){
-			var output = xmlhttp.responseText;
-			prompt('Copy link, then click OK', output.substring(0,output.length - 1));
-		}
-	}
-	xmlhttp.open("GET",'https://api-ssl.bitly.com/v3/shorten?access_token=c955e303139646c6a8abd9ecbd06662693677e27&longUrl='+encodeURIComponent(shareLink)+'&format=txt',true);
-	xmlhttp.send();
 }
 
 // REDRAW MAP WITH NEW SETTINGS AS SET BY USER
@@ -669,7 +631,7 @@ function initGraphics(){
 		"bottom": "0px",
 		"overflow-y": "auto",
 		//"overflow-x": "auto",
-		"max-width": "270px" //'30%';//
+		"max-width": "220px" //'30%'; 270 before//
 	});	
 		
 	$("#rightminimized").css({
@@ -760,8 +722,6 @@ function initGraphics(){
 	<br>Show CGR image: <input type="checkbox" onchange="toggle(\'cgrInfoDiv\');" unchecked>\
 	<br>Show highlight color: <input type="checkbox" onchange="toggle(\'pickcolor\');" unchecked>\
 	<br>Show distances: <input type="checkbox" onchange="toggle(\'distPointsDiv\');" unchecked>\
-	<br><a href="#" onclick="shareLink();"><font color="yellow">Share</font></a> what you see!\
-	<br>Back to main <a href="index.html"><font color="yellow">menu</font></a>\
 	</div>';
 		
 	staticInfoDiv += '<hr color="white" width="60%"><em><strong><font color="yellow" size="4">Legend</font></strong></em><br>'+mapCaption+'<br><br>';
