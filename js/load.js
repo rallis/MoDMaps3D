@@ -12,10 +12,10 @@
 
 
 var MoDMaps3D = { 'version':'3.0', 
-				'dbg':false, 
-				'gglSearchEnabled':true, 
-				'realtimeHighlight':true, 
-				'highlightColor':parseInt("0x28EE2F") };
+		'dbg':false, 
+		'gglSearchEnabled':true, 
+		'realtimeHighlight':true, 
+		'highlightColor':parseInt("0x28EE2F") };
 console.log(MoDMaps3D);
 
 var dbg = MoDMaps3D['dbg'];                   
@@ -589,12 +589,11 @@ function initGraphics(){
 	};
 		
 	render();
-
-    pointInfoDiv = document.getElementById('pointInfoDiv');
-    fcgrDiv = document.getElementById('fcgrDiv');
-    cgrInfoDiv = document.getElementById('cgrInfoDiv');
-    searchDiv = document.getElementById('searchDiv');
-    distPointsDiv = document.getElementById('distPointsDiv');
+	pointInfoDiv = document.getElementById('pointInfoDiv');
+	fcgrDiv = document.getElementById('fcgrDiv');
+	cgrInfoDiv = document.getElementById('cgrInfoDiv');
+	searchDiv = document.getElementById('searchDiv');
+	distPointsDiv = document.getElementById('distPointsDiv');
 
 	$("#leftmenu").css({
 		"display": "block",
@@ -609,7 +608,7 @@ function initGraphics(){
 		"max-width": "200px"
 	});
     
-    $("#leftminimized").css({
+	$("#leftminimized").css({
 		"display": "none",
 		"position": "absolute", 
 		"padding": "5px 8px 5px 8px",
@@ -618,7 +617,7 @@ function initGraphics(){
 		"top": "0px",
 		"left": "0px"
 	});
-    $("#leftminimized").html('<input type="button" value="Click to Maximize Left Panel" onclick="toggleleft();"/>');
+	$("#leftminimized").html('<input type="button" value="Click to Maximize Left Panel" onclick="toggleleft();"/>');
 
 	$("#rightmenu").css({
 		"display": "block",
@@ -852,6 +851,10 @@ function initGraphics(){
 		}
 		if(dbg){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
 		return false;
+	}
+	
+	canvas.onmouseleave = function(e){
+		mouseIsDown = false;
 	}
 		
 	document.onkeydown = function(e) {
