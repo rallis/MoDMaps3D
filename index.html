@@ -413,8 +413,8 @@
 		});
 
 		$("#buildmap").click(function(){
-			$('#allInputData').hide();
-			$('#allInputDataMinimized').show();
+			$('#allInputData').slideUp();
+			$('#allInputDataMinimized').slideDown();
 			time = new Date();
 			step1A = time.getTime();
 			$("#file_contents").empty();
