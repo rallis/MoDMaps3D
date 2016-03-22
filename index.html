@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="js/numeric-1.2.6.min.js"></script>
 	
 	<script>
-	var dbg = false, errorHasOccured = false;
+	var dbg = true, errorHasOccured = false;
 	var eigenval, eigenvec, eigensystem, finalEigenval, finalEigenvec, points ;
 	var mapID, allSequences={}, distMatrix=[], fcgrRes=9, getTaxa = false;
 	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
@@ -54,6 +54,7 @@
 		}
 		
 		// EIGENVALUES - EIGENVECTORS
+		console.log("bp1");
 		res2 = numeric.eig(distMatrixCentered);
 		if(dbg){console.log('numeric.js=',res2['lambda']['x']);}
 
