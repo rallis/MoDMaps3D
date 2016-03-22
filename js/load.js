@@ -858,6 +858,8 @@ function initGraphics(){
 		if(dbg){console.log("keypressed="+e.which)};
 		if(document.activeElement.id!="tosearch"){
 			var d =0.2;
+			// s 83 => got to search field
+			if (e.which == 83) {$("#tosearch").focus();}
 			// +- numpad  or eq
 			if (e.which == 109 || e.which == 81) {camera.position.z += d;}
 			if (e.which == 107 || e.which == 69) {camera.position.z -= d;}
