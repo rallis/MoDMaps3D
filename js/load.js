@@ -858,8 +858,14 @@ function initGraphics(){
 		if(dbg){console.log("keypressed="+e.which)};
 		if(document.activeElement.id!="tosearch"){
 			var d =0.2;
-			// z 90 => got to search field
-			if (e.which == 90) {$("#tosearch").focus();}
+			// ctrl + alt + z 90 => go to search field
+			if (e.ctrlKey && e.altKey && e.which == 90) {$("#tosearch").focus();}
+			// ctrl + alt + r 82 => reset camera position, keep mesh rotation
+			if (e.ctrlKey && e.altKey && e.which == 82) {
+				camera.position.x=0;
+				camera.position.y=0;
+				camera.position.z=15;
+			}			
 			// +- numpad  or eq
 			if (e.which == 109 || e.which == 81) {camera.position.z += d;}
 			if (e.which == 107 || e.which == 69) {camera.position.z -= d;}
