@@ -4,7 +4,7 @@ blue,green,cyan,purple
 Index,Acc,Name,Length,Taxa
 blue,green,cyan,purple
 M (332),D (83),E (32),G (4)
-Set if mtDNA sequences
+Set of mtDNA sequences
 -0.656285
 0.526038
 -0.100356
