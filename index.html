@@ -614,6 +614,21 @@
 			$("#stepstatus").hide();
 		});
 
+		var tmpDataset = geturlparamvalue('dataset');
+		if(tmpDataset.slice(0,5)=='local'){
+			newDataset = localStorage.getItem("dataset"+tmpDataset.slice(5));
+			$('#guide-tabs li:eq(2) a').tab('show');
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#numofsets").val('1');
+			$("#numofsets").trigger("change");
+			$("#set0").html(newDataset);
+			$("#stepstatus").hide();
+			$("#mainprogressbar").hide();
+			//$("#buildmap").click(); allow user to change settings if wanted
+		}else{
+			console.log('no local dataset?!');
+		}
 	});
 
 	</script>
