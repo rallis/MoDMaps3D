@@ -877,9 +877,9 @@ function initGraphics(){
 		if(dbg){console.log("keypressed="+e.which)};
 		
 		// toggle left menu with ctrl+alt+m
-		if (e.ctrlKey && e.altKey && e.which == 77) {toggleleft();}
+		if (e.ctrlKey && e.altKey && e.which == 77) {toggleright();}
 		// toggle right menu with ctrl+alt+n
-		if (e.ctrlKey && e.altKey && e.which == 78) {toggleright();}
+		if (e.ctrlKey && e.altKey && e.which == 78) {toggleleft();}
 
 		if(document.activeElement.id!="tosearch"){
 			var d =0.2;
