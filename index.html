@@ -130,7 +130,12 @@
 		mapfile = mapfile.slice(0,-1);
 		mapfile += "\n";
 		// line 7
-		mapfile += "No Description given\n";
+		// OLD mapfile += "No Description given\n";
+		for(var i=0; i<$("#numofsets").val(); i++){
+			mapfile += $("#nameset"+i).val() + ',';
+		}
+		mapfile = mapfile.slice(0,-1);
+		mapfile += '. Number of sequences: '+accIDs.length+ "\n";
 		// rest of the lines
 		for(var i=0; i<numOfSeq; i++){
 			for(var j=0; j<points[i].length; j++){
