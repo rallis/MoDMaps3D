@@ -8,4 +8,8 @@ Ctrl + Alt + z => Focus on Search field
 
 Ctrl + Alt + r => Reset Camera view, keeping rotation
 
+Ctrl + Alt + m => Toggle visibility of right menu
+
+Ctrl + Alt + n => Toggle visibility of left menu
+
 
