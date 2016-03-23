@@ -875,6 +875,12 @@ function initGraphics(){
 		
 	document.onkeydown = function(e) {
 		if(dbg){console.log("keypressed="+e.which)};
+		
+		// toggle left menu with ctrl+alt+m
+		if (e.ctrlKey && e.altKey && e.which == 77) {toggleleft();}
+		// toggle right menu with ctrl+alt+n
+		if (e.ctrlKey && e.altKey && e.which == 78) {toggleright();}
+
 		if(document.activeElement.id!="tosearch"){
 			var d =0.2;
 			// ctrl + alt + z 90 => go to search field
