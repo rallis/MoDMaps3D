@@ -134,7 +134,7 @@
 		for(var i=0; i<$("#numofsets").val(); i++){
 			mapfile += $("#nameset"+i).val() + ', ';
 		}
-		mapfile = mapfile.slice(0,-1);
+		mapfile = mapfile.slice(0,-2);  //because of space above!
 		mapfile += '. Number of sequences is '+accIDs.length+ "\n";
 		// rest of the lines
 		for(var i=0; i<numOfSeq; i++){
