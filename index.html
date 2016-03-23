@@ -490,6 +490,24 @@
 			$("#stepstatus").hide();
 			$("#mainprogressbar").hide();		
 		});
+		$("#dataset3").click(function(){
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#numofsets").val('5');
+			$("#numofsets").trigger("change");
+			$("#set0").html('Y521630,AM000053,AM000054,AY521629,AY521631,AM000055,DQ396400');
+			$("#set1").html('AF004394,AF042101,AF256204,AF086817,AF042103,AB428555,AB287363,EU786678');
+			$("#set2").html('U46016,AY713415,AY713416,AY255826,EF514713,DQ207941,DQ369994,EU786673');
+			$("#set3").html('AY773338,AY773341,EF633445,AY322189,AF484516,AJ488927,AY371157,AY795907');
+			$("#set4").html('U88826,AF061642,AY772535,AY586549,AF423760,AY371121,AB231893,EU786670');
+			$("#nameset0").val('SetA');
+			$("#nameset1").val('SetB');
+			$("#nameset2").val('SetC');
+			$("#nameset3").val('SetD');
+			$("#nameset4").val('SetG');
+			$("#stepstatus").hide();
+			$("#mainprogressbar").hide();		
+		});
 
 		$("#kmerslen").change(function(){
 			fcgrRes = parseInt($("#kmerslen").val());
@@ -632,8 +650,9 @@
 			<div id="menu2" class="tab-pane fade">
 				<h3>Build your map, for your dataset.</h3>
 				<p>Samples you can try:<br>
-					<a href="#" id="dataset1">[1] 62mtDNA primates</a> - 
-					<a href="#" id="dataset2">[2] 112mtDNA amphibia</a> 
+					<a href="#" id="dataset1">[1] 62 mtDNA primates</a> - 
+					<a href="#" id="dataset2">[2] 112 mtDNA amphibia</a> - 
+					<a href="#" id="dataset3">[3] 39 HIV-1 genomes</a> 
 				</p>
 
 				<p>
