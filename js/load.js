@@ -122,16 +122,35 @@ function startSearch(){
 		
 		if(howManySearchResults==0){
 			$("#searchstatus").html('Nothing matches your search.');
-		}else if(howManySearchResults<=20){
+		}else if(howManySearchResults<=10){
 			$("#searchstatus").html(searchOutput);
 		}else{
-			$("#searchstatus").html("Found "+howManySearchResults+" matches. To select a specific point, please narrow it down to less than 10 results.");
+			$("#searchstatus").html('Found '+howManySearchResults+' matches. To select a specific point, please narrow it down to less than 10 results. <input type="button" value="Plot this!" onclick="saveAndPlot()">');
 		}            
 
 		if(realtimeHighlight){
 			updateRealTimeSelectedMesh();
 		}     
 	}
+}
+
+// SAVE LOCALLY SELECTED DATASET AND PLOT ITFROM SCRATCH
+function saveAndPlot(){
+	var out='';
+	for(var i=0; i<allSearchHits.length; i++){
+		out += allAccessionNums[allSearchHits[i]]+',';
+	}
+	out = out.substring(0,out.length-1);
+	//console.log(out);
+	
+	var dataTimeStamp = new Date().getTime();
+	if(typeof(Storage) !== "undefined") {
+		localStorage.setItem("dataset"+dataTimeStamp, out);
+	} else {
+		console.log("ERROR! NO LOCAL STORAGE AVAILABLE!?");
+		alert("ERROR! NO LOCAL STORAGE AVAILABLE!?");
+	}
+	window.location = "index.html?dataset=local"+dataTimeStamp;
 }
 
 // SELECTION OF SEARCH RESULTS

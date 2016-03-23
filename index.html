@@ -17,6 +17,18 @@
 	var callsNCBIDone, progress;
 	var labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'yellow'];
 	
+	function geturlparamvalue(name) {
+		name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+		var regexS = "[\\?&]" + name + "=([^&#]*)";
+		var regex = new RegExp(regexS);
+		var results = regex.exec(window.location.href);
+		if(results!=null){
+			return results[1];
+		}else{
+			return -1;
+		}
+	}
+
 	function computeMDS(){
 		time = new Date();
 		step3A = time.getTime();
