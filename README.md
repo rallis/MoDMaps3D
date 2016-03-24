@@ -1,7 +1,7 @@
 # MoDMaps3D
 Build your Molecular Distance Map and visualize it in 3D!
 
-See it in action, here <a href="http://rallis.github.io/MoDMaps3D" target="_blank">http://rallis.github.io/MoDMaps3D</a>
+See it in action, here http://rallis.github.io/MoDMaps3D
 
 #### HotKeys:
 While on canvas:
