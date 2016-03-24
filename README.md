@@ -19,10 +19,10 @@ While on canvas:
 <li>S = Move camera Down</li>
 <li>E = Zoom camera In</li>
 <li>Q = Zoom camera Out</li>
-<li>Ctrl + Alt + LeftArrow = Rotate Left</li>
-<li>Ctrl + Alt + UpArrow = Rotate Up</li>
-<li>Ctrl + Alt + RightArrow = Rotate Right</li>
-<li>Ctrl + Alt + DownArrow = Rotate Down</li>
+<li>Ctrl + LeftArrow = Rotate Left</li>
+<li>Ctrl + UpArrow = Rotate Up</li>
+<li>Ctrl + RightArrow = Rotate Right</li>
+<li>Ctrl + DownArrow = Rotate Down</li>
 <li>Left Mouse Click + Drag = Rotate to any direction</li>
 </ul>
 
