@@ -876,10 +876,10 @@ function initGraphics(){
 	document.onkeydown = function(e) {
 		if(dbg){console.log("keypressed="+e.which)};
 		
-		// toggle left menu with ctrl+alt+m
-		if (e.ctrlKey && e.altKey && e.which == 77) {toggleright();}
-		// toggle right menu with ctrl+alt+n
-		if (e.ctrlKey && e.altKey && e.which == 78) {toggleleft();}
+		// toggle left menu with ctrl+m
+		if (e.ctrlKey && e.which == 77) { e.preventDefault(); toggleright();}
+		// toggle right menu with ctrl+n
+		if (e.ctrlKey && e.which == 78) { e.preventDefault(); toggleleft();}
 
 		if(document.activeElement.id!="tosearch"){
 			var d =0.2;
