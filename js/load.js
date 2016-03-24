@@ -889,80 +889,49 @@ function initGraphics(){
 			camera.position.y=0; 
 			camera.position.z=15; 
 		}	
-
+		// ctrl + alt + arrowLeft 37 => rotate left
 		if (e.ctrlKey && e.altKey && e.which == 37) {
-			console.log("PRESSED 37!!\n");
-			var dx = -0.2;
-			//var dy = 0.2;
-			
+			var dx = -0.1;
 			for(var i1=0; i1<meshes.length;i1++){
 				meshes[i1].rotation.y += dx;
 				while (meshes[i1].rotation.y > 2 * Math.PI){meshes[i1].rotation.y -= 2 * Math.PI;}
-				while (meshes[i1].rotation.y < -2 * Math.PI){meshes[i1].rotation.y += 2 * Math.PI;}
-				// if ( (dy > 0 && meshes[i1].rotation.x < Math.PI/2) || (dy < 0 && meshes[i1].rotation.x > -Math.PI/2) ) {
-				// 	meshes[i1].rotation.x += dy;
-				// }
-				//selectedMesh.rotation.x = meshes[i1].rotation.x;
-				
+				while (meshes[i1].rotation.y < -2 * Math.PI){meshes[i1].rotation.y += 2 * Math.PI;}			
 			}
 			selectedMesh.rotation.y = meshes[0].rotation.y;
-			if(true){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
-			//return false;
 		}
+		// ctrl + alt + arrowRight 39 => rotate right
 		if (e.ctrlKey && e.altKey && e.which == 39) {
-			console.log("PRESSED 39!!\n");
-			var dx = 0.2;
-			//var dy = 0.2;
-			
+			var dx = 0.1;
 			for(var i1=0; i1<meshes.length;i1++){
 				meshes[i1].rotation.y += dx;
 				while (meshes[i1].rotation.y > 2 * Math.PI){meshes[i1].rotation.y -= 2 * Math.PI;}
 				while (meshes[i1].rotation.y < -2 * Math.PI){meshes[i1].rotation.y += 2 * Math.PI;}
-				// if ( (dy > 0 && meshes[i1].rotation.x < Math.PI/2) || (dy < 0 && meshes[i1].rotation.x > -Math.PI/2) ) {
-				// 	meshes[i1].rotation.x += dy;
-				// }
-				//selectedMesh.rotation.x = meshes[i1].rotation.x;
 			}
 			selectedMesh.rotation.y = meshes[0].rotation.y;
-			if(true){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
-			//return false;
 		}
+		// ctrl + alt + arrowUp 38 => rotate up
 		if (e.ctrlKey && e.altKey && e.which == 38) {
-			console.log("PRESSED 38!!\n");
-			//var dx = 0.2;
-			var dy = -0.2;
-			
+			var dy = -0.1;
 			for(var i1=0; i1<meshes.length;i1++){
-				//meshes[i1].rotation.y += dx;
 				while (meshes[i1].rotation.y > 2 * Math.PI){meshes[i1].rotation.y -= 2 * Math.PI;}
 				while (meshes[i1].rotation.y < -2 * Math.PI){meshes[i1].rotation.y += 2 * Math.PI;}
 				if ( (dy > 0 && meshes[i1].rotation.x < Math.PI/2) || (dy < 0 && meshes[i1].rotation.x > -Math.PI/2) ) {
 					meshes[i1].rotation.x += dy;
 				}
-				//selectedMesh.rotation.x = meshes[i1].rotation.x;
-				//selectedMesh.rotation.y = meshes[i1].rotation.y;
 			}
 			selectedMesh.rotation.x = meshes[0].rotation.x;
-			if(true){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
-			//return false;
 		}
+		// ctrl + alt + arrowDown 40 => rotate down
 		if (e.ctrlKey && e.altKey && e.which == 40) {
-			console.log("PRESSED 40!!\n");
-			//var dx = 0.2;
-			var dy = 0.2;
-			
+			var dy = 0.1;
 			for(var i1=0; i1<meshes.length;i1++){
-				//meshes[i1].rotation.y += dx;
 				while (meshes[i1].rotation.y > 2 * Math.PI){meshes[i1].rotation.y -= 2 * Math.PI;}
 				while (meshes[i1].rotation.y < -2 * Math.PI){meshes[i1].rotation.y += 2 * Math.PI;}
 				if ( (dy > 0 && meshes[i1].rotation.x < Math.PI/2) || (dy < 0 && meshes[i1].rotation.x > -Math.PI/2) ) {
 					meshes[i1].rotation.x += dy;
 				}	
-				//selectedMesh.rotation.y = meshes[i1].rotation.y;
 			}
 			selectedMesh.rotation.x = meshes[0].rotation.x;
-			if(true){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
-			//return false;
 		}
 
 
