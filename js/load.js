@@ -876,21 +876,99 @@ function initGraphics(){
 	document.onkeydown = function(e) {
 		if(dbg){console.log("keypressed="+e.which)};
 		
-		// toggle left menu with ctrl+m
-		if (e.ctrlKey && e.which == 77) { e.preventDefault(); toggleright();}
-		// toggle right menu with ctrl+n
-		if (e.ctrlKey && e.which == 78) { e.preventDefault(); toggleleft();}
+		// toggle left menu with ctrl+alt+m
+		if (e.ctrlKey && e.altKey && e.which == 77) { e.preventDefault(); toggleright(); }
+		// toggle right menu with ctrl+alt+n
+		if (e.ctrlKey && e.altKey && e.which == 78) { e.preventDefault(); toggleleft(); }
+		// ctrl + f 70 => go to search field
+		if (e.ctrlKey  && e.which == 70) { e.preventDefault(); $("#tosearch").focus(); }
+		// ctrl + alt + r 82 => reset camera position, keep mesh rotation
+		if (e.ctrlKey && e.altKey && e.which == 82) { 
+			e.preventDefault();	
+			camera.position.x=0; 
+			camera.position.y=0; 
+			camera.position.z=15; 
+		}	
+
+		if (e.ctrlKey && e.altKey && e.which == 37) {
+			console.log("PRESSED 37!!\n");
+			var dx = -0.2;
+			//var dy = 0.2;
+			
+			for(var i1=0; i1<meshes.length;i1++){
+				meshes[i1].rotation.y += dx;
+				while (meshes[i1].rotation.y > 2 * Math.PI){meshes[i1].rotation.y -= 2 * Math.PI;}
+				while (meshes[i1].rotation.y < -2 * Math.PI){meshes[i1].rotation.y += 2 * Math.PI;}
+				// if ( (dy > 0 && meshes[i1].rotation.x < Math.PI/2) || (dy < 0 && meshes[i1].rotation.x > -Math.PI/2) ) {
+				// 	meshes[i1].rotation.x += dy;
+				// }
+				//selectedMesh.rotation.x = meshes[i1].rotation.x;
+				
+			}
+			selectedMesh.rotation.y = meshes[0].rotation.y;
+			if(true){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
+			//return false;
+		}
+		if (e.ctrlKey && e.altKey && e.which == 39) {
+			console.log("PRESSED 39!!\n");
+			var dx = 0.2;
+			//var dy = 0.2;
+			
+			for(var i1=0; i1<meshes.length;i1++){
+				meshes[i1].rotation.y += dx;
+				while (meshes[i1].rotation.y > 2 * Math.PI){meshes[i1].rotation.y -= 2 * Math.PI;}
+				while (meshes[i1].rotation.y < -2 * Math.PI){meshes[i1].rotation.y += 2 * Math.PI;}
+				// if ( (dy > 0 && meshes[i1].rotation.x < Math.PI/2) || (dy < 0 && meshes[i1].rotation.x > -Math.PI/2) ) {
+				// 	meshes[i1].rotation.x += dy;
+				// }
+				//selectedMesh.rotation.x = meshes[i1].rotation.x;
+			}
+			selectedMesh.rotation.y = meshes[0].rotation.y;
+			if(true){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
+			//return false;
+		}
+		if (e.ctrlKey && e.altKey && e.which == 38) {
+			console.log("PRESSED 38!!\n");
+			//var dx = 0.2;
+			var dy = -0.2;
+			
+			for(var i1=0; i1<meshes.length;i1++){
+				//meshes[i1].rotation.y += dx;
+				while (meshes[i1].rotation.y > 2 * Math.PI){meshes[i1].rotation.y -= 2 * Math.PI;}
+				while (meshes[i1].rotation.y < -2 * Math.PI){meshes[i1].rotation.y += 2 * Math.PI;}
+				if ( (dy > 0 && meshes[i1].rotation.x < Math.PI/2) || (dy < 0 && meshes[i1].rotation.x > -Math.PI/2) ) {
+					meshes[i1].rotation.x += dy;
+				}
+				//selectedMesh.rotation.x = meshes[i1].rotation.x;
+				//selectedMesh.rotation.y = meshes[i1].rotation.y;
+			}
+			selectedMesh.rotation.x = meshes[0].rotation.x;
+			if(true){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
+			//return false;
+		}
+		if (e.ctrlKey && e.altKey && e.which == 40) {
+			console.log("PRESSED 40!!\n");
+			//var dx = 0.2;
+			var dy = 0.2;
+			
+			for(var i1=0; i1<meshes.length;i1++){
+				//meshes[i1].rotation.y += dx;
+				while (meshes[i1].rotation.y > 2 * Math.PI){meshes[i1].rotation.y -= 2 * Math.PI;}
+				while (meshes[i1].rotation.y < -2 * Math.PI){meshes[i1].rotation.y += 2 * Math.PI;}
+				if ( (dy > 0 && meshes[i1].rotation.x < Math.PI/2) || (dy < 0 && meshes[i1].rotation.x > -Math.PI/2) ) {
+					meshes[i1].rotation.x += dy;
+				}	
+				//selectedMesh.rotation.y = meshes[i1].rotation.y;
+			}
+			selectedMesh.rotation.x = meshes[0].rotation.x;
+			if(true){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
+			//return false;
+		}
+
+
 
 		if(document.activeElement.id!="tosearch"){
-			var d =0.2;
-			// ctrl + alt + z 90 => go to search field
-			if (e.ctrlKey && e.altKey && e.which == 90) {$("#tosearch").focus();}
-			// ctrl + alt + r 82 => reset camera position, keep mesh rotation
-			if (e.ctrlKey && e.altKey && e.which == 82) {
-				camera.position.x=0;
-				camera.position.y=0;
-				camera.position.z=15;
-			}			
+			var d =0.2;		
 			// +- numpad  or eq
 			if (e.which == 109 || e.which == 81) {camera.position.z += d;}
 			if (e.which == 107 || e.which == 69) {camera.position.z -= d;}
