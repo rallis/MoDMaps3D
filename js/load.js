@@ -890,7 +890,7 @@ function initGraphics(){
 			camera.position.z=15; 
 		}	
 		// ctrl + alt + arrowLeft 37 => rotate left
-		if (e.ctrlKey && e.altKey && e.which == 37) {
+		if (e.ctrlKey && e.which == 37) {
 			var dx = -0.1;
 			for(var i1=0; i1<meshes.length;i1++){
 				meshes[i1].rotation.y += dx;
@@ -900,7 +900,7 @@ function initGraphics(){
 			selectedMesh.rotation.y = meshes[0].rotation.y;
 		}
 		// ctrl + alt + arrowRight 39 => rotate right
-		if (e.ctrlKey && e.altKey && e.which == 39) {
+		if (e.ctrlKey && e.which == 39) {
 			var dx = 0.1;
 			for(var i1=0; i1<meshes.length;i1++){
 				meshes[i1].rotation.y += dx;
@@ -910,7 +910,7 @@ function initGraphics(){
 			selectedMesh.rotation.y = meshes[0].rotation.y;
 		}
 		// ctrl + alt + arrowUp 38 => rotate up
-		if (e.ctrlKey && e.altKey && e.which == 38) {
+		if (e.ctrlKey && e.which == 38) {
 			var dy = -0.1;
 			for(var i1=0; i1<meshes.length;i1++){
 				while (meshes[i1].rotation.y > 2 * Math.PI){meshes[i1].rotation.y -= 2 * Math.PI;}
@@ -922,7 +922,7 @@ function initGraphics(){
 			selectedMesh.rotation.x = meshes[0].rotation.x;
 		}
 		// ctrl + alt + arrowDown 40 => rotate down
-		if (e.ctrlKey && e.altKey && e.which == 40) {
+		if (e.ctrlKey && e.which == 40) {
 			var dy = 0.1;
 			for(var i1=0; i1<meshes.length;i1++){
 				while (meshes[i1].rotation.y > 2 * Math.PI){meshes[i1].rotation.y -= 2 * Math.PI;}
