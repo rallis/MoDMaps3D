@@ -125,7 +125,7 @@ function startSearch(){
 		}else if(howManySearchResults<=10){
 			$("#searchstatus").html(searchOutput);
 		}else{
-			$("#searchstatus").html('Found '+howManySearchResults+' matches. To select a specific point, please narrow it down to less than 10 results. <input type="button" value="Plot this!" onclick="saveAndPlot()">');
+			$("#searchstatus").html('Found '+howManySearchResults+' matches. To select a specific point, please narrow it down to less than 10 results. <input type="button" value="Plot this dataset!" onclick="saveAndPlot()">');
 		}            
 
 		if(realtimeHighlight){
