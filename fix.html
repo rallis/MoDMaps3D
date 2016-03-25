@@ -1,0 +1,875 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>MoDMaps3D - Three Dimensional Molecular Distance Maps</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/numeric-1.2.6.min.js"></script>
+	
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ -->
+
+	<script>
+	var dbg = false, errorHasOccured = false;
+	var eigenval, eigenvec, eigensystem, finalEigenval, finalEigenvec, points ;
+	var mapID, allSequences={}, distMatrix=[], fcgrRes=9, getTaxa = false;
+	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
+	var callsNCBIDone, progress;
+	var labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'yellow'];
+	
+	function geturlparamvalue(name) {
+		name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+		var regexS = "[\\?&]" + name + "=([^&#]*)";
+		var regex = new RegExp(regexS);
+		var results = regex.exec(window.location.href);
+		if(results!=null){
+			return results[1];
+		}else{
+			return -1;
+		}
+	}
+
+	function computeMDS(){
+		time = new Date();
+		step3A = time.getTime();
+		console.log("BEGIN computeMDS()");	
+		
+		// pre-processign MDS
+
+		// part 1
+		var numOfSeq = distMatrix.length;
+		var distMatrixSqTotals = [];
+		for(var i=0; i<numOfSeq; i++){
+			var tmpColSum = 0;
+			for(var j=0; j<numOfSeq; j++){
+				tmpColSum += Math.pow(distMatrix[i][j], 2);
+			}
+			distMatrixSqTotals.push(tmpColSum);
+		}
+		if(dbg){console.log('sqtotals=',distMatrixSqTotals);}
+		
+		// part 2
+		var sumOfSqTotals = 0;
+		for(var i=0; i<numOfSeq; i++){
+			sumOfSqTotals += distMatrixSqTotals[i];
+		}
+		if(dbg){console.log('sumofsqtotals=',sumOfSqTotals);}
+		
+		// part 3
+		var distMatrixCentered = [];
+		for(var i=0; i<numOfSeq; i++){
+			distMatrixCentered.push([]);
+			for(var j=0; j<numOfSeq; j++){
+				var tmpVal = -(1/2)*(Math.pow(distMatrix[i][j], 2) - (1/numOfSeq)*distMatrixSqTotals[i] - (1/numOfSeq)*distMatrixSqTotals[j] + (1/(Math.pow(numOfSeq, 2)))* sumOfSqTotals);
+				distMatrixCentered[i].push(tmpVal);
+			}
+		}
+		
+		// EIGENVALUES - EIGENVECTORS
+		try{
+			res2 = numeric.eig(distMatrixCentered);	
+		}catch(err){
+			console.log(err.message);
+			errorHasOccured = true;
+			$('#ncbiprogress').html('ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.');
+			return;
+		}
+		if(dbg){console.log('numeric.js=',res2['lambda']['x']);}
+
+		eigenval = res2['lambda']['x'];
+		eigenvec = numeric.transpose(res2['E']['x']);   /// here transpose!!!
+		eigensystem =[];
+		for(var i=0; i<numOfSeq; i++){
+			eigensystem.push([eigenval[i], eigenvec[i]]);
+		}
+		if(dbg){console.log("eigensystem=",eigensystem);}
+		eigensystem.sort(function (a,b){ return Math.abs(b[0]) - Math.abs(a[0]) });
+		if(dbg){console.log("eigensystem=",eigensystem);}
+		
+
+		// PICK 5 LARGEST AND POSITIVE
+		finalEigenvec=[];
+		finalEigenval=[];
+		for(var i=0; i<numOfSeq; i++){
+			if(eigensystem[i][0]>0){
+				finalEigenvec.push(eigensystem[i][1]);
+				finalEigenval.push(eigensystem[i][0]);
+			}
+			if(dbg){console.log("i-th eigeinvalue= [",i,"] [",eigensystem[i][0],"]");}
+			if(finalEigenvec.length === 5){break;}
+		}
+		if(dbg){console.log("finalEigenval=",finalEigenval);}
+		if(dbg){console.log("finalEigenvec=",finalEigenvec);}
+		
+		// POINTS COORDINATES
+		points = numeric.dot(numeric.transpose(finalEigenvec), numeric.sqrt(numeric.T.diag(finalEigenval)['x']));
+		if(dbg){console.log("points=",points);}
+		
+		// MIN-MAX PER DIMENSION (FOR LATER SCALING)
+		var allMinMax =[], tmpMinMax = numeric.transpose(points);
+		for(var i=0; i<5; i++){
+			allMinMax.push( [ Math.min.apply(Math,tmpMinMax[i]) , Math.max.apply(Math,tmpMinMax[i]) ] );
+		}
+		if(dbg){console.log(allMinMax);}
+		
+
+		// PRODUCING MAPFILE
+		var mapfile = '';
+		// line 1
+		for(var i=0; i<accIDsSets.length; i++){
+			mapfile += accIDsSets[i].length + ",";
+		}
+		mapfile = mapfile.slice(0,-1);
+		mapfile += "\n";
+		// line 2
+		for(var i=0; i<accIDsSets.length; i++){
+			mapfile += $("#colorset"+i).val() + ",";
+		}
+		mapfile = mapfile.slice(0,-1);
+		mapfile += "\n";
+		// line 3+4
+		mapfile += "5\nIndex,Acc,Name,Length,Taxa\n";
+		// line 5
+		for(var i=0; i<accIDsSets.length; i++){
+			mapfile += $("#colorset"+i).val() + ",";
+		}
+		mapfile = mapfile.slice(0,-1);
+		mapfile += "\n";
+		// line 6
+		for(var i=0; i<accIDsSets.length; i++){
+			mapfile += $("#nameset"+i).val()+" ("+accIDsSets[i].length+"),";
+		}
+		mapfile = mapfile.slice(0,-1);
+		mapfile += "\n";
+		// line 7
+		// OLD mapfile += "No Description given\n";
+		for(var i=0; i<$("#numofsets").val(); i++){
+			mapfile += $("#nameset"+i).val() + ', ';
+		}
+		mapfile = mapfile.slice(0,-2);  //because of space above!
+		mapfile += '. Number of sequences is '+accIDs.length+ "\n";
+		// rest of the lines
+		for(var i=0; i<numOfSeq; i++){
+			for(var j=0; j<points[i].length; j++){
+				mapfile += ((2*points[i][j] - allMinMax[j][0] - allMinMax[j][1]) / ( allMinMax[j][1] - allMinMax[j][0] ) ) +"\n";	
+			}
+			mapfile += i+"\n";                      // INDEX
+			mapfile += allSequences[i][0]+"\n";     // ACC
+			mapfile += allSequences[i][4].split("|").pop().trim()+"\n";     // NAME
+			mapfile += allSequences[i][1]+"\n";     // LENGTH
+			mapfile += allSequences[i][2]+"\n";     // TAXA
+		}
+		mapfile = mapfile.slice(0,-1);
+		if(dbg){console.log("c/p=\n",mapfile);}
+
+		var mapTimeStamp = new Date().getTime();
+		if(typeof(Storage) !== "undefined") {
+			localStorage.setItem("mapfile"+mapTimeStamp, mapfile);
+			localStorage.setItem("distMatrix"+mapTimeStamp, distMatrix);
+		} else {
+			console.log("ERROR! NO LOCAL STORAGE AVAILABLE!?");
+			alert("ERROR! NO LOCAL STORAGE AVAILABLE!?");
+		}
+
+		$('#ncbiprogress').html('100%');
+		$("#file_contents").html('<pre>'+mapfile+'</pre>');
+		$("#file_contents").hide();
+		// END OF MDS
+		
+
+		time = new Date();
+		step3B = time.getTime();
+		$("#stepstatus").html('\
+			<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
+			<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p>\
+			<p>Step 3 (MDS) DONE in ~'+(step3B-step3A)/1000+' sec</p></strong>');
+		$("#stepstatus").html($("#stepstatus").html()+'<p>Map file <a href="load.html?mapid=local'+mapTimeStamp+'" target="_blank">here</a> or <a href="#" id="viewfile">view</a> contents.</p>');
+		$("#mainprogressbar").hide();
+		$("#viewfile").click(function(){
+			$("#file_contents").toggle();
+		});
+
+		// list local storage for debuging
+		if(dbg){for (var a in localStorage) {console.log(a);}}
+		if(dbg){console.log(Object.keys(localStorage));}
+	}
+
+	function computeDistMatrix(){
+		time = new Date();
+		step2A = time.getTime();
+		console.log("BEGIN computeDistMatrix()");	
+		$("#stepstatus").html('\
+			<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</strong></p>\
+			<p>Step 2 of 3: (AID)</p>');
+		$('#ncbiprogress').html('0%');
+
+		var dim=accIDs.length;
+		distMatrix=[];
+		for(var i=0; i<dim; i++){
+			distMatrix.push([]);
+			for(var j=0; j<dim; j++){
+				distMatrix[i].push(0);
+			}
+		}
+		
+		var s = 1;
+		var process = function() {
+			for (; s<= (dim-1)*dim/2; s++) {
+				var sum=0, frow, fcol;
+				for(var row=dim-1; row>=1; row--){
+					sum+=row;
+					//console.log(s,dim,row,sum);
+					if(sum >= s){
+						//ACTUAL ROW OF TRIANGULAR NUMBER
+						frow = dim-row;
+						sum=0;
+						for(var col=dim-1; col>=dim-frow+1; col--){sum+=col;}
+						// ACTUAL COLUMN OF TRIANGULAR NUMBER
+						fcol=s-sum+frow;
+						break;
+					}
+				}
+				if(dbg){console.log("s=",s,"frow=",frow,"fcol=",fcol);}
+
+				var numerator = allSequences[frow-1][3]['size'] + allSequences[fcol-1][3]['size'];
+				//var denominator = mergeKmers(allSequences[frow-1][3],allSequences[fcol-1][3]);
+				var denominator=0;
+				for(var unionInd=0; unionInd<Math.pow(4,fcgrRes); unionInd++){
+					if( (allSequences[frow-1][3]['flatFCGR'][unionInd]==1) || (allSequences[fcol-1][3]['flatFCGR'][unionInd]==1) ){
+						denominator++;
+					} 
+				}
+				if(dbg){console.log(frow,fcol,'=',numerator,denominator,2 - numerator*1.0/denominator);}
+				distMatrix[frow-1][fcol-1] = 2 - numerator*1.0/denominator;
+				distMatrix[fcol-1][frow-1] = distMatrix[frow-1][fcol-1];
+
+				var progress = 2*s*100.0/ (dim*(dim-1));
+				progress = progress.toFixed(2);
+				if(dbg){console.log('progr='+progress);}
+
+				if( s%10 == 0){
+					if(dbg){console.log('ABOUT-TO-BREAK = '+s);}
+					$('#ncbiprogress').html(progress+'%');
+					s++;
+					var myvar = setTimeout(process, 10);
+					break;
+				}
+			}
+			if(s==(dim-1)*dim/2 + 1){
+				time = new Date();
+				step2B = time.getTime();
+				// YOU HAVE COMPUTED DISTANCE MATRIX, PRINT IT AND GO FOR MDS
+				if(dbg){console.log(distMatrix);}
+
+				//DEBUGING FOR PRINTING dMatrix
+				if(dbg){
+					console.log('matrix=',distMatrix);
+					var toprint="[";
+					for(var i=0; i<distMatrix.length; i++){
+						toprint+='';
+						for (var j=0; j<distMatrix.length; j++){
+							toprint+=distMatrix[i][j]+',';
+						}
+						toprint = toprint.substring(0, toprint.length - 1);
+						toprint+=';'
+					}
+					toprint = toprint.substring(0, toprint.length - 1);
+					toprint+=']';
+					console.log('COPY/PASTE MATHEMATICA');
+					console.log("Eigenvalues[",toprint,"]");
+					//$("#accessionIDs").html("Eigenvalues["+toprint+"]");
+				}
+
+
+				$("#stepstatus").html('\
+					<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
+					<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p></strong>\
+					<p>Step 3 of 3: (MDS)</p>');
+				$('#ncbiprogress').html('Please wait.. (browser may freeze for a while) <img src="img/loading.gif" width="30" height="30"/>');
+
+				setTimeout(computeMDS, 500);
+			}
+		};
+
+		process();
+	}
+
+	function buildFCGR(seq, k){
+		var numOfKmers=0, curmer, curmerInd, kmers={}, mapACGT={"A":0, "C":1, "G":2, "T":3};
+		var newseq = seq.replace(/B|D|E|F|H|I|J|K|L|M|N|O|P|Q|R|S|U|V|W|X|Y|Z/gi, "");
+	    var kmersInds = new Uint8Array(Math.pow(4, k));
+	    if(dbg){console.log((seq.length - newseq.length)+' lost bp');}
+	    for(var i=0; i<newseq.length-k+1; i++){
+			curmer = newseq.slice(i,i+k);
+			curmerInd = 0;
+			for(var j=0; j<curmer.length; j++){ 
+				curmerInd += Math.pow(4, k-1-j)*mapACGT[curmer[j]]; 
+			}
+			
+			if(kmersInds[curmerInd]==0){
+				numOfKmers++;
+				kmersInds[curmerInd]=1;
+			}
+
+		}
+		if(dbg){console.log(numOfKmers+' #kmers '+kmersInds.length);}
+		return {"size":numOfKmers, "flatFCGR":kmersInds};
+	}
+
+	function loadFastaFromNCBI(ind, accID, callback){
+		$.ajax({
+			url: "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&rettype=fasta&retmode=text&id="+accID,
+			success: function(result){
+				var data = result.split(/\n\r?/gi);
+				var header;
+				if( data.length && data[0][0]==='>' ){ header = data[0]; }
+				while (data.length && data[0][0] === '>') {data.shift();}
+				var outputFasta=data.join('');
+				if(dbg){console.log('['+accID+'] len='+outputFasta.length);}
+				callback(ind, accID, outputFasta, header);
+			},
+			error: function(xhr, status, error) {
+				console.log('STATUS=',status,'ERROR from loadFastaFromNCBI=',error);
+				errorHasOccured = true;
+				$('#ncbiprogress').html('ERROR ['+error+'] while fetching data from NCBI for ['+accID+']');
+			}
+		});
+	}
+
+	function getTaxaFromNCBI(ind, idNCBI){
+		if(dbg){console.log("getting taxa for id=",id);}
+		$.ajax({
+			url: "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=gb&retmode=xml&id="+idNCBI,
+			success: function(result){
+				// res=result;
+				// console.log("res=", result);
+				var taxaString = new XMLSerializer().serializeToString(result);
+				var taxa = /<GBSeq_taxonomy>(.*)<\/GBSeq_taxonomy>/g.exec(taxaString);
+				if(dbg){console.log("taxa=", taxa[1]);}
+				allSequences[ind][2] = taxa[1].trim();
+				
+				callsNCBIDone += 0.5;
+				progress = callsNCBIDone*100.0/accIDs.length;
+				progress = progress.toFixed(2);
+				if(!errorHasOccured){$('#ncbiprogress').html(progress+'%');}
+				if(callsNCBIDone == accIDs.length){
+					time = new Date();
+					step1B = time.getTime();
+					computeDistMatrix();
+				}
+			},
+			error: function(xhr, status, error) {
+				console.log('STATUS=',status,'ERROR getTaxaFromNCBI=',error);
+				errorHasOccured = true;
+				$('#ncbiprogress').html('ERROR ['+error+'] while fetching Taxonomy data from NCBI for ['+accID+']');
+			}
+		});		
+	}
+
+	$(document).ready(function(){
+
+		$.ajax({url: "browse.php", success: function(result){
+			// LOAD FILENAMES FROM MAPS DIRECTORY
+			//  NOT VISIBLE MAPS
+			/*	Representatives_3Kingdoms_1.txt
+				Representatives_3Kingdoms_2.txt
+				mtDNA_Vertebrata_Fungi.txt
+				mtDNA_Vertebrata_Protists.txt    */
+			// HARDCODE FILENAMES. 
+			// ALTERNATIVELY, COMMENT NEXT LINE AND UNCOMMENT NEXT TO NEXT LINE
+			result = [
+				['Animalia Kingdom',
+				['animalia01.txt',
+				'animalia02.txt',
+				'animalia03.txt',
+				'animalia04.txt',
+				'animalia05.txt',
+				'animalia06.txt',
+				'animalia06_comp.txt',
+				'animalia07.txt',
+				'animalia07_comp.txt',
+				'animalia08.txt',
+				'animalia08_comp.txt',
+				'animalia09.txt',
+				'animalia09_comp.txt',
+				'animalia10.txt',
+				'animalia10_comp.txt',
+				'animalia10_comp_asm.txt']],
+				['Archaea Kingdom',
+				['archaea1.txt',
+				'archaea2.txt',
+				'archaea3.txt',
+				'archaea4.txt']],
+				['Bacteria Kingdom',
+				['bacteria1.txt',
+				'bacteria2.txt',
+				'bacteria3.txt',
+				'bacteria4.txt',
+				'bacteria5.txt',
+				'bacteria5_comp.txt']],
+				['Fungi Kingdom',
+				['fungi1.txt',
+				'fungi2.txt',
+				'fungi3.txt',
+				'fungi4.txt',
+				'fungi5.txt',
+				'fungi5_comp.txt']],
+				['Plantae Kingdom',
+				['plants1.txt',
+				'plants2.txt',
+				'plants3.txt',
+				'plants4.txt',
+				'plants5.txt',
+				'plants6.txt',
+				'plants7.txt',
+				'plants7_comp_cp.txt',
+				'plants8.txt',
+				'plants8_comp_cp.txt',
+				'plants8_comp_cp_mt.txt',
+				'plants8_comp_mt.txt']],
+				['Protists Kingdom',
+				['protists1.txt',
+				'protists2.txt',
+				'protists3.txt',
+				'protists4.txt']],
+				['Mitochondrial DNA (mtDNA)',
+				['mtDNA_Amphibians.txt',
+				'mtDNA_Hominidae_Hylobatidae.txt',
+				'mtDNA_InsecMamAmph.txt',
+				'mtDNA_Insects.txt',
+				'mtDNA_Mammals.txt',
+				'mtDNA_Primates.txt',
+				'mtDNA_Vertebrata.txt']],
+				['Haplogroups (Human mtDNA)',
+				['mtDNA_HumanHaplogroups_1_k=6.txt',
+				'mtDNA_HumanHaplogroups_1_k=9.txt',
+				'mtDNA_HumanHaplogroups_2_AllHaplogroups.txt',
+				'mtDNA_HumanHaplogroups_3_L0-L6.txt',
+				'mtDNA_HumanHaplogroups_4_AsianBranch.txt',
+				'mtDNA_HumanHaplogroups_5_L2-L3-L4-L6.txt',
+				'mtDNA_HumanHaplogroups_6_L3-L4-L6.txt',
+				'mtDNA_HumanHaplogroups_7_L4-L6.txt',
+				'mtDNA_HumanHaplogroups_8_M-D-E-G.txt',
+				'mtDNA_HumanHaplogroups_8_M-E-G.txt',
+				'mtDNA_HumanHaplogroups_9_EurasiaBranch_1.txt',
+				'mtDNA_HumanHaplogroups_9_EurasiaBranch_2.txt',
+				'mtDNA_HumanHaplogroups_9_EurasiaBranch_3.txt',
+				'mtDNA_HumanHaplogroups_9_EurasiaBranch_4.txt',
+				'mtDNA_HumanHaplogroups_9_EurasiaBranch_5.txt',
+				'mtDNA_HumanHaplogroups_9_EurasiaBranch_6.txt',
+				'mtDNA_HumanHaplogroups_9_EurasiaBranch_7.txt',
+				'mtDNA_HumanHaplogroups_10_Hsubgroups.txt',
+				'mtDNA_HumanHaplogroups_11_Human_Chimp.txt',
+				'mtDNA_HumanHaplogroups_11_Human_k=8.txt']]
+				];
+			//var resfetch=result.split("#");
+			var resfetch=result;
+			var outcome='';
+			for(i=0;i<resfetch.length;i++){
+				//outcome+='<a href="#" class="list-group-item">'+resfetch[i]+'</a>';
+				//outcome+='<button type="button" class="btn btn-default btn-lg btn-block">'+resfetch[i][0]+'</button>';
+				outcome+='<div class="panel-heading"><h4 class="panel-title">\
+								<a data-toggle="collapse" data-parent="#modmap-accordion-'+i+'" href="#modmap-collapse-'+i+'">'+resfetch[i][0]+'&nbsp;<span class="badge">'+resfetch[i][1].length+'</span></a>\
+							</h4></div>';
+
+				var tmp='<div id="modmap-collapse-'+i+'" class="panel-collapse collapse out"><div class="panel-body"><ul class="list-group large-group">';
+				for(var j=0; j<resfetch[i][1].length; j++){
+					//tmp+='<li href="#" class="list-group-item"><div>'+resfetch[i][j]+'</div></li>';
+					//<span class="badge">5</span>\
+					tmp+='<li class="list-group-item">\
+							<a href="#">'+resfetch[i][1][j]+'</a>\
+							</li>';
+				}
+				tmp+='</ul></div></div>';
+				outcome+=tmp;
+
+							
+									
+				//console.log(outcome);
+				//resfetch[i][0]+'-'+resfetch[i][1];
+			}
+			//$("#mainfilenavigate").html('<p><span class="label label-primary">Available Maps</span></p>'+outcome);
+
+			$('#listgroupsofmaps').html(outcome);
+
+			// <div id="filenavigate">
+			// +'</div>'
+			// LOAD PREVIEW CONTENT FOR EACH FILENAME
+			
+			$(".list-group-item").click(function() {
+				console.log('Loading = '+$(this).text());
+				mapID=$(this).text();
+				$.ajax({
+					url: "maps/"+mapID, 
+					success: function(result){
+						var resfetch=result.split("\n");
+						$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+resfetch[6]+'</p><a href="load.html?mapid='+mapID+'" target="_blank">Show Map</a><p></p>');
+					}
+				});
+			});
+		}});
+
+		$("#goto1").click(function(){$('#guide-tabs li:eq(1) a').tab('show');});
+		$("#goto2").click(function(){$('#guide-tabs li:eq(2) a').tab('show');});
+		$("#kmerslen").val('9');
+		$("#getTaxa").val('0');
+
+		$("#dataset1").click(function(){
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#numofsets").val('2');
+			$("#numofsets").trigger("change");
+			$("#set0").html('NC_014453,NC_012761,NC_012762,NC_012763,NC_012764,NC_012766,NC_012769,NC_012771,NC_012773,NC_011053,NC_010299,NC_010300,NC_004025,NC_002765');
+			$("#set1").html('NC_018115,NC_018116,NC_018096,NC_018057,NC_018058,NC_018059,NC_018060,NC_018061,NC_018062,NC_018063,NC_016666,NC_015485,NC_015486,NC_014042,NC_014045,NC_014047,NC_014051,NC_013993,NC_012920,NC_012774,NC_012775,NC_012670,NC_011519,NC_011137,NC_011120,NC_009747,NC_009748,NC_008215,NC_008216,NC_008217,NC_008218,NC_008219,NC_008220,NC_008066,NC_007009,NC_006900,NC_006901,NC_005943,NC_002811,NC_002763,NC_002764,NC_001643,NC_001644,NC_001645,NC_001646,NC_001992,NC_002082,NC_002083');	
+			$("#nameset0").val('Strepsirrhini');
+			$("#nameset1").val('Haplorrhini');
+			$("#colorset0").val('green');
+			$("#colorset1").val('red');
+			$("#stepstatus").hide();
+			$("#mainprogressbar").hide();		
+		});  
+		$("#dataset2").click(function(){
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#numofsets").val('3');
+			$("#numofsets").trigger("change");
+			$("#set0").html('NC_017870,NC_017871,NC_015788,NC_015790,NC_015791,NC_015792,NC_015794,NC_015795,NC_015796,NC_014568,NC_014571,NC_014572,NC_013825,NC_013762,NC_012430,NC_010224,NC_009335,NC_008090,NC_008085,NC_008088,NC_008089,NC_008091,NC_008076,NC_008077,NC_008078,NC_008079,NC_008080,NC_008081,NC_008082,NC_008083,NC_008084,NC_007446,NC_006887,NC_006888,NC_006889,NC_006890,NC_006407,NC_006325,NC_006326,NC_006327,NC_006328,NC_006329,NC_006330,NC_006331,NC_006332,NC_006333,NC_006334,NC_006335,NC_006336,NC_006337,NC_006338,NC_006339,NC_006340,NC_006341,NC_006342,NC_006343,NC_006344,NC_006345,NC_006346,NC_005797,NC_004926,NC_004021,NC_002756');
+			$("#set1").html('NC_007911,NC_006404,NC_006301,NC_006302,NC_006303,NC_006304,NC_006305,NC_002471');
+			$("#set2").html('NC_016119,NC_016059,NC_015615,NC_015617,NC_015618,NC_015620,NC_015305,NC_014685,NC_014691,NC_014581,NC_014584,NC_013270,NC_012837,NC_012647,NC_011049,NC_010232,NC_010233,NC_009886,NC_009422,NC_009423,NC_009258,NC_009264,NC_008410,NC_008144,NC_007888,NC_007440,NC_007178,NC_006839,NC_006688,NC_006689,NC_006690,NC_006402,NC_006403,NC_006405,NC_006406,NC_006408,NC_008975,NC_005794,NC_005055,NC_002805,NC_001573');
+			$("#nameset0").val('Caudata');
+			$("#nameset1").val('Gymnophiona');
+			$("#nameset2").val('Anura');
+			$("#colorset0").val('green');
+			$("#colorset1").val('cyan');
+			$("#colorset2").val('blue');
+			$("#stepstatus").hide();
+			$("#mainprogressbar").hide();		
+		});
+		$("#dataset3").click(function(){
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#numofsets").val('5');
+			$("#numofsets").trigger("change");
+			$("#set0").html('AY521630,AM000053,AM000054,AY521629,AY521631,AM000055,DQ396400');
+			$("#set1").html('AF004394,AF042101,AF256204,AF086817,AF042103,AB428555,AB287363,EU786678');
+			$("#set2").html('U46016,AY713415,AY713416,AY255826,EF514713,DQ207941,DQ369994,EU786673');
+			$("#set3").html('AY773338,AY773341,EF633445,AY322189,AF484516,AJ488927,AY371157,AY795907');
+			$("#set4").html('U88826,AF061642,AY772535,AY586549,AF423760,AY371121,AB231893,EU786670');
+			$("#nameset0").val('SetA');
+			$("#nameset1").val('SetB');
+			$("#nameset2").val('SetC');
+			$("#nameset3").val('SetD');
+			$("#nameset4").val('SetG');
+			$("#stepstatus").hide();
+			$("#mainprogressbar").hide();		
+		});
+
+		$("#kmerslen").change(function(){
+			fcgrRes = parseInt($("#kmerslen").val());
+			console.log("NEW fcgrRes=",fcgrRes);
+		});
+		$("#getTaxa").change(function(){
+			getTaxa = parseInt($("#getTaxa").val());
+			console.log("NEW getTaxa=", getTaxa);
+		});
+
+		$("#buildmap").click(function(){
+			$('#allInputData').slideUp();
+			$('#allInputDataMinimized').slideDown();
+			time = new Date();
+			step1A = time.getTime();
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#mainprogressbar").show();
+			$("#stepstatus").show();
+			$("#stepstatus").html('Step 1 of 3: (NCBI + FCGRs)');
+			$('#ncbiprogress').html('0%'); 
+			errorHasOccured = false;
+			
+			// GET "accIDs"
+			accIDsSets=[];
+			for(var i=0; i<$("#numofsets").val(); i++){
+				console.log(i,$("#set"+i).val().split(","));
+				var tmpSet = $("#set"+i).val().split(",");
+				if(tmpSet[0]!=""){
+					accIDsSets.push(tmpSet);
+				}
+			}
+			accIDs = [].concat.apply([], accIDsSets);
+			console.log("accIDs=",accIDs);
+			console.log("In total = " + accIDs.length + " sequences.");
+			if(accIDs.length == 0){
+				$("#stepstatus").html('Please eneter at least 2 sequences..');
+				return;
+			}
+
+			// AJAX CALLS TO NCBI FOR FASTA FILES
+			callsNCBIDone=0;
+			for(var i=0; i<accIDs.length; i++){
+				if(!errorHasOccured){
+					loadFastaFromNCBI(i, accIDs[i].trim(), function(ind, accID, output, header){
+						allSequences[ind]=[accID, output.length, /**/, buildFCGR(output, fcgrRes), header];
+						if(getTaxa){
+							getTaxaFromNCBI(ind, accID);
+						}else{
+							callsNCBIDone += 0.5;
+							allSequences[ind][2] = "NotAvailable";
+						}
+						if(dbg){console.log([ind,accID,output.length,'DONE']);}
+						
+						callsNCBIDone += 0.5;
+						progress = callsNCBIDone*100.0/accIDs.length;
+						progress = progress.toFixed(2);
+						if(!errorHasOccured){$('#ncbiprogress').html(progress+'%');} 
+						if(callsNCBIDone == accIDs.length){
+							time = new Date();
+							step1B = time.getTime();
+							computeDistMatrix();
+						}
+					});
+				}
+			}
+		});
+		
+		$("#allInputDataShow").click(function(){
+			$("#allInputData").slideToggle();
+		});
+
+		$("#numofsets").change(function(){
+			var colorList = '';
+			for(var i=0; i<labelColors.length; i++){
+				colorList += '<option value="'+labelColors[i]+'">'+ labelColors[i]+'</option>';
+			}
+
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			console.log($("#numofsets").val());
+			$("#sets").html('');
+			for(var i=0; i<$("#numofsets").val(); i++){
+				$("#sets").html($("#sets").html()+'<p>SetName:<input type="text" size="5" id="nameset'+i+'" value="Set['+i+']"> SetColor: <select id="colorset'+i+'">'+colorList+'</select><br><textarea id="set'+i+'" autofocus  rows="2" cols="40"></textarea></p>');
+			}
+			for(var i=0; i<$("#numofsets").val(); i++){$("#colorset"+i).val(labelColors[i]);}
+			if($("#numofsets").val()>0){$("#buildmap").show();}else{$("#buildmap").hide();}
+			$("#stepstatus").hide();
+		});
+
+		var tmpDataset = geturlparamvalue('dataset');
+		if(tmpDataset.slice(0,5)=='local'){
+			newDataset = localStorage.getItem("dataset"+tmpDataset.slice(5));
+			$('#guide-tabs li:eq(2) a').tab('show');
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#numofsets").val('1');
+			$("#numofsets").trigger("change");
+			$("#set0").html(newDataset);
+			$("#stepstatus").hide();
+			$("#mainprogressbar").hide();
+			//$("#buildmap").click(); allow user to change settings if wanted
+		}else{
+			console.log('no local dataset?!');
+		}
+	});
+
+	</script>
+
+	<style>
+	body {
+		margin-bottom: 60px;
+	}
+	#filenavigate{ 
+		display:block; 
+		overflow:auto; 
+		height:300px; 
+	}
+	</style>
+</head>
+<body>
+
+	<div class = "page-header">
+		<h1 class="text-center">MoDMaps3D</h1>
+	</div>
+
+	<div class="container">
+		<ul class="nav nav-tabs" id="guide-tabs">
+			<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+			<li><a data-toggle="tab" href="#menu1">Explore a Map</a></li>
+			<li><a data-toggle="tab" href="#menu2">Build a Map</a></li>
+			<li><a data-toggle="tab" href="#menu3">About</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="home" class="tab-pane fade in active">
+				<h3>Welcome to MoDMaps3D!</h3>
+				<p>Here are some of the things you can do with three dimensional Molecular Distance Maps.</p>
+
+				<dl class="dl-horizontal">
+					<dt><a href="#" id="goto1">Explore a Map</a></dt>
+					<dd>Explore available built-in MoDMaps. These maps provide extensive information for each genomic sequence involved in each map, along with complementary information.</dd>
+					<dt><a href="#" id="goto2">Build a Map</a></dt>
+					<dd>Build a new MoDMap from scratch tailored to your dataset.</dd>
+				</dl>
+				<div id="fastafile"></div>
+			</div>
+			<div id="menu1" class="tab-pane fade">
+				<h3>Explore available MoDMaps</h3>
+				<p>Here you can find a list of available built-in MoDMaps to explore. Select a map from sidebar, preview its content, and click on "Show Map" to see it in action.</p>
+
+				<!-- <div id="hardware-collapse" class="panel-collapse collapse in">
+            	<div class="panel-body">
+                <div class="row">
+                 -->    
+                    <!-- hardware sub accordions [1] -->
+				<div class="col-xs-4">
+					<div id="listgroupsofmaps" class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#animalia-kingdom-accordion-1" href="#animalia-kingdom-collapse-1">Card Readers
+								<span class="badge">14</span>
+								</a>
+							</h4>
+						</div>
+						<div id="animalia-kingdom-collapse-1" class="panel-collapse collapse in">
+							<div class="panel-body"> 
+								<ul class="list-group large-group">
+									<li class="list-group-item">
+									<span class="badge">14</span>
+									<a href="/">test input one</a>
+									</li>
+									<li class="list-group-item">
+									<span class="badge">5</span>
+									<a href="/">test input two this style can handle large text</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#animalia-kingdom-accordion-2" href="#animalia-kingdom-collapse-2">Card Readers
+								<span class="badge">14</span>
+								</a>
+							</h4>
+						</div>
+						<div id="animalia-kingdom-collapse-2" class="panel-collapse collapse in">
+							<div class="panel-body"> 
+								<ul class="list-group large-group">
+									<li class="list-group-item">
+									<span class="badge">14</span>
+									<a href="/">test input one</a>
+									</li>
+									<li class="list-group-item">
+									<span class="badge">5</span>
+									<a href="/">test input two this style can handle large tdscdscdscsdcsdcsdcsdcsdcdscsdcdscext</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        		<!-- </div>
+        		</div>
+        		</div>
+ -->
+				<div class="col-xs-4 " id="mainfilenavigate">
+				</div>
+				<div class="col-xs-6 " id="filecontent">
+				</div>  
+			</div>
+			<div id="menu2" class="tab-pane fade">
+				<h3>Build your map, for your dataset.</h3>
+				<p>Samples you can try:<br>
+					<a href="#" id="dataset1">[1] 62 mtDNA primates</a> - 
+					<a href="#" id="dataset2">[2] 112 mtDNA amphibia</a> - 
+					<a href="#" id="dataset3">[3] 39 HIV-1 genomes</a> 
+				</p>
+
+				<p>
+					<div id="allInputDataMinimized">
+						<a href="#" id="allInputDataShow">Show/Hide input data</a>
+					</div>
+				</p>
+				<div id="allInputData">
+					<dl class="dl-horizontal">
+						<dt>Length of k-mers:</dt>
+						<dd>
+							<select id="kmerslen">
+								<option value="3">3 bp</option>
+								<option value="4">4 bp</option>
+								<option value="5">5 bp</option>
+								<option value="6">6 bp</option>
+								<option value="7">7 bp</option>
+								<option value="8">8 bp</option>
+								<option value="9">9 bp</option>
+								<option value="10">10 bp</option>
+								<option value="11">11 bp</option>
+								<option value="12">12 bp</option>
+							</select>
+						</dd>
+						<dt>Get Taxonomy:</dt>
+						<dd>
+							<select id="getTaxa">
+								<option value="0">No (Fast)</option>
+								<option value="1">Yes (Slow)</option>
+							</select>
+						</dd>
+						<dt>Number of sets:</dt>
+						<dd>
+							<select id="numofsets">
+								<option value="0">Choose</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option> 
+							</select>
+						</dd>
+					</dl>
+
+					<div id="sets"></div>
+
+				</div>
+
+				
+				<p><input type="submit" id="buildmap" value="Compute MoDMap" style="display:none;" /></p>
+
+				<p id="stepstatus"></p>
+				<div id="mainprogressbar" style="display:none;">
+				  <div id="ncbiprogress"></div>
+				</div>
+				
+				<p id="file_contents"></p>
+			</div>
+			<div id="menu3" class="tab-pane fade">
+				<h3>About MoDMaps3D</h3>
+				
+				<p>
+					<dl class="dl-horizontal">
+						<dt>Coded by:</dt>
+						<dd>Rallis Karamichalis, 2016</dd>
+						<dt>Github Page:</dt>
+						<dd><a href="http://rallis.github.io/MoDMaps3D/" target="_blank">http://rallis.github.io/MoDMaps3D/</a></dd>
+						<dt>Github Code:</dt>
+						<dd><a href="http://github.com/rallis/MoDMaps3D/" target="_blank">http://github.com/rallis/MoDMaps3D/</a></dd>
+						<!-- <dt>Publication:</dt>
+						<dd>[PUBLICATION_DOI_LINK]</dd> -->
+					</dl>
+				</p>	
+
+			</div>
+		</div>	
+	</div>
+
+</body>
+</html>
