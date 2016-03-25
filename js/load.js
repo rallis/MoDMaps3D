@@ -155,6 +155,18 @@ function saveAndPlot(){
 	window.location = "index.html?dataset=local"+dataTimeStamp;
 }
 
+// ENABLE / DISABLE MOUSEOVER SELECTION
+function enableMouseover(){
+	if(selectOnMouseover){
+		MoDMaps3D['selectonmouseover'] = false; 
+		selectOnMouseover = MoDMaps3D['selectonmouseover'];
+	}else{
+		MoDMaps3D['selectonmouseover'] = true; 
+		selectOnMouseover = MoDMaps3D['selectonmouseover'];
+	} 
+	console.log('selectonmouseover NOW = '+selectOnMouseover);
+}
+
 // SELECTION OF SEARCH RESULTS
 function selectAndFill(id){
 	$("#searchstatus").html("");
@@ -739,6 +751,7 @@ function initGraphics(){
 	<br>Show CGR image: <input type="checkbox" onchange="toggle(\'cgrInfoDiv\');" unchecked>\
 	<br>Show highlight color: <input type="checkbox" onchange="toggle(\'pickcolor\');" unchecked>\
 	<br>Show distances: <input type="checkbox" onchange="toggle(\'distPointsDiv\');" unchecked>\
+	<br>Select on Mouseover: <input type="checkbox" onchange="enableMouseover();" unchecked>\
 	</div>';
 		
 	staticInfoDiv += '<hr color="white" width="60%"><em><strong><font color="yellow" size="4">Legend</font></strong></em><br>'+mapCaption+'<br><br>';
