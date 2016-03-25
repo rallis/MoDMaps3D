@@ -377,81 +377,6 @@
 				mtDNA_Vertebrata_Protists.txt    */
 			// HARDCODE FILENAMES. 
 			// ALTERNATIVELY, COMMENT NEXT LINE AND UNCOMMENT NEXT TO NEXT LINE
-			// result = ['animalia01.txt',
-			// 	'animalia02.txt',
-			// 	'animalia03.txt',
-			// 	'animalia04.txt',
-			// 	'animalia05.txt',
-			// 	'animalia06.txt',
-			// 	'animalia06_comp.txt',
-			// 	'animalia07.txt',
-			// 	'animalia07_comp.txt',
-			// 	'animalia08.txt',
-			// 	'animalia08_comp.txt',
-			// 	'animalia09.txt',
-			// 	'animalia09_comp.txt',
-			// 	'animalia10.txt',
-			// 	'animalia10_comp.txt',
-			// 	'animalia10_comp_asm.txt',
-			// 	'archaea1.txt',
-			// 	'archaea2.txt',
-			// 	'archaea3.txt',
-			// 	'archaea4.txt',
-			// 	'bacteria1.txt',
-			// 	'bacteria2.txt',
-			// 	'bacteria3.txt',
-			// 	'bacteria4.txt',
-			// 	'bacteria5.txt',
-			// 	'bacteria5_comp.txt',
-			// 	'fungi1.txt',
-			// 	'fungi2.txt',
-			// 	'fungi3.txt',
-			// 	'fungi4.txt',
-			// 	'fungi5.txt',
-			// 	'fungi5_comp.txt',
-			// 	'mtDNA_Amphibians.txt',
-			// 	'mtDNA_Hominidae_Hylobatidae.txt',
-			// 	'mtDNA_HumanHaplogroups_1_k=6.txt',
-			// 	'mtDNA_HumanHaplogroups_1_k=9.txt',
-			// 	'mtDNA_HumanHaplogroups_2_AllHaplogroups.txt',
-			// 	'mtDNA_HumanHaplogroups_3_L0-L6.txt',
-			// 	'mtDNA_HumanHaplogroups_4_AsianBranch.txt',
-			// 	'mtDNA_HumanHaplogroups_5_L2-L3-L4-L6.txt',
-			// 	'mtDNA_HumanHaplogroups_6_L3-L4-L6.txt',
-			// 	'mtDNA_HumanHaplogroups_7_L4-L6.txt',
-			// 	'mtDNA_HumanHaplogroups_8_M-D-E-G.txt',
-			// 	'mtDNA_HumanHaplogroups_8_M-E-G.txt',
-			// 	'mtDNA_HumanHaplogroups_9_EurasiaBranch_1.txt',
-			// 	'mtDNA_HumanHaplogroups_9_EurasiaBranch_2.txt',
-			// 	'mtDNA_HumanHaplogroups_9_EurasiaBranch_3.txt',
-			// 	'mtDNA_HumanHaplogroups_9_EurasiaBranch_4.txt',
-			// 	'mtDNA_HumanHaplogroups_9_EurasiaBranch_5.txt',
-			// 	'mtDNA_HumanHaplogroups_9_EurasiaBranch_6.txt',
-			// 	'mtDNA_HumanHaplogroups_9_EurasiaBranch_7.txt',
-			// 	'mtDNA_HumanHaplogroups_10_Hsubgroups.txt',
-			// 	'mtDNA_HumanHaplogroups_11_Human_Chimp.txt',
-			// 	'mtDNA_HumanHaplogroups_11_Human_k=8.txt',
-			// 	'mtDNA_InsecMamAmph.txt',
-			// 	'mtDNA_Insects.txt',
-			// 	'mtDNA_Mammals.txt',
-			// 	'mtDNA_Primates.txt',
-			// 	'mtDNA_Vertebrata.txt',
-			// 	'plants1.txt',
-			// 	'plants2.txt',
-			// 	'plants3.txt',
-			// 	'plants4.txt',
-			// 	'plants5.txt',
-			// 	'plants6.txt',
-			// 	'plants7.txt',
-			// 	'plants7_comp_cp.txt',
-			// 	'plants8.txt',
-			// 	'plants8_comp_cp.txt',
-			// 	'plants8_comp_cp_mt.txt',
-			// 	'plants8_comp_mt.txt',
-			// 	'protists1.txt',
-			// 	'protists2.txt',
-			// 	'protists3.txt',
-			// 	'protists4.txt'];
 			result = [
 				['Animalia Kingdom',
 				['animalia01.txt',
@@ -558,7 +483,6 @@
 				tmp+='</ul></div></div>';
 				outcome+=tmp;
 			}
-			//$("#mainfilenavigate").html('<p><span class="label label-primary">Available Maps</span></p><div id="filenavigate">'+outcome+'</div>');
 			$('#listgroupsofmaps').html(outcome);
 
 			// LOAD PREVIEW CONTENT FOR EACH FILENAME
@@ -780,11 +704,9 @@
 				<h3>Explore available MoDMaps</h3>
 				<p>Here you can find a list of available built-in MoDMaps to explore. Select a map from sidebar, preview its content, and click on "Show Map" to see it in action.</p>
 				
-				<div class="col-xs-4">
+				<div class="col-xs-5">
 					<div id="listgroupsofmaps" class="panel panel-default">
 					</div>
-				</div>
-				<div class="col-xs-4 " id="mainfilenavigate">
 				</div>
 				<div class="col-xs-6 " id="filecontent">
 				</div>  
