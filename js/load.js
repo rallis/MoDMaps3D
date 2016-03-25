@@ -299,7 +299,7 @@ function updateInfoDiv() {
 				infoTable=infoTable+'<tr><td>'+namesOfLabels[indLabel]+'</td><td>'+globalPointsLabels[selectedIndex][indLabel]+' (<a href="'+link+'" target="_blank"><font color="yellow">NCBI</font></a>)</td></tr>';
 				
 				if(mapid in mapsWithReadyFCGRs){
-					console.log("readyFCGRS!!");
+					//console.log("readyFCGRS!!");
 					fcgrInfo='<a href="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" target="_blank"><img src="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" height="200px" width="200px" alt="FCGR IMAGE NOT AVAILABLE" title="Click here to Zoom In"></a>';
 				}else{
 					fcgrInfo="Not Available.";			 
@@ -308,7 +308,7 @@ function updateInfoDiv() {
 				var link=linkNCBI+globalPointsLabels[selectedIndex][indLabel];
 				infoTable=infoTable+'<tr><td>'+namesOfLabels[indLabel]+'</td><td>'+globalPointsLabels[selectedIndex][indLabel]+' (<a href="'+link+'" target="_blank"><font color="yellow">NCBI</font></a>)</td></tr>';
 				if(mapid in mapsWithReadyFCGRs){
-					console.log("readyFCGRS!!");
+					//console.log("readyFCGRS!!");
 					fcgrInfo='<a href="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" target="_blank"><img src="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" height="200px" width="200px" alt="FCGR IMAGE NOT AVAILABLE" title="Click here to Zoom In"></a>';
 				}else{
 					fcgrInfo="Not Available.";				 
