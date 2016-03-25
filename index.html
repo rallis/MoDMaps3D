@@ -644,7 +644,7 @@
 		});
 
 		var tmpDataset = geturlparamvalue('dataset');
-		if(tmpDataset.slice(0,5)=='local'){
+		if(tmpDataset!=-1 && tmpDataset.slice(0,5)=='local'){
 			newDataset = localStorage.getItem("dataset"+tmpDataset.slice(5));
 			$('#guide-tabs li:eq(2) a').tab('show');
 			$("#file_contents").empty();
