@@ -164,9 +164,9 @@ function enableMouseover(){
 		MoDMaps3D['selectonmouseover'] = true; 
 		selectOnMouseover = MoDMaps3D['selectonmouseover'];
 	} 
-	console.log('selectonmouseover NOW = '+selectOnMouseover);
+	console.log('selectOnMouseover NOW = '+selectOnMouseover);
 }
-
+	
 // SELECTION OF SEARCH RESULTS
 function selectAndFill(id){
 	$("#searchstatus").html("");
