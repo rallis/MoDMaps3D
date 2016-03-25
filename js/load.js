@@ -12,12 +12,14 @@ var MoDMaps3D = { 'version':'3.0',
 		'dbg':false, 
 		'gglSearchEnabled':true, 
 		'realtimeHighlight':true, 
+		'selectonmouseover':false,
 		'highlightColor':parseInt("0x28EE2F") };
 console.log(MoDMaps3D);
 
 var dbg = MoDMaps3D['dbg'];                   
 var gglSearchEnabled = MoDMaps3D['gglSearchEnabled']; 
 var realtimeHighlight = MoDMaps3D['realtimeHighlight'];
+var selectOnMouseover = MoDMaps3D['selectonmouseover'];
 var highlightColor = MoDMaps3D['highlightColor'];   
 var mapsWithReadyFCGRs = {'mtDNA_Amphibians.txt':'mtDNA', 'mtDNA_Hominidae_Hylobatidae.txt':'mtDNA', 'mtDNA_InsecMamAmph.txt':'mtDNA', 'mtDNA_Insects.txt':'mtDNA', 'mtDNA_Mammals.txt':'mtDNA', 'mtDNA_Primates.txt':'mtDNA', 'mtDNA_Vertebrata.txt':'mtDNA'};
 var mapsWithReadyDistMatrix = {'mapfilename':'distMatrixFilename'};
