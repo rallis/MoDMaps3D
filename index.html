@@ -475,7 +475,7 @@
 			var outcome='';
 			for(i=0;i<resfetch.length;i++){
 				//outcome+='<a href="#" class="list-group-item">'+resfetch[i]+'</a>';
-				outcome+='<div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#modmap-accordion-'+i+'" href="#modmap-collapse-'+i+'">'+resfetch[i][0]+'&nbsp;<span class="badge">'+resfetch[i][1].length+'</span></a></h4></div>';
+				outcome+='<div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#modmap-accordion-'+i+'" href="#modmap-collapse-'+i+'">'+resfetch[i][0]+'&nbsp;&nbsp;<span class="badge">'+resfetch[i][1].length+'</span></a></h4></div>';
 				var tmp='<div id="modmap-collapse-'+i+'" class="panel-collapse collapse out"><div class="panel-body"><ul class="list-group large-group">';
 				for(var j=0; j<resfetch[i][1].length; j++){
 					tmp+='<li class="list-group-item"><a href="#">'+resfetch[i][1][j]+'</a></li>';
