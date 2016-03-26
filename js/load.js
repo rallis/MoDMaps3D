@@ -864,7 +864,68 @@ function initGraphics(){
 	}
 
 	canvas.onmousemove = function(e){
-		if(!mouseIsDown) return;
+		//console.log('mousmove!');
+		if(!mouseIsDown){
+			if(!MoDMaps3D['selectonmouseover']){return;}
+			mouse.x = ( e.clientX / canvas.width ) * 2 - 1;
+			mouse.y = - ( e.clientY / canvas.height) * 2 + 1;
+			
+			var vector = new THREE.Vector3(mouse.x, mouse.y, 1);
+			vector.unproject(camera);
+			raycaster.set(camera.position, vector.sub(camera.position).normalize());
+			var intersects = raycaster.intersectObjects(scene.children);
+					
+			if(dbg){console.log("Found="+intersects.length+" intersections..");}
+
+			if (intersects.length > 0 /*&& downxConst == e.clientX && downyConst == e.clientY*/) {
+				allHits = new Array();
+				minDistance=1000;
+				var minIndex;
+				for(var myInd=0; myInd <intersects.length; myInd++){
+					intersectedPoint= intersects[myInd].point;
+					var op = [intersectedPoint.x, intersectedPoint.y, intersectedPoint.z];
+					var im = new THREE.Matrix4();
+					im.getInverse(meshes[0].matrixWorld);
+					im.applyToVector3Array(op);
+					op = {x:op[0], y:op[1], z:op[2]};
+					if(dbg){console.log(op);}
+
+					// loop through all of them to find the point closer to the ray
+					//minDistance = getDistanceSquare(op, offsets[0]);
+					//var minIndex = 0;
+					for (var i = 0; i < offsets.length; i ++) {
+						var dist = getDistanceSquare(op, offsets[i]);
+						if (dist < minDistance) {
+							minDistance = dist;
+							minIndex = i;
+						}
+					}
+					
+					allHits[myInd]=[];
+					allHits[myInd].push(minIndex);
+					allHits[myInd].push(minDistance);
+				}
+				
+				if(minDistance<3){
+					for(var hitInd=0; hitInd<allHits.length; hitInd++){
+						if(100*(allHits[hitInd][1]-minDistance)<1){
+							minIndex=hitInd;
+							break;
+						}  
+					}
+					//console.log("hitInd="+hitInd);
+					selectedIndex=allHits[minIndex][0];
+					op = {x:offsets[selectedIndex].x, y:offsets[selectedIndex].y, z:offsets[selectedIndex].z};
+					//console.log("FINAL Closest point is= "+selectedIndex);
+					
+					selectedPoint = op;
+					//// for disabling selection 
+					updateSelectedMesh();
+					updateInfoDiv();      
+				}         
+			}
+			return;
+		}
 		var dx = e.clientX - downx;
 		var dy = e.clientY - downy;
 		downx = e.clientX;
