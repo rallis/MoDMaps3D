@@ -487,6 +487,7 @@
 
 			// LOAD PREVIEW CONTENT FOR EACH FILENAME
 			$(".list-group-item").click(function() {
+				$("#filecontent").html('<img src="img/loading.gif" width="50" height="50"/>');
 				console.log('Loading = '+$(this).text());
 				mapID=$(this).text();
 				$.ajax({
