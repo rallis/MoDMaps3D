@@ -976,7 +976,7 @@ function initGraphics(){
 		selectedMesh.rotation.y = meshes[0].rotation.y;
 		if(dbg){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
 	},false);
-		
+
 	document.onkeydown = function(e) {
 		if(dbg){console.log("keypressed="+e.which)};
 		
@@ -1192,16 +1192,20 @@ $(document).ready(function(){
 	if(mapid.length>0){
 		var tmpMapId = geturlparamvalue('mapid');
 		if(tmpMapId.slice(0,5)=='local'){
-			alldata = localStorage.getItem("mapfile"+tmpMapId.slice(5));
-			distMatrix = localStorage.getItem("distMatrix"+tmpMapId.slice(5)).split(',');
-			console.log(distMatrix.length);
-			//console.log(distMatrix);
-			//console.log(alldata);
-			if(alldata!=null){
+			try{
+				alldata = localStorage.getItem("mapfile"+tmpMapId.slice(5));
+				distMatrix = localStorage.getItem("distMatrix"+tmpMapId.slice(5)).split(',');
+				console.log(distMatrix.length);
 				mapContentParsing();
-			}else{
+			}catch(err){
 				document.write('<font color="red" size="4"><b>The mapid you provided ['+mapid+'] cannot be found. <br>Available in localStorage ['+Object.keys(localStorage)+'].</b></font>');
 			}
+			//console.log(distMatrix);
+			//console.log(alldata);
+			// if(alldata!=null){
+			// 	mapContentParsing();
+			// }else{
+			// }
 		}else{
 			$.ajax({
 				type: 'GET',
