@@ -71,7 +71,8 @@
 		}catch(err){
 			console.log(err.message);
 			errorHasOccured = true;
-			$('#ncbiprogress').html('ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.');
+			//$('#ncbiprogress').html('ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.');
+			$('#ncbiprogress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+'ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.</div>');
 			return;
 		}
 		if(dbg){console.log('numeric.js=',res2['lambda']['x']);}
