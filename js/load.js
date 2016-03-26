@@ -35,7 +35,7 @@ var linkAssemblyNCBI = 'http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=assemb
 var allAccessionNums, allNames, allBioInfo, allSearchHits;    
 var fromIndex="", toIndex="", dists, howmany;
 var dxTimer, dyTimer, dzTimer;   
-
+var touchStartX = 0, touchStartY = 0, originalMeshRot = [];
 
 // CREATE VARIOUS INFO DIVS AND SET THEIR IDs
 var pointInfoDiv, fcgrDiv, cgrInfoDiv, searchDiv, distPointsDiv, staticInfoDiv, fcgrInfo;
@@ -948,6 +948,34 @@ function initGraphics(){
 	canvas.onmouseleave = function(e){
 		mouseIsDown = false;
 	}
+	
+	canvas.addEventListener('touchstart', function(e){
+		originalMeshRot = [];
+		for(var i=0; i<meshes.length;i++){
+			originalMeshRot.push([meshes[i].rotation.x, meshes[i].rotation.y]);
+		}
+		touchStartX = e.changedTouches[0].clientX;
+		touchStartY = e.changedTouches[0].clientY;
+		if(dbg){$("#searchstatus").html('START: '+touchStartX + '---' + touchStartY);}
+	},false);
+	
+	canvas.addEventListener('touchmove', function(e){
+		var dx = e.changedTouches[0].clientX - touchStartX;
+		var dy = e.changedTouches[0].clientY - touchStartY;
+		if(dbg){$("#searchstatus").html(dx + '---' + dy);}
+
+		for(var i=0; i<meshes.length;i++){
+			meshes[i].rotation.y = originalMeshRot[i][1] + 0.005 * dx;
+			while (meshes[i].rotation.y > 2 * Math.PI){meshes[i].rotation.y -= 2 * Math.PI;}
+			while (meshes[i].rotation.y < -2 * Math.PI){meshes[i].rotation.y += 2 * Math.PI;}
+			if ( (dy > 0 && meshes[i].rotation.x < Math.PI/2) || (dy < 0 && meshes[i].rotation.x > -Math.PI/2) ) {
+				meshes[i].rotation.x = originalMeshRot[i][0] + 0.005 * dy;
+			}
+		}
+		selectedMesh.rotation.x = meshes[0].rotation.x;
+		selectedMesh.rotation.y = meshes[0].rotation.y;
+		if(dbg){console.log('rotX='+meshes[0].rotation.x+'|rotY='+meshes[0].rotation.y);}   
+	},false);
 		
 	document.onkeydown = function(e) {
 		if(dbg){console.log("keypressed="+e.which)};
