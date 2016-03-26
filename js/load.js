@@ -1200,12 +1200,6 @@ $(document).ready(function(){
 			}catch(err){
 				document.write('<font color="red" size="4"><b>The mapid you provided ['+mapid+'] cannot be found. <br>Available in localStorage ['+Object.keys(localStorage)+'].</b></font>');
 			}
-			//console.log(distMatrix);
-			//console.log(alldata);
-			// if(alldata!=null){
-			// 	mapContentParsing();
-			// }else{
-			// }
 		}else{
 			$.ajax({
 				type: 'GET',

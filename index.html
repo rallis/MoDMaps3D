@@ -331,7 +331,7 @@
 			error: function(xhr, status, error) {
 				console.log('STATUS=',status,'ERROR from loadFastaFromNCBI=',error);
 				errorHasOccured = true;
-				$('#ncbiprogress').html('ERROR ['+error+'] while fetching data from NCBI for ['+accID+']');
+				$('#ncbiprogress').html('ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]');
 			}
 		});
 	}
@@ -361,7 +361,7 @@
 			error: function(xhr, status, error) {
 				console.log('STATUS=',status,'ERROR getTaxaFromNCBI=',error);
 				errorHasOccured = true;
-				$('#ncbiprogress').html('ERROR ['+error+'] while fetching Taxonomy data from NCBI for ['+accID+']');
+				$('#ncbiprogress').html('ERROR [<strong>'+error+'</strong>] while fetching Taxonomy data from NCBI for [<strong>'+accID+'</strong>]');
 			}
 		});		
 	}
