@@ -12,9 +12,20 @@
 
 	$(document).ready(function(){
 		
-		// $("#allInputDataShow").click(function(){
-		// 	$("#allInputData").slideToggle();
-		// });
+		$("#buildmap").click(function(){
+			console.log("start");
+
+			var mapTimeStamp = new Date().getTime();
+			if(typeof(Storage) !== "undefined") {
+				localStorage.setItem("mapfile"+mapTimeStamp, $("#inputmap").val());
+			} else {
+				console.log("ERROR! NO LOCAL STORAGE AVAILABLE!?");
+				alert("ERROR! NO LOCAL STORAGE AVAILABLE!?");
+			}
+			console.log('load.html?mapid=local'+mapTimeStamp+'&distmatrix=false');	
+			window.location = 'load.html?mapid=local'+mapTimeStamp+'&distmatrix=false';
+
+		});
 
 	});
 
@@ -33,33 +44,17 @@
 	</div>
 
 	<div class="container">
-		<!-- <ul class="nav nav-tabs" id="guide-tabs">
-			<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-			<li><a data-toggle="tab" href="#menu1">Explore a Map</a></li>
-			<li><a data-toggle="tab" href="#menu2">Build a Map</a></li>
-			<li><a data-toggle="tab" href="#menu3">About</a></li>
-		</ul>
+		<p>
+			Input (paste) you map contents below, and click "View Map!" button.
+		</p>
 
-		<div class="tab-content">
-			<div id="home" class="tab-pane fade in active">
-				<h3>Welcome to MoDMaps3D!</h3>
-				<p>Here are some of the things you can do with three dimensional Molecular Distance Maps.</p>
+		<p>
+			<textarea id="inputmap" autofocus  rows="10" cols="40"></textarea>
+		</p>
 
-				<dl class="dl-horizontal">
-					<dt><a href="#" id="goto1">Explore a Map</a></dt>
-					<dd>Explore available built-in MoDMaps. These maps provide extensive information for each genomic sequence involved in each map, along with complementary information.</dd>
-					<dt><a href="#" id="goto2">Build a Map</a></dt>
-					<dd>Build a new MoDMap from scratch tailored to your dataset.</dd>
-				</dl>
-				<div id="fastafile"></div>
-			</div>
-			
-
-			<div id="menu3" class="tab-pane fade">
-				<h3>About MoDMaps3D</h3>
-
-			</div>
-		</div> -->	
+		<p>
+			<input type="submit" id="buildmap" value="View Map!"/>
+		</p>
 	</div>
 
 </body>
