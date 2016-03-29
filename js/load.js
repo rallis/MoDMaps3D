@@ -513,7 +513,7 @@ function initGraphics(){
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.body.appendChild(renderer.domElement);
-	renderer.setClearColor( 0xC7C7C7, 1); //change color  E9E9E9   A1A1A1  C7C7C7
+	renderer.setClearColor( 0xE5E3E3, 1); //change color  E9E9E9   A1A1A1  C7C7C7 E5E3E3
 
 	selectedPoint = null;
 	axisUnit = 0.15; 
