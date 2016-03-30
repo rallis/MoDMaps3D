@@ -1088,14 +1088,14 @@ function initGraphics(){
 function mapContentParsing() {
 	if(dbg){console.log("begin mapContentParsing()..");}
 	
-	var res=alldata.split("\n");
-	setOfPoints=res[0].split(','); 
-	colors=res[1].split(',');  
+	var res=alldata.trim().split("\n");
+	setOfPoints=res[0].trim().split(','); 
+	colors=res[1].trim().split(',');  
 	numberOfLabels=parseFloat(res[2]);
-	namesOfLabels=res[3].split(',');
-	legendColors=res[4].split(',');
-	legendLabels=res[5].split(',');
-	mapCaption=res[6];
+	namesOfLabels=res[3].trim().split(',');
+	legendColors=res[4].trim().split(',');
+	legendLabels=res[5].trim().split(',');
+	mapCaption=res[6].trim();
 
 	var pointDimensions=5;
 	var startInd=7;
