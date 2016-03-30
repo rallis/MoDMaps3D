@@ -1088,6 +1088,7 @@ function initGraphics(){
 function mapContentParsing() {
 	if(dbg){console.log("begin mapContentParsing()..");}
 	
+	// trim to avoid problems with lf or crlf @ win
 	var res=alldata.trim().split("\n");
 	setOfPoints=res[0].trim().split(','); 
 	colors=res[1].trim().split(',');  
