@@ -17,7 +17,7 @@
 
 			var mapTimeStamp = new Date().getTime();
 			if(typeof(Storage) !== "undefined") {
-				localStorage.setItem("mapfile"+mapTimeStamp, $("#inputmap").val());
+				localStorage.setItem("mapfile"+mapTimeStamp, $("#inputmap").val().trim());
 			} else {
 				console.log("ERROR! NO LOCAL STORAGE AVAILABLE!?");
 				alert("ERROR! NO LOCAL STORAGE AVAILABLE!?");
