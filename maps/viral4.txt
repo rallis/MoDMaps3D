@@ -1,0 +1,7937 @@
+563,230
+red,orange
+5
+Index,Acc,Name,Length,Taxa
+red,orange
+Reoviridae (563),Polydnaviridae (230)
+No Description
+-0.351904
+-0.166343
+-0.832771
+0.244169
+-0.0900496
+1
+NC_002557
+Trichoplusia ni cypovirus 15
+4361
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.455746
+-0.203129
+-0.84017
+0.25406
+-0.0931543
+2
+NC_002558
+Trichoplusia ni cypovirus 15
+4187
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.469602
+-0.178914
+-0.864571
+0.27125
+-0.0854512
+3
+NC_002559
+Trichoplusia ni cypovirus 15
+3878
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.667232
+-0.192452
+-0.796697
+0.228623
+-0.0794571
+4
+NC_002560
+Trichoplusia ni cypovirus 15
+2260
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.752089
+-0.227366
+-0.719705
+0.240745
+-0.07315
+5
+NC_002561
+Trichoplusia ni cypovirus 15
+1859
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.738191
+-0.165278
+-0.751173
+0.249049
+-0.08112
+6
+NC_002562
+Trichoplusia ni cypovirus 15
+1776
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.842466
+-0.300802
+-0.66427
+0.242211
+-0.041721
+7
+NC_002563
+Trichoplusia ni cypovirus 15
+1234
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.841112
+-0.298166
+-0.583173
+0.231934
+-0.0412239
+8
+NC_002564
+Trichoplusia ni cypovirus 15
+1157
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.941183
+-0.413446
+-0.529359
+0.238888
+-0.0346244
+9
+NC_002565
+Trichoplusia ni cypovirus 15
+897
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.984459
+-0.425149
+-0.491269
+0.241947
+-0.0249799
+10
+NC_002566
+Trichoplusia ni cypovirus 15
+200
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.555987
+-0.194215
+-0.776401
+0.244027
+-0.066167
+11
+NC_002567
+Trichoplusia ni cypovirus 15
+3311
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.501723
+-0.314763
+-0.758927
+0.226906
+-0.0774368
+12
+NC_003006
+Cypovirus 14
+4329
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.57593
+-0.330052
+-0.795876
+0.237164
+-0.105317
+13
+NC_003007
+Cypovirus 14
+4056
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.556122
+-0.298924
+-0.787811
+0.235008
+-0.0830526
+14
+NC_003008
+Cypovirus 14
+3921
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.582469
+-0.262756
+-0.772849
+0.255283
+-0.0957427
+15
+NC_003009
+Cypovirus 14
+3339
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.703529
+-0.385077
+-0.710419
+0.242961
+-0.0782961
+16
+NC_003010
+Cypovirus 14
+3159
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.795185
+-0.296425
+-0.704611
+0.26199
+-0.0834373
+17
+NC_003011
+Cypovirus 14
+1783
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.872718
+-0.352872
+-0.570239
+0.246991
+-0.0652657
+18
+NC_003012
+Cypovirus 14
+1391
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.853877
+-0.296355
+-0.649709
+0.245339
+-0.0496424
+19
+NC_003013
+Cypovirus 14
+1250
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.859856
+-0.281726
+-0.647372
+0.253889
+-0.0707981
+20
+NC_003014
+Cypovirus 14
+1141
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.966036
+-0.446262
+-0.50457
+0.23805
+-0.0342465
+21
+NC_003015
+Cypovirus 14
+956
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.658882
+-0.451884
+-0.644971
+0.235503
+-0.068449
+22
+NC_003016
+Cypovirus 1
+4164
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.634751
+-0.393518
+-0.695882
+0.243677
+-0.0729698
+23
+NC_003017
+Cypovirus 1
+3853
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.646734
+-0.369907
+-0.705446
+0.244545
+-0.0729201
+24
+NC_003018
+Cypovirus 1
+3846
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.695399
+-0.362478
+-0.655081
+0.224703
+-0.0773694
+25
+NC_003019
+Cypovirus 1
+3262
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.749138
+-0.401787
+-0.574111
+0.225473
+-0.0676423
+26
+NC_003020
+Cypovirus 1
+2851
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.854801
+-0.373913
+-0.688117
+0.25407
+-0.0564779
+27
+NC_003021
+Cypovirus 1
+1792
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.911351
+-0.387181
+-0.600877
+0.231005
+-0.0440898
+28
+NC_003022
+Cypovirus 1
+1501
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.918703
+-0.427042
+-0.558708
+0.245799
+-0.046461
+29
+NC_003023
+Cypovirus 1
+1332
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.919546
+-0.420272
+-0.544834
+0.236295
+-0.0426513
+30
+NC_003024
+Cypovirus 1
+1187
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.960139
+-0.448767
+-0.509732
+0.233435
+-0.0339176
+31
+NC_003025
+Cypovirus 1
+944
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.762169
+-0.166375
+-0.735079
+0.238715
+-0.0572369
+32
+NC_003652
+Nilaparvata lugens reovirus
+1430
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus}
+-0.690303
+-0.141212
+-0.758646
+0.270857
+-0.0587176
+33
+NC_003653
+Nilaparvata lugens reovirus
+1802
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus}
+-0.29227
+-0.130239
+-0.908389
+0.244266
+-0.0749257
+34
+NC_003654
+Nilaparvata lugens reovirus
+4391
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus}
+-0.373746
+-0.113205
+-0.882623
+0.24678
+-0.0897995
+35
+NC_003655
+Nilaparvata lugens reovirus
+3732
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus}
+-0.39218
+-0.142727
+-0.836176
+0.253335
+-0.0616142
+36
+NC_003656
+Nilaparvata lugens reovirus
+3753
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus}
+-0.443379
+-0.180462
+-0.768706
+0.20479
+-0.068147
+37
+NC_003657
+Nilaparvata lugens reovirus
+3560
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus}
+-0.572979
+-0.33878
+-0.653048
+0.243641
+-0.0836274
+38
+NC_003658
+Nilaparvata lugens reovirus
+3427
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus}
+-0.568676
+-0.221811
+-0.695148
+0.247214
+-0.0808426
+39
+NC_003659
+Nilaparvata lugens reovirus
+2970
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus}
+-0.657191
+-0.132251
+-0.747701
+0.280055
+-0.0791124
+40
+NC_003660
+Nilaparvata lugens reovirus
+1994
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus}
+-0.686795
+-0.085592
+-0.785325
+0.22229
+-0.0607131
+41
+NC_003661
+Nilaparvata lugens reovirus
+1640
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus}
+-0.633834
+-0.476052
+-0.655566
+0.225588
+-0.0642944
+42
+NC_003696
+Eyach virus
+4349
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.674966
+-0.492522
+-0.592851
+0.207186
+-0.0868633
+43
+NC_003697
+Eyach virus
+3934
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.694487
+-0.444189
+-0.677558
+0.232931
+-0.0559064
+44
+NC_003698
+Eyach virus
+3585
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.760042
+-0.440972
+-0.63591
+0.22174
+-0.0516963
+45
+NC_003699
+Eyach virus
+3156
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.883991
+-0.549145
+-0.52875
+0.224195
+-0.0459364
+46
+NC_003700
+Eyach virus
+2398
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.867067
+-0.465605
+-0.589667
+0.22805
+-0.0573708
+47
+NC_003701
+Eyach virus
+2178
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.767903
+-0.33332
+-0.671375
+0.251883
+-0.0740074
+48
+NC_003702
+Eyach virus
+2139
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.853038
+-0.416781
+-0.602111
+0.233881
+-0.0542782
+49
+NC_003703
+Eyach virus
+2028
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.893222
+-0.45893
+-0.53063
+0.224211
+-0.0536862
+50
+NC_003704
+Eyach virus
+1884
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.815893
+-0.368334
+-0.605687
+0.257097
+-0.0367315
+51
+NC_003705
+Eyach virus
+1879
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.946087
+-0.41731
+-0.537004
+0.230506
+-0.0287197
+52
+NC_003706
+Eyach virus
+1002
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.948499
+-0.398755
+-0.47028
+0.239217
+-0.0354122
+53
+NC_003707
+Eyach virus
+678
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.388764
+-0.109889
+-0.854019
+0.293053
+-0.0962717
+54
+NC_003728
+Rice black streaked dwarf virus
+3572
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.197103
+-0.0294422
+-0.981014
+0.242559
+-0.117372
+55
+NC_003729
+Rice black streaked dwarf virus
+4501
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.626668
+-0.128076
+-0.865686
+0.263612
+-0.0673773
+56
+NC_003730
+Rice black streaked dwarf virus
+2193
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.638622
+-0.0991952
+-0.813569
+0.233443
+-0.0904613
+57
+NC_003731
+Rice black streaked dwarf virus
+1900
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.681394
+-0.169835
+-0.714024
+0.268493
+-0.0667324
+58
+NC_003732
+Rice black streaked dwarf virus
+1936
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.736278
+-0.21778
+-0.757388
+0.243337
+-0.0736161
+59
+NC_003733
+Rice black streaked dwarf virus
+1801
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.38482
+-0.140253
+-0.902602
+0.280934
+-0.121006
+60
+NC_003734
+Rice black streaked dwarf virus
+3812
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.275998
+-0.0345317
+-0.908915
+0.251363
+-0.0951241
+61
+NC_003735
+Rice black streaked dwarf virus
+3617
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.58125
+-0.267058
+-0.710953
+0.243292
+-0.0883101
+62
+NC_003736
+Rice black streaked dwarf virus
+3164
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.67737
+-0.27754
+-0.72438
+0.240857
+-0.090088
+63
+NC_003737
+Rice black streaked dwarf virus
+2645
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.662187
+-0.425367
+-0.66863
+0.230317
+-0.0854682
+64
+NC_003749
+Rice ragged stunt virus
+3849
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Oryzavirus}
+-0.686425
+-0.465633
+-0.636273
+0.235173
+-0.0538982
+65
+NC_003750
+Rice ragged stunt virus
+3808
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Oryzavirus}
+-0.713408
+-0.486272
+-0.573445
+0.247924
+-0.0708203
+66
+NC_003751
+Rice ragged stunt virus
+3699
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Oryzavirus}
+-0.861608
+-0.46027
+-0.577167
+0.23163
+-0.0451549
+67
+NC_003752
+Rice ragged stunt virus
+2157
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Oryzavirus}
+-0.931387
+-0.399289
+-0.553544
+0.25637
+-0.0516949
+68
+NC_003757
+Rice ragged stunt virus
+1132
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Oryzavirus}
+-0.858036
+-0.406581
+-0.612268
+0.242695
+-0.0471363
+69
+NC_003758
+Rice ragged stunt virus
+1914
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Oryzavirus}
+-0.809158
+-0.435864
+-0.646841
+0.231593
+-0.0768065
+70
+NC_003759
+Rice ragged stunt virus
+2682
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Oryzavirus}
+-0.842055
+-0.361107
+-0.606415
+0.24294
+-0.0357082
+71
+NC_003760
+Rice dwarf virus
+1578
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.888771
+-0.499069
+-0.51929
+0.213931
+-0.0415501
+72
+NC_003761
+Rice dwarf virus
+2218
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.767063
+-0.371085
+-0.602985
+0.23354
+-0.0534901
+73
+NC_003762
+Rice dwarf virus
+2449
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.874851
+-0.409898
+-0.564242
+0.226891
+-0.0290512
+74
+NC_003763
+Rice dwarf virus
+1579
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.889814
+-0.381775
+-0.543723
+0.226689
+-0.0361463
+75
+NC_003764
+Rice dwarf virus
+1397
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.933672
+-0.415836
+-0.578719
+0.246997
+-0.040571
+76
+NC_003765
+Rice dwarf virus
+1224
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.854055
+-0.317732
+-0.585848
+0.219802
+-0.0393589
+77
+NC_003766
+Rice dwarf virus
+1163
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.910641
+-0.349865
+-0.588111
+0.242111
+-0.0415721
+78
+NC_003767
+Rice dwarf virus
+1036
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.898812
+-0.369479
+-0.546983
+0.23853
+-0.0506681
+79
+NC_003768
+Rice dwarf virus
+1066
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.924713
+-0.408766
+-0.561394
+0.254643
+-0.0623986
+80
+NC_003769
+Rice ragged stunt virus
+1162
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Oryzavirus}
+-0.854598
+-0.431068
+-0.565606
+0.246182
+-0.0604857
+81
+NC_003770
+Rice ragged stunt virus
+1938
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Oryzavirus}
+-0.675583
+-0.424977
+-0.648771
+0.23928
+-0.0607984
+82
+NC_003771
+Rice ragged stunt virus
+3823
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Oryzavirus}
+-0.697395
+-0.420577
+-0.590593
+0.228151
+-0.0548624
+83
+NC_003772
+Rice dwarf virus
+3195
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.568064
+-0.363214
+-0.697628
+0.217983
+-0.0833536
+84
+NC_003773
+Rice dwarf virus
+4422
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.72279
+-0.456298
+-0.585945
+0.231006
+-0.0694944
+85
+NC_003774
+Rice dwarf virus
+3512
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.894932
+-0.480566
+-0.51612
+0.244791
+-0.0393731
+86
+NC_004180
+Colorado tick fever virus
+1884
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.663889
+-0.465101
+-0.644989
+0.230466
+-0.0746298
+87
+NC_004181
+Colorado tick fever virus
+4350
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.694416
+-0.48449
+-0.58742
+0.209716
+-0.066061
+88
+NC_004182
+Colorado tick fever virus
+3909
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.722497
+-0.477131
+-0.621314
+0.252575
+-0.0698941
+89
+NC_004183
+Colorado tick fever virus
+3586
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.792832
+-0.484077
+-0.672196
+0.235095
+-0.0670533
+90
+NC_004184
+Colorado tick fever virus
+3157
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.872173
+-0.548217
+-0.51559
+0.201717
+-0.0519269
+91
+NC_004185
+Colorado tick fever virus
+2432
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.789352
+-0.352064
+-0.635252
+0.23565
+-0.046206
+92
+NC_004186
+Colorado tick fever virus
+2141
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.853869
+-0.399596
+-0.582302
+0.231493
+-0.073669
+93
+NC_004187
+Colorado tick fever virus
+2133
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.874
+-0.434932
+-0.610352
+0.246112
+-0.0584303
+94
+NC_004188
+Colorado tick fever virus
+2029
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.843194
+-0.411489
+-0.617414
+0.253388
+-0.0497487
+95
+NC_004189
+Colorado tick fever virus
+1880
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.963518
+-0.427643
+-0.469587
+0.233526
+-0.0256107
+96
+NC_004190
+Colorado tick fever virus
+675
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.950285
+-0.412099
+-0.551732
+0.227034
+-0.0498923
+97
+NC_004191
+Colorado tick fever virus
+998
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Coltivirus}
+-0.896592
+-0.316808
+-0.648185
+0.238393
+-0.0547245
+98
+NC_004198
+Banna virus strain JKT-6423
+862
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.889415
+-0.256208
+-0.68151
+0.26759
+-0.036785
+99
+NC_004199
+Kadipiro virus
+756
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.900686
+-0.290824
+-0.715736
+0.249035
+-0.0273997
+100
+NC_004200
+Banna virus strain JKT-6423
+867
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.878912
+-0.27032
+-0.66496
+0.248842
+-0.0482634
+101
+NC_004201
+Banna virus strain JKT-6423
+977
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.869803
+-0.305767
+-0.638543
+0.261673
+-0.0414378
+102
+NC_004202
+Banna virus strain JKT-6423
+1101
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.904413
+-0.390501
+-0.583433
+0.225358
+-0.0477335
+103
+NC_004203
+Banna virus strain JKT-6423
+1119
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.852671
+-0.229428
+-0.736943
+0.252535
+-0.0609736
+104
+NC_004204
+Banna virus strain JKT-6423
+1136
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.874179
+-0.275354
+-0.631734
+0.248744
+-0.0360136
+105
+NC_004205
+Kadipiro virus
+894
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.851096
+-0.226208
+-0.662942
+0.26215
+-0.0700092
+106
+NC_004206
+Kadipiro virus
+946
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.8821
+-0.345535
+-0.58414
+0.252272
+-0.0554228
+107
+NC_004207
+Kadipiro virus
+1054
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.860482
+-0.259046
+-0.68382
+0.250615
+-0.0547848
+108
+NC_004208
+Kadipiro virus
+1114
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.823844
+-0.270415
+-0.714164
+0.250159
+-0.0571168
+109
+NC_004209
+Kadipiro virus
+1259
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.559161
+-0.314543
+-0.782596
+0.227474
+-0.0950668
+110
+NC_004210
+Kadipiro virus
+3774
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.551937
+-0.293737
+-0.793271
+0.246162
+-0.0970494
+111
+NC_004211
+Banna virus
+3747
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.678358
+-0.326162
+-0.754796
+0.239868
+-0.0511755
+112
+NC_004212
+Kadipiro virus
+3035
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.625357
+-0.115063
+-0.792891
+0.268068
+-0.0663887
+113
+NC_004213
+Kadipiro virus
+2415
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.739793
+-0.280411
+-0.727423
+0.238595
+-0.0769523
+114
+NC_004214
+Kadipiro virus
+2121
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.751351
+-0.242456
+-0.738349
+0.253928
+-0.0394191
+115
+NC_004215
+Kadipiro virus
+1947
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.80101
+-0.280126
+-0.685384
+0.258994
+-0.0506748
+116
+NC_004216
+Kadipiro virus
+1670
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.686141
+-0.362629
+-0.709403
+0.211684
+-0.0828452
+117
+NC_004217
+Banna virus
+3048
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.705154
+-0.279869
+-0.747638
+0.251589
+-0.0817327
+118
+NC_004218
+Banna virus
+2400
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.801047
+-0.331638
+-0.738215
+0.233351
+-0.0654937
+119
+NC_004219
+Banna virus
+2038
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.823197
+-0.336963
+-0.696915
+0.248856
+-0.047967
+120
+NC_004220
+Banna virus
+1716
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.843493
+-0.364727
+-0.681257
+0.22544
+-0.0469519
+121
+NC_004221
+Banna virus
+1671
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.746425
+-0.569107
+-0.520466
+0.220267
+-0.0666848
+122
+NC_004274
+Mammalian orthoreovirus 3
+3901
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.735334
+-0.50814
+-0.538469
+0.217904
+-0.0721721
+123
+NC_004275
+Mammalian orthoreovirus 3
+3916
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.980117
+-0.52622
+-0.531792
+0.218663
+-0.0409122
+124
+NC_004276
+Mammalian orthoreovirus 3
+1196
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.92059
+-0.436456
+-0.477686
+0.256908
+-0.0407657
+125
+NC_004277
+Mammalian orthoreovirus 3
+1416
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.892563
+-0.527344
+-0.544647
+0.21468
+-0.044869
+126
+NC_004278
+Mammalian orthoreovirus 3
+2207
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.950499
+-0.476
+-0.480517
+0.235281
+-0.0377434
+127
+NC_004279
+Mammalian orthoreovirus 3
+1331
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.846525
+-0.462423
+-0.626907
+0.262799
+-0.0513157
+128
+NC_004280
+Mammalian orthoreovirus 3
+2304
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.878573
+-0.510904
+-0.56476
+0.255242
+-0.0611657
+129
+NC_004281
+Mammalian orthoreovirus 3
+2235
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.74211
+-0.56528
+-0.565654
+0.239046
+-0.0753522
+130
+NC_004282
+Mammalian orthoreovirus 3
+3860
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.986252
+-0.559711
+-0.512001
+0.242663
+-0.00660869
+131
+NC_004283
+Mammalian orthoreovirus 3
+1198
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.84861
+-0.693002
+-0.28623
+0.194995
+-0.0387977
+132
+NC_005166
+Aquareovirus C
+3949
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.834851
+-0.637428
+-0.351329
+0.19689
+-0.0361924
+133
+NC_005167
+Aquareovirus C
+3877
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.856751
+-0.664665
+-0.318334
+0.204135
+-0.038177
+134
+NC_005168
+Aquareovirus C
+3702
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.956528
+-0.638871
+-0.304146
+0.193453
+-0.0184211
+135
+NC_005169
+Aquareovirus C
+2320
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.923719
+-0.580989
+-0.36255
+0.209952
+-0.0206089
+136
+NC_005170
+Aquareovirus C
+2239
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.934198
+-0.590282
+-0.379604
+0.217773
+-0.0330923
+137
+NC_005171
+Aquareovirus C
+2039
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.969854
+-0.532536
+-0.365556
+0.239985
+-0.0301615
+138
+NC_005172
+Aquareovirus C
+1414
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.95899
+-0.52986
+-0.414631
+0.21962
+-0.0271858
+139
+NC_005173
+Aquareovirus C
+1297
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.980507
+-0.520366
+-0.365303
+0.223014
+-0.0264181
+140
+NC_005174
+Aquareovirus C
+1130
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.985489
+-0.483364
+-0.429395
+0.2376
+-0.0317454
+141
+NC_005175
+Aquareovirus C
+909
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.999953
+-0.51373
+-0.407989
+0.2435
+-0.0219461
+142
+NC_005176
+Aquareovirus C
+820
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.626798
+-0.227841
+-0.858871
+0.231294
+-0.0826858
+143
+NC_005986
+Palyam virus
+3055
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.793239
+-0.23109
+-0.763141
+0.267107
+-0.0636604
+144
+NC_005987
+Palyam virus
+1610
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.918447
+-0.344745
+-0.625061
+0.249258
+-0.0454592
+145
+NC_005988
+Palyam virus
+1151
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.669069
+-0.22331
+-0.767076
+0.25911
+-0.0980836
+146
+NC_005989
+Palyam virus
+2774
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.488074
+-0.220131
+-0.851246
+0.220768
+-0.0789815
+147
+NC_005990
+Palyam virus
+3930
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.719224
+-0.209696
+-0.822908
+0.264199
+-0.0594671
+148
+NC_005991
+Palyam virus
+1967
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.925116
+-0.316203
+-0.671347
+0.266204
+-0.0825083
+149
+NC_005992
+Palyam virus
+877
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.771005
+-0.257277
+-0.683851
+0.248429
+-0.0510418
+150
+NC_005993
+Palyam virus
+1764
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.878419
+-0.263524
+-0.675194
+0.258322
+-0.0676789
+151
+NC_005994
+Palyam virus
+1059
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.921625
+-0.301725
+-0.663862
+0.249133
+-0.0349516
+152
+NC_005995
+Palyam virus
+728
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.629767
+-0.285679
+-0.837691
+0.255067
+-0.0910289
+153
+NC_005996
+African horse sickness virus
+3203
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.793098
+-0.618414
+-0.379981
+0.197582
+-0.065575
+154
+NC_005997
+St Croix River virus
+4089
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.85418
+-0.550646
+-0.417654
+0.200527
+-0.0447977
+155
+NC_005998
+St Croix River virus
+2747
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.897166
+-0.533671
+-0.459248
+0.219453
+-0.0424637
+156
+NC_005999
+St Croix River virus
+2024
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.915168
+-0.563134
+-0.406562
+0.223715
+-0.0370083
+157
+NC_006000
+St Croix River virus
+2017
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.929186
+-0.489905
+-0.474727
+0.218272
+-0.0435751
+158
+NC_006001
+St Croix River virus
+1664
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.941512
+-0.538284
+-0.410704
+0.22781
+-0.0344737
+159
+NC_006002
+St Croix River virus
+1657
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.947254
+-0.502006
+-0.453171
+0.2252
+-0.0325264
+160
+NC_006003
+St Croix River virus
+1463
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.976467
+-0.541671
+-0.413624
+0.225411
+-0.0154499
+161
+NC_006004
+St Croix River virus
+1256
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.980367
+-0.461385
+-0.462526
+0.245836
+-0.0410089
+162
+NC_006005
+St Croix River virus
+764
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.980702
+-0.48203
+-0.457327
+0.228161
+-0.0232337
+163
+NC_006006
+St Croix River virus
+764
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.923917
+-0.33111
+-0.699695
+0.24807
+-0.0507646
+164
+NC_006007
+Bluetongue virus
+1125
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.974575
+-0.404308
+-0.653431
+0.272372
+-0.0571441
+165
+NC_006008
+Bluetongue virus
+1049
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.950574
+-0.338126
+-0.623727
+0.267628
+-0.045392
+166
+NC_006009
+African horse sickness virus
+758
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.870473
+-0.319498
+-0.718852
+0.247114
+-0.054882
+167
+NC_006010
+Bluetongue virus
+1638
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.909032
+-0.398643
+-0.584659
+0.235501
+-0.0497212
+168
+NC_006011
+African horse sickness virus
+1179
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.794455
+-0.288775
+-0.721115
+0.269969
+-0.0959462
+169
+NC_006012
+African horse sickness virus
+1978
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.692608
+-0.303179
+-0.725673
+0.239571
+-0.0883886
+170
+NC_006013
+Bluetongue virus
+2953
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.787823
+-0.41081
+-0.676131
+0.249027
+-0.0704222
+171
+NC_006014
+Bluetongue virus
+2772
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.951784
+-0.364362
+-0.641343
+0.233902
+-0.0463699
+172
+NC_006015
+Bluetongue virus
+822
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.926244
+-0.355018
+-0.654381
+0.253457
+-0.0409059
+173
+NC_006016
+African horse sickness virus
+1166
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.726498
+-0.318264
+-0.745749
+0.233193
+-0.0665567
+174
+NC_006017
+African horse sickness virus
+2792
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.860051
+-0.331913
+-0.668208
+0.228815
+-0.0604692
+175
+NC_006018
+African horse sickness virus
+1566
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.946632
+-0.395695
+-0.634879
+0.250636
+-0.0608609
+176
+NC_006019
+African horse sickness virus
+1169
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.856945
+-0.351552
+-0.75624
+0.250167
+-0.0529622
+177
+NC_006020
+African horse sickness virus
+1748
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.55275
+-0.241418
+-0.863789
+0.247813
+-0.0935658
+178
+NC_006021
+African horse sickness virus
+3965
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.919073
+-0.38521
+-0.563004
+0.240495
+-0.0384173
+179
+NC_006022
+Bluetongue virus
+1156
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.636396
+-0.349417
+-0.740245
+0.225923
+-0.092024
+180
+NC_006023
+Bluetongue virus
+3944
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.834164
+-0.324346
+-0.681194
+0.241783
+-0.0753748
+181
+NC_006024
+Bluetongue virus
+1980
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.836643
+-0.3396
+-0.65277
+0.258357
+-0.0646583
+182
+NC_006025
+Bluetongue virus
+1769
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.289605
+-0.0188424
+-0.946557
+0.279292
+-0.0691924
+228
+NC_007154
+Fiji disease virus
+3820
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 1}
+-0.325085
+-0.0262866
+-0.864264
+0.263252
+-0.0837531
+229
+NC_007155
+Fiji disease virus
+3568
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 1}
+-0.654373
+-0.0926153
+-0.719277
+0.242629
+-0.0639344
+230
+NC_007156
+Fiji disease virus
+1843
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 1}
+-0.501256
+-0.0291213
+-0.984621
+0.25103
+-0.104574
+231
+NC_007157
+Fiji disease virus
+2831
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 1}
+-0.296836
+0.0323236
+-0.902422
+0.252861
+-0.102853
+232
+NC_007158
+Fiji disease virus
+3623
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 1}
+-0.178102
+-0.0146828
+-0.981085
+0.25701
+-0.0971136
+233
+NC_007159
+Fiji disease virus
+4532
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 1}
+-0.464947
+-0.0970943
+-0.924549
+0.260029
+-0.0839572
+234
+NC_007160
+Fiji disease virus
+3150
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 1}
+-0.617718
+-0.0968371
+-0.794698
+0.221775
+-0.065422
+235
+NC_007161
+Fiji disease virus
+1959
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 1}
+-0.678411
+-0.0806818
+-0.768095
+0.24969
+-0.0573806
+236
+NC_007162
+Fiji disease virus
+1819
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 1}
+-0.586577
+-0.070586
+-0.826387
+0.259309
+-0.0781813
+237
+NC_007163
+Fiji disease virus
+2194
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 1}
+-0.865863
+-0.489403
+-0.501084
+0.209201
+-0.0508628
+238
+NC_007524
+Mycoreovirus 3
+2259
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.857978
+-0.445375
+-0.487261
+0.230123
+-0.0641851
+239
+NC_007525
+Mycoreovirus 3
+2030
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.916895
+-0.475674
+-0.508832
+0.219118
+-0.0446176
+240
+NC_007526
+Mycoreovirus 3
+1509
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.915593
+-0.43014
+-0.470037
+0.224991
+-0.033439
+241
+NC_007527
+Mycoreovirus 3
+1299
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.95481
+-0.50157
+-0.498384
+0.236445
+-0.0372667
+242
+NC_007528
+Mycoreovirus 3
+1226
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.937376
+-0.467925
+-0.493404
+0.223992
+-0.0367514
+243
+NC_007529
+Mycoreovirus 3
+1171
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.952598
+-0.459132
+-0.500944
+0.221442
+-0.0351058
+244
+NC_007531
+Mycoreovirus 3
+1003
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.930484
+-0.412702
+-0.514791
+0.230684
+-0.0400598
+245
+NC_007532
+Mycoreovirus 3
+943
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.7791
+-0.561875
+-0.432748
+0.21212
+-0.0482913
+246
+NC_007533
+Mycoreovirus 3
+3773
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.882011
+-0.516667
+-0.492757
+0.230984
+-0.0414305
+247
+NC_007534
+Mycoreovirus 3
+2089
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.729748
+-0.571167
+-0.514159
+0.203202
+-0.0668896
+248
+NC_007535
+Mycoreovirus 3
+4143
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.79032
+-0.557513
+-0.437342
+0.204809
+-0.0518712
+249
+NC_007536
+Mycoreovirus 3
+3310
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.736733
+-0.0298645
+-0.869177
+0.248695
+-0.0598553
+250
+NC_007543
+Rotavirus C
+1350
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.712471
+-0.047415
+-0.768224
+0.265124
+-0.0732204
+251
+NC_007544
+Rotavirus C
+1270
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.809492
+-0.109917
+-0.744571
+0.238408
+-0.0739346
+252
+NC_007545
+Rotavirus C
+1037
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.498983
+-0.000845623
+-0.89104
+0.267398
+-0.101547
+253
+NC_007546
+Rotavirus C
+2736
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.375924
+0.0330037
+-0.995385
+0.266996
+-0.0830628
+254
+NC_007547
+Rotavirus C
+3309
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.345966
+0.0336374
+-0.80216
+0.274127
+-0.0913253
+255
+NC_007548
+Adult diarrheal rotavirus strain J19
+3538
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.516211
+-0.124007
+-0.939441
+0.239653
+-0.0892062
+256
+NC_007549
+Adult diarrheal rotavirus strain J19
+2969
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.570476
+-0.0625989
+-0.881838
+0.235268
+-0.0729972
+257
+NC_007550
+Adult diarrheal rotavirus strain J19
+2512
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.53553
+0.0831785
+-0.798272
+0.238046
+-0.0405153
+258
+NC_007551
+Adult diarrheal rotavirus strain J19
+2204
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.775204
+-0.134421
+-0.717397
+0.251329
+-0.0566569
+259
+NC_007552
+Adult diarrheal rotavirus strain J19
+1307
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.820402
+-0.264482
+-0.700662
+0.244014
+-0.0395899
+260
+NC_007553
+Adult diarrheal rotavirus strain J19
+1287
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.828916
+-0.165592
+-0.691966
+0.241265
+-0.0508672
+261
+NC_007554
+Adult diarrheal rotavirus strain J19
+1004
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.843426
+-0.170691
+-0.761924
+0.240228
+-0.0424092
+262
+NC_007555
+Adult diarrheal rotavirus strain J19
+932
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.866847
+-0.270788
+-0.630985
+0.263298
+-0.0421286
+263
+NC_007556
+Adult diarrheal rotavirus strain J19
+820
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.868551
+-0.200146
+-0.679989
+0.251678
+-0.0549896
+264
+NC_007557
+Adult diarrheal rotavirus strain J19
+739
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.905169
+-0.218093
+-0.658746
+0.270123
+-0.0709743
+265
+NC_007558
+Adult diarrheal rotavirus strain J19
+649
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.582079
+-0.426222
+-0.708397
+0.23587
+-0.0867124
+266
+NC_007559
+Operophtera brumata reovirus
+4170
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.622695
+-0.38992
+-0.713322
+0.217459
+-0.0832014
+267
+NC_007560
+Operophtera brumata reovirus
+3780
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.620266
+-0.350935
+-0.71589
+0.225937
+-0.074708
+268
+NC_007561
+Operophtera brumata reovirus
+3595
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.634362
+-0.393294
+-0.692008
+0.218617
+-0.0883658
+269
+NC_007562
+Operophtera brumata reovirus
+3362
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.814772
+-0.39947
+-0.587707
+0.243269
+-0.0620219
+270
+NC_007563
+Operophtera brumata reovirus
+2106
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.811291
+-0.361963
+-0.651455
+0.237831
+-0.0605978
+271
+NC_007564
+Operophtera brumata reovirus
+1935
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.846173
+-0.360324
+-0.654667
+0.243579
+-0.0554264
+272
+NC_007565
+Operophtera brumata reovirus
+1606
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.817515
+-0.322142
+-0.609728
+0.244744
+-0.048087
+273
+NC_007566
+Operophtera brumata reovirus
+1584
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.860266
+-0.381383
+-0.580024
+0.229559
+-0.0545036
+274
+NC_007567
+Operophtera brumata reovirus
+1547
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.852136
+-0.361839
+-0.629576
+0.255612
+-0.0647974
+275
+NC_007568
+Operophtera brumata reovirus
+1509
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.895053
+-0.220954
+-0.718613
+0.246098
+-0.0548113
+276
+NC_007569
+Rotavirus C
+730
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.737076
+-0.132986
+-0.731984
+0.239949
+-0.0705119
+277
+NC_007570
+Rotavirus C
+1353
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.776418
+-0.098516
+-0.745031
+0.228419
+-0.0589276
+278
+NC_007571
+Rotavirus C
+1063
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.578921
+-0.0793335
+-0.842526
+0.2563
+-0.0601221
+279
+NC_007572
+Rotavirus C
+2283
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.897721
+-0.265341
+-0.684722
+0.247512
+-0.0564077
+280
+NC_007573
+Rotavirus C
+613
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.523854
+0.118574
+-0.880777
+0.240963
+-0.0979939
+281
+NC_007574
+Rotavirus C
+2166
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.851784
+-0.659444
+-0.300447
+0.202204
+-0.0355682
+282
+NC_007582
+Aquareovirus A
+3947
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.861844
+-0.67002
+-0.34466
+0.197401
+-0.0324883
+283
+NC_007583
+Aquareovirus A
+3867
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.881696
+-0.657309
+-0.300087
+0.202728
+-0.0301075
+284
+NC_007584
+Aquareovirus A
+3690
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.972575
+-0.587005
+-0.350902
+0.234412
+-0.0311445
+285
+NC_007585
+Aquareovirus A
+1619
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.933617
+-0.600432
+-0.360291
+0.210403
+-0.035638
+286
+NC_007586
+Chum salmon reovirus CS
+2242
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.965551
+-0.52578
+-0.403531
+0.206124
+-0.0346153
+287
+NC_007587
+Chum salmon reovirus CS
+1395
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.962509
+-0.526676
+-0.413993
+0.225601
+-0.021346
+288
+NC_007588
+Aquareovirus A
+1317
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.9854
+-0.528889
+-0.409812
+0.229516
+-0.0220052
+289
+NC_007589
+Aquareovirus A
+1118
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.983255
+-0.492128
+-0.468697
+0.230533
+-0.0328477
+290
+NC_007590
+Aquareovirus A
+985
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.987228
+-0.497656
+-0.431405
+0.235611
+-0.0313013
+291
+NC_007591
+Aquareovirus A
+783
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.925768
+-0.547203
+-0.396759
+0.227019
+-0.035598
+292
+NC_007592
+Aquareovirus A
+2052
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.52672
+-0.260606
+-0.82165
+0.252399
+-0.1022
+293
+NC_007656
+Yunnan orbivirus
+3993
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.665131
+-0.285852
+-0.721477
+0.239574
+-0.0682445
+294
+NC_007657
+Yunnan orbivirus
+2900
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.669092
+-0.238919
+-0.776258
+0.247355
+-0.0849363
+295
+NC_007658
+Yunnan orbivirus
+2688
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.805342
+-0.32119
+-0.734588
+0.23199
+-0.0662496
+296
+NC_007659
+Yunnan orbivirus
+1993
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.698283
+-0.228198
+-0.659713
+0.224097
+-0.0545163
+297
+NC_007660
+Yunnan orbivirus
+1957
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.812133
+-0.271008
+-0.694784
+0.25597
+-0.0515439
+298
+NC_007661
+Yunnan orbivirus
+1683
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.85404
+-0.359409
+-0.628478
+0.248095
+-0.0410496
+299
+NC_007662
+Yunnan orbivirus
+1504
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.920951
+-0.417263
+-0.559349
+0.24103
+-0.0476958
+300
+NC_007663
+Yunnan orbivirus
+1191
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.927628
+-0.358055
+-0.656875
+0.252772
+-0.0738572
+301
+NC_007664
+Yunnan orbivirus (YUOV)
+1082
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.947166
+-0.346858
+-0.604124
+0.222801
+-0.0411371
+302
+NC_007665
+Yunnan orbivirus
+825
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.39971
+-0.098501
+-0.93659
+0.279466
+-0.0886536
+303
+NC_007666
+Aedes pseudoscutellaris reovirus
+3817
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Dinovernavirus}
+-0.380703
+-0.0844567
+-0.913941
+0.242878
+-0.0965396
+304
+NC_007667
+Aedes pseudoscutellaris reovirus
+3752
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Dinovernavirus}
+-0.41919
+-0.133181
+-0.833531
+0.232515
+-0.0870134
+305
+NC_007668
+Aedes pseudoscutellaris reovirus
+3732
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Dinovernavirus}
+-0.455906
+-0.142097
+-0.881581
+0.266473
+-0.0987583
+306
+NC_007669
+Aedes pseudoscutellaris reovirus
+3375
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Dinovernavirus}
+-0.517977
+-0.163812
+-0.866312
+0.272304
+-0.0987009
+307
+NC_007670
+Aedes pseudoscutellaris reovirus
+3227
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Dinovernavirus}
+-0.730332
+-0.16085
+-0.779875
+0.255009
+-0.0704812
+308
+NC_007671
+Aedes pseudoscutellaris reovirus
+1775
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Dinovernavirus}
+-0.859067
+-0.31575
+-0.657123
+0.220256
+-0.0496057
+309
+NC_007672
+Aedes pseudoscutellaris reovirus
+1171
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Dinovernavirus}
+-0.845687
+-0.264717
+-0.700295
+0.231172
+-0.0620991
+310
+NC_007673
+Aedes pseudoscutellaris reovirus
+1151
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Dinovernavirus}
+-0.781263
+-0.0960618
+-0.676541
+0.257187
+-0.0440791
+311
+NC_007674
+Aedes pseudoscutellaris reovirus
+1147
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Dinovernavirus}
+-0.634721
+-0.405681
+-0.694567
+0.246703
+-0.0718232
+312
+NC_007736
+Liao ning virus
+3740
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.716354
+-0.411028
+-0.632206
+0.240908
+-0.0710866
+313
+NC_007737
+Liao ning virus
+3055
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.728209
+-0.328083
+-0.654957
+0.212382
+-0.0528014
+314
+NC_007738
+Liao ning virus
+2404
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.824548
+-0.408387
+-0.587544
+0.224133
+-0.0779618
+315
+NC_007739
+Liao ning virus
+2062
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.77522
+-0.310126
+-0.648821
+0.233782
+-0.0679081
+316
+NC_007740
+Liao ning virus
+1870
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.846024
+-0.36155
+-0.638891
+0.217972
+-0.0665411
+317
+NC_007741
+Liao ning virus
+1750
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.874804
+-0.350437
+-0.609264
+0.24247
+-0.0605938
+318
+NC_007742
+Liao ning virus
+1208
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.929287
+-0.444227
+-0.534969
+0.228701
+-0.0385118
+319
+NC_007743
+Liao ning virus
+1147
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.924025
+-0.38519
+-0.55341
+0.232763
+-0.0332581
+320
+NC_007744
+Liao ning virus
+943
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.928506
+-0.403049
+-0.511065
+0.242372
+-0.0369705
+321
+NC_007745
+Liao ning virus
+903
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.940801
+-0.387865
+-0.597015
+0.241325
+-0.0408713
+322
+NC_007746
+Liao ning virus
+897
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.914541
+-0.35884
+-0.54192
+0.252391
+-0.0441214
+323
+NC_007747
+Liao ning virus
+760
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Seadornavirus}
+-0.425212
+-0.140643
+-0.988593
+0.274868
+-0.128164
+324
+NC_007748
+Peruvian horse sickness virus
+3987
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.577673
+-0.158411
+-0.949711
+0.24031
+-0.104328
+325
+NC_007749
+Peruvian horse sickness virus
+2856
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.499352
+0.0389978
+-0.935907
+0.260079
+-0.113987
+326
+NC_007750
+Peruvian horse sickness virus
+2747
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.719167
+-0.206438
+-0.828296
+0.256757
+-0.0901738
+327
+NC_007751
+Peruvian horse sickness virus
+1996
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.782281
+-0.223482
+-0.812123
+0.25628
+-0.0707048
+328
+NC_007752
+Peruvian horse sickness virus
+1695
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.864388
+-0.144073
+-0.818512
+0.268323
+-0.0677915
+329
+NC_007753
+Peruvian horse sickness virus
+1071
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.900974
+-0.350186
+-0.636469
+0.243277
+-0.0541429
+330
+NC_007754
+Peruvian horse sickness virus
+1180
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.692668
+-0.107874
+-0.761058
+0.261182
+-0.0689868
+331
+NC_007755
+Peruvian horse sickness virus
+1784
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.753693
+-0.168398
+-0.801425
+0.209566
+-0.0832164
+332
+NC_007756
+Peruvian horse sickness virus
+1613
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.919075
+-0.265307
+-0.608931
+0.257658
+-0.0460414
+333
+NC_007757
+Peruvian horse sickness virus
+819
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.483043
+-0.444758
+-0.68322
+0.218946
+-0.0812491
+358
+NC_008171
+Micromonas pusilla reovirus
+5792
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.676457
+-0.462245
+-0.630607
+0.185207
+-0.083187
+359
+NC_008172
+Micromonas pusilla reovirus
+4175
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.788172
+-0.490853
+-0.613567
+0.21848
+-0.0714748
+360
+NC_008173
+Micromonas pusilla reovirus
+3129
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.746362
+-0.393774
+-0.60281
+0.204108
+-0.0439371
+361
+NC_008174
+Micromonas pusilla reovirus
+2833
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.880681
+-0.451589
+-0.424636
+0.212538
+-0.0223016
+362
+NC_008175
+Micromonas pusilla reovirus
+2027
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.844175
+-0.36251
+-0.560944
+0.25496
+-0.0675573
+363
+NC_008176
+Micromonas pusilla reovirus
+1687
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.863842
+-0.371466
+-0.587848
+0.239851
+-0.0439685
+364
+NC_008177
+Micromonas pusilla reovirus
+1556
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.894163
+-0.393926
+-0.591913
+0.236796
+-0.0381141
+365
+NC_008178
+Micromonas pusilla reovirus
+1449
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.887147
+-0.345515
+-0.623237
+0.239567
+-0.0598711
+366
+NC_008179
+Micromonas pusilla reovirus
+1296
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.946954
+-0.439358
+-0.472493
+0.217745
+-0.0235279
+367
+NC_008180
+Micromonas pusilla reovirus
+878
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.942686
+-0.390689
+-0.519153
+0.242453
+-0.0460138
+368
+NC_008181
+Micromonas pusilla reovirus
+741
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Mimoreovirus}
+-0.659624
+-0.148686
+-0.702238
+0.267426
+-0.0596205
+369
+NC_008728
+Mal de Rio Cuarto virus (MRCV)
+1931
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.351253
+-0.0658777
+-0.897338
+0.271721
+-0.095009
+370
+NC_008729
+Mal de Rio Cuarto virus (MRCV)
+3566
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.314928
+-0.0483879
+-0.892457
+0.237632
+-0.114545
+371
+NC_008730
+Mal de Rio Cuarto virus (MRCV)
+3617
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.669844
+-0.2702
+-0.804122
+0.244662
+-0.0961693
+372
+NC_008731
+Mal de Rio Cuarto virus (MRCV)
+2639
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.374146
+-0.156147
+-0.934026
+0.273057
+-0.11751
+373
+NC_008732
+Mal de Rio Cuarto virus (MRCV)
+3826
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.219174
+-0.054969
+-0.987819
+0.250449
+-0.100795
+374
+NC_008733
+Mal de Rio Cuarto virus (MRCV)
+4501
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.685268
+-0.120456
+-0.7466
+0.271376
+-0.0584809
+375
+NC_008734
+Mal de Rio Cuarto virus (MRCV)
+1798
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.547301
+-0.225344
+-0.716693
+0.23267
+-0.095599
+376
+NC_008735
+Mal de Rio Cuarto virus (MRCV)
+3162
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.62508
+-0.102665
+-0.843992
+0.273217
+-0.0561359
+377
+NC_008736
+Mal de Rio Cuarto virus (MRCV)
+2186
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.657075
+-0.0967651
+-0.768647
+0.264698
+-0.0791495
+378
+NC_008737
+Mal de Rio Cuarto virus (MRCV)
+1870
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  Fijivirus group 2}
+-0.842173
+-0.332519
+-0.576011
+0.234371
+-0.0423155
+540
+NC_009241
+Rice gall dwarf virus
+1578
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.92624
+-0.424161
+-0.60467
+0.247368
+-0.0417022
+541
+NC_009242
+Rice gall dwarf virus
+1198
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.656141
+-0.313792
+-0.726589
+0.217108
+-0.0748786
+542
+NC_009243
+Rice gall dwarf virus
+3224
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.595077
+-0.283029
+-0.7691
+0.229959
+-0.0735274
+543
+NC_009244
+Rice gall dwarf virus
+3514
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.889913
+-0.294612
+-0.6634
+0.261214
+-0.0560114
+544
+NC_009245
+Rice gall dwarf virus
+1171
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.885968
+-0.319291
+-0.602031
+0.248178
+-0.0372134
+545
+NC_009246
+Rice gall dwarf virus
+1202
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.650962
+-0.23903
+-0.777795
+0.221991
+-0.0793389
+546
+NC_009247
+Rice gall dwarf virus
+2542
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.464061
+-0.23979
+-0.858311
+0.235982
+-0.0935599
+547
+NC_009248
+Rice gall dwarf virus
+4505
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.733133
+-0.319897
+-0.638955
+0.243138
+-0.0698285
+548
+NC_009249
+Rice gall dwarf virus
+2622
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.826138
+-0.310696
+-0.676446
+0.263751
+-0.0631401
+549
+NC_009250
+Rice gall dwarf virus
+1648
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.831034
+-0.299364
+-0.686639
+0.241547
+-0.0660374
+550
+NC_009251
+Rice gall dwarf virus
+1652
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.931588
+-0.366326
+-0.606128
+0.23274
+-0.0435631
+551
+NC_009252
+Rice gall dwarf virus
+853
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus}
+-0.852628
+-0.636247
+-0.358936
+0.209538
+-0.0281537
+552
+NC_010584
+American grass carp reovirus
+3949
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.834085
+-0.633878
+-0.35346
+0.208633
+-0.0454805
+553
+NC_010585
+American grass carp reovirus
+3876
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.876757
+-0.673468
+-0.334494
+0.197979
+-0.0370006
+554
+NC_010586
+American grass carp reovirus
+3709
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.959838
+-0.606177
+-0.305718
+0.222642
+-0.0264911
+555
+NC_010587
+American grass carp reovirus
+2293
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.931634
+-0.579469
+-0.378575
+0.203975
+-0.0373141
+556
+NC_010588
+American grass carp reovirus
+2237
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.949419
+-0.597685
+-0.393149
+0.216639
+-0.0330741
+557
+NC_010589
+American grass carp reovirus
+2042
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.970486
+-0.543676
+-0.392722
+0.208212
+-0.048968
+558
+NC_010590
+American grass carp reovirus
+1356
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.968709
+-0.535459
+-0.416607
+0.238419
+-0.0278214
+559
+NC_010591
+American grass carp reovirus
+1305
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.988936
+-0.537985
+-0.383243
+0.217906
+-0.0110628
+560
+NC_010592
+American grass carp reovirus
+1125
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-1.
+-0.529588
+-0.422785
+0.230936
+-0.0167164
+561
+NC_010593
+American grass carp reovirus
+912
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.982544
+-0.452681
+-0.433688
+0.236828
+-0.0312389
+562
+NC_010594
+American grass carp reovirus
+772
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Aquareovirus}
+-0.948978
+-0.402968
+-0.563147
+0.251278
+-0.043083
+563
+NC_010661
+Cypovirus 5 (Heliothis armigera cytoplasmic polyhedrosis virus 5)
+883
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.732478
+-0.14145
+-0.858842
+0.241456
+-0.0755846
+564
+NC_010662
+Cypovirus 5 (Heliothis armigera cytoplasmic polyhedrosis virus 5)
+1830
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.870536
+-0.237171
+-0.772676
+0.23465
+-0.0617294
+565
+NC_010663
+Cypovirus 5 (Heliothis armigera cytoplasmic polyhedrosis virus 5)
+1066
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.827064
+-0.192396
+-0.787726
+0.266004
+-0.066407
+566
+NC_010664
+Cypovirus 5 (Heliothis armigera cytoplasmic polyhedrosis virus 5)
+1268
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.739187
+-0.188402
+-0.81462
+0.240118
+-0.0700861
+567
+NC_010665
+Cypovirus 5 (Heliothis armigera cytoplasmic polyhedrosis virus 5)
+1930
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.597508
+-0.120584
+-0.90611
+0.239907
+-0.0770982
+568
+NC_010666
+Cypovirus 5 (Heliothis armigera cytoplasmic polyhedrosis virus 5)
+2797
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.491829
+-0.0688461
+-0.876975
+0.213431
+-0.0876906
+569
+NC_010667
+Cypovirus 5 (Heliothis armigera cytoplasmic polyhedrosis virus 5)
+3303
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.483233
+-0.112614
+-0.918842
+0.271925
+-0.106368
+570
+NC_010668
+Cypovirus 5 (Heliothis armigera cytoplasmic polyhedrosis virus 5)
+3713
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.484488
+-0.13944
+-0.943427
+0.253589
+-0.105415
+571
+NC_010669
+Cypovirus 5 (Heliothis armigera cytoplasmic polyhedrosis virus 5)
+3905
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.461138
+-0.15209
+-0.976909
+0.251063
+-0.0967017
+572
+NC_010670
+Cypovirus 5 (Heliothis armigera cytoplasmic polyhedrosis virus 5)
+4123
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.58292
+-0.405562
+-0.653984
+0.224123
+-0.0697615
+573
+NC_010743
+Mycoreovirus 1
+4127
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.666897
+-0.5013
+-0.531724
+0.220917
+-0.0623886
+574
+NC_010744
+Mycoreovirus 1
+3846
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.700586
+-0.432118
+-0.55071
+0.206861
+-0.0591211
+575
+NC_010745
+Mycoreovirus 1
+3258
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.701086
+-0.233339
+-0.690272
+0.254663
+-0.0689363
+576
+NC_010746
+Mycoreovirus 1
+2269
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.809815
+-0.410202
+-0.498626
+0.218089
+-0.0643187
+577
+NC_010747
+Mycoreovirus 1
+2056
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.799927
+-0.346942
+-0.648524
+0.234192
+-0.0610051
+578
+NC_010748
+Mycoreovirus 1
+2023
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.907862
+-0.474126
+-0.493878
+0.221687
+-0.0379496
+579
+NC_010749
+Mycoreovirus 1
+1539
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.852437
+-0.341317
+-0.607815
+0.243287
+-0.0553979
+580
+NC_010750
+Mycoreovirus 1
+1536
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.934571
+-0.455876
+-0.455574
+0.232487
+-0.0319906
+581
+NC_010751
+Mycoreovirus 1
+1072
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.920201
+-0.399084
+-0.536319
+0.216704
+-0.0390995
+582
+NC_010752
+Mycoreovirus 1
+975
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.898701
+-0.28874
+-0.542385
+0.223738
+-0.0488616
+583
+NC_010753
+Mycoreovirus 1
+732
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Mycoreovirus}
+-0.669737
+-0.0281661
+-0.851815
+0.279418
+-0.069847
+584
+NC_011500
+Rotavirus A
+1614
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.805454
+-0.172265
+-0.747853
+0.275109
+-0.0564607
+585
+NC_011501
+Rotavirus A
+1105
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.806713
+-0.149081
+-0.707902
+0.247216
+-0.0788248
+586
+NC_011502
+Rotavirus A
+1059
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.857144
+-0.253585
+-0.65711
+0.258194
+-0.0613623
+587
+NC_011503
+Rotavirus A
+1062
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.916082
+-0.301132
+-0.614467
+0.263211
+-0.0533437
+588
+NC_011504
+Rotavirus A
+751
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.926155
+-0.313035
+-0.601934
+0.241826
+-0.0389946
+589
+NC_011505
+Rotavirus A
+667
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.543974
+-0.0722029
+-0.953155
+0.25383
+-0.0863871
+590
+NC_011506
+Rotavirus A
+2693
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.425274
+-0.0213738
+-0.870748
+0.232616
+-0.0653861
+591
+NC_011507
+Rotavirus A
+3302
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.419374
+0.110303
+-0.871617
+0.258317
+-0.0751803
+592
+NC_011508
+Rotavirus A
+2591
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.843774
+-0.289261
+-0.676402
+0.226014
+-0.0461753
+593
+NC_011509
+Rotavirus A
+1356
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.644322
+-0.169849
+-0.857024
+0.239036
+-0.0996819
+594
+NC_011510
+Rotavirus A
+2362
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.423622
+-0.255223
+-0.795344
+0.252188
+-0.087453
+595
+NC_012535
+Homalodisca vitripennis reovirus
+4475
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.583201
+-0.249402
+-0.79413
+0.239326
+-0.0644899
+596
+NC_012536
+Homalodisca vitripennis reovirus
+3522
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.595067
+-0.243531
+-0.750332
+0.226579
+-0.0648475
+597
+NC_012537
+Homalodisca vitripennis reovirus
+3180
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.693177
+-0.289803
+-0.754683
+0.212486
+-0.0716088
+598
+NC_012538
+Homalodisca vitripennis reovirus
+2559
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.658602
+-0.208488
+-0.771445
+0.254216
+-0.0842144
+599
+NC_012539
+Homalodisca vitripennis reovirus
+2521
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.799495
+-0.2771
+-0.743978
+0.236011
+-0.0716323
+600
+NC_012540
+Homalodisca vitripennis reovirus
+1665
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.772135
+-0.247065
+-0.691627
+0.28715
+-0.0874965
+601
+NC_012541
+Homalodisca vitripennis reovirus
+1702
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.857235
+-0.317683
+-0.609072
+0.244751
+-0.0536459
+602
+NC_012542
+Homalodisca vitripennis reovirus
+1434
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.858304
+-0.312641
+-0.606518
+0.244354
+-0.0467936
+603
+NC_012543
+Homalodisca vitripennis reovirus
+1187
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.863407
+-0.307491
+-0.657286
+0.250346
+-0.0600403
+604
+NC_012544
+Homalodisca vitripennis reovirus
+1205
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.852513
+-0.276236
+-0.65785
+0.247305
+-0.04642
+605
+NC_012545
+Homalodisca vitripennis reovirus
+1234
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.879697
+-0.339668
+-0.642855
+0.25389
+-0.0422927
+606
+NC_012546
+Homalodisca vitripennis reovirus
+1040
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Phytoreovirus  unclassified Phytoreovirus}
+-0.610178
+-0.326403
+-0.784031
+0.201575
+-0.0963203
+607
+NC_012754
+Stretch Lagoon orbivirus
+3933
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.777054
+-0.416994
+-0.625259
+0.234739
+-0.0855241
+608
+NC_012755
+Stretch Lagoon orbivirus
+2792
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.754515
+-0.594008
+-0.558277
+0.225138
+-0.0824559
+609
+NC_013225
+Mammalian orthoreovirus 3
+3804
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.74214
+-0.521527
+-0.548729
+0.223169
+-0.0582264
+610
+NC_013226
+Mammalian orthoreovirus 3
+3870
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.858349
+-0.447678
+-0.626934
+0.254265
+-0.0382625
+611
+NC_013227
+Mammalian orthoreovirus 3
+2251
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.907085
+-0.549007
+-0.562452
+0.214112
+-0.0472992
+612
+NC_013228
+Mammalian orthoreovirus 3
+2127
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.773837
+-0.583601
+-0.485671
+0.211816
+-0.0511759
+613
+NC_013229
+Mammalian orthoreovirus 3
+3888
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.884267
+-0.534906
+-0.580259
+0.241068
+-0.065978
+614
+NC_013230
+Mammalian orthoreovirus 3
+2241
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.922015
+-0.425089
+-0.468186
+0.25297
+-0.0398006
+615
+NC_013231
+Mammalian orthoreovirus 3
+1368
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.942368
+-0.462349
+-0.51231
+0.235132
+-0.0302315
+616
+NC_013232
+Mammalian orthoreovirus 3
+1331
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.98431
+-0.541207
+-0.499389
+0.228857
+-0.0126573
+617
+NC_013233
+Mammalian orthoreovirus 3
+1198
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.974971
+-0.489115
+-0.511349
+0.226637
+-0.0377966
+618
+NC_013234
+Mammalian orthoreovirus 3
+1098
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.522971
+-0.216133
+-0.836493
+0.239475
+-0.0876099
+619
+NC_013396
+Epizootic hemorrhagic disease virus (serotype 1 / strain New
+3942
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.646257
+-0.21515
+-0.801441
+0.239889
+-0.0903109
+620
+NC_013397
+Epizootic hemorrhagic disease virus (serotype 1 / strain New
+2968
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.720286
+-0.271563
+-0.799915
+0.237202
+-0.0780758
+621
+NC_013398
+Epizootic hemorrhagic disease virus (serotype 1 / strain New
+2768
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.813931
+-0.284739
+-0.758914
+0.233602
+-0.0757415
+622
+NC_013399
+Epizootic hemorrhagic disease virus (serotype 1 / strain New
+1983
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.814907
+-0.307865
+-0.660481
+0.244843
+-0.0614692
+623
+NC_013400
+Epizootic hemorrhagic disease virus (serotype 1 / strain New
+1803
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.869265
+-0.311375
+-0.786557
+0.236252
+-0.0717188
+624
+NC_013401
+Epizootic hemorrhagic disease virus (serotype 1 / strain New
+1640
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.901399
+-0.356035
+-0.565486
+0.238385
+-0.0387301
+625
+NC_013402
+Epizootic hemorrhagic disease virus (serotype 1 / strain New
+1162
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.914377
+-0.344068
+-0.691102
+0.265528
+-0.0708585
+626
+NC_013403
+Epizootic hemorrhagic disease virus (serotype 1 / strain New
+1186
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.943974
+-0.331855
+-0.680345
+0.262614
+-0.0672112
+627
+NC_013404
+Epizootic hemorrhagic disease virus (serotype 1 / strain New
+1143
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.944292
+-0.356745
+-0.616581
+0.233961
+-0.0296375
+628
+NC_013405
+Epizootic hemorrhagic disease virus (serotype 1 / strain New
+810
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.654873
+-0.4501
+-0.595113
+0.216242
+-0.0652536
+629
+NC_014236
+Broome virus
+3947
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.593485
+-0.372022
+-0.660539
+0.23381
+-0.0813494
+630
+NC_014237
+Broome virus
+3903
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.612972
+-0.400889
+-0.681238
+0.24067
+-0.05872
+631
+NC_014238
+Broome virus
+3848
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.770026
+-0.359976
+-0.703049
+0.251437
+-0.077469
+632
+NC_014239
+Broome virus
+2327
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.803405
+-0.3371
+-0.648883
+0.245812
+-0.0596554
+633
+NC_014240
+Broome virus
+2076
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.823337
+-0.382699
+-0.659488
+0.242044
+-0.0601635
+634
+NC_014241
+Broome virus
+2068
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.850178
+-0.315337
+-0.600358
+0.233794
+-0.037613
+635
+NC_014242
+Broome virus
+1316
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.872075
+-0.306235
+-0.650545
+0.250916
+-0.051177
+636
+NC_014243
+Broome virus
+1231
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.908204
+-0.372045
+-0.632715
+0.241281
+-0.0493546
+637
+NC_014244
+Broome virus
+1203
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.912381
+-0.30523
+-0.652451
+0.252289
+-0.0494855
+638
+NC_014245
+Broome virus
+808
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.346407
+0.100343
+-0.945884
+0.232634
+-0.096836
+639
+NC_014511
+Rotavirus D chicken/05V0049/DEU/2005
+3274
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.505509
+-0.0127112
+-0.989865
+0.240328
+-0.0824844
+640
+NC_014512
+Rotavirus D chicken/05V0049/DEU/2005
+2801
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.635748
+-0.126888
+-0.844099
+0.258933
+-0.0861314
+641
+NC_014513
+Rotavirus D chicken/05V0049/DEU/2005
+2366
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.555439
+0.0112339
+-0.814437
+0.215159
+-0.0864645
+642
+NC_014514
+Rotavirus D chicken/05V0049/DEU/2005
+2104
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.739245
+-0.220377
+-0.739685
+0.24468
+-0.0589312
+643
+NC_014515
+Rotavirus D chicken/05V0049/DEU/2005
+1872
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.851138
+-0.300195
+-0.647869
+0.242912
+-0.0505018
+644
+NC_014516
+Rotavirus D chicken/05V0049/DEU/2005
+1353
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.804308
+-0.1516
+-0.747957
+0.265025
+-0.0460458
+645
+NC_014517
+Rotavirus D chicken/05V0049/DEU/2005
+1242
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.819363
+-0.185324
+-0.754198
+0.236449
+-0.0612713
+646
+NC_014518
+Rotavirus D chicken/05V0049/DEU/2005
+1026
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.794237
+-0.13783
+-0.780011
+0.25452
+-0.0389416
+647
+NC_014519
+Rotavirus D chicken/05V0049/DEU/2005
+1025
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.85968
+-0.238082
+-0.602119
+0.237213
+-0.029634
+648
+NC_014520
+Rotavirus D chicken/05V0049/DEU/2005
+765
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.89901
+-0.211213
+-0.733796
+0.248674
+-0.0602513
+649
+NC_014521
+Rotavirus D chicken/05V0049/DEU/2005
+672
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.852611
+-0.606616
+-0.39511
+0.215107
+-0.0384919
+650
+NC_014522
+Great Island virus (GIV)
+3897
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.915529
+-0.608187
+-0.403364
+0.213312
+-0.0361955
+651
+NC_014523
+Great Island virus (GIV)
+2794
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.953593
+-0.543845
+-0.453555
+0.222756
+-0.0421828
+652
+NC_014524
+Great Island virus (GIV)
+1936
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.960366
+-0.562684
+-0.439408
+0.226285
+-0.0331695
+653
+NC_014525
+Great Island virus (GIV)
+1731
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.957524
+-0.508526
+-0.474198
+0.217959
+-0.0302818
+654
+NC_014526
+Great Island virus (GIV)
+1722
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.971967
+-0.525498
+-0.420211
+0.229838
+-0.0398542
+655
+NC_014527
+Great Island virus (GIV)
+1666
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.976965
+-0.518681
+-0.414577
+0.222038
+-0.02995
+656
+NC_014528
+Great Island virus (GIV)
+1181
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.982288
+-0.525919
+-0.434405
+0.239707
+-0.0262903
+657
+NC_014529
+Great Island virus (GIV)
+1172
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.984815
+-0.489964
+-0.453174
+0.242192
+-0.0333228
+658
+NC_014530
+Great Island virus (GIV)
+1056
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.99896
+-0.470781
+-0.494098
+0.250017
+-0.035653
+659
+NC_014531
+Great Island virus (GIV)
+703
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.629387
+-0.402785
+-0.645348
+0.237295
+-0.0840157
+660
+NC_014598
+Raspberry latent virus
+3948
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.682855
+-0.440948
+-0.620329
+0.209812
+-0.0680193
+661
+NC_014599
+Raspberry latent virus
+3914
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.646245
+-0.410359
+-0.655187
+0.21834
+-0.0874631
+662
+NC_014600
+Raspberry latent virus
+3818
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.63652
+-0.408599
+-0.680345
+0.246477
+-0.0744986
+663
+NC_014601
+Raspberry latent virus
+3650
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.759199
+-0.362173
+-0.663779
+0.219165
+-0.0639598
+664
+NC_014602
+Raspberry latent virus
+2563
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.808468
+-0.336387
+-0.711705
+0.228947
+-0.0720542
+665
+NC_014603
+Raspberry latent virus
+1996
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.856637
+-0.400562
+-0.657261
+0.227505
+-0.0488189
+666
+NC_014604
+Raspberry latent virus
+1957
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.763921
+-0.279607
+-0.693851
+0.241423
+-0.0718827
+667
+NC_014605
+Raspberry latent virus
+1936
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.912668
+-0.359562
+-0.62242
+0.255433
+-0.0576691
+668
+NC_014606
+Raspberry latent virus
+1205
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.930221
+-0.423107
+-0.519544
+0.235623
+-0.0415864
+669
+NC_014607
+Raspberry latent virus
+1141
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.5613
+-0.281835
+-0.675049
+0.249998
+-0.0948234
+670
+NC_014708
+Southern rice black-streaked dwarf virus
+3167
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  unclassified Fijivirus}
+-0.679177
+-0.290392
+-0.730035
+0.258473
+-0.113218
+671
+NC_014709
+Southern rice black-streaked dwarf virus
+2651
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  unclassified Fijivirus}
+-0.563952
+-0.0807596
+-0.870026
+0.276495
+-0.0580587
+672
+NC_014710
+Southern rice black-streaked dwarf virus
+2176
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  unclassified Fijivirus}
+-0.684359
+-0.173589
+-0.704461
+0.242469
+-0.0765216
+673
+NC_014711
+Southern rice black-streaked dwarf virus
+1928
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  unclassified Fijivirus}
+-0.672442
+-0.111094
+-0.765495
+0.248698
+-0.0885854
+674
+NC_014712
+Southern rice black-streaked dwarf virus
+1900
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  unclassified Fijivirus}
+-0.718789
+-0.153818
+-0.756232
+0.221624
+-0.0729936
+675
+NC_014713
+Southern rice black-streaked dwarf virus
+1798
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  unclassified Fijivirus}
+-0.178143
+-0.033299
+-0.976834
+0.242614
+-0.125187
+676
+NC_014714
+Southern rice black-streaked dwarf virus
+4500
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  unclassified Fijivirus}
+-0.372145
+-0.139485
+-0.898072
+0.300188
+-0.105827
+677
+NC_014715
+Southern rice black-streaked dwarf virus
+3815
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  unclassified Fijivirus}
+-0.31764
+-0.0504107
+-0.835647
+0.234469
+-0.10575
+678
+NC_014716
+Southern rice black-streaked dwarf virus
+3618
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  unclassified Fijivirus}
+-0.399071
+-0.113783
+-0.824683
+0.239912
+-0.0894728
+679
+NC_014717
+Southern rice black-streaked dwarf virus
+3571
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Fijivirus  unclassified Fijivirus}
+-0.785238
+-0.604055
+-0.439585
+0.20107
+-0.0592999
+680
+NC_015126
+Avian orthoreovirus
+3958
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.727644
+-0.546683
+-0.443672
+0.229166
+-0.0462293
+681
+NC_015127
+Avian orthoreovirus
+3829
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.71553
+-0.550544
+-0.458392
+0.220874
+-0.0572985
+682
+NC_015128
+Avian orthoreovirus
+3907
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.862303
+-0.50179
+-0.464565
+0.227217
+-0.0517066
+683
+NC_015129
+Avian orthoreovirus
+2283
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.884045
+-0.526778
+-0.526925
+0.219434
+-0.0556286
+684
+NC_015130
+Avian orthoreovirus
+2158
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.893735
+-0.521688
+-0.473675
+0.225803
+-0.0514087
+685
+NC_015131
+Avian orthoreovirus
+1996
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.883659
+-0.458554
+-0.429751
+0.241209
+-0.0538897
+686
+NC_015132
+Avian orthoreovirus
+1645
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.955209
+-0.505751
+-0.459255
+0.228752
+-0.0339816
+687
+NC_015133
+Avian orthoreovirus
+1324
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.967527
+-0.501113
+-0.499466
+0.246295
+-0.0416498
+688
+NC_015134
+Avian orthoreovirus
+1202
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.960479
+-0.484515
+-0.471034
+0.215286
+-0.0283741
+689
+NC_015135
+Avian orthoreovirus
+1192
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.460324
+-0.176279
+-0.828835
+0.235802
+-0.0828522
+690
+NC_015877
+Baboon orthoreovirus
+3903
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.46722
+-0.214591
+-0.840394
+0.24039
+-0.080749
+691
+NC_015878
+Baboon orthoreovirus
+3838
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.550301
+-0.306004
+-0.783565
+0.231801
+-0.068396
+692
+NC_015879
+Baboon orthoreovirus
+3766
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.678507
+-0.244765
+-0.785467
+0.240569
+-0.0495972
+693
+NC_015880
+Baboon orthoreovirus
+2292
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.789651
+-0.345583
+-0.675796
+0.242676
+-0.0736295
+694
+NC_015881
+Baboon orthoreovirus
+2143
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.778116
+-0.276689
+-0.738551
+0.229212
+-0.0821126
+695
+NC_015882
+Baboon orthoreovirus
+1892
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.821169
+-0.225928
+-0.701844
+0.243098
+-0.0398041
+696
+NC_015883
+Baboon orthoreovirus
+1311
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.860777
+-0.310764
+-0.5859
+0.237704
+-0.0453332
+697
+NC_015884
+Baboon orthoreovirus
+1253
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.912714
+-0.35379
+-0.61345
+0.23972
+-0.0496324
+698
+NC_015885
+Baboon orthoreovirus
+887
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.877919
+-0.261841
+-0.63282
+0.247214
+-0.0422319
+699
+NC_015886
+Baboon orthoreovirus
+1150
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus}
+-0.776787
+-0.548543
+-0.524914
+0.224073
+-0.0645277
+700
+NC_016874
+Spissistilus festinus reovirus
+3780
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.781952
+-0.510524
+-0.54467
+0.227996
+-0.0616782
+701
+NC_016875
+Spissistilus festinus reovirus
+3325
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.87453
+-0.453468
+-0.534478
+0.249105
+-0.0401841
+702
+NC_016876
+Spissistilus festinus reovirus
+2031
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.880529
+-0.46001
+-0.514996
+0.244525
+-0.0332852
+703
+NC_016877
+Spissistilus festinus reovirus
+1761
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.955673
+-0.475938
+-0.508203
+0.232529
+-0.0302429
+704
+NC_016878
+Spissistilus festinus reovirus
+1121
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.766597
+-0.584342
+-0.511263
+0.222085
+-0.0500691
+705
+NC_016879
+Spissistilus festinus reovirus
+4012
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.778537
+-0.544156
+-0.479558
+0.245375
+-0.0592263
+706
+NC_016880
+Spissistilus festinus reovirus
+3729
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.862319
+-0.470797
+-0.524555
+0.222368
+-0.0402464
+707
+NC_016881
+Spissistilus festinus reovirus
+2238
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.900357
+-0.50435
+-0.454711
+0.220879
+-0.0373688
+708
+NC_016882
+Spissistilus festinus reovirus
+1937
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.957434
+-0.484636
+-0.484126
+0.238281
+-0.0312659
+709
+NC_016883
+Spissistilus festinus reovirus
+1205
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.740088
+-0.564486
+-0.440493
+0.202478
+-0.0462333
+710
+NC_020439
+Melaka orthoreovirus
+3896
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.750824
+-0.577139
+-0.449602
+0.230633
+-0.0575381
+711
+NC_020440
+Melaka orthoreovirus
+3954
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.866761
+-0.534085
+-0.462659
+0.2192
+-0.0444476
+712
+NC_020441
+Melaka orthoreovirus
+2295
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.890677
+-0.526377
+-0.490521
+0.21791
+-0.0525925
+713
+NC_020442
+Melaka orthoreovirus
+2145
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.9057
+-0.51009
+-0.484063
+0.21545
+-0.0551353
+714
+NC_020443
+Melaka orthoreovirus
+1984
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.96272
+-0.515936
+-0.456791
+0.236004
+-0.0347385
+715
+NC_020444
+Melaka orthoreovirus
+1322
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.954117
+-0.481591
+-0.459322
+0.247224
+-0.0268359
+716
+NC_020445
+Melaka orthoreovirus
+1192
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.966365
+-0.495461
+-0.426533
+0.226426
+-0.0140934
+717
+NC_020446
+Melaka orthoreovirus
+1184
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.755795
+-0.587426
+-0.469463
+0.220705
+-0.0416679
+718
+NC_020447
+Melaka orthoreovirus
+3833
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.900434
+-0.500453
+-0.412334
+0.22731
+-0.0462453
+719
+NC_020448
+Melaka orthoreovirus
+1605
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Orthoreovirus  unclassified Orthoreovirus}
+-0.53667
+-0.212404
+-0.794801
+0.265409
+-0.0906707
+720
+NC_021541
+Human rotavirus B
+3511
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.87526
+-0.289825
+-0.578308
+0.238011
+-0.0348768
+721
+NC_021542
+Human rotavirus B
+814
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.633497
+-0.153464
+-0.729685
+0.268407
+-0.0780412
+722
+NC_021543
+Human rotavirus B
+2306
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.874629
+-0.331023
+-0.630147
+0.229346
+-0.0482958
+723
+NC_021544
+Human rotavirus B
+1269
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.682542
+-0.320141
+-0.709893
+0.224253
+-0.0956517
+724
+NC_021545
+Human rotavirus B
+2847
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.79863
+-0.234866
+-0.612386
+0.225855
+-0.0436486
+725
+NC_021546
+Human rotavirus B
+1276
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.851565
+-0.193553
+-0.714505
+0.287756
+-0.0591618
+726
+NC_021547
+Human rotavirus B
+1179
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.848947
+-0.204079
+-0.68782
+0.263915
+-0.074651
+727
+NC_021548
+Human rotavirus B
+1007
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.908004
+-0.230257
+-0.631653
+0.255213
+-0.0500121
+728
+NC_021549
+Human rotavirus B
+631
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.908118
+-0.285536
+-0.647248
+0.263074
+-0.044188
+729
+NC_021550
+Human rotavirus B
+751
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.633577
+-0.184473
+-0.723694
+0.227989
+-0.0639069
+730
+NC_021551
+Human rotavirus B
+2341
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus}
+-0.545497
+-0.104008
+-0.905534
+0.26526
+-0.114777
+731
+NC_021580
+Rotavirus G chicken/03V0567/DEU/2003
+3014
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.599514
+-0.0604633
+-0.893485
+0.264512
+-0.079589
+732
+NC_021581
+Rotavirus G chicken/03V0567/DEU/2003
+2364
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.865186
+-0.223067
+-0.623266
+0.266838
+-0.0575741
+733
+NC_021582
+Rotavirus G chicken/03V0567/DEU/2003
+825
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.795564
+-0.175264
+-0.678091
+0.242624
+-0.0614652
+734
+NC_021583
+Rotavirus G chicken/03V0567/DEU/2003
+1295
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.881806
+-0.253202
+-0.692333
+0.243937
+-0.0658688
+735
+NC_021584
+Rotavirus G chicken/03V0567/DEU/2003
+1012
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.877563
+-0.230795
+-0.746203
+0.246294
+-0.0650595
+736
+NC_021585
+Rotavirus G chicken/03V0567/DEU/2003
+1052
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.853277
+-0.137618
+-0.767437
+0.267385
+-0.0633436
+737
+NC_021586
+Rotavirus G chicken/03V0567/DEU/2003
+801
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.910216
+-0.228538
+-0.741237
+0.247247
+-0.0676015
+738
+NC_021587
+Rotavirus G chicken/03V0567/DEU/2003
+678
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.860741
+-0.282287
+-0.730565
+0.24675
+-0.0377807
+739
+NC_021588
+Rotavirus G chicken/03V0567/DEU/2003
+1267
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.477971
+0.110119
+-0.891827
+0.255205
+-0.090923
+740
+NC_021589
+Rotavirus G chicken/03V0567/DEU/2003
+2352
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.45407
+-0.0421011
+-1.
+0.245672
+-0.0958871
+741
+NC_021590
+Rotavirus G chicken/03V0567/DEU/2003
+3526
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.36063
+-0.00307216
+-0.917163
+0.254863
+-0.0847698
+742
+NC_021625
+Rotavirus F chicken/03V0568/DEU/2003
+3296
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.574325
+-0.105324
+-0.904188
+0.262535
+-0.0935573
+743
+NC_021626
+Rotavirus F chicken/03V0568/DEU/2003
+2769
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.808057
+-0.165657
+-0.679592
+0.260195
+-0.0462669
+744
+NC_021627
+Rotavirus F chicken/03V0568/DEU/2003
+990
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.864295
+-0.222154
+-0.705781
+0.27073
+-0.0580395
+745
+NC_021628
+Rotavirus F chicken/03V0568/DEU/2003
+1068
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.92369
+-0.309028
+-0.652288
+0.259945
+-0.0519903
+746
+NC_021629
+Rotavirus F chicken/03V0568/DEU/2003
+706
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.610142
+-0.0508046
+-0.832901
+0.26681
+-0.0849355
+747
+NC_021630
+Rotavirus F chicken/03V0568/DEU/2003
+2174
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.613283
+-0.0856861
+-0.870281
+0.242875
+-0.0670231
+748
+NC_021631
+Rotavirus F chicken/03V0568/DEU/2003
+2246
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.726656
+-0.180071
+-0.765697
+0.259954
+-0.0682351
+749
+NC_021632
+Rotavirus F chicken/03V0568/DEU/2003
+1791
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.850697
+-0.238952
+-0.774554
+0.277069
+-0.0593974
+750
+NC_021633
+Rotavirus F chicken/03V0568/DEU/2003
+1309
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.931438
+-0.320677
+-0.63661
+0.251632
+-0.0518681
+751
+NC_021634
+Rotavirus F chicken/03V0568/DEU/2003
+678
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.831242
+-0.251172
+-0.631778
+0.226911
+-0.0307551
+752
+NC_021635
+Rotavirus F chicken/03V0568/DEU/2003
+1314
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Rotavirus  unclassified rotaviruses}
+-0.438188
+-0.186305
+-0.942061
+0.256122
+-0.100493
+753
+NC_022553
+Wallal virus (WALV)
+3952
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.576196
+-0.13148
+-0.853897
+0.25152
+-0.0722859
+754
+NC_022554
+Wallal virus (WALV)
+2963
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.655291
+-0.23874
+-0.865662
+0.236189
+-0.0833875
+755
+NC_022555
+Wallal virus (WALV)
+2765
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.818017
+-0.297601
+-0.754712
+0.217951
+-0.0915726
+756
+NC_022556
+Wallal virus (WALV)
+1747
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.902277
+-0.350586
+-0.605271
+0.256274
+-0.0477572
+757
+NC_022557
+Wallal virus (WALV)
+1125
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.919334
+-0.279945
+-0.789644
+0.264526
+-0.0661022
+758
+NC_022558
+Wallal virus (WALV)
+1034
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.927655
+-0.320018
+-0.668927
+0.238358
+-0.0523079
+759
+NC_022559
+Wallal virus (WALV)
+831
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.787267
+-0.250011
+-0.805489
+0.251609
+-0.0704795
+760
+NC_022560
+Wallal virus (WALV)
+1978
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.794253
+-0.206811
+-0.839572
+0.232373
+-0.0805343
+761
+NC_022561
+Wallal virus (WALV)
+1627
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.906355
+-0.299995
+-0.778458
+0.262141
+-0.0724332
+762
+NC_022562
+Wallal virus (WALV)
+1158
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.668477
+-0.223482
+-0.839136
+0.229869
+-0.0776301
+763
+NC_022620
+Mobuck virus
+2702
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.790107
+-0.282151
+-0.710902
+0.232743
+-0.0680646
+764
+NC_022621
+Mobuck virus
+1997
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.914917
+-0.288848
+-0.748296
+0.26179
+-0.0636199
+765
+NC_022622
+Mobuck virus
+1069
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.896341
+-0.349956
+-0.616126
+0.249013
+-0.0625874
+766
+NC_022623
+Mobuck virus
+1179
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.803898
+-0.281509
+-0.710314
+0.224458
+-0.0566447
+767
+NC_022624
+Mobuck virus
+1690
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.938611
+-0.33176
+-0.658687
+0.248464
+-0.0420252
+768
+NC_022625
+Mobuck virus
+811
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.440859
+-0.188559
+-0.920552
+0.242963
+-0.116294
+769
+NC_022626
+Mobuck virus
+4034
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.687971
+-0.312597
+-0.760691
+0.258432
+-0.0915214
+770
+NC_022627
+Mobuck virus
+2855
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.81712
+-0.239112
+-0.754438
+0.24925
+-0.0608621
+771
+NC_022628
+Mobuck virus
+1682
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.694785
+-0.141309
+-0.743626
+0.27715
+-0.0825722
+772
+NC_022629
+Mobuck virus
+1925
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.567563
+-0.212568
+-0.752606
+0.241276
+-0.086426
+773
+NC_022633
+Changuinola virus
+3662
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.737341
+-0.315776
+-0.735656
+0.236931
+-0.0769172
+774
+NC_022634
+Changuinola virus
+2776
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.830532
+-0.315492
+-0.707607
+0.216034
+-0.0699052
+775
+NC_022635
+Changuinola virus
+1814
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.91523
+-0.396282
+-0.542389
+0.235238
+-0.0504918
+776
+NC_022636
+Changuinola virus
+1162
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.940207
+-0.353008
+-0.56457
+0.261182
+-0.0545981
+777
+NC_022637
+Changuinola virus
+1028
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.938162
+-0.348807
+-0.610244
+0.235268
+-0.0552553
+778
+NC_022638
+Changuinola virus
+809
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.539335
+-0.299559
+-0.810736
+0.232798
+-0.104692
+779
+NC_022639
+Changuinola virus
+3980
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.77575
+-0.212758
+-0.712035
+0.27829
+-0.0631285
+780
+NC_022640
+Changuinola virus
+1977
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.846029
+-0.301076
+-0.725184
+0.228086
+-0.0695798
+781
+NC_022641
+Changuinola virus
+1653
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.941499
+-0.3271
+-0.697002
+0.239675
+-0.044678
+782
+NC_022642
+Changuinola virus
+910
+{root  Viruses  dsRNA viruses  Reoviridae  Sedoreovirinae  Orbivirus}
+-0.568141
+-0.33869
+-0.700141
+0.211579
+-0.0767313
+783
+NC_023420
+Cimodo virus
+4080
+{root  Viruses  dsRNA viruses  Reoviridae  unclassified Reoviridae}
+-0.52625
+-0.232949
+-0.785438
+0.222008
+-0.063484
+784
+NC_023486
+Inachis io cypovirus 2
+3649
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.539214
+-0.172785
+-0.737927
+0.267748
+-0.0986998
+785
+NC_023487
+Inachis io cypovirus 2
+3286
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.731999
+-0.205277
+-0.749007
+0.25375
+-0.0693389
+786
+NC_023488
+Inachis io cypovirus 2
+2006
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.817068
+-0.311114
+-0.666568
+0.247118
+-0.0471893
+787
+NC_023489
+Inachis io cypovirus 2
+1746
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.843965
+-0.32375
+-0.700666
+0.237419
+-0.0511625
+788
+NC_023490
+Inachis io cypovirus 2
+1504
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.513621
+-0.258948
+-0.769432
+0.245452
+-0.0506551
+789
+NC_023491
+Inachis io cypovirus 2
+3737
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.602352
+-0.331084
+-0.729441
+0.231066
+-0.0709117
+790
+NC_023492
+Inachis io cypovirus 2
+3503
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.790462
+-0.322309
+-0.649798
+0.238348
+-0.0786614
+791
+NC_023493
+Inachis io cypovirus 2
+1841
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.810291
+-0.271078
+-0.688223
+0.255863
+-0.0592929
+792
+NC_023494
+Inachis io cypovirus 2
+1584
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+-0.867898
+-0.312551
+-0.570611
+0.242116
+-0.0422592
+793
+NC_023495
+Inachis io cypovirus 2
+1185
+{root  Viruses  dsRNA viruses  Reoviridae  Spinareovirinae  Cypovirus}
+0.846171
+-0.714235
+-0.562862
+0.301306
+-0.00822382
+183
+NC_006633
+Cotesia congregata bracovirus
+27346
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.567933
+-0.535703
+-0.612374
+0.281934
+-0.0251763
+184
+NC_006634
+Cotesia congregata bracovirus
+14975
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.93291
+-0.855918
+-0.51449
+0.313945
+-0.00300117
+185
+NC_006635
+Cotesia congregata bracovirus
+29874
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.795449
+-0.399066
+-0.616987
+0.293879
+-0.0187244
+186
+NC_006636
+Cotesia congregata bracovirus
+15876
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.645833
+-0.447312
+-0.574257
+0.272943
+-0.040066
+187
+NC_006637
+Cotesia congregata bracovirus
+14489
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.536986
+-0.565437
+-0.555066
+0.287188
+-0.0202853
+188
+NC_006638
+Cotesia congregata bracovirus
+15230
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.934548
+-0.722221
+-0.634828
+0.311289
+-0.0167208
+189
+NC_006639
+Cotesia congregata bracovirus
+24748
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+-0.105513
+0.0256315
+-0.652464
+0.248029
+-0.0401883
+190
+NC_006640
+Cotesia congregata bracovirus
+5032
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.565752
+-0.596511
+-0.535246
+0.272293
+-0.0215939
+191
+NC_006641
+Cotesia congregata bracovirus
+15959
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.548332
+-0.531902
+-0.610155
+0.279929
+-0.0321136
+192
+NC_006642
+Cotesia congregata bracovirus
+14286
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.409549
+-0.298662
+-0.560369
+0.265834
+-0.0447772
+193
+NC_006643
+Cotesia congregata bracovirus
+12903
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.771585
+-0.489015
+-0.593825
+0.283663
+-0.0306692
+194
+NC_006644
+Cotesia congregata bracovirus
+16103
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.887979
+-0.669599
+-0.589548
+0.339633
+-0.0044413
+195
+NC_006645
+Cotesia congregata bracovirus
+21388
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.992242
+-0.840101
+-0.561107
+0.333732
+-0.00403337
+196
+NC_006646
+Cotesia congregata bracovirus
+31972
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.240487
+-0.254812
+-0.608363
+0.250485
+-0.0490894
+197
+NC_006647
+Cotesia congregata bracovirus
+8785
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.692244
+-0.522618
+-0.559115
+0.290761
+-0.0159614
+198
+NC_006648
+Cotesia congregata bracovirus
+15158
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.958001
+-0.885321
+-0.547013
+0.336964
+0.00245475
+199
+NC_006649
+Cotesia congregata bracovirus
+32108
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.563579
+-0.363669
+-0.608566
+0.261879
+-0.0212786
+200
+NC_006650
+Cotesia congregata bracovirus
+18768
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.758383
+-0.62891
+-0.595572
+0.30952
+-0.0179896
+201
+NC_006651
+Cotesia congregata bracovirus
+19161
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+-0.0415158
+0.0870309
+-0.607535
+0.210553
+-0.0384739
+202
+NC_006652
+Cotesia congregata bracovirus
+4981
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.970126
+-0.682235
+-0.591105
+0.332157
+-0.00453261
+203
+NC_006653
+Cotesia congregata bracovirus
+26062
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.509446
+-0.56203
+-0.602985
+0.273177
+-0.0382867
+204
+NC_006654
+Cotesia congregata bracovirus
+13597
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.548432
+-0.56983
+-0.60533
+0.290288
+-0.0249548
+205
+NC_006655
+Cotesia congregata bracovirus
+15279
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.372671
+-0.466826
+-0.542362
+0.264814
+-0.0296995
+206
+NC_006656
+Cotesia congregata bracovirus
+12682
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.805637
+-0.656861
+-0.605489
+0.299333
+-0.011096
+207
+NC_006657
+Cotesia congregata bracovirus
+19820
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.721076
+-0.907714
+-0.500964
+0.306083
+-0.0123462
+208
+NC_006658
+Cotesia congregata bracovirus
+30655
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+1.
+-1.
+-0.526938
+0.336368
+0.00315639
+209
+NC_006659
+Cotesia congregata bracovirus
+41573
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.859667
+-0.694779
+-0.59605
+0.310518
+0.00300988
+210
+NC_006660
+Cotesia congregata bracovirus
+20197
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.434077
+-0.348547
+-0.539088
+0.219778
+-0.0331764
+211
+NC_006661
+Cotesia congregata bracovirus
+11186
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.809221
+-0.511412
+-0.612531
+0.313215
+-0.0256184
+212
+NC_006662
+Cotesia congregata bracovirus
+17477
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+-0.285774
+-0.0710556
+-0.632845
+0.218207
+-0.0467652
+213
+NC_007028
+Microplitis demolitor bracovirus (MdBV)
+3611
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.058702
+-0.143087
+-0.608258
+0.221269
+-0.0371615
+214
+NC_007029
+Microplitis demolitor bracovirus (MdBV)
+6307
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+-0.160136
+-0.0937301
+-0.653374
+0.255781
+-0.0762122
+215
+NC_007030
+Microplitis demolitor bracovirus (MdBV)
+4576
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.0203171
+-0.306909
+-0.639349
+0.241372
+-0.0554358
+216
+NC_007031
+Microplitis demolitor bracovirus (MdBV)
+7228
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.241402
+-0.407408
+-0.577461
+0.224427
+-0.0267871
+217
+NC_007032
+Microplitis demolitor bracovirus (MdBV)
+9604
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.207216
+-0.255694
+-0.582759
+0.253117
+-0.0698516
+218
+NC_007033
+Microplitis demolitor bracovirus (MdBV)
+7823
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.332883
+-0.404862
+-0.582569
+0.250838
+-0.0418462
+219
+NC_007034
+Microplitis demolitor bracovirus (MdBV)
+10790
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.361265
+-0.344877
+-0.629027
+0.240776
+-0.0492859
+220
+NC_007035
+Microplitis demolitor bracovirus (MdBV)
+11238
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.43628
+-0.557325
+-0.551569
+0.251441
+-0.0510358
+221
+NC_007036
+Microplitis demolitor bracovirus (MdBV)
+13704
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.613661
+-0.555944
+-0.598249
+0.289163
+-0.0241362
+222
+NC_007037
+Microplitis demolitor bracovirus (MdBV)
+15058
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.61973
+-0.500542
+-0.590453
+0.285725
+-0.0300048
+223
+NC_007038
+Microplitis demolitor bracovirus (MdBV)
+15218
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.621521
+-0.628678
+-0.501679
+0.271105
+-0.0248699
+224
+NC_007039
+Microplitis demolitor bracovirus (MdBV)
+17355
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.611466
+-0.533928
+-0.585771
+0.284088
+-0.0316723
+225
+NC_007040
+Microplitis demolitor bracovirus (MdBV)
+15096
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.458411
+-0.485368
+-0.564272
+0.263736
+-0.00935995
+226
+NC_007041
+Microplitis demolitor bracovirus
+13279
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.539883
+-0.424389
+-0.590031
+0.282564
+-0.0386828
+227
+NC_007044
+Microplitis demolitor bracovirus
+34334
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Bracovirus}
+0.0154249
+-0.643021
+-0.501342
+0.224972
+-0.0478513
+334
+NC_007985
+Campoletis sonorensis ichnovirus (CsIV)
+12098
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.294626
+-0.48167
+-0.459809
+0.200094
+-0.0599206
+335
+NC_007986
+Campoletis sonorensis ichnovirus (CsIV)
+7276
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.33688
+-0.515386
+-0.507698
+0.200033
+-0.0857577
+336
+NC_007987
+Campoletis sonorensis ichnovirus (CsIV)
+6567
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.256347
+-0.476711
+-0.514764
+0.189179
+-0.0783576
+337
+NC_007988
+Campoletis sonorensis ichnovirus (CsIV)
+7760
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.126911
+-0.498783
+-0.483759
+0.217369
+-0.0771944
+338
+NC_007989
+Campoletis sonorensis ichnovirus (CsIV)
+8284
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.200675
+-0.487773
+-0.529991
+0.19907
+-0.0589135
+339
+NC_007990
+Campoletis sonorensis ichnovirus (CsIV)
+8171
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.24726
+-0.528309
+-0.427192
+0.195284
+-0.0763286
+340
+NC_007991
+Campoletis sonorensis ichnovirus (CsIV)
+8315
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.166361
+-0.46551
+-0.515266
+0.193417
+-0.0609358
+341
+NC_007992
+Campoletis sonorensis ichnovirus (CsIV)
+8600
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.11854
+-0.513902
+-0.514274
+0.204037
+-0.0687287
+342
+NC_007993
+Campoletis sonorensis ichnovirus (CsIV)
+9155
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.0984564
+-0.521499
+-0.52117
+0.216371
+-0.0629024
+343
+NC_007994
+Campoletis sonorensis ichnovirus (CsIV)
+9391
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.110169
+-0.549807
+-0.424073
+0.206582
+-0.0467919
+344
+NC_007995
+Campoletis sonorensis ichnovirus (CsIV)
+8864
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.107758
+-0.585689
+-0.481835
+0.206592
+-0.0429492
+345
+NC_007996
+Campoletis sonorensis ichnovirus (CsIV)
+10223
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.223269
+-0.655979
+-0.129203
+-1.
+-0.999753
+346
+NC_007997
+Campoletis sonorensis ichnovirus (CsIV)
+6138
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.151113
+-0.563754
+-0.47553
+0.2163
+-0.0547057
+347
+NC_007998
+Campoletis sonorensis ichnovirus (CsIV)
+11285
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+0.0571491
+-0.588695
+-0.45186
+0.203091
+-0.0664197
+348
+NC_007999
+Campoletis sonorensis ichnovirus (CsIV)
+11841
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+0.0909535
+-0.620123
+-0.513211
+0.231288
+-0.0384678
+349
+NC_008000
+Campoletis sonorensis ichnovirus (CsIV)
+14531
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+0.129617
+-0.605432
+-0.456165
+0.181569
+-0.0778264
+350
+NC_008001
+Campoletis sonorensis ichnovirus (CsIV)
+14825
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+0.295122
+-0.796939
+-0.436922
+0.234154
+-0.0401876
+351
+NC_008002
+Campoletis sonorensis ichnovirus (CsIV)
+19557
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+0.0455689
+-0.523083
+-0.487993
+0.20425
+-0.0590815
+352
+NC_008003
+Campoletis sonorensis ichnovirus (CsIV)
+15510
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.164987
+-0.445713
+-0.505388
+0.240475
+-0.0766839
+353
+NC_008004
+Campoletis sonorensis ichnovirus (CsIV)
+7887
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.223213
+-0.663084
+-0.130854
+-0.99989
+-1.
+354
+NC_008005
+Campoletis sonorensis ichnovirus (CsIV)
+6283
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.0320531
+-0.558838
+-0.474926
+0.222254
+-0.0592891
+355
+NC_008006
+Campoletis sonorensis ichnovirus (CsIV)
+10757
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+0.131029
+-0.72601
+-0.458367
+0.231753
+-0.0503038
+356
+NC_008007
+Campoletis sonorensis ichnovirus (CsIV)
+15812
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.189576
+-0.417555
+-0.495799
+0.215561
+-0.048028
+357
+NC_008008
+Campoletis sonorensis ichnovirus (CsIV)
+7604
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.732642
+-0.0161638
+-0.422086
+0.162767
+0.000652558
+379
+NC_008837
+Glypta fumiferanae ichnovirus
+1533
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.744811
+0.0359697
+-0.233863
+0.301405
+-0.100797
+380
+NC_008838
+Glypta fumiferanae ichnovirus
+1657
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.704551
+-0.0306187
+-0.442939
+0.156042
+0.019407
+381
+NC_008839
+Glypta fumiferanae ichnovirus
+1750
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.768602
+-0.156355
+-0.324517
+0.254485
+-0.0518714
+382
+NC_008840
+Glypta fumiferanae ichnovirus
+1859
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.677696
+-0.0232855
+-0.428319
+0.182985
+-0.00694171
+383
+NC_008841
+Glypta fumiferanae ichnovirus
+1916
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.728181
+-0.217357
+-0.504233
+0.232418
+-0.0514982
+384
+NC_008842
+Glypta fumiferanae ichnovirus
+1940
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.714301
+-0.0672685
+-0.472612
+0.162929
+0.00907926
+385
+NC_008843
+Glypta fumiferanae ichnovirus
+1945
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.611185
+0.15269
+-0.243057
+0.276199
+-0.0665282
+386
+NC_008844
+Glypta fumiferanae ichnovirus
+1948
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.666847
+0.0285517
+-0.417267
+0.152205
+0.0144666
+387
+NC_008845
+Glypta fumiferanae ichnovirus
+1963
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.713412
+-0.0811325
+-0.446931
+0.255433
+-0.0736509
+388
+NC_008846
+Glypta fumiferanae ichnovirus
+1963
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.617579
+0.0523922
+-0.331723
+0.233921
+-0.0460724
+389
+NC_008847
+Glypta fumiferanae ichnovirus
+2005
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.652757
+0.0248248
+-0.364315
+0.24493
+-0.0747102
+390
+NC_008848
+Glypta fumiferanae ichnovirus
+2066
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.613103
+0.0288256
+-0.320508
+0.279827
+-0.0746997
+391
+NC_008849
+Glypta fumiferanae ichnovirus
+2074
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.644742
+0.00978779
+-0.287876
+0.293907
+-0.0759204
+392
+NC_008850
+Glypta fumiferanae ichnovirus
+2079
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.609083
+0.142953
+-0.149752
+0.261306
+-0.0604021
+393
+NC_008851
+Glypta fumiferanae ichnovirus
+2080
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.627215
+0.00801098
+-0.444031
+0.125996
+0.0573223
+394
+NC_008852
+Glypta fumiferanae ichnovirus
+2094
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.674078
+0.0531238
+-0.363607
+0.115417
+0.0495687
+395
+NC_008853
+Glypta fumiferanae ichnovirus
+2135
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.629628
+0.0534759
+-0.286036
+0.283139
+-0.0843488
+396
+NC_008854
+Glypta fumiferanae ichnovirus
+2177
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.503759
+0.985645
+0.997326
+1.
+-0.487124
+397
+NC_008855
+Glypta fumiferanae ichnovirus
+2179
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.600043
+0.0753182
+-0.368345
+0.265381
+-0.0637622
+398
+NC_008856
+Glypta fumiferanae ichnovirus
+2195
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.56646
+0.152714
+-0.250231
+0.288545
+-0.0764194
+399
+NC_008857
+Glypta fumiferanae ichnovirus
+2199
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.644775
+-0.0121921
+-0.45743
+0.141173
+0.0145416
+400
+NC_008858
+Glypta fumiferanae ichnovirus
+2235
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.539762
+0.0865761
+-0.475413
+0.153343
+-0.0109837
+401
+NC_008859
+Glypta fumiferanae ichnovirus
+2262
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.649908
+0.0114981
+-0.342469
+0.283148
+-0.0856092
+402
+NC_008860
+Glypta fumiferanae ichnovirus
+2285
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.613771
+-0.00137923
+-0.40402
+0.196882
+0.01241
+403
+NC_008861
+Glypta fumiferanae ichnovirus
+2295
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.636508
+-0.128566
+-0.523165
+0.220508
+-0.0629244
+404
+NC_008862
+Glypta fumiferanae ichnovirus
+2298
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.648005
+0.0552816
+-0.417649
+0.123207
+0.0484361
+405
+NC_008863
+Glypta fumiferanae ichnovirus
+2318
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.654619
+-0.0854743
+-0.491042
+0.174441
+0.0118716
+406
+NC_008864
+Glypta fumiferanae ichnovirus
+2341
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.519795
+0.0786806
+-0.337997
+0.0638034
+0.0982338
+407
+NC_008865
+Glypta fumiferanae ichnovirus
+2358
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.64953
+0.00458958
+-0.388905
+0.165999
+0.0191205
+408
+NC_008866
+Glypta fumiferanae ichnovirus
+2358
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.562755
+0.0991878
+-0.259495
+0.243469
+-0.0875196
+409
+NC_008867
+Glypta fumiferanae ichnovirus
+2380
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.573964
+-0.0159325
+-0.500924
+0.190753
+-0.00257359
+410
+NC_008868
+Glypta fumiferanae ichnovirus
+2395
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.577356
+0.0197245
+-0.398977
+0.124215
+0.0297819
+411
+NC_008869
+Glypta fumiferanae ichnovirus
+2408
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.635943
+0.0613557
+-0.214471
+0.289878
+-0.0952078
+412
+NC_008870
+Glypta fumiferanae ichnovirus
+2415
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.610161
+-0.138121
+-0.492604
+0.237758
+-0.0345092
+413
+NC_008871
+Glypta fumiferanae ichnovirus
+2452
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.586344
+0.0416001
+-0.36624
+0.268734
+-0.0750737
+414
+NC_008872
+Glypta fumiferanae ichnovirus
+2454
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.553518
+-0.14788
+-0.508185
+0.2288
+-0.0510161
+415
+NC_008873
+Glypta fumiferanae ichnovirus
+2462
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.537543
+0.105428
+-0.337093
+0.165713
+0.00783831
+416
+NC_008874
+Glypta fumiferanae ichnovirus
+2509
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.571974
+0.0589322
+-0.306804
+0.254311
+-0.0575442
+417
+NC_008875
+Glypta fumiferanae ichnovirus
+2540
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.611974
+-0.115799
+-0.347661
+0.188753
+-0.0140803
+418
+NC_008876
+Glypta fumiferanae ichnovirus
+2548
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.442157
+1.
+1.
+0.991167
+-0.48264
+419
+NC_008877
+Glypta fumiferanae ichnovirus
+2572
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.630115
+-0.0950647
+-0.421255
+0.14555
+0.0243726
+420
+NC_008878
+Glypta fumiferanae ichnovirus
+2579
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.439889
+0.195888
+-0.34422
+0.288269
+-0.110079
+421
+NC_008879
+Glypta fumiferanae ichnovirus
+2590
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.57224
+0.0582178
+-0.267413
+0.276613
+-0.0712704
+422
+NC_008880
+Glypta fumiferanae ichnovirus
+2598
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.543113
+0.0976439
+-0.381667
+0.311349
+-0.101779
+423
+NC_008881
+Glypta fumiferanae ichnovirus
+2615
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.521497
+0.104731
+-0.236076
+0.239933
+-0.0438328
+424
+NC_008882
+Glypta fumiferanae ichnovirus
+2625
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.554924
+-0.0375854
+-0.442007
+0.161769
+0.0138284
+425
+NC_008883
+Glypta fumiferanae ichnovirus
+2631
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.617903
+-0.0459007
+-0.322123
+0.249411
+-0.0613816
+426
+NC_008884
+Glypta fumiferanae ichnovirus
+2636
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.599123
+-0.0671748
+-0.406912
+0.245861
+-0.0641347
+427
+NC_008885
+Glypta fumiferanae ichnovirus
+2641
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.469406
+0.142876
+-0.327074
+0.277899
+-0.0828583
+428
+NC_008886
+Glypta fumiferanae ichnovirus
+2646
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.60055
+0.0435345
+-0.351901
+0.13152
+0.0530777
+429
+NC_008887
+Glypta fumiferanae ichnovirus
+2723
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.513722
+0.0491833
+-0.453893
+0.232133
+-0.0480893
+430
+NC_008888
+Glypta fumiferanae ichnovirus
+2723
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.417589
+0.305129
+-0.134995
+0.337381
+-0.0979201
+431
+NC_008889
+Glypta fumiferanae ichnovirus
+2738
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.535809
+-0.0178046
+-0.489845
+0.169278
+-0.0088102
+432
+NC_008890
+Glypta fumiferanae ichnovirus
+2768
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.489781
+0.0886745
+-0.404763
+0.158672
+0.0149679
+433
+NC_008891
+Glypta fumiferanae ichnovirus
+2775
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.533109
+-0.00403538
+-0.340208
+0.260368
+-0.070075
+434
+NC_008892
+Glypta fumiferanae ichnovirus
+2785
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.405825
+0.0665604
+-0.491647
+0.132171
+0.00342243
+435
+NC_008893
+Glypta fumiferanae ichnovirus
+2808
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.435457
+0.122376
+-0.239938
+0.259478
+-0.0827096
+436
+NC_008894
+Glypta fumiferanae ichnovirus
+2819
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.586901
+-0.154563
+-0.399927
+0.198936
+-0.0312199
+437
+NC_008895
+Glypta fumiferanae ichnovirus
+2854
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.488078
+0.0484412
+-0.490292
+0.192009
+-0.00260085
+438
+NC_008896
+Glypta fumiferanae ichnovirus
+2856
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.497884
+0.0330415
+-0.388096
+0.158999
+0.0148378
+439
+NC_008897
+Glypta fumiferanae ichnovirus
+2871
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.505781
+0.0476783
+-0.397588
+0.177225
+-0.0171832
+440
+NC_008898
+Glypta fumiferanae ichnovirus
+2875
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.465589
+0.00776988
+-0.446164
+0.210631
+-0.0321422
+441
+NC_008899
+Glypta fumiferanae ichnovirus
+2879
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.596179
+-0.0807954
+-0.338036
+0.260347
+-0.0730272
+442
+NC_008900
+Glypta fumiferanae ichnovirus
+2924
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.511836
+-0.0506197
+-0.416549
+0.114904
+0.0116657
+443
+NC_008901
+Glypta fumiferanae ichnovirus
+2930
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.510671
+-0.0244993
+-0.467225
+0.165242
+-0.00231243
+444
+NC_008902
+Glypta fumiferanae ichnovirus
+2933
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.51417
+-0.0368751
+-0.467487
+0.158275
+-0.00517763
+445
+NC_008903
+Glypta fumiferanae ichnovirus
+2934
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.362218
+0.322338
+-0.151104
+0.360994
+-0.104573
+446
+NC_008904
+Glypta fumiferanae ichnovirus
+2944
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.415417
+0.209814
+-0.280011
+0.290059
+-0.0645455
+447
+NC_008905
+Glypta fumiferanae ichnovirus
+2997
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.416923
+0.211953
+-0.228621
+0.302
+-0.104598
+448
+NC_008906
+Glypta fumiferanae ichnovirus
+3036
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.463282
+-0.0953564
+-0.562875
+0.21728
+-0.0413865
+449
+NC_008907
+Glypta fumiferanae ichnovirus
+3058
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.428849
+0.168859
+-0.246406
+0.340874
+-0.112933
+450
+NC_008908
+Glypta fumiferanae ichnovirus
+3083
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.393287
+0.169701
+-0.369802
+-0.0377291
+0.270403
+451
+NC_008909
+Glypta fumiferanae ichnovirus
+3111
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.358723
+0.224567
+-0.258362
+0.284794
+-0.0958759
+452
+NC_008910
+Glypta fumiferanae ichnovirus
+3117
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.381304
+0.143919
+-0.279818
+0.251513
+-0.0939711
+453
+NC_008911
+Glypta fumiferanae ichnovirus
+3130
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.417587
+0.201759
+-0.401574
+0.166753
+0.029193
+454
+NC_008912
+Glypta fumiferanae ichnovirus
+3141
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.402019
+0.161151
+-0.388825
+0.151116
+0.00811863
+455
+NC_008913
+Glypta fumiferanae ichnovirus
+3157
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.475705
+0.0536442
+-0.333686
+0.262289
+-0.0878149
+456
+NC_008914
+Glypta fumiferanae ichnovirus
+3243
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.374888
+0.274689
+-0.207689
+0.346877
+-0.126594
+457
+NC_008915
+Glypta fumiferanae ichnovirus
+3307
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.341424
+0.236567
+-0.351168
+0.280599
+-0.050421
+458
+NC_008916
+Glypta fumiferanae ichnovirus
+3331
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.349069
+0.180646
+-0.394509
+0.237348
+-0.0687276
+459
+NC_008917
+Glypta fumiferanae ichnovirus
+3343
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.389299
+0.0153879
+-0.37185
+0.249987
+-0.054337
+460
+NC_008918
+Glypta fumiferanae ichnovirus
+3357
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.395282
+0.17367
+-0.30621
+0.272958
+-0.07333
+461
+NC_008919
+Glypta fumiferanae ichnovirus
+3391
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.386423
+0.0221183
+-0.370338
+0.16742
+-0.0114025
+462
+NC_008920
+Glypta fumiferanae ichnovirus
+3403
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.387668
+0.0467695
+-0.46748
+0.157893
+0.00887098
+463
+NC_008921
+Glypta fumiferanae ichnovirus
+3498
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.294047
+0.482985
+-0.368411
+-0.556999
+0.993829
+464
+NC_008922
+Glypta fumiferanae ichnovirus
+3519
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.363169
+0.0273383
+-0.666198
+0.15676
+-0.0590812
+465
+NC_008923
+Glypta fumiferanae ichnovirus
+3743
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.37788
+-0.0454291
+-0.42717
+0.253002
+-0.0661585
+466
+NC_008924
+Glypta fumiferanae ichnovirus
+3761
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.385564
+-0.129207
+-0.520508
+0.222426
+-0.040951
+467
+NC_008925
+Glypta fumiferanae ichnovirus
+3821
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.215697
+0.537675
+-0.678847
+-0.901608
+-0.216382
+468
+NC_008926
+Glypta fumiferanae ichnovirus
+4059
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.26833
+0.00245913
+-0.381573
+0.233752
+-0.0648325
+469
+NC_008927
+Glypta fumiferanae ichnovirus
+4066
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.296217
+-0.0168488
+-0.300942
+0.234575
+-0.0566386
+470
+NC_008928
+Glypta fumiferanae ichnovirus
+4340
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.277655
+-0.062687
+-0.481376
+0.188152
+-0.0321135
+471
+NC_008929
+Glypta fumiferanae ichnovirus
+4707
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.287865
+0.0116513
+-0.356995
+0.261441
+-0.0745465
+472
+NC_008930
+Glypta fumiferanae ichnovirus
+4829
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.105003
+0.135159
+-0.290563
+0.244401
+-0.0981932
+473
+NC_008931
+Glypta fumiferanae ichnovirus
+4886
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.212003
+0.0330554
+-0.323125
+0.245863
+-0.0632963
+474
+NC_008932
+Glypta fumiferanae ichnovirus
+5156
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.653546
+0.111378
+-0.157997
+0.282608
+-0.0712343
+475
+NC_008933
+Glypta fumiferanae ichnovirus
+2060
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.595462
+0.153125
+-0.240166
+0.317587
+-0.115013
+476
+NC_008934
+Glypta fumiferanae ichnovirus
+2309
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.504195
+0.152571
+-0.305073
+0.279728
+-0.0968498
+477
+NC_008935
+Glypta fumiferanae ichnovirus
+2502
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.596582
+0.062868
+-0.254156
+0.246047
+-0.0749198
+478
+NC_008936
+Glypta fumiferanae ichnovirus
+2588
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.489577
+0.102651
+-0.341937
+0.295281
+-0.0828202
+479
+NC_008937
+Glypta fumiferanae ichnovirus
+2759
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.37599
+0.510114
+-0.370061
+-0.556855
+1.
+480
+NC_008938
+Glypta fumiferanae ichnovirus
+2840
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.45227
+0.172875
+-0.249648
+0.305896
+-0.0766666
+481
+NC_008939
+Glypta fumiferanae ichnovirus
+3008
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.490174
+-0.0205916
+-0.389036
+0.104208
+0.0129296
+482
+NC_008940
+Glypta fumiferanae ichnovirus
+3140
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.167541
+0.550276
+-0.673392
+-0.90682
+-0.213248
+483
+NC_008941
+Glypta fumiferanae ichnovirus
+4459
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.495366
+-0.386658
+-0.471985
+0.191628
+-0.0613375
+484
+NC_008946
+Hyposoter fugitivus ichnovirus (HfIV)
+4692
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.666372
+-0.339159
+-0.463474
+0.19925
+-0.0484697
+485
+NC_008947
+Hyposoter fugitivus ichnovirus (HfIV)
+2755
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.589394
+-0.443263
+-0.501421
+0.206389
+-0.0657966
+486
+NC_008948
+Hyposoter fugitivus ichnovirus (HfIV)
+4442
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.518148
+-0.271186
+-0.5093
+0.200961
+-0.0670924
+487
+NC_008949
+Hyposoter fugitivus ichnovirus (HfIV)
+3510
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.415276
+-0.445689
+-0.517413
+0.191022
+-0.0705471
+488
+NC_008950
+Hyposoter fugitivus ichnovirus (HfIV)
+5254
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.596577
+-0.362739
+-0.438632
+0.230468
+-0.0817693
+489
+NC_008951
+Hyposoter fugitivus ichnovirus (HfIV)
+3590
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.507111
+-0.370269
+-0.474859
+0.217612
+-0.0573012
+490
+NC_008952
+Hyposoter fugitivus ichnovirus (HfIV)
+4063
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.606515
+-0.418697
+-0.483986
+0.209359
+-0.068509
+491
+NC_008953
+Hyposoter fugitivus ichnovirus (HfIV)
+3935
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.528159
+-0.417961
+-0.474608
+0.196082
+-0.0600426
+492
+NC_008954
+Hyposoter fugitivus ichnovirus (HfIV)
+4351
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.628044
+-0.385132
+-0.563527
+0.184546
+-0.0709843
+493
+NC_008955
+Hyposoter fugitivus ichnovirus (HfIV)
+3548
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.661201
+-0.358926
+-0.557419
+0.209512
+-0.0569791
+494
+NC_008956
+Hyposoter fugitivus ichnovirus (HfIV)
+3153
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.678551
+-0.339192
+-0.502977
+0.20501
+-0.0697884
+495
+NC_008957
+Hyposoter fugitivus ichnovirus (HfIV)
+2851
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.695597
+-0.385206
+-0.465562
+0.227173
+-0.0598638
+496
+NC_008958
+Hyposoter fugitivus ichnovirus (HfIV)
+2857
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.653912
+-0.359897
+-0.592534
+0.218117
+-0.0569638
+497
+NC_008959
+Hyposoter fugitivus ichnovirus (HfIV)
+3213
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.680152
+-0.399371
+-0.513053
+0.198638
+-0.083011
+498
+NC_008960
+Hyposoter fugitivus ichnovirus (HfIV)
+3225
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.663935
+-0.367373
+-0.44507
+0.222922
+-0.0465637
+499
+NC_008961
+Hyposoter fugitivus ichnovirus (HfIV)
+3293
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.640929
+-0.4028
+-0.498636
+0.201452
+-0.0576039
+500
+NC_008962
+Hyposoter fugitivus ichnovirus (HfIV)
+3385
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.614598
+-0.372698
+-0.470103
+0.215485
+-0.0580476
+501
+NC_008963
+Hyposoter fugitivus ichnovirus (HfIV)
+3573
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.645544
+-0.437864
+-0.491866
+0.205728
+-0.0683036
+502
+NC_008964
+Hyposoter fugitivus ichnovirus (HfIV)
+3573
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.603253
+-0.381661
+-0.512099
+0.216499
+-0.0574727
+503
+NC_008965
+Hyposoter fugitivus ichnovirus (HfIV)
+3591
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.660679
+-0.43123
+-0.458234
+0.218599
+-0.05375
+504
+NC_008966
+Hyposoter fugitivus ichnovirus (HfIV)
+3638
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.569954
+-0.376718
+-0.467988
+0.181204
+-0.0504796
+505
+NC_008967
+Hyposoter fugitivus ichnovirus (HfIV)
+3841
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.609154
+-0.398707
+-0.467695
+0.2153
+-0.0466882
+506
+NC_008968
+Hyposoter fugitivus ichnovirus (HfIV)
+3868
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.49704
+-0.332277
+-0.4843
+0.193042
+-0.0736041
+507
+NC_008969
+Hyposoter fugitivus ichnovirus (HfIV)
+3957
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.541341
+-0.357325
+-0.489176
+0.215929
+-0.0664691
+508
+NC_008970
+Hyposoter fugitivus ichnovirus (HfIV)
+4006
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.607823
+-0.423933
+-0.487156
+0.196364
+-0.0686414
+509
+NC_008971
+Hyposoter fugitivus ichnovirus (HfIV)
+4126
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.526316
+-0.392482
+-0.537357
+0.188512
+-0.0692549
+510
+NC_008972
+Hyposoter fugitivus ichnovirus (HfIV)
+4144
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.5389
+-0.395001
+-0.477848
+0.208094
+-0.0564834
+511
+NC_008973
+Hyposoter fugitivus ichnovirus (HfIV)
+4180
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.587015
+-0.364801
+-0.510346
+0.219567
+-0.0662095
+512
+NC_008976
+Hyposoter fugitivus ichnovirus (HfIV)
+4188
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.48339
+-0.337373
+-0.479965
+0.209674
+-0.0938631
+513
+NC_008977
+Hyposoter fugitivus ichnovirus (HfIV)
+4225
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.599924
+-0.434339
+-0.467702
+0.2179
+-0.0675545
+514
+NC_008978
+Hyposoter fugitivus ichnovirus (HfIV)
+4247
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.593869
+-0.42769
+-0.450901
+0.183449
+-0.05803
+515
+NC_008979
+Hyposoter fugitivus ichnovirus (HfIV)
+4264
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.443089
+-0.32601
+-0.480607
+0.197228
+-0.0816187
+516
+NC_008980
+Hyposoter fugitivus ichnovirus (HfIV)
+4367
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.470296
+-0.371378
+-0.449659
+0.194651
+-0.0519951
+517
+NC_008981
+Hyposoter fugitivus ichnovirus (HfIV)
+4495
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.504156
+-0.378101
+-0.514729
+0.215625
+-0.0713409
+518
+NC_008982
+Hyposoter fugitivus ichnovirus (HfIV)
+4562
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.552374
+-0.379572
+-0.426612
+0.191538
+-0.0755679
+519
+NC_008983
+Hyposoter fugitivus ichnovirus (HfIV)
+4720
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.529453
+-0.460561
+-0.470759
+0.216298
+-0.0709788
+520
+NC_008984
+Hyposoter fugitivus ichnovirus (HfIV)
+4729
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.499257
+-0.473465
+-0.463305
+0.199914
+-0.0534594
+521
+NC_008985
+Hyposoter fugitivus ichnovirus (HfIV)
+4914
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.497141
+-0.46496
+-0.512236
+0.195844
+-0.0708043
+522
+NC_008986
+Hyposoter fugitivus ichnovirus (HfIV)
+5047
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.452601
+-0.402637
+-0.487259
+0.213717
+-0.0622867
+523
+NC_008987
+Hyposoter fugitivus ichnovirus (HfIV)
+5050
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.481441
+-0.483417
+-0.509236
+0.19174
+-0.0654628
+524
+NC_008988
+Hyposoter fugitivus ichnovirus (HfIV)
+5070
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.434404
+-0.387502
+-0.452432
+0.198722
+-0.042718
+525
+NC_008989
+Hyposoter fugitivus ichnovirus (HfIV)
+5108
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.446597
+-0.422733
+-0.433751
+0.201423
+-0.0621477
+526
+NC_008990
+Hyposoter fugitivus ichnovirus (HfIV)
+5298
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.462157
+-0.472149
+-0.499081
+0.189853
+-0.0404683
+527
+NC_008991
+Hyposoter fugitivus ichnovirus (HfIV)
+5328
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.53364
+-0.464622
+-0.511954
+0.180029
+-0.060247
+528
+NC_008992
+Hyposoter fugitivus ichnovirus (HfIV)
+5353
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.4526
+-0.431512
+-0.532345
+0.187696
+-0.0581127
+529
+NC_008993
+Hyposoter fugitivus ichnovirus (HfIV)
+5530
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.422295
+-0.470272
+-0.484618
+0.188575
+-0.0565025
+530
+NC_008994
+Hyposoter fugitivus ichnovirus (HfIV)
+5579
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.375525
+-0.442781
+-0.480136
+0.195453
+-0.0792788
+531
+NC_008995
+Hyposoter fugitivus ichnovirus (HfIV)
+5848
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.410201
+-0.362488
+-0.504811
+0.208067
+-0.0803451
+532
+NC_008996
+Hyposoter fugitivus ichnovirus (HfIV)
+5404
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.419008
+-0.475573
+-0.478867
+0.17009
+-0.0716318
+533
+NC_008997
+Hyposoter fugitivus ichnovirus (HfIV)
+6654
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.207774
+-0.526983
+-0.49279
+0.203186
+-0.0541463
+534
+NC_008998
+Hyposoter fugitivus ichnovirus (HfIV)
+8851
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.668253
+-0.38936
+-0.47246
+0.207988
+-0.0566072
+535
+NC_008999
+Hyposoter fugitivus ichnovirus (HfIV)
+3402
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.545424
+-0.327905
+-0.499643
+0.218865
+-0.0496195
+536
+NC_009000
+Hyposoter fugitivus ichnovirus (HfIV)
+3831
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.541627
+-0.462137
+-0.480822
+0.196381
+-0.0456802
+537
+NC_009001
+Hyposoter fugitivus ichnovirus (HfIV)
+4461
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.477286
+-0.407315
+-0.45595
+0.183219
+-0.0665174
+538
+NC_009002
+Hyposoter fugitivus ichnovirus (HfIV)
+4808
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
+-0.437884
+-0.490694
+-0.538849
+0.206441
+-0.0664743
+539
+NC_009003
+Hyposoter fugitivus ichnovirus (HfIV)
+6145
+{root  Viruses  dsDNA viruses no RNA stage  Polydnaviridae  Ichnovirus}
