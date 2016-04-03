@@ -267,17 +267,17 @@
 				//DEBUGING FOR PRINTING dMatrix
 				if(noMDS){
 					if(dbg){console.log(distMatrix);}
-					var toprint="[";
+					var toprint="{";
 					for(var i=0; i<distMatrix.length; i++){
-						toprint+='';
+						toprint+='{';
 						for (var j=0; j<distMatrix.length; j++){
 							toprint+=distMatrix[i][j]+',';
 						}
 						toprint = toprint.substring(0, toprint.length - 1);
-						toprint+=';'
+						toprint+='}'
 					}
 					toprint = toprint.substring(0, toprint.length - 1);
-					toprint+=']';
+					toprint+='}';
 					console.log('COPY/PASTE MATHEMATICA');
 					console.log("Eigenvalues[",toprint,"]");
 				}
