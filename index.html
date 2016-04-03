@@ -65,6 +65,26 @@
 			}
 		}
 		
+		//DEBUGING FOR PRINTING dMatrix
+		if(noMDS){
+			if(dbg){console.log(distMatrixCentered);}
+			var toprint="{";
+			for(var i=0; i<distMatrixCentered.length; i++){
+				toprint+='{';
+				for (var j=0; j<distMatrixCentered.length; j++){
+					toprint+=distMatrixCentered[i][j]+',';
+				}
+				toprint = toprint.substring(0, toprint.length - 1);
+				toprint+='},'
+			}
+			toprint = toprint.substring(0, toprint.length - 1);
+			toprint+='}';
+			console.log('COPY/PASTE MATHEMATICA');
+			console.log("Eigensystem[",toprint,"]");
+		}
+		$('#ncbiprogress').html('noMDS == true. Please take a look at the console..');
+		
+
 		// EIGENVALUES - EIGENVECTORS
 		try{
 			res2 = numeric.eig(distMatrixCentered);	
@@ -265,7 +285,7 @@
 				// YOU HAVE COMPUTED DISTANCE MATRIX, GO FOR MDS
 				
 				//DEBUGING FOR PRINTING dMatrix
-				if(noMDS){
+				if(dbg){
 					if(dbg){console.log(distMatrix);}
 					var toprint="{";
 					for(var i=0; i<distMatrix.length; i++){
@@ -287,12 +307,9 @@
 					<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
 					<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p></strong>\
 					<p>Step 3 of 3: (MDS)</p>');
-				$('#ncbiprogress').html('noMDS == true. Please take a look at the console..');
-				
-				if(!noMDS){ 
-					setTimeout(computeMDS, 500); 
-					$('#ncbiprogress').html('Please wait.. (browser may freeze for a while) <img src="img/loading.gif" width="30" height="30"/>');
-				}
+				$('#ncbiprogress').html('Please wait.. (browser may freeze for a while) <img src="img/loading.gif" width="30" height="30"/>');
+
+				setTimeout(computeMDS, 500); 
 			}
 		};
 
