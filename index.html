@@ -81,8 +81,9 @@
 			toprint+='}';
 			console.log('COPY/PASTE MATHEMATICA');
 			console.log("Eigensystem[",toprint,"]");
+			$('#ncbiprogress').html('noMDS == true. Please take a look at the console..');
+			return;
 		}
-		$('#ncbiprogress').html('noMDS == true. Please take a look at the console..');
 		
 
 		// EIGENVALUES - EIGENVECTORS
