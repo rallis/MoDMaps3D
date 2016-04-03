@@ -368,124 +368,13 @@
 
 	$(document).ready(function(){
 
-		$.ajax({url: "/extra/browse.php", success: function(result){
-			// LOAD FILENAMES FROM MAPS DIRECTORY
-			//  NOT VISIBLE MAPS
-			/*	Representatives_3Kingdoms_1.txt
-				Representatives_3Kingdoms_2.txt
-				mtDNA_Vertebrata_Fungi.txt
-				mtDNA_Vertebrata_Protists.txt 
-				viral1.txt
-				viral2.txt
-				viral3.txt
-				viral4.txt   */
-			// HARDCODE FILENAMES. 
-			// ALTERNATIVELY, COMMENT NEXT LINE AND UNCOMMENT NEXT TO NEXT LINE
-			result = [
-				['Animalia Kingdom',
-				['animalia01.txt',
-				'animalia02.txt',
-				'animalia03.txt',
-				'animalia04.txt',
-				'animalia05.txt',
-				'animalia06.txt',
-				'animalia06_comp.txt',
-				'animalia07.txt',
-				'animalia07_comp.txt',
-				'animalia08.txt',
-				'animalia08_comp.txt',
-				'animalia09.txt',
-				'animalia09_comp.txt',
-				'animalia10.txt',
-				'animalia10_comp.txt',
-				'animalia10_comp_asm.txt']],
-
-				['Archaea Kingdom',	
-				['archaea1.txt',
-				'archaea2.txt',
-				'archaea3.txt',
-				'archaea4.txt']],
-
-				['Bacteria Kingdom',
-				['bacteria1.txt',
-				'bacteria2.txt',
-				'bacteria3.txt',
-				'bacteria4.txt',
-				'bacteria5.txt',
-				'bacteria5_comp.txt']],
-
-				['Fungi Kingdom',
-				['fungi1.txt',
-				'fungi2.txt',
-				'fungi3.txt',
-				'fungi4.txt',
-				'fungi5.txt',
-				'fungi5_comp.txt']],
-
-				['Plantae Kingdom',	
-				['plants1.txt',
-				'plants2.txt',
-				'plants3.txt',
-				'plants4.txt',
-				'plants5.txt',
-				'plants6.txt',
-				'plants7.txt',
-				'plants7_comp_cp.txt',
-				'plants8.txt',
-				'plants8_comp_cp.txt',
-				'plants8_comp_cp_mt.txt',
-				'plants8_comp_mt.txt']],
-
-				['Protists Kingdom',
-				['protists1.txt',
-				'protists2.txt',
-				'protists3.txt',
-				'protists4.txt']],
-
-				['Six Kingdoms',
-				['six_kingdoms_one_chrom.txt',
-				'six_kingdoms_sampling.txt']],
-
-				['Viruses',
-				['virus_hiv1.txt']],
-
-				['Mitochondrial DNA (mtDNA)', 
-				['mtDNA_Amphibians.txt',
-				'mtDNA_Hominidae_Hylobatidae.txt',
-				'mtDNA_InsecMamAmph.txt',
-				'mtDNA_Insects.txt',
-				'mtDNA_Mammals.txt',
-				'mtDNA_Primates.txt',
-				'mtDNA_Vertebrata.txt']],
-
-				['Haplogroups (Human mtDNA)',
-				['Haplogroups_1_k=6.txt',
-				'Haplogroups_1_k=9.txt',
-				'Haplogroups_2_AllHaplogroups.txt',
-				'Haplogroups_3_L0-L6.txt',
-				'Haplogroups_4_AsianBranch.txt',
-				'Haplogroups_5_L2-L3-L4-L6.txt',
-				'Haplogroups_6_L3-L4-L6.txt',
-				'Haplogroups_7_L4-L6.txt',
-				'Haplogroups_8_M-D-E-G.txt',
-				'Haplogroups_8_M-E-G.txt',
-				'Haplogroups_9_EurasiaBranch_1.txt',
-				'Haplogroups_9_EurasiaBranch_2.txt',
-				'Haplogroups_9_EurasiaBranch_3.txt',
-				'Haplogroups_9_EurasiaBranch_4.txt',
-				'Haplogroups_9_EurasiaBranch_5.txt',
-				'Haplogroups_9_EurasiaBranch_6.txt',
-				'Haplogroups_9_EurasiaBranch_7.txt',
-				'Haplogroups_10_Hsubgroups.txt',
-				'Haplogroups_11_Human_Chimp.txt',
-				'Haplogroups_11_Human_k=8.txt']]
-
-				];
-			//var resfetch=result.split("#");
-			var resfetch=result;
+		$.ajax({url: "./extra/maps.txt", success: function(result){
+			// LOAD FILENAMES OF MAPS 
+			//var result = JSON.parse(result);
+			//console.log(result);
+			var resfetch=JSON.parse(result)['maps'];
 			var outcome='';
 			for(i=0;i<resfetch.length;i++){
-				//outcome+='<a href="#" class="list-group-item">'+resfetch[i]+'</a>';
 				outcome+='<div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#modmap-accordion-'+i+'" href="#modmap-collapse-'+i+'">'+resfetch[i][0]+'&nbsp;&nbsp;<span class="badge">'+resfetch[i][1].length+'</span></a></h4></div>';
 				var tmp='<div id="modmap-collapse-'+i+'" class="panel-collapse collapse out"><div class="panel-body"><ul class="list-group large-group">';
 				for(var j=0; j<resfetch[i][1].length; j++){
