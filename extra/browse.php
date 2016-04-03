@@ -1,5 +1,5 @@
 <?php
-	$root = __DIR__."/maps";
+	$root = __DIR__."/../maps";
 	//print_r(glob($root.'/*'));
 	$output="";
 	foreach (glob($root.'/*') as $file) {
