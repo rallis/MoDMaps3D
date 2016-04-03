@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="js/numeric-1.2.6.min.js"></script>
 	
 	<script>
-	var dbg = false, errorHasOccured = false;
+	var dbg = false, errorHasOccured = false, noMDS = false;
 	var eigenval, eigenvec, eigensystem, finalEigenval, finalEigenvec, points ;
 	var mapID, allSequences={}, distMatrix=[], fcgrRes=9, getTaxa = false;
 	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
@@ -262,12 +262,11 @@
 			if(s==(dim-1)*dim/2 + 1){
 				time = new Date();
 				step2B = time.getTime();
-				// YOU HAVE COMPUTED DISTANCE MATRIX, PRINT IT AND GO FOR MDS
-				if(dbg){console.log(distMatrix);}
-
+				// YOU HAVE COMPUTED DISTANCE MATRIX, GO FOR MDS
+				
 				//DEBUGING FOR PRINTING dMatrix
-				if(dbg){
-					console.log('matrix=',distMatrix);
+				if(noMDS){
+					if(dbg){console.log(distMatrix);}
 					var toprint="[";
 					for(var i=0; i<distMatrix.length; i++){
 						toprint+='';
@@ -281,7 +280,6 @@
 					toprint+=']';
 					console.log('COPY/PASTE MATHEMATICA');
 					console.log("Eigenvalues[",toprint,"]");
-					//$("#accessionIDs").html("Eigenvalues["+toprint+"]");
 				}
 
 
@@ -289,9 +287,12 @@
 					<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
 					<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p></strong>\
 					<p>Step 3 of 3: (MDS)</p>');
-				$('#ncbiprogress').html('Please wait.. (browser may freeze for a while) <img src="img/loading.gif" width="30" height="30"/>');
-
-				setTimeout(computeMDS, 500);
+				$('#ncbiprogress').html('noMDS == true. Please take a look at the console..');
+				
+				if(!noMDS){ 
+					setTimeout(computeMDS, 500); 
+					$('#ncbiprogress').html('Please wait.. (browser may freeze for a while) <img src="img/loading.gif" width="30" height="30"/>');
+				}
 			}
 		};
 
