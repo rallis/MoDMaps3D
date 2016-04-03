@@ -251,7 +251,11 @@
 					if(dbg){console.log('ABOUT-TO-BREAK = '+s);}
 					$('#ncbiprogress').html(progress+'%');
 					s++;
-					var myvar = setTimeout(process, 10);
+					if(!errorHasOccured){
+						var myvar = setTimeout(process, 10);
+					}else{
+						$('#ncbiprogress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>Stopped by user</strong>].</div>'); 
+					}
 					break;
 				}
 			}
@@ -352,7 +356,7 @@
 				progress = callsNCBIDone*100.0/accIDs.length;
 				progress = progress.toFixed(2);
 				if(!errorHasOccured){$('#ncbiprogress').html(progress+'%');}
-				if(callsNCBIDone == accIDs.length){
+				if(callsNCBIDone == accIDs.length && !errorHasOccured){
 					time = new Date();
 					step1B = time.getTime();
 					computeDistMatrix();
@@ -512,7 +516,7 @@
 						progress = callsNCBIDone*100.0/accIDs.length;
 						progress = progress.toFixed(2);
 						if(!errorHasOccured){$('#ncbiprogress').html(progress+'%');} 
-						if(callsNCBIDone == accIDs.length){
+						if(callsNCBIDone == accIDs.length && !errorHasOccured){
 							time = new Date();
 							step1B = time.getTime();
 							computeDistMatrix();
