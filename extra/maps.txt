@@ -39,6 +39,10 @@
 		"viral1.txt",
 		"viral2.txt",
 		"viral3.txt",
-		"viral4.txt"]]
+		"viral4.txt",
+		"mitomap_2k.txt",
+		"mitomap_5k.txt",
+		"mitomap_10k.txt",
+		"mitomap_23k.txt"]]
 ]
 }
