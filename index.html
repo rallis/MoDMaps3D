@@ -80,8 +80,23 @@
 			toprint = toprint.substring(0, toprint.length - 1);
 			toprint+='}';
 			console.log('COPY/PASTE MATHEMATICA');
-			console.log("Eigensystem[",toprint,"]");
+			//console.log("Eigensystem[",toprint,"]");
 			$('#ncbiprogress').html('noMDS == true. Please take a look at the console..');
+			// 
+			toprint2='accIDs={';
+			for(var i=0; i<accIDsSets.length; i++){
+				toprint2 += '{';
+				for(var j=0; j<accIDsSets[i].length; j++){
+					toprint2 += '"'+accIDsSets[i][j]+'",'
+				}
+				toprint2 = toprint2.substring(0, toprint2.length - 1);
+				toprint2 +='},'
+			}
+			toprint2 = toprint2.substring(0, toprint2.length - 1);
+			toprint2 +='};';
+			console.log("eig=Eigensystem["+toprint+"];"+toprint2);
+			//
+
 			return;
 		}
 		
