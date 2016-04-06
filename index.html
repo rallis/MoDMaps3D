@@ -8,7 +8,9 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/numeric-1.2.6.min.js"></script>
-	
+	<script type="text/javascript" src="js/jszip.min.js"></script>
+	<script type="text/javascript" src="js/FileSaver.min.js"></script>
+
 	<script>
 	var dbg = false, errorHasOccured = false, noMDS = false;
 	var eigenval, eigenvec, eigensystem, finalEigenval, finalEigenvec, points, mapfile ;
@@ -72,7 +74,7 @@
 			for(var i=0; i<distMatrixCentered.length; i++){
 				toprint+='{';
 				for (var j=0; j<distMatrixCentered.length; j++){
-					toprint+=distMatrixCentered[i][j]+',';
+					toprint+=distMatrixCentered[i][j].toFixed(10)+',';
 				}
 				toprint = toprint.substring(0, toprint.length - 1);
 				toprint+='},'
@@ -80,10 +82,10 @@
 			toprint = toprint.substring(0, toprint.length - 1);
 			toprint+='}';
 			console.log('COPY/PASTE MATHEMATICA');
-			//console.log("Eigensystem[",toprint,"]");
+			
 			$('#ncbiprogress').html('noMDS == true. Please take a look at the console..');
-			// 
-			toprint2='accIDs={';
+			
+			toprint2='{';
 			for(var i=0; i<accIDsSets.length; i++){
 				toprint2 += '{';
 				for(var j=0; j<accIDsSets[i].length; j++){
@@ -93,10 +95,15 @@
 				toprint2 +='},'
 			}
 			toprint2 = toprint2.substring(0, toprint2.length - 1);
-			toprint2 +='};';
-			console.log("eig=Eigensystem["+toprint+"];"+toprint2);
-			//
-
+			toprint2 +='}';
+			//console.log("eig=Eigensystem["+toprint+"];"+toprint2);
+			
+			var zip = new JSZip();
+			zip.file("dMatrix.txt", toprint);
+			zip.file("accIDs.txt", toprint2);
+			var content = zip.generate({type:"blob"});
+			// see FileSaver.js
+			saveAs(content, "dataForMMA.zip");
 			return;
 		}
 		
@@ -150,7 +157,7 @@
 		
 
 		// PRODUCING MAPFILE
-		var mapfile = '';
+		mapfile = '';
 		// line 1
 		for(var i=0; i<accIDsSets.length; i++){
 			mapfile += accIDsSets[i].length + ",";
