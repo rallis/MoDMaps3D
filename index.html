@@ -536,8 +536,8 @@
 			console.log("accIDs=",accIDs);
 			console.log("In total = " + accIDs.length + " sequences.");
 			if(accIDs.length < 5){
-				$("#stepstatus").html('Found '+accIDs.length+' sequences. Please enter at least 5 and try again..');
 				errorHasOccured = true;
+				$('#ncbiprogress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>Found '+accIDs.length+' sequences.</strong>] Please enter at least 5 sequences and try again.]</div>');
 				return;
 			}
 
