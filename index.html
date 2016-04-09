@@ -383,7 +383,7 @@
 	}
 
 	function getTaxaFromNCBI(ind, idNCBI){
-		if(dbg){console.log("getting taxa for id=",id);}
+		if(dbg){console.log("getting taxa for id=",ind);}
 		$.ajax({
 			url: "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=gb&retmode=xml&id="+idNCBI,
 			success: function(result){
