@@ -70,6 +70,10 @@
 		//DEBUGING FOR PRINTING dMatrix
 		if(noMDS){
 			if(dbg){console.log(distMatrixCentered);}
+			
+			$('#ncbiprogress').html('<p>noMDS == true. Please download zip file. Then use <a href="./extra/mds.nb" target="_blank">MDS-Mathematica</a> file, run the code, and then paste your output map file <a href="./extra/input.html" target="_blank">here</a> to visualize your map.</p>');
+			console.log('COPY/PASTE MATHEMATICA');
+			
 			var toprint="{";
 			for(var i=0; i<distMatrixCentered.length; i++){
 				toprint+='{';
@@ -81,26 +85,57 @@
 			}
 			toprint = toprint.substring(0, toprint.length - 1);
 			toprint+='}';
-			console.log('COPY/PASTE MATHEMATICA');
 			
-			$('#ncbiprogress').html('<p>noMDS == true. Please download zip file. Then use <a href="./extra/mds.nb" target="_blank">MDS-Mathematica</a> file, run the code, and then paste your output map file <a href="./extra/input.html" target="_blank">here</a> to visualize your map.</p>');
-			
-			toprint2='{';
+			var toprint2='{';
 			for(var i=0; i<accIDsSets.length; i++){
 				toprint2 += '{';
 				for(var j=0; j<accIDsSets[i].length; j++){
-					toprint2 += '"'+accIDsSets[i][j]+'",'
+					toprint2 += '"'+accIDsSets[i][j]+'",';
 				}
 				toprint2 = toprint2.substring(0, toprint2.length - 1);
 				toprint2 +='},'
 			}
 			toprint2 = toprint2.substring(0, toprint2.length - 1);
 			toprint2 +='}';
-			//console.log("eig=Eigensystem["+toprint+"];"+toprint2);
 			
+			var toprint3='{';
+			var totalNumOfSeq = Object.keys(allSequences).length;
+			for(var i=0; i<totalNumOfSeq; i++){
+				toprint3 += '{';
+				toprint3 += '"'+allSequences[i][0]+'",';
+				toprint3 += '"'+allSequences[i][1]+'",';
+				toprint3 += '"'+allSequences[i][2]+'",';
+				toprint3 += '"'+allSequences[i][4]+'",';
+				toprint3 = toprint3.substring(0, toprint3.length - 1);
+				toprint3 +='},'
+			}
+			toprint3 = toprint3.substring(0, toprint3.length - 1);
+			toprint3 +='}';
+
+			var toprint4 = '';
+			for(var i=0; i<accIDsSets.length; i++){	toprint4 += accIDsSets[i].length + ",";	}
+			toprint4 = toprint4.slice(0,-1);
+			toprint4 += "\n";
+			for(var i=0; i<accIDsSets.length; i++){ toprint4 += $("#colorset"+i).val() + ","; }
+			toprint4 = toprint4.slice(0,-1);
+			toprint4 += "\n";
+			toprint4 += "5\nIndex,Acc,Name,Length,Taxa\n";
+			for(var i=0; i<accIDsSets.length; i++){ toprint4 += $("#colorset"+i).val() + ","; }
+			toprint4 = toprint4.slice(0,-1);
+			toprint4 += "\n";
+			for(var i=0; i<accIDsSets.length; i++){ toprint4 += $("#nameset"+i).val()+" ("+accIDsSets[i].length+"),"; }
+			toprint4 = toprint4.slice(0,-1);
+			toprint4 += "\n";
+			for(var i=0; i<$("#numofsets").val(); i++){ toprint4 += $("#nameset"+i).val() + ', '; }
+			toprint4 = toprint4.slice(0,-2);  //because of space above!
+			toprint4 += '. Number of sequences is '+accIDs.length+ "\n";
+			
+
 			var zip = new JSZip();
 			zip.file("dMatrix.txt", toprint);
 			zip.file("accIDs.txt", toprint2);
+			zip.file("allSequences.txt", toprint3);
+			zip.file("mapheader.txt", toprint4);
 			var content = zip.generate({type:"blob"});
 			// see FileSaver.js
 			saveAs(content, "dataForMMA.zip");
