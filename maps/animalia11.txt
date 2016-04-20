@@ -2,7 +2,7 @@
 blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red
 5
 Index,Acc,Name,Length,Fragment
-blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red
+blue,red
 H.sapiens (480), P.troglodytes (500)
 Sampling from H.sapiens and P.troglodytes; Number of genomic DNA sequences is 980; FCGR with k=9; Approx. Information
 0.890167
