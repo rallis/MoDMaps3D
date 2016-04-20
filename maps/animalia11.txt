@@ -1,9 +1,9 @@
 20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20
-blue,red
+blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red
 5
 Index,Acc,Name,Length,Fragment
-blue,red
-NC_000001.11 (20),NC_000002.12 (20),NC_000003.12 (20),NC_000004.12 (20),NC_000005.10 (20),NC_000006.12 (20),NC_000007.14 (20),NC_000008.11 (20),NC_000009.12 (20),NC_000010.11 (20),NC_000011.10 (20),NC_000012.12 (20),NC_000013.11 (20),NC_000014.9 (20),NC_000015.10 (20),NC_000016.10 (20),NC_000017.11 (20),NC_000018.10 (20),NC_000019.10 (20),NC_000020.11 (20),NC_000021.9 (20),NC_000022.11 (20),NC_000023.11 (20),NC_000024.10 (20),NC_006468.3 (20),NC_006469.3 (20),NC_006470.3 (20),NC_006471.3 (20),NC_006472.3 (20),NC_006473.3 (20),NC_006474.3 (20),NC_006475.3 (20),NC_006476.3 (20),NC_006477.3 (20),NC_006478.3 (20),NC_006479.3 (20),NC_006480.3 (20),NC_006481.3 (20),NC_006482.3 (20),NC_006483.3 (20),NC_006484.3 (20),NC_006485.3 (20),NC_006486.3 (20),NC_006487.3 (20),NC_006488.3 (20),NC_006489.3 (20),NC_006490.3 (20),NC_006491.3 (20),NC_006492.3 (20)
+blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red,red
+H.sapiens (480), P.troglodytes (500)
 Sampling from H.sapiens and P.troglodytes; Number of genomic DNA sequences is 980; FCGR with k=9; Approx. Information
 0.890167
 -0.773973
