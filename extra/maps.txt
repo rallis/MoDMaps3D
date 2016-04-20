@@ -1,6 +1,6 @@
 {"maps": [
 	["Animalia Kingdom",
-	["animalia01.txt","animalia02.txt","animalia03.txt","animalia04.txt","animalia05.txt","animalia06.txt","animalia06_comp.txt","animalia07.txt","animalia07_comp.txt","animalia08.txt","animalia08_comp.txt","animalia09.txt","animalia09_comp.txt","animalia10.txt","animalia10_comp.txt","animalia10_comp_asm.txt"]],
+	["animalia01.txt","animalia02.txt","animalia03.txt","animalia04.txt","animalia05.txt","animalia06.txt","animalia06_comp.txt","animalia07.txt","animalia07_comp.txt","animalia08.txt","animalia08_comp.txt","animalia09.txt","animalia09_comp.txt","animalia10.txt","animalia10_comp.txt","animalia10_comp_asm.txt","animalia11.txt"]],
 
 	["Archaea Kingdom",	
 	["archaea1.txt","archaea2.txt","archaea3.txt","archaea4.txt"]],
