@@ -302,7 +302,14 @@
 				maxX = Math.min(i*splitBy-1,dim-1);
 				minY = (j-1)*splitBy;
 				maxY = Math.min(j*splitBy-1,dim-1);
-				input.push([minX, maxX, minY, maxY, allSequences.slice(minX, maxX), allSequences.slice(minY, maxY), fcgrRes]);
+				var allSequencesX = [] , allSequencesY = [];
+				for(var i00=minX; i00<=maxX; i00++){
+					allSequencesX.push(allSequences[i00]);
+				}
+				for(var i00=minY; i00<=maxY; i00++){
+					allSequencesY.push(allSequences[i00]);
+				}
+				input.push([minX, maxX, minY, maxY, allSequencesX, allSequencesY, fcgrRes]);
 			}
 		}
 		console.log("input= ",input);
