@@ -293,7 +293,8 @@
 			}
 		}
 		
-		//splitBy = 20;
+		splitBy = Math.max(Math.ceil(dim/5), 50);
+		console.log("splitBy= ",splitBy);
 		var input = []
 		for(var i=1; i<= Math.ceil(dim/splitBy); i++){
 			for(var j=i; j<= Math.ceil(dim/splitBy); j++){
