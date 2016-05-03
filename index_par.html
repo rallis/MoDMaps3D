@@ -14,7 +14,7 @@
 
 
 	<script>
-	var dbg = false, errorHasOccured = false, noMDS = false, splitBy = 100;
+	var dbg = false, errorHasOccured = false, noMDS = false, splitBy;
 	var eigenval, eigenvec, eigensystem, finalEigenval, finalEigenvec, points, mapfile ;
 	var mapID, allSequences={}, distMatrix=[], fcgrRes=9, getTaxa = false;
 	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
@@ -293,10 +293,16 @@
 			}
 		}
 		
-		input = []
+		splitBy = 20;
+		var input = []
 		for(var i=1; i<= Math.ceil(dim/splitBy); i++){
 			for(var j=i; j<= Math.ceil(dim/splitBy); j++){
-				input.push([(i-1)*splitBy, Math.min(i*splitBy-1,dim-1), (j-1)*splitBy, Math.min(j*splitBy-1,dim-1), allSequences, fcgrRes]);
+				var minX, maxX, minY, maxY;
+				minX = (i-1)*splitBy;
+				maxX = Math.min(i*splitBy-1,dim-1);
+				minY = (j-1)*splitBy;
+				maxY = Math.min(j*splitBy-1,dim-1);
+				input.push([minX, maxX, minY, maxY, allSequences.slice(minX, maxX), allSequences.slice(minY, maxY), fcgrRes]);
 			}
 		}
 		console.log("input= ",input);
@@ -304,17 +310,17 @@
 	    
 		var computeChunks = function (chunk) {
 			var bgX = chunk[0], endX = chunk[1], bgY = chunk[2], endY = chunk[3];
-			var allSequences = chunk[4], fcgrRes = chunk[5];
+			var allSequencesX = chunk[4], allSequencesY = chunk[5], fcgrRes = chunk[6];
 			var res=[], tmpRow, numerator, denominator ;
 		  	console.log("Worker ["+chunk+"]");
 
-		  	for(var i = bgX; i<=endX; i++){
+		  	for(var i = 0; i<allSequencesX.length; i++){
 		  		tmpRow=[];
-		  		for(var j = bgY; j<=endY; j++){
-		  			numerator = allSequences[i][3]['size'] + allSequences[j][3]['size'];
+		  		for(var j = 0; j<allSequencesY.length; j++){
+		  			numerator = allSequencesX[i][3]['size'] + allSequencesY[j][3]['size'];
 					denominator=0;
 					for(var unionInd=0; unionInd<Math.pow(4,fcgrRes); unionInd++){
-						if( (allSequences[i][3]['flatFCGR'][unionInd]==1) || (allSequences[j][3]['flatFCGR'][unionInd]==1) ){
+						if( (allSequencesX[i][3]['flatFCGR'][unionInd]==1) || (allSequencesY[j][3]['flatFCGR'][unionInd]==1) ){
 							denominator++;
 						} 
 					}
