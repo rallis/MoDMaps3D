@@ -262,7 +262,7 @@
 			<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
 			<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p>\
 			<p>Step 3 (MDS) DONE in ~'+(step3B-step3A)/1000+' sec</p></strong>');
-		$("#stepstatus").html($("#stepstatus").html()+'<p>Map file <a href="load.html?mapid=local'+mapTimeStamp+'" target="_blank">here</a> or <a href="#" id="viewfile">view</a> contents.</p>');
+		$("#stepstatus").html($("#stepstatus").html()+'<p><a href="load.html?mapid=local'+mapTimeStamp+'" target="_blank">Show map</a> or <a href="#" id="viewfile">view contents</a>.</p>');
 		$("#mainprogressbar").hide();
 		$("#viewfile").click(function(){
 			$("#file_contents").toggle();
