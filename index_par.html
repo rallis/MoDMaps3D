@@ -293,7 +293,7 @@
 			}
 		}
 		
-		splitBy = 20;
+		//splitBy = 20;
 		var input = []
 		for(var i=1; i<= Math.ceil(dim/splitBy); i++){
 			for(var j=i; j<= Math.ceil(dim/splitBy); j++){
@@ -319,7 +319,7 @@
 			var bgX = chunk[0], endX = chunk[1], bgY = chunk[2], endY = chunk[3];
 			var allSequencesX = chunk[4], allSequencesY = chunk[5], fcgrRes = chunk[6];
 			var res=[], tmpRow, numerator, denominator ;
-		  	console.log("Worker ["+bgX+", "+endX+" - "+bgY+", "+endY+"]");
+		  	console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"]");
 
 		  	for(var i = 0; i<allSequencesX.length; i++){
 		  		tmpRow=[];
