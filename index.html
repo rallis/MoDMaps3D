@@ -468,7 +468,7 @@
 			error: function(xhr, status, error) {
 				console.log('STATUS=',status,'ERROR getTaxaFromNCBI=',error);
 				errorHasOccured = true;
-				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching Taxonomy data from NCBI for [<strong>'+accID+'</strong>]</div>');
+				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching Taxonomy data from NCBI for [<strong>'+idNCBI+'</strong>]</div>');
 			}
 		});		
 	}
