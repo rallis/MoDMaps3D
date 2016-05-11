@@ -73,7 +73,13 @@
 		if(noMDS){
 			if(dbg){console.log(distMatrixCentered);}
 			
-			$('#progress').html('<p>noMDS == true. Please download zip file. Then use <a href="./extra/mds.nb" target="_blank">MDS-Mathematica</a> file, run the code, and then paste your output map file <a href="./extra/input.html" target="_blank">here</a> to visualize your map.</p>');
+			$('#progress').html('<p>Please continue computation offline. <br> <strong>Instructions:</strong>\
+				<ul><li>Download zip file (It is downloaded automatically)</li>\
+				<li>Extract zip contents to a directory of your choice</li>\
+				<li>Download either <a href="./extra/mds.nb" target="_blank">MDS-Mathematica</a> or <a href="./extra/mds.py" target="_blank">MDS-Python</a> code and place it in the same directory</li>\
+				<li>Run the code, you should get an output file [map_output.txt]</li>\
+				<li>Open [map_output.txt], copy its content and paste it <a href="./extra/input.html" target="_blank">here</a></li>\
+				</ul></p>');
 			console.log('COPY/PASTE MATHEMATICA');
 			
 			var toprint="{";
@@ -250,8 +256,7 @@
 			console.log("ERROR! NO LOCAL STORAGE AVAILABLE!?");
 			alert("ERROR! NO LOCAL STORAGE AVAILABLE!?");
 		}
-		// for(var x in localStorage){delete localStorage[x];}
-
+		
 		$('#progress').html('100%');
 		$("#file_contents").html('<pre>'+mapfile+'</pre>');
 		$("#file_contents").hide();
@@ -393,8 +398,7 @@
 
  		}
 
-		p.map(computeChunks).then(assembleChunks);
-		
+		p.map(computeChunks).then(assembleChunks);		
 	}
 
 	function buildFCGR(seq, k){
@@ -570,6 +574,9 @@
 		$("#buildmap").click(function(){
 			$('#allInputData').slideUp();
 			$('#allInputDataMinimized').slideDown();
+			console.log("localStorageKeys before=",Object.keys(localStorage));
+			localStorage.clear();
+			console.log("localStorageKeys after=",Object.keys(localStorage));
 			time = new Date();
 			step1A = time.getTime();
 			$("#file_contents").empty();
@@ -638,7 +645,7 @@
 
 			$("#file_contents").empty();
 			$("#file_contents").hide();
-			console.log($("#numofsets").val());
+			console.log("numofsets=",$("#numofsets").val());
 			$("#sets").html('');
 			for(var i=0; i<$("#numofsets").val(); i++){
 				$("#sets").html($("#sets").html()+'<p>SetName:<input type="text" size="5" id="nameset'+i+'" value="Set['+i+']"> SetColor: <select id="colorset'+i+'">'+colorList+'</select><br><textarea id="set'+i+'" autofocus  rows="2" cols="40"></textarea></p>');

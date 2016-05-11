@@ -1,3 +1,10 @@
+#######################################################
+## MoDMaps3D                                         ##
+## MultiDimensional Scaling in Python                ##
+## Coded by Rallis Karamichalis                      ##
+## Github Repo: https://github.com/rallis/MoDMaps3D  ##
+#######################################################
+
 
 import math, sys
 import numpy as np
