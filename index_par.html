@@ -73,7 +73,7 @@
 		if(noMDS){
 			if(dbg){console.log(distMatrixCentered);}
 			
-			$('#ncbiprogress').html('<p>noMDS == true. Please download zip file. Then use <a href="./extra/mds.nb" target="_blank">MDS-Mathematica</a> file, run the code, and then paste your output map file <a href="./extra/input.html" target="_blank">here</a> to visualize your map.</p>');
+			$('#progress').html('<p>noMDS == true. Please download zip file. Then use <a href="./extra/mds.nb" target="_blank">MDS-Mathematica</a> file, run the code, and then paste your output map file <a href="./extra/input.html" target="_blank">here</a> to visualize your map.</p>');
 			console.log('COPY/PASTE MATHEMATICA');
 			
 			var toprint="{";
@@ -151,7 +151,7 @@
 		}catch(err){
 			console.log(err.message);
 			errorHasOccured = true;
-			$('#ncbiprogress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.</div>');
+			$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.</div>');
 			return;
 		}
 		if(dbg){console.log('numeric.js=',res2['lambda']['x']);}
@@ -252,7 +252,7 @@
 		}
 		// for(var x in localStorage){delete localStorage[x];}
 
-		$('#ncbiprogress').html('100%');
+		$('#progress').html('100%');
 		$("#file_contents").html('<pre>'+mapfile+'</pre>');
 		$("#file_contents").hide();
 		// END OF MDS
@@ -264,7 +264,7 @@
 			<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
 			<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p>\
 			<p>Step 3 (MDS) DONE in ~'+(step3B-step3A)/1000+' sec</p></strong>');
-		$("#stepstatus").html($("#stepstatus").html()+'<p>Map file <a href="load.html?mapid=local'+mapTimeStamp+'" target="_blank">here</a> or <a href="#" id="viewfile">view</a> contents.</p>');
+		$("#stepstatus").html($("#stepstatus").html()+'<p><a href="load.html?mapid=local'+mapTimeStamp+'" target="_blank">Show MoDMap</a> or <a href="#" id="viewfile">view contents</a>.</p>');
 		$("#mainprogressbar").hide();
 		$("#viewfile").click(function(){
 			$("#file_contents").toggle();
@@ -282,7 +282,7 @@
 		$("#stepstatus").html('\
 			<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</strong></p>\
 			<p>Step 2 of 3: (AID)</p>');
-		$('#ncbiprogress').html('0%');
+		$('#progress').html('0%');
 
 		var dim=accIDs.length;
 		distMatrix=[];
@@ -314,13 +314,15 @@
 			}
 		}
 		console.log("input= ",input);
+		$('#progress').html('Parallel computation of '+input.length+' matrices of ~ '+splitBy+'x'+splitBy+' each. Please wait..');
 		var p = new Parallel( input );
 	    
 		var computeChunks = function (chunk) {
 			var bgX = chunk[0], endX = chunk[1], bgY = chunk[2], endY = chunk[3];
 			var allSequencesX = chunk[4], allSequencesY = chunk[5], fcgrRes = chunk[6];
 			var res=[], tmpRow, numerator, denominator ;
-		  	console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"]");
+		  	var timeBegin = new Date();
+			console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"]");
 
 		  	for(var i = 0; i<allSequencesX.length; i++){
 		  		tmpRow=[];
@@ -337,9 +339,13 @@
 		  		}
 		  		res.push(tmpRow);
 		  	}
+
+		  	var timeEnd = new Date();
+			console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"] execution time: "+String((timeEnd-timeBegin)/1000)+" sec");
 		  	return [bgX, endX, bgY, endY, res];
 		};
  
+
  		function assembleChunks(data){
  			// console.log("data=",data,data.length);
  			// console.log("dMat=",distMatrix.length);
@@ -381,7 +387,7 @@
 				<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
 				<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p></strong>\
 				<p>Step 3 of 3: (MDS)</p>');
-			$('#ncbiprogress').html('Please wait.. (browser may freeze for a while) <img src="img/loading.gif" width="30" height="30"/>');
+			$('#progress').html('Please wait.. (browser may freeze for a while) <img src="img/loading.gif" width="30" height="30"/>');
 			
 			setTimeout(computeMDS, 500); 
 
@@ -428,7 +434,7 @@
 			error: function(xhr, status, error) {
 				console.log('STATUS=',status,'ERROR from loadFastaFromNCBI=',error);
 				errorHasOccured = true;
-				$('#ncbiprogress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
+				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
 			}
 		});
 	}
@@ -448,7 +454,7 @@
 				callsNCBIDone += 0.5;
 				progress = callsNCBIDone*100.0/accIDs.length;
 				progress = progress.toFixed(2);
-				if(!errorHasOccured){$('#ncbiprogress').html(progress+'%');}
+				if(!errorHasOccured){$('#progress').html(progress+'%');}
 				if(callsNCBIDone == accIDs.length && !errorHasOccured){
 					time = new Date();
 					step1B = time.getTime();
@@ -458,7 +464,7 @@
 			error: function(xhr, status, error) {
 				console.log('STATUS=',status,'ERROR getTaxaFromNCBI=',error);
 				errorHasOccured = true;
-				$('#ncbiprogress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching Taxonomy data from NCBI for [<strong>'+accID+'</strong>]</div>');
+				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching Taxonomy data from NCBI for [<strong>'+accID+'</strong>]</div>');
 			}
 		});		
 	}
@@ -571,7 +577,7 @@
 			$("#mainprogressbar").show();
 			$("#stepstatus").show();
 			$("#stepstatus").html('Step 1 of 3: (NCBI + FCGRs)');
-			$('#ncbiprogress').html('0%'); 
+			$('#progress').html('0%'); 
 			errorHasOccured = false;
 			
 			// GET "accIDs"
@@ -588,7 +594,7 @@
 			console.log("In total = " + accIDs.length + " sequences.");
 			if(accIDs.length < 5){
 				errorHasOccured = true;
-				$('#ncbiprogress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>Found '+accIDs.length+' sequences.</strong>] Please enter at least 5 sequences and try again.]</div>');
+				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>Found '+accIDs.length+' sequences.</strong>] Please enter at least 5 sequences and try again.]</div>');
 				return;
 			}
 
@@ -609,7 +615,7 @@
 						callsNCBIDone += 0.5;
 						progress = callsNCBIDone*100.0/accIDs.length;
 						progress = progress.toFixed(2);
-						if(!errorHasOccured){$('#ncbiprogress').html(progress+'%');} 
+						if(!errorHasOccured){$('#progress').html(progress+'%');} 
 						if(callsNCBIDone == accIDs.length && !errorHasOccured){
 							time = new Date();
 							step1B = time.getTime();
@@ -776,7 +782,7 @@
 
 				<p id="stepstatus"></p>
 				<div id="mainprogressbar" style="display:none;">
-				  <div id="ncbiprogress"></div>
+				  <div id="progress"></div>
 				</div>
 				
 				<p id="file_contents"></p>
