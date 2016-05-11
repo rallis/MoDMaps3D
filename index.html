@@ -436,7 +436,7 @@
 				callback(ind, accID, outputFasta, header);
 			},
 			error: function(xhr, status, error) {
-				console.log('STATUS=',status,'ERROR from loadFastaFromNCBI=',error);
+				console.log('STATUS=',status,'ERROR from loadFastaFromNCBI=',error.message);
 				errorHasOccured = true;
 				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
 			}
@@ -466,7 +466,7 @@
 				}
 			},
 			error: function(xhr, status, error) {
-				console.log('STATUS=',status,'ERROR getTaxaFromNCBI=',error);
+				console.log('STATUS=',status,'ERROR getTaxaFromNCBI=',error.message);
 				errorHasOccured = true;
 				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching Taxonomy data from NCBI for [<strong>'+idNCBI+'</strong>]</div>');
 			}
