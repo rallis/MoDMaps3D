@@ -314,11 +314,7 @@ function updateInfoDiv() {
 					fcgrInfo="Not Available.";				 
 				}
 			}else if(namesOfLabels[indLabel]=="Name"){
-				if(globalPointsLabels[selectedIndex][indLabel].substring(0,13)=='mitochondrion'){
-					var link='https://www.google.com/search?hl=en&site=imghp&tbm=isch&source=hp&q='+globalPointsLabels[selectedIndex][indLabel].substring(14,globalPointsLabels[selectedIndex][indLabel].length);
-				}else{
-					var link='https://www.google.com/search?hl=en&site=imghp&tbm=isch&source=hp&q='+globalPointsLabels[selectedIndex][indLabel];  
-				}
+				var link = 'https://www.google.com/search?hl=en&site=imghp&tbm=isch&source=hp&q='+globalPointsLabels[selectedIndex][indLabel].replace("mitochondrion"," ").replace("complete genome", "").replace("complete sequence", "");
 				if(gglSearchEnabled){
 					infoTable=infoTable+'<tr><td>'+namesOfLabels[indLabel]+'</td><td>'+globalPointsLabels[selectedIndex][indLabel]+' (<a href="'+link+'" target="_blank"><font color="yellow">Google it!</font></a>)</td></tr>';   
 				}else{
