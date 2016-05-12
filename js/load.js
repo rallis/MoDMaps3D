@@ -314,7 +314,7 @@ function updateInfoDiv() {
 					fcgrInfo="Not Available.";				 
 				}
 			}else if(namesOfLabels[indLabel]=="Name"){
-				var link = 'https://www.google.com/search?hl=en&site=imghp&tbm=isch&source=hp&q='+globalPointsLabels[selectedIndex][indLabel].replace("mitochondrion"," ").replace("complete genome", "").replace("complete sequence", "");
+				var link = 'https://www.google.com/search?hl=en&site=imghp&tbm=isch&source=hp&q='+globalPointsLabels[selectedIndex][indLabel].replace("mitochondrion"," ").replace("complete genome", " ").replace("complete sequence", " ");
 				if(gglSearchEnabled){
 					infoTable=infoTable+'<tr><td>'+namesOfLabels[indLabel]+'</td><td>'+globalPointsLabels[selectedIndex][indLabel]+' (<a href="'+link+'" target="_blank"><font color="yellow">Google it!</font></a>)</td></tr>';   
 				}else{
