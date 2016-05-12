@@ -14,7 +14,7 @@
 
 
 	<script>
-	var dbg = false, errorHasOccured = false, noMDS = false, splitBy;
+	var dbg = false, errorHasOccured = false, noMDS = false, splitBy, offlineCompMinSize = 500;
 	var eigenval, eigenvec, eigensystem, finalEigenval, finalEigenvec, points, mapfile ;
 	var mapID, allSequences={}, distMatrix=[], fcgrRes=9, getTaxa = false;
 	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
@@ -604,8 +604,9 @@
 				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>Found '+accIDs.length+' sequences.</strong>] Please enter at least 5 sequences and try again.]</div>');
 				return;
 			}
-			if(accIDs.length > 500 ){
-				alert("Your input contains more than 500 sequences. This requires that the last step (MDS) has to be computed offline using either Mathematica or Python. Files and code will be provided to you once you reach that point.");
+			if(accIDs.length > offlineCompMinSize ){
+				noMDS = true;
+				alert("Your input contains more than ["+offlineCompMinSize+"] sequences. This requires that the last step (MDS) has to be computed offline using either Mathematica or Python. Files and code will be provided to you once you reach that point.");
 			}
 
 			// AJAX CALLS TO NCBI FOR FASTA FILES
