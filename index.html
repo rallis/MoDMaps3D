@@ -250,8 +250,15 @@
 
 		var mapTimeStamp = new Date().getTime();
 		if(typeof(Storage) !== "undefined") {
-			localStorage.setItem("mapfile"+mapTimeStamp, mapfile);
-			localStorage.setItem("distMatrix"+mapTimeStamp, distMatrix);
+			try{
+				localStorage.setItem("mapfile"+mapTimeStamp, mapfile);
+				localStorage.setItem("distMatrix"+mapTimeStamp, distMatrix);	
+			}catch(err){
+				console.log(err.message);
+				errorHasOccured = true;
+				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+err.message+'</strong>]. Consider emptying localStorage.</div>');
+				return;
+			}
 		} else {
 			console.log("ERROR! NO LOCAL STORAGE AVAILABLE!?");
 			alert("ERROR! NO LOCAL STORAGE AVAILABLE!?");
