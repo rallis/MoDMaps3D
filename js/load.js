@@ -1,14 +1,12 @@
-/*==========================================================
-% MoDMaps3D - THREE DIMENSIONAL MOLECULAR DISTANCE MAPS 
-% Version 3
+/*========================================================== 
+% Version 4
 % Coded by Rallis Karamichalis, 2016.
 % ----------------------------------------------------------
 % This is a vizualization tool for creating 
 % 3D Molecular Distance Maps (MoDMaps3D). 
 % ==========================================================*/
 
-
-var MoDMaps3D = { 'version':'3.0', 
+var MoDMaps3D = { 'version':'4.0', 
 		'dbg':false, 
 		'gglSearchEnabled':true, 
 		'realtimeHighlight':true, 
@@ -21,8 +19,8 @@ var gglSearchEnabled = MoDMaps3D['gglSearchEnabled'];
 var realtimeHighlight = MoDMaps3D['realtimeHighlight'];
 var selectOnMouseover = MoDMaps3D['selectonmouseover'];
 var highlightColor = MoDMaps3D['highlightColor'];   
-var mapsWithReadyFCGRs = {'mtDNA_Amphibians.txt':'mtDNA', 'mtDNA_Hominidae_Hylobatidae.txt':'mtDNA', 'mtDNA_InsecMamAmph.txt':'mtDNA', 'mtDNA_Insects.txt':'mtDNA', 'mtDNA_Mammals.txt':'mtDNA', 'mtDNA_Primates.txt':'mtDNA', 'mtDNA_Vertebrata.txt':'mtDNA'};
-var mapsWithReadyDistMatrix = {'mapfilename':'distMatrixFilename'};
+var mapsWithReadyFCGRs = {'Animalia_mtDNA_Amphibians.txt':'mtDNA', 'Animalia_mtDNA_Insects.txt':'mtDNA', 'Animalia_mtDNA_Mammals.txt':'mtDNA', 'Animalia_mtDNA_Mammals2.txt':'mtDNA', 'Animalia_mtDNA_Mammals3.txt':'mtDNA','Animalia_mtDNA_Primates.txt':'mtDNA', 'Animalia_mtDNA_Vertebrata.txt':'mtDNA', 'Fungi_mtDNA.txt':'mtDNA', 'Plants_mtDNA.txt':'mtDNA', 'Protists_mtDNA.txt':'mtDNA', 'Protists_ptDNA.txt':'ptDNA', 'H.sapiens_P.troglodytes_nDNA+mtDNA.txt':'index_animalia', 'B.napus_B.oleracea_nDNA+cpDNA.txt':'index_plants', 'E.coli_E.fergusonii_nDNA+ptDNA.txt':'index_bacteria'};
+var mapsWithReadyDistMatrix = {'Animalia_mtDNA_Amphibians.txt':'amphibians', 'Animalia_mtDNA_Insects.txt':'insects', 'Animalia_mtDNA_Mammals.txt':'mammals', 'Animalia_mtDNA_Mammals2.txt':'mammals2', 'Animalia_mtDNA_Mammals3.txt':'mammals3', 'Animalia_mtDNA_Primates.txt':'primates', 'Animalia_mtDNA_Vertebrata.txt':'vertebrata', 'Fungi_mtDNA.txt':'fungi', 'Plants_mtDNA.txt':'plants', 'Protists_mtDNA.txt':'protistsmt', 'Protists_ptDNA.txt':'protistspt', 'H.sapiens_P.troglodytes_nDNA+mtDNA.txt':'index_animalia', 'B.napus_B.oleracea_nDNA+cpDNA.txt':'index_plants', 'E.coli_E.fergusonii_nDNA+ptDNA.txt':'index_bacteria'};
 var mapid, dim1, dim2, dim3, radius, alldata, distMatrix = [];
 var setOfPoints, colors, numberOfLabels, namesOfLabels, legendColors, legendLabels; 
 var globalScaledPointsCoord, globalPointsLabels;      
@@ -181,104 +179,79 @@ function selectAndFill(id){
 }
 
 // COMPUTE DIST 
-function computeDist(preload){
-	if(dbg){console.log("preload= "+preload);}
+function computeDist(){
+	$("#outputDist").val('');
+	$("#computeDist").html('');
+	if(($("#fromHere").val()!="")&&($("#toHere").val()!="")){
+		$("#computeDist").html('<img src="img/loading.gif" height="30">');
+		var dMatSplitBy = 100;
+		var idFrom=parseInt($("#fromHere").val())  ;
+		var idTo=parseInt($("#toHere").val()) ;
+		console.log(idFrom, idTo);
+		var rowInd = Math.ceil(Math.min(idFrom,idTo)/dMatSplitBy);
+		var colInd = Math.ceil(Math.max(idFrom,idTo)/dMatSplitBy);
+		var rowmin = dMatSplitBy*(rowInd-1) + 1;
+		var rowmax = dMatSplitBy*rowInd ;
+		var colmin = dMatSplitBy*(colInd-1) + 1;
+		var colmax = dMatSplitBy*colInd ;
+		var localrowInd = Math.min(idFrom,idTo)%dMatSplitBy;
+		var localcolInd = Math.max(idFrom,idTo)%dMatSplitBy;
+		if(localrowInd == 0){localrowInd = dMatSplitBy;}
+		if(localcolInd == 0){localcolInd = dMatSplitBy;}
 
-	// Load distance matrix if it's first time
-	if(preload==true){ 
-		if(distMatrix.length>0){
-			console.log('distMatrix.length > 0');
-			howmany=Math.sqrt(distMatrix.length);
-			console.log("howmany= "+howmany+" x "+howmany);
-			dists = [];
-			for(var i=0; i<distMatrix.length; i++){
-				if(i%(howmany)==0){ dists.push([]); }
-				dists[dists.length-1].push(distMatrix[i]);
+		console.log(rowmin, rowmax,"--",colmin, colmax,"---", localrowInd, localcolInd);
+		console.log("./dists/"+mapsWithReadyDistMatrix[mapid]+"/dSubMat_"+rowmin+"_"+rowmax+"_"+colmin+"_"+colmax+".txt");
+
+		$.ajax({
+			url: "./dists/"+mapsWithReadyDistMatrix[mapid]+"/dSubMat_"+rowmin+"_"+rowmax+"_"+colmin+"_"+colmax+".txt",
+			success: function(result){
+				var localDistSubMatrix = result.trim().split("\n");
+				var localDistSubMatrixIndex;
+				//check whether you have full dMatSplitBy x dMatSplitBy matrix
+				if(globalScaledPointsCoord.length < colmax){
+					console.log("not full submatrix");
+					localDistSubMatrixIndex = (globalScaledPointsCoord.length - colmin + 1)*(localrowInd-1)+localcolInd-1;
+				}else{
+					localDistSubMatrixIndex = dMatSplitBy*(localrowInd-1)+localcolInd-1;	
+				}
+				console.log(localDistSubMatrix.length);
+				console.log(localDistSubMatrixIndex);
+				console.log(localDistSubMatrix[localDistSubMatrixIndex]);
+				$("#outputDist").val(localDistSubMatrix[localDistSubMatrixIndex]);	
+				$("#computeDist").html('');
+			},
+			error: function(xhr, status, error) {
+				console.log('STATUS=',status,'ERROR getting distSubMatrix=',error);
+				$("#computeDist").html('STATUS=['+status+'] ERROR=['+error+']');
 			}
-			// temp dbg
-			// var toprint="[";
-			// for(var i=0; i<dists.length; i++){
-			// 	toprint+='';
-			// 	for (var j=0; j<dists.length; j++){
-			// 		toprint+=dists[i][j]+',';
-			// 	}
-			// 	toprint = toprint.substring(0, toprint.length - 1);
-			// 	toprint+="\n"
-			// }
-			// toprint = toprint.substring(0, toprint.length - 1);
-			// toprint+=']';
-			// console.log("matrix= ",toprint);
-			$("#computeDist").html('');
-			distPointsDiv.innerHTML = '<em><strong><font color="yellow" size="4">Distance between Points</font></strong></em><br>\
-					<table border="0">\
-					<tr><td>From:</td><td><input id="fromHere" value="'+fromIndex+'" maxlength="7" size="7" disabled /></td>\
-					<td><input type="button" value="Add" onclick="add(\'from\');"></td></tr>\
-					<tr><td>To:</td><td><input id="toHere" value="'+toIndex+'" maxlength="7" size="7" disabled /></td>\
-					<td><input type="button" value="Add" onclick="add(\'to\');"></td></tr>\
-					<tr><td>Distance:</td><td><input id="outputDist" type="text" value="" maxlength="10" size="7" disabled /></td>\
-					<td><div id="computeDist"></div></td></tr></table>\
-					<hr color="white" width="60%">';
-		}else{
-			var xmlhttp;
-			xmlhttp=new XMLHttpRequest();
-			$("#computeDist").html('Loading, please wait.. <img src="img/loading.gif" height="30">');
-			xmlhttp.onreadystatechange=function(){
-				if (xmlhttp.readyState==4 && xmlhttp.status==200){
-					dists=xmlhttp.responseText.split("\n");
-					howmany=dists.length;
-					for(var i=0; i<dists.length; i++){
-						dists[i] = dists[i].split(',');
-					}
-					$("#computeDist").html('');
-					distPointsDiv.innerHTML = '<em><strong><font color="yellow" size="4">Distance between Points</font></strong></em><br>\
-							<table border="0">\
-							<tr><td>From:</td><td><input id="fromHere" value="'+fromIndex+'" maxlength="7" size="7" disabled /></td>\
-							<td><input type="button" value="Add" onclick="add(\'from\');"></td></tr>\
-							<tr><td>To:</td><td><input id="toHere" value="'+toIndex+'" maxlength="7" size="7" disabled /></td>\
-							<td><input type="button" value="Add" onclick="add(\'to\');"></td></tr>\
-							<tr><td>Distance:</td><td><input id="outputDist" type="text" value="" maxlength="10" size="7" disabled /></td>\
-							<td><div id="computeDist"></div></td></tr></table>\
-							<hr color="white" width="60%">';
-				}else if(xmlhttp.readyState==4 && xmlhttp.status==404){
-					console.log("Distance file is not available..");
-					distPointsDiv.innerHTML='<em><strong><font color="yellow" size="4">Distance between Points</font></strong></em><br>Distance Matrix has not been made available for this map.<hr color="white" width="60%">';
-				}       
-			}
-			xmlhttp.open("GET","dists/"+mapsWithReadyDistMatrix[mapid],true);
-			xmlhttp.send();	
-		}
-	}else if(preload==false){
-		var idFrom=$("#fromHere").val();
-		var idTo=$("#toHere").val();
-		if((idFrom!="")&&(idTo!="")){
-			$("#outputDist").val('');
-			$("#computeDist").html('<img src="img/loading.gif" height="30">');
-			idFrom=parseFloat(globalPointsLabels[idFrom][0]);
-			idTo=parseFloat(globalPointsLabels[idTo][0]);
-			// old method, only upper triangular
-			// var res=dists[(idFrom-1)*howmany+idTo-1];
-			var res=dists[idFrom][idTo];
-			if(preload!=true){$("#outputDist").val(res);}
-			$("#computeDist").html('');
-		}
-	}else{
-		console.log("Weird call. Please debug it...");
+		});
+
+		// $("#outputDist").val('');
+		// $("#computeDist").html('<img src="img/loading.gif" height="30">');
+		// idFrom=parseFloat(globalPointsLabels[idFrom][0]);
+		// idTo=parseFloat(globalPointsLabels[idTo][0]);
+		// // old method, only upper triangular
+		// // var res=dists[(idFrom-1)*howmany+idTo-1];
+		// var res=dists[idFrom][idTo];
+		// if(preload!=true){$("#outputDist").val(res);}
+		// $("#computeDist").html('');
 	}
 }
 
 // ADD FROM/TO INDICES
 function add(place){
+	// before was simply selectedIndex?!
 	if(selectedIndex!=undefined){
 		if(place=='from'){
-			$('#fromHere').val(selectedIndex);
-			fromIndex=selectedIndex;
+			$('#fromHere').val(parseInt(globalPointsLabels[selectedIndex][0]));
+			fromIndex=parseInt(globalPointsLabels[selectedIndex][0]);
 		}
 		if(place=='to'){
-			$('#toHere').val(selectedIndex);
-			toIndex=selectedIndex;
+			$('#toHere').val(parseInt(globalPointsLabels[selectedIndex][0]));
+			toIndex=parseInt(globalPointsLabels[selectedIndex][0]);
 		}
 	}
-	computeDist(false);
+	computeDist();
 }
 
 // UPDATES ALL DIVS THAT REQUIRE DYNAMIC DATA
@@ -299,10 +272,23 @@ function updateInfoDiv() {
 				infoTable=infoTable+'<tr><td>'+namesOfLabels[indLabel]+'</td><td>'+globalPointsLabels[selectedIndex][indLabel]+' (<a href="'+link+'" target="_blank"><font color="yellow">NCBI</font></a>)</td></tr>';
 				
 				if(mapid in mapsWithReadyFCGRs){
-					//console.log("readyFCGRS!!");
-					fcgrInfo='<a href="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" target="_blank"><img src="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" height="200px" width="200px" alt="FCGR IMAGE NOT AVAILABLE" title="Click here to Zoom In"></a>';
+					
+					if(mapsWithReadyFCGRs[mapid].substring(0,6)=='index_'){
+						// map with intra, where accessions cannot be used
+						console.log("intra map!");
+						// console.log(mapsWithReadyFCGRs[mapid]);
+						// console.log(globalPointsLabels[selectedIndex]);
+						// console.log(indLabel);
+
+						fcgrInfo='<a href="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][0]+'.png" target="_blank"><img src="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][0]+'.png" height="200px" width="200px" alt="FCGR IMAGE NOT AVAILABLE" title="Click here to Zoom In"></a>';
+					}else{
+						// use accessions
+						fcgrInfo='<a href="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" target="_blank"><img src="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png" height="200px" width="200px" alt="FCGR IMAGE NOT AVAILABLE" title="Click here to Zoom In"></a>';	
+					}
 				}else{
-					fcgrInfo="Not Available.";			 
+					fcgrInfo="Not Available.";	
+					// for debug, where is it searching for image
+					// console.log('fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][indLabel]+'.png');		 
 				}
 			}else if(namesOfLabels[indLabel]=="AsmAcc"){
 				var link=linkNCBI+globalPointsLabels[selectedIndex][indLabel];
@@ -329,7 +315,7 @@ function updateInfoDiv() {
 			}
 		}else{
 			infoTable=infoTable+'<tr><td>'+namesOfLabels[indLabel]+'</td><td>Undefined</td></tr>';
-			fcgrInfo='Unavailable for this map!';
+			fcgrInfo='Select a point!';
 		}
 	}
 	pointInfoDiv.innerHTML= '<em><strong><font color="yellow" size="4">Point Info</font></strong></em><table border="3">'+infoTable+'</table>';
@@ -765,11 +751,23 @@ function initGraphics(){
 	<div id="searchstatus"></div><hr color="white" width="60%">';
 
 	// DISTPOINTS DIV
-	distPointsDiv.innerHTML='<em><strong><font color="yellow" size="4">Distance between Points</font></strong></em><br>\
-	<input type="button" value="Load Map\'s Distance Matrix" onclick="computeDist(true);">\
-	<div id="computeDist"></div>\
-	<hr color="white" width="60%">';
-
+	distPointsDiv.innerHTML = '<em><strong><font color="yellow" size="4">Distance between Points</font></strong></em><br>\
+			<table border="0">\
+			<tr>\
+				<td>From:</td>\
+				<td><input id="fromHere" value="'+fromIndex+'" maxlength="7" size="7" disabled /></td>\
+				<td><input type="button" value="Add" onclick="add(\'from\');"></td></tr>\
+			<tr>\
+				<td>To:</td>\
+				<td><input id="toHere" value="'+toIndex+'" maxlength="7" size="7" disabled /></td>\
+				<td><input type="button" value="Add" onclick="add(\'to\');"></td></tr>\
+			<tr>\
+				<td>Distance:</td>\
+				<td colspan="2"><input id="outputDist" type="text" value="" maxlength="10" size="14" disabled /></td></tr>\
+			<tr>\
+				<td><div id="computeDist"></div></td></tr>\
+			</table><hr color="white" width="60%">';
+	
 	// SET DIMENSIONS IN DROPDOWN MENU
 	document.getElementById("dim1").selectedIndex=dim1;
 	document.getElementById("dim2").selectedIndex=dim2;
@@ -1156,7 +1154,8 @@ function mapContentParsing() {
 $(document).ready(function(){
 	
 	$("#cgrInfoDiv").hide();
-	$("#distPointsDiv").hide();
+	//uncomment
+	//$("#distPointsDiv").hide();
 
 	if(geturlparamvalue('dbg')=='true'){dbg=true;}    
 	mapid=geturlparamvalue('mapid');

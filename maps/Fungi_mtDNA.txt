@@ -1,0 +1,2517 @@
+251
+blue
+5
+Index,Acc,Name,Length,Taxa
+blue
+Fungi (251)
+Number of sequences is 251
+-0.586659
+-0.136642
+0.0933455
+-0.199849
+0.31973
+1
+NC_000843
+mitochondrion Neurospora intermedia
+7050
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Sordariaceae  Neurospora}
+0.242679
+0.46103
+0.969154
+0.366046
+0.184494
+2
+NC_001224
+mitochondrion Saccharomyces cerevisiae S288c
+85779
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Saccharomyces}
+-0.105771
+0.0464186
+0.153399
+-0.0598832
+0.223628
+3
+NC_001326
+mitochondrion Schizosaccharomyces pombe (fission yeast)
+19431
+{Eukaryota  Fungi  Dikarya  Ascomycota  Taphrinomycotina  Schizosaccharomycetes  Schizosaccharomycetales  Schizosaccharomycetaceae  Schizosaccharomyces}
+0.875889
+-0.297944
+-0.0396408
+-0.028973
+0.258986
+4
+NC_001329
+mitochondrion Podospora anserina
+100314
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Lasiosphaeriaceae  Podospora}
+-0.991449
+-0.98365
+-0.730587
+0.971723
+-0.960714
+5
+NC_001570
+mitochondrion Neurospora crassa
+3581
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Sordariaceae  Neurospora}
+-1.
+-0.996061
+-0.750578
+0.99389
+-0.995305
+6
+NC_001571
+mitochondrion Neurospora intermedia
+3675
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Sordariaceae  Neurospora}
+0.39656
+-0.381681
+0.131043
+0.0244908
+0.211245
+7
+NC_001715
+mitochondrion Allomyces macrogynus
+57473
+{Eukaryota  Fungi  Blastocladiomycota  Blastocladiomycetes  Blastocladiales  Blastocladiaceae  Allomyces}
+-0.156182
+0.634137
+0.548408
+0.132002
+0.286363
+8
+NC_001762
+mitochondrion Wickerhamomyces canadensis (Hansenula wingei)
+27694
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Phaffomycetaceae  Wickerhamomyces}
+-0.560365
+0.143101
+0.267484
+-0.245091
+0.268114
+9
+NC_002135
+mitochondrion Pleurotus ostreatus (oyster mushroom)
+9879
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Pleurotaceae  Pleurotus}
+-0.693715
+-0.611681
+-0.192832
+-0.096154
+0.389381
+10
+NC_002364
+mitochondrion Cryphonectria parasitica (chestnut blight fungus)
+1364
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Diaporthales  Cryphonectriaceae  Cryphonectria-Endothia complex  Cryphonectria}
+0.176956
+0.0275902
+0.439883
+0.0474329
+0.224426
+11
+NC_002653
+mitochondrion Candida albicans SC5314
+40420
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.377436
+0.368752
+0.49625
+0.0776294
+0.150393
+12
+NC_002659
+mitochondrion Yarrowia lipolytica
+47916
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Dipodascaceae  Yarrowia}
+-0.0692938
+-0.509217
+-0.0279014
+-0.0693286
+0.281059
+13
+NC_003048
+mitochondrion Hyaloraphidium curvatum
+29593
+{Eukaryota  Fungi  Chytridiomycota  Monoblepharidomycetes  Monoblepharidales  Monoblepharidales incertae sedis  Hyaloraphidium}
+0.380877
+0.175744
+0.352371
+-0.103452
+0.0735554
+14
+NC_003049
+mitochondrion Schizophyllum commune
+49704
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Schizophyllaceae  Schizophyllum}
+0.543711
+-0.217457
+0.337897
+-0.0726946
+0.115716
+15
+NC_003052
+mitochondrion Spizellomyces punctatus
+58830
+{Eukaryota  Fungi  Chytridiomycota  Chytridiomycetes  Spizellomycetales  Spizellomycetaceae  Spizellomyces}
+0.598883
+0.0483508
+0.371235
+-0.0393924
+0.0836743
+16
+NC_003053
+mitochondrion Rhizophydium sp. 136
+68834
+{Eukaryota  Fungi  Chytridiomycota  Chytridiomycetes  Rhizophydiales  Rhizophydiaceae  Rhizophydium}
+-0.72149
+-0.614633
+-0.215356
+-0.0960397
+0.407688
+17
+NC_003060
+mitochondrion Spizellomyces punctatus
+1136
+{Eukaryota  Fungi  Chytridiomycota  Chytridiomycetes  Spizellomycetales  Spizellomycetaceae  Spizellomyces}
+-0.726323
+-0.607972
+-0.204445
+-0.0896281
+0.409921
+18
+NC_003061
+mitochondrion Spizellomyces punctatus
+1381
+{Eukaryota  Fungi  Chytridiomycota  Chytridiomycetes  Spizellomycetales  Spizellomycetaceae  Spizellomyces}
+0.507197
+0.309151
+-0.323938
+-0.0290143
+0.549245
+19
+NC_003388
+mitochondrion Trichoderma reesei
+42130
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Hypocreaceae  Trichoderma}
+-0.18995
+0.596266
+0.823504
+0.296602
+0.29916
+20
+NC_003920
+mitochondrion Naumovozyma castellii (Saccharomyces castellii)
+25753
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Naumovozyma}
+0.335533
+0.149644
+0.40063
+-0.0675532
+0.0867345
+21
+NC_004312
+mitochondrion Schizosaccharomyces octosporus
+44227
+{Eukaryota  Fungi  Dikarya  Ascomycota  Taphrinomycotina  Schizosaccharomycetes  Schizosaccharomycetales  Schizosaccharomycetaceae  Schizosaccharomyces}
+0.429164
+0.192091
+0.542938
+-0.047944
+0.0831221
+22
+NC_004332
+mitochondrion Schizosaccharomyces japonicus
+80059
+{Eukaryota  Fungi  Dikarya  Ascomycota  Taphrinomycotina  Schizosaccharomycetes  Schizosaccharomycetales  Schizosaccharomycetaceae  Schizosaccharomyces}
+-0.100072
+-0.224626
+0.233226
+-0.115615
+0.266277
+23
+NC_004336
+mitochondrion Cryptococcus neoformans var. grubii (Filobasidiella
+24874
+{ORGANISM  Cryptococcus neoformans var grubii            Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Tremellomycetes  Tremellales  Tremellaceae  Filobasidiella  Filobasidiella/Cryptococcus neoformans species complex}
+0.110299
+0.593751
+-0.604225
+-0.0216347
+0.844347
+24
+NC_004514
+mitochondrion Lecanicillium muscarium
+24499
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Cordycipitaceae  Lecanicillium}
+-0.0853375
+-0.221282
+0.0105987
+-0.0694187
+0.257534
+25
+NC_004623
+mitochondrion Harpochytrium sp. JEL105
+24169
+{Eukaryota  Fungi  Chytridiomycota  Monoblepharidomycetes  Monoblepharidales  Harpochytriaceae  Harpochytrium}
+0.332668
+-0.411075
+0.113073
+-0.0363737
+0.198144
+26
+NC_004624
+mitochondrion Monoblepharella sp. JEL15
+60432
+{Eukaryota  Fungi  Chytridiomycota  Monoblepharidomycetes  Monoblepharidales  Monoblepharidaceae  Monoblepharella}
+-0.406727
+0.630045
+0.889648
+0.415472
+0.379523
+27
+NC_004691
+mitochondrion Candida glabrata CBS 138
+20063
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Nakaseomyces  Nakaseomyces/Candida clade}
+-0.186491
+-0.20361
+-0.0053118
+-0.0654093
+0.260679
+28
+NC_004760
+mitochondrion Harpochytrium sp. JEL94
+19473
+{Eukaryota  Fungi  Chytridiomycota  Monoblepharidomycetes  Monoblepharidales  Harpochytriaceae  Harpochytrium}
+-0.0551632
+0.468241
+0.763568
+0.242956
+0.279155
+29
+NC_004918
+mitochondrion Kazachstania servazzii
+30782
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Kazachstania}
+-0.539616
+-0.137319
+0.107989
+-0.202782
+0.327339
+30
+NC_004935
+mitochondrion Blumeria graminis f. sp. hordei
+7965
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Erysiphales  Erysiphaceae  Blumeria}
+-0.670668
+-0.525188
+-0.158944
+-0.102149
+0.366236
+31
+NC_004948
+mitochondrion Trichoderma harzianum
+2619
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Hypocreaceae  Trichoderma}
+-0.648098
+-0.443625
+-0.113634
+-0.116538
+0.393859
+32
+NC_004970
+mitochondrion Neurospora intermedia
+4080
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Sordariaceae  Neurospora}
+-0.719343
+-0.627004
+-0.239219
+-0.0985637
+0.407805
+33
+NC_004975
+mitochondrion Fusarium oxysporum f. sp. matthiolae
+1836
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium  Fusarium oxysporum species complex}
+-0.719801
+-0.629799
+-0.226381
+-0.0981426
+0.405967
+34
+NC_004976
+mitochondrion Fusarium oxysporum f. sp. raphani
+1905
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium  Fusarium oxysporum species complex}
+0.0724578
+0.325928
+0.59975
+-0.0474962
+0.165511
+35
+NC_005253
+mitochondrion Candida parapsilosis
+32745
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.315143
+0.557796
+-0.361649
+-0.11128
+0.00494374
+36
+NC_005256
+mitochondrion Talaromyces marneffei (anamorph: Penicillium
+35438
+{ORGANISM  Talaromyces marneffei            Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Trichocomaceae  Talaromyces}
+-0.323528
+0.609015
+0.818854
+0.247046
+0.287798
+37
+NC_005789
+mitochondrion Eremothecium gossypii ATCC 10895 (Ashbya gossypii
+23564
+{ORGANISM  Eremothecium gossypii ATCC 10895            Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Eremothecium}
+0.784405
+-0.278105
+0.262871
+-0.0420175
+0.106348
+38
+NC_005927
+mitochondrion Moniliophthora perniciosa (Crinipellis perniciosa)
+109103
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Marasmiaceae  mitosporic Marasmiaceae  Moniliophthora}
+-0.151622
+0.369758
+0.412882
+-0.0820684
+0.206119
+39
+NC_005972
+mitochondrion Starmerella bacillaris
+23114
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetales incertae            sedis  Starmerella}
+-0.0187584
+0.104688
+0.60963
+-0.112616
+0.132398
+40
+NC_006077
+mitochondrion Kluyveromyces lactis
+40291
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Kluyveromyces}
+-0.205098
+0.531425
+0.908182
+0.440948
+0.371117
+41
+NC_006626
+mitochondrion Lachancea thermotolerans
+23584
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Lachancea}
+0.409645
+-0.0256722
+0.323674
+-0.0968921
+0.0817012
+42
+NC_006836
+mitochondrion Rhizopus oryzae (Rhizopus arrhizus)
+54178
+{Eukaryota  Fungi  Fungi incertae sedis  Mucoromycotina  Mucorales  Mucorineae  Rhizopodaceae  Rhizopus}
+0.362569
+0.316411
+0.481094
+-0.117285
+0.0565581
+43
+NC_006837
+mitochondrion Zancudomyces culisetae
+58654
+{Eukaryota  Fungi  Fungi incertae sedis  Kickxellomycotina  Harpellales  Legeriomycetaceae  Zancudomyces}
+0.517471
+-0.104244
+0.347593
+-0.102191
+0.0888627
+44
+NC_006838
+mitochondrion Mortierella verticillata
+58745
+{Eukaryota  Fungi  Fungi incertae sedis  Mortierellomycotina  Mortierellales  Mortierellaceae  Mortierella}
+-0.100433
+0.321213
+0.590982
+-0.0397126
+0.193506
+45
+NC_006971
+mitochondrion Candida metapsilosis
+24152
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+-0.128317
+0.335323
+0.589416
+-0.0486023
+0.212218
+46
+NC_006972
+mitochondrion Candida orthopsilosis
+22528
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.177302
+0.915928
+-0.799214
+-0.226166
+-0.488252
+47
+NC_007394
+mitochondrion Epidermophyton floccosum
+30910
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Arthrodermataceae  Epidermophyton}
+0.225319
+0.623454
+-0.572397
+-0.119379
+-0.0674253
+48
+NC_007445
+mitochondrion Aspergillus niger
+31103
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Aspergillus}
+0.280002
+0.610718
+-0.548833
+-0.11141
+-0.0596891
+49
+NC_007597
+mitochondrion Aspergillus tubingensis
+33656
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Aspergillus}
+-0.179173
+0.0738736
+0.329589
+-0.0645405
+0.247847
+50
+NC_007780
+mitochondrion Hanseniaspora uvarum
+18844
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycodaceae  Hanseniaspora}
+0.534933
+0.299798
+0.0290085
+-0.0608187
+0.0239217
+51
+NC_007935
+mitochondrion Paracoccidioides brasiliensis
+71335
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Onygenales incertae            sedis  Paracoccidioides}
+0.126742
+0.467335
+-0.503989
+-0.0249345
+0.709574
+52
+NC_008068
+mitochondrion Metarhizium anisopliae
+24673
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Clavicipitaceae  Metarhizium}
+0.169496
+0.488548
+-0.489227
+-0.0832629
+0.533104
+53
+NC_008248
+mitochondrion Verticillium dahliae
+27184
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Plectosphaerellaceae  Verticillium}
+0.212168
+0.687622
+-0.585309
+-0.129763
+-0.0600957
+54
+NC_008282
+mitochondrion Aspergillus oryzae
+29202
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Aspergillus}
+0.521493
+-0.248026
+0.286583
+-0.0868006
+0.128358
+55
+NC_008368
+mitochondrion Ustilago maydis
+56814
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Ustilaginomycotina  Ustilaginomycetes  Ustilaginales  Ustilaginaceae  Ustilago}
+0.953016
+-0.318577
+-0.219491
+0.0281433
+0.547441
+56
+NC_009493
+mitochondrion Fusarium graminearum (Gibberella zeae)
+95676
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium}
+-0.441585
+0.561349
+0.768715
+0.315007
+0.356906
+57
+NC_009638
+mitochondrion Vanderwaltozyma polyspora
+21684
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Vanderwaltozyma}
+0.516573
+0.00795449
+0.0581684
+-0.143957
+0.106015
+58
+NC_009746
+mitochondrion Parastagonospora nodorum SN15
+49761
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Dothideomycetes  Pleosporomycetidae  Pleosporales  Pleosporineae  Phaeosphaeriaceae  Parastagonospora}
+0.590984
+-0.272229
+0.367874
+-0.134954
+0.0846054
+59
+NC_009880
+mitochondrion Tilletia indica (Neovossia indica)
+65147
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Ustilaginomycotina  Exobasidiomycetes  Tilletiales  Tilletiaceae  Tilletia}
+0.662041
+-0.128646
+0.252321
+-0.047762
+0.0936739
+60
+NC_009905
+mitochondrion Pleurotus ostreatus (oyster mushroom)
+73242
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Pleurotaceae  Pleurotus}
+0.0515745
+0.27571
+0.445939
+-0.00532224
+0.226955
+61
+NC_010166
+mitochondrion Debaryomyces hansenii
+29462
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Debaryomyces}
+0.376468
+-0.0858354
+0.104747
+-0.206084
+0.0762851
+62
+NC_010222
+mitochondrion Zymoseptoria tritici
+43964
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Dothideomycetes  Dothideomycetidae  Capnodiales  Mycosphaerellaceae  Zymoseptoria}
+-0.465406
+0.0804668
+0.20867
+-0.229418
+0.27055
+63
+NC_010425
+mitochondrion Fusarium proliferatum (Gibberella intermedia)
+10336
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium  Fusarium fujikuroi species complex}
+0.544065
+-0.239899
+0.366219
+-0.143965
+0.0858596
+64
+NC_010651
+mitochondrion Tilletia walkeri
+59352
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Ustilaginomycotina  Exobasidiomycetes  Tilletiales  Tilletiaceae  Tilletia}
+0.242248
+0.578566
+-0.646117
+-0.0234006
+0.917131
+65
+NC_010652
+mitochondrion Beauveria bassiana
+29961
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Cordycipitaceae  Beauveria}
+0.0930301
+0.327202
+0.566118
+0.0483599
+0.19928
+66
+NC_011133
+mitochondrion Candida neerlandica
+32141
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.314009
+0.513903
+-0.550369
+-0.0270109
+0.834832
+67
+NC_011194
+mitochondrion Cordyceps brongniartii
+33926
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Cordycipitaceae  Cordyceps}
+0.191244
+-0.112864
+0.126795
+0.025083
+0.212023
+68
+NC_011360
+mitochondrion Blastocladiella emersonii
+36503
+{Eukaryota  Fungi  Blastocladiomycota  Blastocladiomycetes  Blastocladiales  Blastocladiaceae  Blastocladiella}
+0.681976
+-0.680327
+0.159175
+-0.0287681
+0.134512
+69
+NC_012056
+mitochondrion Rhizophagus intraradices
+70606
+{Eukaryota  Fungi  Glomeromycota  Glomeromycetes  Glomerales  Glomeraceae  Rhizophagus}
+0.172602
+0.482171
+0.925696
+0.315185
+0.204209
+70
+NC_012145
+mitochondrion Saccharomyces pastorianus Weihenstephan 34/70
+70578
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Saccharomyces}
+-0.993293
+-0.985183
+-0.734149
+0.973104
+-0.967498
+71
+NC_012412
+mitochondrion Neurospora intermedia
+3614
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Sordariaceae  Neurospora}
+-0.999804
+-1.
+-0.750435
+1.
+-1.
+72
+NC_012415
+mitochondrion Neurospora intermedia
+3774
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Sordariaceae  Neurospora}
+-0.252379
+0.651907
+0.927388
+0.361482
+0.322932
+73
+NC_012619
+mitochondrion Nakaseomyces delphensis
+37016
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Nakaseomyces}
+-0.220613
+0.510421
+0.759424
+0.127584
+0.250542
+74
+NC_012620
+mitochondrion Candida castellii
+50294
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Nakaseomyces  Nakaseomyces/Candida clade}
+-0.0283459
+0.25694
+0.665923
+-0.103526
+0.135929
+75
+NC_012621
+mitochondrion Nakaseomyces bacillisporus
+107123
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Nakaseomyces}
+0.0763885
+0.986746
+-0.939144
+-0.262186
+-0.586855
+76
+NC_012824
+mitochondrion Trichophyton rubrum
+26985
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Arthrodermataceae  Trichophyton}
+0.021049
+1.
+-0.997032
+-0.269712
+-0.581789
+77
+NC_012826
+mitochondrion Trichophyton mentagrophytes
+24297
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Arthrodermataceae  Trichophyton}
+0.107991
+0.852289
+-0.711023
+-0.216505
+-0.366386
+78
+NC_012828
+mitochondrion Arthroderma uncinatum (anamorph: Trichophyton
+28530
+{ORGANISM  Arthroderma uncinatum            Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Arthrodermataceae  Arthroderma}
+0.0256065
+0.9507
+-0.973449
+-0.273765
+-0.547343
+79
+NC_012830
+mitochondrion Arthroderma obtusum (anamorph: Microsporum nanum)
+24105
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Arthrodermataceae  Arthroderma}
+0.0152185
+0.986264
+-0.982626
+-0.265369
+-0.544856
+80
+NC_012832
+mitochondrion Arthroderma otae (anamorph: Microsporum canis)
+23943
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Arthrodermataceae  Arthroderma}
+0.0062825
+0.515251
+0.425678
+0.0726685
+0.261663
+81
+NC_013145
+mitochondrion Brettanomyces custersianus
+30058
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Pichiaceae  Brettanomyces}
+0.177983
+0.306875
+0.728906
+-0.141069
+0.0515047
+82
+NC_013147
+mitochondrion Brettanomyces bruxellensis (Dekkera bruxellensis)
+76453
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Pichiaceae  Brettanomyces}
+0.232896
+0.36352
+0.479189
+0.0359544
+0.187456
+83
+NC_013255
+mitochondrion Millerozyma farinosa (Pichia farinosa)
+39107
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Millerozyma}
+0.0233344
+0.0776856
+0.16188
+0.0206421
+0.233909
+84
+NC_013660
+mitochondrion Pneumocystis carinii
+26119
+{Eukaryota  Fungi  Dikarya  Ascomycota  Taphrinomycotina  Pneumocystidomycetes  Pneumocystidaceae  Pneumocystis}
+0.170327
+0.242761
+0.538444
+0.017774
+0.188068
+85
+NC_013809
+mitochondrion Candida viswanathii
+39242
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.257458
+0.291083
+0.511386
+-0.0780236
+0.131197
+86
+NC_013830
+mitochondrion Candida maltosa
+62949
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.167905
+0.0971727
+0.529322
+-0.0417743
+0.149195
+87
+NC_013839
+mitochondrion Candida sojae
+39415
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.831073
+-0.145228
+0.289282
+-0.00974348
+0.100268
+88
+NC_013933
+mitochondrion Trametes cingulata
+91500
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Polyporales  Trametes}
+-0.330523
+-0.760149
+-0.160638
+-0.0265891
+0.387622
+89
+NC_014337
+mitochondrion Candida subhashii
+29795
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  mitosporic Saccharomycetales  Candida}
+0.0455695
+-0.205504
+0.175795
+0.00786222
+0.331373
+90
+NC_014344
+mitochondrion Phakopsora pachyrhizi
+31825
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Pucciniomycotina  Pucciniomycetes  Pucciniales  Phakopsoraceae  Phakopsora}
+0.072473
+-0.217475
+0.161114
+0.00559614
+0.319699
+91
+NC_014352
+mitochondrion Phakopsora meibomiae
+32520
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Pucciniomycotina  Pucciniomycetes  Pucciniales  Phakopsoraceae  Phakopsora}
+0.686673
+-0.683841
+0.15041
+-0.0289175
+0.134613
+92
+NC_014489
+mitochondrion Rhizophagus irregularis
+70800
+{Eukaryota  Fungi  Glomeromycota  Glomeromycetes  Glomerales  Glomeraceae  Rhizophagus}
+-0.06538
+0.442501
+0.57849
+-0.0593168
+0.163391
+93
+NC_014612
+mitochondrion Candida alai
+30368
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  mitosporic Saccharomycetales  Candida}
+-0.0933444
+0.438015
+0.428076
+-0.0593253
+0.177893
+94
+NC_014613
+mitochondrion Candida salmanticensis
+27812
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  mitosporic Saccharomycetales  Candida}
+0.0682738
+0.249505
+0.497135
+0.0832151
+0.2258
+95
+NC_014693
+mitochondrion Candida jiufengensis
+29672
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.194899
+0.339959
+0.570218
+-0.0948765
+0.0928803
+96
+NC_014805
+mitochondrion Ogataea angusta
+41719
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Pichiaceae  Ogataea}
+0.181576
+0.694027
+-0.508732
+-0.124022
+-0.0641504
+97
+NC_015080
+mitochondrion Penicillium digitatum
+28978
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Penicillium}
+-0.54841
+0.110627
+0.222956
+-0.225149
+0.276906
+98
+NC_015333
+mitochondrion Moniliophthora roreri
+9745
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Marasmiaceae  mitosporic Marasmiaceae  Moniliophthora}
+-0.501251
+0.217598
+0.358416
+-0.231641
+0.268576
+99
+NC_015334
+mitochondrion Moniliophthora roreri
+11500
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Marasmiaceae  mitosporic Marasmiaceae  Moniliophthora}
+-0.499333
+0.105291
+0.234496
+-0.234436
+0.258752
+100
+NC_015335
+mitochondrion Moniliophthora roreri
+10090
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Marasmiaceae  mitosporic Marasmiaceae  Moniliophthora}
+0.136864
+0.489925
+0.456968
+0.0756314
+0.21647
+101
+NC_015384
+mitochondrion Komagataella phaffii CBS 7435
+35683
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Phaffomycetaceae  Komagataella}
+0.792843
+-0.260231
+0.264675
+-0.0409832
+0.103637
+102
+NC_015400
+mitochondrion Moniliophthora roreri
+93722
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Marasmiaceae  mitosporic Marasmiaceae  Moniliophthora}
+0.455676
+0.239098
+-0.229793
+-0.110276
+0.172798
+103
+NC_015789
+mitochondrion Phialocephala subalpina
+43742
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Helotiales incertae sedis  Phialocephala  Phialocephala fortinii complex}
+0.104302
+0.3841
+0.572401
+0.0351117
+0.169482
+104
+NC_015814
+mitochondrion Candida frijolesensis
+37215
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.917387
+-0.457924
+0.00305269
+-0.00316613
+0.234293
+105
+NC_015893
+mitochondrion Chaetomium thermophilum var. thermophilum DSM 1495
+127206
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+0.131354
+0.52101
+-0.324145
+-0.0860725
+0.369582
+106
+NC_015923
+mitochondrion Sporothrix schenckii
+27125
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Ophiostomatales  Ophiostomataceae  Sporothrix}
+0.738204
+-0.0889901
+-0.0822031
+-0.0696934
+0.157422
+107
+NC_015991
+mitochondrion Marssonina brunnea f. sp. 'multigermtubi'
+70379
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Dermateaceae  Marssonina}
+0.378988
+0.341692
+0.50135
+0.085026
+0.146792
+108
+NC_016116
+mitochondrion Candida galli
+48508
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  mitosporic Saccharomycetales  Candida}
+0.186947
+0.445898
+0.45989
+0.0605165
+0.177601
+109
+NC_016124
+mitochondrion Candida alimentaria
+35173
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  mitosporic Saccharomycetales  Candida}
+0.0416047
+0.500773
+0.464191
+0.0670133
+0.214405
+110
+NC_016126
+mitochondrion Candida phangngaensis
+28017
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  mitosporic Saccharomycetales  Candida}
+0.284784
+0.404925
+0.506055
+0.0845765
+0.170577
+111
+NC_016130
+mitochondrion Candida deformans
+40665
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  mitosporic Saccharomycetales  Candida}
+0.176185
+0.702704
+-0.518134
+-0.124253
+-0.0643087
+112
+NC_016187
+mitochondrion Penicillium solitum
+28601
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Penicillium}
+0.711757
+0.047949
+-0.230931
+-0.0168824
+0.479662
+113
+NC_016680
+mitochondrion Fusarium solani
+62978
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium  Fusarium solani species complex}
+0.503926
+-0.886896
+0.0377595
+-0.0171129
+0.24792
+114
+NC_016684
+mitochondrion Gigaspora margarita
+96998
+{Eukaryota  Fungi  Glomeromycota  Glomeromycetes  Diversisporales  Gigasporaceae  Gigaspora}
+0.587191
+0.0490635
+-0.454214
+-0.00600599
+0.717072
+115
+NC_016687
+mitochondrion Fusarium verticillioides
+53753
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium  Fusarium fujikuroi species complex}
+-0.322693
+0.611269
+0.809488
+0.246722
+0.288567
+116
+NC_016756
+mitochondrion Eremothecium gossypii FDAG1 (Ashbya gossypii FDAG1)
+23497
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Eremothecium}
+0.699325
+0.0407192
+-0.0290878
+-0.0679807
+0.112044
+117
+NC_016955
+mitochondrion Peltigera malacea
+63363
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Lecanoromycetes  OSLEUM clade  Lecanoromycetidae  Peltigerales  Peltigerineae  Peltigeraceae  Peltigera}
+0.687083
+0.0487121
+-0.00540583
+-0.0793642
+0.0925667
+118
+NC_016957
+mitochondrion Peltigera membranacea
+62785
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Lecanoromycetes  OSLEUM clade  Lecanoromycetidae  Peltigerales  Peltigerineae  Peltigeraceae  Peltigera}
+0.507195
+-0.891735
+0.052481
+-0.0206946
+0.248128
+119
+NC_016985
+mitochondrion Gigaspora rosea
+97350
+{Eukaryota  Fungi  Glomeromycota  Glomeromycetes  Diversisporales  Gigasporaceae  Gigaspora}
+0.232383
+0.696256
+-0.556332
+-0.12399
+-0.0687926
+120
+NC_017016
+mitochondrion Aspergillus fumigatus
+30696
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Aspergillus}
+0.285703
+0.662011
+-0.480265
+-0.113896
+-0.0296736
+121
+NC_017896
+mitochondrion Aspergillus nidulans FGSC A4
+33227
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Aspergillus}
+0.368453
+0.270515
+-0.580547
+-0.0247591
+0.793135
+122
+NC_017930
+mitochondrion Fusarium oxysporum
+34477
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium  Fusarium oxysporum species complex}
+0.15401
+0.532164
+0.93812
+0.294806
+0.16851
+123
+NC_018044
+mitochondrion Saccharomyces paradoxus
+71355
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Saccharomyces}
+-0.0357153
+0.603764
+0.902265
+0.377777
+0.279133
+124
+NC_018056
+mitochondrion Lachancea kluyveri
+51679
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Lachancea}
+0.00314386
+0.0579043
+0.6912
+-0.637183
+-0.162903
+125
+NC_018100
+mitochondrion Aspergillus oryzae 3.042
+29192
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Aspergillus}
+0.504371
+0.24123
+-0.192388
+-0.0592521
+0.325683
+126
+NC_018359
+mitochondrion Madurella mycetomatis
+45590
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  mitosporic            Sordariales  Madurella}
+0.848818
+-0.438928
+0.225516
+-0.0240021
+0.122219
+127
+NC_018365
+mitochondrion Lentinula edodes (shiitake mushroom)
+121394
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Omphalotaceae  Lentinula}
+-0.0997113
+-0.224747
+0.232917
+-0.115274
+0.266305
+128
+NC_018792
+mitochondrion Cryptococcus neoformans var. grubii H99
+24919
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Tremellomycetes  Tremellales  Tremellaceae  Filobasidiella  Filobasidiella/Cryptococcus neoformans species complex}
+0.223407
+-0.395086
+0.193893
+-0.0387832
+0.229641
+129
+NC_020043
+mitochondrion Magnusiomyces magnusii
+42757
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Dipodascaceae  Magnusiomyces}
+0.86605
+-0.574556
+0.190874
+-0.0469657
+0.13141
+130
+NC_020148
+mitochondrion Phlebia radiata
+156348
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Corticiales  Corticiaceae  Phlebia}
+0.122904
+0.194142
+0.23981
+0.0162287
+0.181331
+131
+NC_020331
+mitochondrion Pneumocystis jirovecii
+35626
+{Eukaryota  Fungi  Dikarya  Ascomycota  Taphrinomycotina  Pneumocystidomycetes  Pneumocystidaceae  Pneumocystis}
+-0.0402163
+0.0433731
+0.134656
+-0.00988973
+0.252135
+132
+NC_020332
+mitochondrion Pneumocystis murina
+24608
+{Eukaryota  Fungi  Dikarya  Ascomycota  Taphrinomycotina  Pneumocystidomycetes  Pneumocystidaceae  Pneumocystis}
+0.756125
+-0.551606
+0.195812
+-0.0700641
+0.128196
+133
+NC_020353
+mitochondrion Microbotryum lychnidis-dioicae
+107808
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Pucciniomycotina  Microbotryomycetes  Microbotryales  Microbotryaceae  Microbotryum}
+0.600243
+-0.461876
+0.196852
+-0.0819258
+0.137079
+134
+NC_020354
+mitochondrion Microbotryum cf. violaceum BFL-2013
+92107
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Pucciniomycotina  Microbotryomycetes  Microbotryales  Microbotryaceae  Microbotryum}
+0.574729
+0.017292
+0.306003
+-0.0249465
+0.114125
+135
+NC_020368
+mitochondrion Cantharellus cibarius (chanterelle)
+58656
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Cantharellales  Cantharellaceae  Cantharellus}
+0.888248
+-0.197981
+0.0362872
+-0.0103983
+0.225707
+136
+NC_020430
+mitochondrion Ceratocystis cacaofunesta
+103147
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Microascales  Ceratocystidaceae  Ceratocystis}
+0.78701
+-0.69213
+0.10801
+-0.0230286
+0.170044
+137
+NC_021436
+mitochondrion Rhizoctonia solani
+235849
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Cantharellales  Ceratobasidiaceae  mitosporic            Ceratobasidiaceae  Rhizoctonia}
+0.325188
+-0.688653
+0.0417557
+-0.0187108
+0.254955
+138
+NC_022144
+mitochondrion Glomus cerebriforme
+59633
+{Eukaryota  Fungi  Glomeromycota  Glomeromycetes  Glomerales  Glomeraceae  Glomus}
+-0.0926244
+0.273953
+0.583163
+-0.0988348
+0.155532
+139
+NC_022173
+mitochondrion Candida blackwelliae
+32053
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.362111
+0.0098059
+0.541771
+-0.0467995
+0.128863
+140
+NC_022176
+mitochondrion Candida chauliodis
+77153
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.142818
+0.281766
+0.521849
+-0.0194801
+0.141282
+141
+NC_022434
+mitochondrion Candida bohioensis
+69218
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.210654
+0.289861
+0.515902
+-0.0129077
+0.165696
+142
+NC_022435
+mitochondrion Candida prachuapensis
+90840
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+0.746293
+-0.0565925
+-0.341251
+0.00259198
+0.645876
+143
+NC_022681
+mitochondrion Fusarium circinatum
+67109
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium  Fusarium fujikuroi species complex}
+0.206658
+0.589806
+-0.684938
+-0.028452
+0.94018
+144
+NC_022708
+mitochondrion Beauveria pseudobassiana
+28006
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Cordycipitaceae  Beauveria}
+0.316825
+0.518169
+-0.504546
+-0.0188412
+0.792167
+145
+NC_022834
+mitochondrion Cordyceps militaris
+33277
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Cordycipitaceae  Cordyceps}
+0.153417
+0.486653
+-0.555553
+-0.0345659
+0.709594
+146
+NC_022835
+mitochondrion Pochonia chlamydosporia (Metacordyceps
+25615
+{ORGANISM  Pochonia chlamydosporia            Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Clavicipitaceae  Pochonia}
+0.827583
+-0.226747
+0.301747
+-0.00224728
+0.0865995
+147
+NC_022933
+mitochondrion Ganoderma sinense
+86451
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Polyporales  Ganodermataceae  Ganoderma}
+0.950096
+-0.444543
+0.0121703
+-0.0122648
+0.216624
+148
+NC_023117
+mitochondrion Annulohypoxylon stygium
+133782
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Xylariomycetidae  Xylariales  Xylariaceae  Annulohypoxylon}
+0.805023
+-0.0994991
+-0.142999
+-0.0812359
+0.105698
+149
+NC_023125
+mitochondrion Rhynchosporium agropyri
+68904
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Helotiales incertae sedis  Rhynchosporium}
+0.809526
+-0.106207
+-0.139993
+-0.0813268
+0.103594
+150
+NC_023126
+mitochondrion Rhynchosporium commune
+69581
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Helotiales incertae sedis  Rhynchosporium}
+0.558965
+0.142126
+-0.203491
+-0.0975052
+0.144502
+151
+NC_023127
+mitochondrion Rhynchosporium orthosporum
+49539
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Helotiales incertae sedis  Rhynchosporium}
+0.804982
+-0.0960753
+-0.13867
+-0.0813007
+0.104621
+152
+NC_023128
+mitochondrion Rhynchosporium secalis (leaf blotch of barley)
+68729
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Helotiales incertae sedis  Rhynchosporium}
+0.123723
+-0.119608
+0.184313
+-0.130375
+0.188256
+153
+NC_023248
+mitochondrion Jaminaea angkorensis
+29999
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Ustilaginomycotina  Exobasidiomycetes  Microstromatales  Microstromatales incertae            sedis  Jaminaea}
+0.178162
+0.473857
+-0.414456
+-0.0678607
+0.530986
+154
+NC_023268
+mitochondrion Acremonium chrysogenum
+27266
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Hypocreales            incertae sedis  Acremonium}
+0.371055
+0.231208
+-0.389498
+-0.0636366
+0.49264
+155
+NC_023540
+mitochondrion Colletotrichum lindemuthianum
+36957
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Glomerellaceae  Colletotrichum}
+0.107621
+0.447549
+0.446228
+0.0437293
+0.188994
+156
+NC_024093
+mitochondrion Magnusiomyces ingens
+37684
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Dipodascaceae  Magnusiomyces}
+-0.0233281
+-0.691191
+-0.0754858
+-0.0269739
+0.326627
+157
+NC_024094
+mitochondrion Magnusiomyces tetrasperma
+44469
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Dipodascaceae  Magnusiomyces}
+0.283065
+0.318703
+0.487525
+0.0248123
+0.15778
+158
+NC_024095
+mitochondrion Magnusiomyces capitatus
+43486
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Dipodascaceae  Magnusiomyces}
+0.138103
+-0.102561
+0.258962
+-0.0902522
+0.154587
+159
+NC_024200
+mitochondrion Lichtheimia hongkongensis
+31830
+{Eukaryota  Fungi  Fungi incertae sedis  Mucoromycotina  Mucorales  Lichtheimiaceae  Lichtheimia}
+0.826028
+-0.191376
+0.283947
+-0.046694
+0.0878267
+160
+NC_024555
+mitochondrion Heterobasidion irregulare
+114193
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Russulales  Bondarzewiaceae  Heterobasidion  Heterobasidion annosum species complex}
+0.679747
+-0.344555
+0.335036
+-0.0938426
+0.0700248
+161
+NC_024944
+mitochondrion Parasitella parasitica
+83361
+{Eukaryota  Fungi  Fungi incertae sedis  Mucoromycotina  Mucorales  Mucorineae  Mucoraceae  Parasitella}
+1.
+-0.714001
+0.0157861
+-0.0237097
+0.183041
+162
+NC_025200
+mitochondrion Sclerotinia borealis
+203051
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Sclerotiniaceae  Sclerotinia}
+-0.0940288
+0.574297
+0.817724
+0.3146
+0.297834
+163
+NC_025331
+mitochondrion Kluyveromyces marxianus
+46256
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Kluyveromyces}
+0.257633
+0.656668
+-0.517417
+-0.133628
+-0.0749624
+164
+NC_025570
+mitochondrion Aspergillus ustus
+33007
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Aspergillus}
+0.00377241
+0.330182
+0.392776
+0.0368531
+0.223751
+165
+NC_025768
+mitochondrion Geotrichum candidum
+29008
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Dipodascaceae  Geotrichum}
+0.943785
+-0.306597
+-0.226598
+0.0267902
+0.552828
+166
+NC_025928
+mitochondrion Fusarium gerlachii
+93428
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium}
+0.0539626
+0.497626
+-0.402303
+-0.0890363
+0.518595
+167
+NC_026534
+mitochondrion Sarocladium implicatum
+22376
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Hypocreales            incertae sedis  Sarocladium}
+0.597213
+-0.112022
+-0.140476
+-0.016019
+0.322636
+168
+NC_026614
+mitochondrion Neurospora crassa OR74A
+64840
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Sordariaceae  Neurospora}
+0.779936
+-0.155035
+0.32479
+-0.0119219
+0.0724623
+169
+NC_026782
+mitochondrion Ganoderma meredithae
+78447
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Polyporales  Ganodermataceae  Ganoderma}
+0.28148
+0.198429
+0.223377
+-0.269181
+0.0198779
+170
+NC_026869
+mitochondrion Shiraia bambusicola
+39030
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Dothideomycetes  Pleosporomycetidae  Pleosporales  Pleosporales            incertae sedis  Shiraia}
+0.233582
+0.677639
+-0.53977
+-0.136046
+-0.0779558
+171
+NC_026920
+mitochondrion Aspergillus flavus
+31602
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Aspergillus}
+0.981011
+-0.352462
+-0.200623
+0.0260097
+0.52906
+172
+NC_026993
+mitochondrion Fusarium culmorum
+103844
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium}
+0.954061
+-0.369823
+0.280542
+-0.00610771
+0.0856591
+173
+NC_027188
+mitochondrion Ganoderma applanatum
+119803
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Polyporales  Ganodermataceae  Ganoderma}
+0.153849
+0.531983
+0.993942
+0.380135
+0.199465
+174
+NC_027264
+mitochondrion Saccharomyces cerevisiae (baker's yeast)
+78917
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Saccharomyces}
+0.269087
+0.331491
+-0.538794
+-0.0694903
+0.577576
+175
+NC_027280
+mitochondrion Colletotrichum acutatum
+30892
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Glomerellaceae  Colletotrichum}
+0.0202728
+0.0885036
+0.659924
+-0.586712
+-0.132945
+176
+NC_027416
+mitochondrion Penicillium roqueforti
+29908
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Penicillium}
+0.187893
+0.455194
+-0.444951
+-0.115284
+0.224012
+177
+NC_027422
+mitochondrion Pseudogymnoascus pannorum (Geomyces pannorus)
+26918
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Leotiomycetes incertae sedis  Pseudeurotiaceae  Pseudogymnoascus}
+-0.120153
+0.532036
+0.966218
+0.452687
+0.324634
+178
+NC_027433
+mitochondrion Torulaspora delbrueckii (anamorph: Candida
+28793
+{ORGANISM  Torulaspora delbrueckii            Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Torulaspora}
+-0.0476493
+0.585771
+1.
+0.453
+0.305912
+179
+NC_027457
+mitochondrion Torulaspora pretoriensis
+33343
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Torulaspora}
+-0.00195597
+0.553139
+0.983904
+0.437835
+0.281828
+180
+NC_027458
+mitochondrion Torulaspora franciscae
+39201
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Torulaspora}
+0.139667
+0.377797
+0.87525
+0.377043
+0.260086
+181
+NC_027459
+mitochondrion Torulaspora globosa
+45193
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Torulaspora}
+0.533712
+-0.0249672
+-0.229348
+-0.0386725
+0.359129
+182
+NC_027509
+mitochondrion Diaporthe longicolla (Phomopsis longicolla)
+53439
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Diaporthales  Diaporthaceae  Diaporthe}
+0.606546
+0.133841
+-0.171029
+-0.0488217
+0.405861
+183
+NC_027660
+mitochondrion Hirsutella minnesotensis
+52245
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Ophiocordycipitaceae  Hirsutella}
+0.480154
+-0.347394
+0.234869
+-0.0261759
+0.147063
+184
+NC_027730
+mitochondrion Phycomyces blakesleeanus
+62082
+{Eukaryota  Fungi  Fungi incertae sedis  Mucoromycotina  Mucorales  Phycomycetaceae  Phycomyces}
+0.624529
+0.0745056
+0.334611
+-0.0533045
+0.0591369
+185
+NC_028135
+mitochondrion Tricholoma matsutake
+76037
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Tricholomataceae  Tricholoma}
+0.146797
+0.633078
+-0.604393
+0.00720936
+0.850358
+186
+NC_028330
+mitochondrion Lecanicillium saksenae
+25919
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Cordycipitaceae  Lecanicillium}
+0.696888
+-0.687626
+0.151173
+-0.0279767
+0.133421
+187
+NC_029185
+mitochondrion Rhizophagus fasciculatus
+72251
+{Eukaryota  Fungi  Glomeromycota  Glomeromycetes  Glomerales  Glomeraceae  Rhizophagus}
+0.26457
+0.182151
+-0.40072
+-0.0428043
+0.712278
+188
+NC_029194
+mitochondrion Fusarium mangiferae
+30629
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Nectriaceae  Fusarium  Fusarium fujikuroi species complex}
+0.175671
+-0.132179
+0.623896
+-0.658151
+-0.206184
+189
+NC_029213
+mitochondrion Colletotrichum lupini
+36554
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Glomerellaceae  Colletotrichum}
+-0.0941423
+0.00241272
+0.816318
+-0.9962
+-0.393328
+190
+NC_029238
+mitochondrion Verticillium nonalfalfae
+26139
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Plectosphaerellaceae  Verticillium}
+0.553156
+-0.153209
+0.293027
+-0.232163
+0.0613685
+191
+NC_029396
+mitochondrion Didymella pinodes (pea foot rot fungus)
+55973
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Dothideomycetes  Pleosporomycetidae  Pleosporales  Pleosporineae  Didymellaceae  Didymella}
+-0.197896
+0.473987
+0.718373
+0.196538
+0.288321
+192
+NC_029458
+mitochondrion Eremothecium sinecaudum (Holleya sinecauda)
+26238
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Saccharomycetaceae  Eremothecium}
+0.0621837
+-0.123491
+0.627816
+-0.696086
+-0.209474
+193
+NC_029706
+mitochondrion Colletotrichum tamarilloi
+30824
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Glomerellaceae  Colletotrichum}
+0.77148
+-0.715015
+0.00441404
+-0.00797931
+0.206928
+194
+NC_029745
+mitochondrion Pyronema omphalodes (Pyronema confluens)
+191189
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Pezizomycetes  Pezizales  Pyronemataceae  Pyronema}
+-0.031761
+0.0295444
+0.637273
+-0.565498
+-0.100975
+195
+NC_029759
+mitochondrion Cairneyella variabilis
+27186
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Helotiaceae  Cairneyella}
+0.118826
+0.424979
+-0.469511
+-0.0508089
+0.592829
+196
+NC_029851
+mitochondrion Acremonium fuci
+24565
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Hypocreales            incertae sedis  Acremonium}
+0.382509
+0.149389
+-0.162772
+-0.121789
+0.134218
+197
+NC_030051
+mitochondrion Lecanora strobilina
+39842
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Lecanoromycetes  OSLEUM clade  Lecanoromycetidae  Lecanorales  Lecanorineae  Lecanoraceae  Lecanora}
+0.25181
+0.354731
+-0.543345
+-0.0743073
+0.579066
+198
+NC_030052
+mitochondrion Colletotrichum fioriniae
+30020
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Glomerellaceae  Colletotrichum}
+-0.092264
+0.0277542
+0.690202
+-0.649779
+-0.155773
+199
+NT_165950
+mitochondrion Aspergillus terreus NIH2624
+32827
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Eurotiales  Aspergillaceae  Aspergillus}
+0.794027
+-0.535434
+0.383246
+-0.261193
+0.000337291
+200
+NT_165984
+mitochondrion Chaetomium globosum CBS 148.51
+258733
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+0.925955
+-0.420457
+-0.0244812
+-0.0628135
+0.35615
+201
+NT_165985
+mitochondrion Chaetomium globosum CBS 148.51
+140602
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+0.479069
+-0.119796
+0.0854597
+-0.144457
+0.445803
+202
+NT_165987
+mitochondrion Chaetomium globosum CBS 148.51
+50760
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+0.226905
+-0.129855
+0.415383
+-0.316836
+0.0292634
+203
+NT_165988
+mitochondrion Chaetomium globosum CBS 148.51
+36141
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+0.19322
+-0.0217901
+0.190762
+-0.128409
+0.227101
+204
+NT_165989
+mitochondrion Chaetomium globosum CBS 148.51
+30759
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.281813
+-0.00390967
+0.34304
+-0.306526
+0.154133
+205
+NT_166002
+mitochondrion Chaetomium globosum CBS 148.51
+16054
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.427998
+-0.112594
+0.197015
+-0.272656
+0.241427
+206
+NT_166003
+mitochondrion Chaetomium globosum CBS 148.51
+11320
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.404375
+-0.0828391
+0.0787832
+-0.179225
+0.384052
+207
+NT_166004
+mitochondrion Chaetomium globosum CBS 148.51
+10846
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.464971
+0.0763772
+-0.204141
+-0.172697
+0.460748
+208
+NT_166006
+mitochondrion Chaetomium globosum CBS 148.51
+9058
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.659688
+-0.253149
+-0.133721
+-0.337283
+0.950583
+209
+NT_166008
+mitochondrion Chaetomium globosum CBS 148.51
+8045
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.714277
+-0.298177
+-0.13181
+-0.365529
+1.
+210
+NT_166010
+mitochondrion Chaetomium globosum CBS 148.51
+7290
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.647142
+-0.227554
+-0.072082
+-0.293273
+0.733509
+211
+NT_166011
+mitochondrion Chaetomium globosum CBS 148.51
+7166
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.728821
+-0.335299
+-0.130026
+-0.352905
+0.995133
+212
+NT_166013
+mitochondrion Chaetomium globosum CBS 148.51
+6862
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.577139
+-0.12639
+-0.0526666
+-0.155967
+0.403759
+213
+NT_166014
+mitochondrion Chaetomium globosum CBS 148.51
+6834
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.638464
+-0.281702
+0.0584066
+-0.271833
+0.308378
+214
+NT_166015
+mitochondrion Chaetomium globosum CBS 148.51
+5637
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+-0.659242
+-0.389034
+-0.0148662
+-0.203503
+0.347693
+215
+NT_166017
+mitochondrion Chaetomium globosum CBS 148.51
+4347
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Sordariales  Chaetomiaceae  Chaetomium}
+0.0212624
+0.178821
+0.499641
+0.0196717
+0.229627
+216
+NW_001813686
+mitochondrion Lodderomyces elongisporus NRRL YB-4239
+35601
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Lodderomyces}
+-0.83568
+-0.548966
+-0.215042
+-0.145563
+0.536208
+217
+NW_001813703
+mitochondrion Histoplasma capsulatum NAm1 (Ajellomyces capsulatus
+1032
+{ORGANISM  Histoplasma capsulatum NAm1            Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Ajellomycetaceae  Histoplasma}
+-0.829025
+-0.560303
+-0.214541
+-0.153967
+0.532356
+218
+NW_001813704
+mitochondrion Histoplasma capsulatum NAm1 (Ajellomyces capsulatus
+1093
+{ORGANISM  Histoplasma capsulatum NAm1            Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Ajellomycetaceae  Histoplasma}
+-0.675273
+-0.116852
+0.237567
+-0.405522
+0.262665
+219
+NW_001813705
+mitochondrion Histoplasma capsulatum NAm1 (Ajellomyces capsulatus
+6949
+{ORGANISM  Histoplasma capsulatum NAm1            Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Ajellomycetaceae  Histoplasma}
+-0.26333
+0.0761377
+0.461312
+-0.458197
+0.0347487
+220
+NW_001813706
+mitochondrion Histoplasma capsulatum NAm1 (Ajellomyces capsulatus
+18217
+{ORGANISM  Histoplasma capsulatum NAm1            Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Ajellomycetaceae  Histoplasma}
+-0.292215
+0.233879
+-0.0131736
+-0.175004
+0.215534
+221
+NW_001813912
+mitochondrion Histoplasma capsulatum NAm1 (Ajellomyces capsulatus
+14560
+{ORGANISM  Histoplasma capsulatum NAm1            Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Ajellomycetaceae  Histoplasma}
+0.665902
+-0.39153
+0.412599
+-0.292046
+-0.0312098
+222
+NW_001814287
+mitochondrion Botrytis cinerea B05.10
+80799
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Sclerotiniaceae  Botrytis}
+-0.68226
+-0.53268
+-0.130578
+-0.134316
+0.382616
+223
+NW_001820797
+mitochondrion Sclerotinia sclerotiorum 1980 UF-70
+12275
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Sclerotiniaceae  Sclerotinia}
+0.154256
+-0.0293318
+0.0952928
+-0.133729
+0.210032
+224
+NW_001820798
+mitochondrion Sclerotinia sclerotiorum 1980 UF-70
+29710
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Sclerotiniaceae  Sclerotinia}
+0.835805
+-0.5938
+0.314099
+-0.211436
+0.0177464
+225
+NW_001820799
+mitochondrion Sclerotinia sclerotiorum 1980 UF-70
+160509
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Helotiales  Sclerotiniaceae  Sclerotinia}
+0.983672
+-0.589371
+0.195871
+-0.0923872
+0.0990915
+226
+NW_002475730
+mitochondrion Pyrenophora tritici-repentis Pt-1C-BFP
+157001
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Dothideomycetes  Pleosporomycetidae  Pleosporales  Pleosporineae  Pleosporaceae  Pyrenophora}
+0.23256
+-0.332392
+0.296249
+0.0194544
+0.226276
+227
+NW_003020054
+mitochondrion Candida tropicalis MYA-3404
+50304
+{Eukaryota  Fungi  Dikarya  Ascomycota  Saccharomycotina  Saccharomycetes  Saccharomycetales  Debaryomycetaceae  Candida/Lodderomyces clade  Candida}
+-0.656269
+-0.0600623
+0.258019
+-0.383746
+0.241936
+228
+NW_003101580
+mitochondrion Blastomyces gilchristii SLH14081
+7187
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Ajellomycetaceae  Blastomyces}
+-0.626466
+-0.00372265
+0.335638
+-0.424693
+0.204552
+229
+NW_003101581
+mitochondrion Blastomyces gilchristii SLH14081
+8933
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Ajellomycetaceae  Blastomyces}
+0.0946681
+0.0819222
+0.58663
+-0.451213
+-0.0579798
+230
+NW_003101582
+mitochondrion Blastomyces gilchristii SLH14081
+34670
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Ajellomycetaceae  Blastomyces}
+-0.185176
+0.075734
+0.609089
+-0.589115
+-0.0741112
+231
+NW_003298754
+mitochondrion Uncinocarpus reesii 1704
+21803
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Onygenaceae  Uncinocarpus}
+-0.0462781
+0.975514
+-1.
+-0.271601
+-0.541184
+232
+NW_003299153
+mitochondrion Arthroderma otae CBS 113480 (anamorph: Microsporum
+21449
+{ORGANISM  Arthroderma otae CBS 113480            Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Arthrodermataceae  Arthroderma}
+0.283954
+0.0241908
+0.391837
+-0.155527
+0.0892592
+233
+NW_003307477
+mitochondrion Coprinopsis cinerea okayama7#130 (Coprinus cinereus
+42448
+{ORGANISM  Coprinopsis cinerea okayama7#130            Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Agaricomycetes  Agaricomycetidae  Agaricales  Psathyrellaceae  Coprinopsis}
+-0.117301
+0.00529175
+0.818417
+-1.
+-0.390062
+234
+NW_003315039
+mitochondrion Verticillium alfalfae VaMs.102
+29493
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Plectosphaerellaceae  Verticillium}
+-0.2756
+0.0399197
+0.59164
+-0.602832
+-0.0599813
+235
+NW_003345183
+mitochondrion Microsporum gypseum CBS 118893
+18750
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Arthrodermataceae  Microsporum}
+0.0852653
+0.962116
+-0.933606
+-0.26113
+-0.583957
+236
+NW_003456429
+mitochondrion Trichophyton rubrum CBS 118892
+27683
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Arthrodermataceae  Trichophyton}
+0.460893
+-0.518773
+0.24442
+-0.105475
+0.152214
+237
+NW_003526743
+mitochondrion Puccinia graminis f. sp. tritici CRL 75-36-700-3
+79748
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Pucciniomycotina  Pucciniomycetes  Pucciniales  Pucciniaceae  Puccinia}
+0.696531
+0.199345
+-0.103326
+-0.0729839
+0.0127534
+238
+NW_004504306
+mitochondrion Coccidioides immitis RS
+68094
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Eurotiomycetidae  Onygenales  Onygenales incertae            sedis  Coccidioides}
+0.423817
+0.258125
+-0.365281
+-0.0693235
+0.473646
+239
+NW_007361658
+mitochondrion Colletotrichum graminicola M1.001
+39649
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Glomerellaceae  Colletotrichum}
+-0.768431
+-0.369284
+0.00807308
+-0.221372
+0.369795
+240
+NW_007931071
+mitochondrion Beauveria bassiana ARSEF 2860
+2575
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Cordycipitaceae  Beauveria}
+-0.767032
+-0.506722
+-0.100882
+-0.197882
+0.389519
+241
+NW_007931072
+mitochondrion Beauveria bassiana ARSEF 2860
+1283
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Hypocreales  Cordycipitaceae  Beauveria}
+0.120868
+0.531495
+-0.325381
+-0.12579
+0.118074
+242
+NW_008751656
+mitochondrion Exophiala dermatitidis NIH/UT8656
+26004
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Eurotiomycetes  Chaetothyriomycetidae  Chaetothyriales  Herpotrichiellaceae  Exophiala}
+0.729767
+-0.217241
+0.101347
+-0.0496696
+0.21552
+243
+NW_008805058
+mitochondrion Gaeumannomyces graminis var. tritici R3-111a-1
+105383
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Magnaporthales  Magnaporthaceae  Gaeumannomyces}
+-0.321836
+-0.164955
+0.263746
+-0.366899
+0.159068
+244
+NW_008805059
+mitochondrion Gaeumannomyces graminis var. tritici R3-111a-1
+32120
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Magnaporthales  Magnaporthaceae  Gaeumannomyces}
+-0.703073
+-0.357396
+-0.0129714
+-0.246484
+0.366664
+245
+NW_008805060
+mitochondrion Gaeumannomyces graminis var. tritici R3-111a-1
+8714
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Magnaporthales  Magnaporthaceae  Gaeumannomyces}
+-0.669564
+-0.405076
+-0.162681
+-0.123804
+0.425862
+246
+NW_008805061
+mitochondrion Gaeumannomyces graminis var. tritici R3-111a-1
+4300
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Sordariomycetidae  Magnaporthales  Magnaporthaceae  Gaeumannomyces}
+-0.564975
+-0.0290759
+0.539299
+-0.79902
+-0.110263
+247
+NW_009276968
+mitochondrion Verticillium dahliae VdLs.17
+9712
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Plectosphaerellaceae  Verticillium}
+-0.0483554
+0.481811
+-0.405614
+-0.115474
+0.516973
+248
+NW_009276969
+mitochondrion Verticillium dahliae VdLs.17
+19770
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Plectosphaerellaceae  Verticillium}
+-0.054669
+-0.0109304
+0.80069
+-0.952796
+-0.366463
+249
+NW_009276970
+mitochondrion Verticillium dahliae VdLs.17
+42389
+{Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Sordariomycetes  Hypocreomycetidae  Glomerellales  Plectosphaerellaceae  Verticillium}
+0.291687
+0.37026
+-0.354337
+-0.104554
+0.212458
+250
+NW_012236426
+mitochondrion Pseudogymnoascus destructans 20631-21 (Geomyces
+32146
+{ORGANISM  Pseudogymnoascus destructans 20631-21            Eukaryota  Fungi  Dikarya  Ascomycota  Pezizomycotina  Leotiomycetes  Leotiomycetes incertae sedis  Pseudeurotiaceae  Pseudogymnoascus}
+0.148824
+0.0453255
+0.345673
+-0.120542
+0.151586
+251
+NW_014040924
+mitochondrion Trichosporon asahii var. asahii CBS 2479
+32568
+{Eukaryota  Fungi  Dikarya  Basidiomycota  Agaricomycotina  Tremellomycetes  Tremellales  Trichosporonaceae  Trichosporon}
