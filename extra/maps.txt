@@ -15,9 +15,9 @@
 	"Protists_ptDNA.txt"]],
 
 
-	["Closely Related Species", 
+	["Closely Related Species - Additive Genomic Signatures", 
 	["H.sapiens_P.troglodytes_nDNA+mtDNA.txt",
-	"B.napus_B.oleracea_nDNA+cpDNA.txt",
+	"B.oleracea_B.napus_nDNA+mtDNA.txt",
 	"E.coli_E.fergusonii_nDNA+ptDNA.txt"]]
 
 ],

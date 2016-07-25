@@ -19,8 +19,8 @@ var gglSearchEnabled = MoDMaps3D['gglSearchEnabled'];
 var realtimeHighlight = MoDMaps3D['realtimeHighlight'];
 var selectOnMouseover = MoDMaps3D['selectonmouseover'];
 var highlightColor = MoDMaps3D['highlightColor'];   
-var mapsWithReadyFCGRs = {'Animalia_mtDNA_Amphibians.txt':'mtDNA', 'Animalia_mtDNA_Insects.txt':'mtDNA', 'Animalia_mtDNA_Mammals.txt':'mtDNA', 'Animalia_mtDNA_Mammals2.txt':'mtDNA', 'Animalia_mtDNA_Mammals3.txt':'mtDNA','Animalia_mtDNA_Primates.txt':'mtDNA', 'Animalia_mtDNA_Vertebrata.txt':'mtDNA', 'Fungi_mtDNA.txt':'mtDNA', 'Plants_mtDNA.txt':'mtDNA', 'Protists_mtDNA.txt':'mtDNA', 'Protists_ptDNA.txt':'ptDNA', 'H.sapiens_P.troglodytes_nDNA+mtDNA.txt':'index_animalia', 'B.napus_B.oleracea_nDNA+cpDNA.txt':'index_plants', 'E.coli_E.fergusonii_nDNA+ptDNA.txt':'index_bacteria'};
-var mapsWithReadyDistMatrix = {'Animalia_mtDNA_Amphibians.txt':'amphibians', 'Animalia_mtDNA_Insects.txt':'insects', 'Animalia_mtDNA_Mammals.txt':'mammals', 'Animalia_mtDNA_Mammals2.txt':'mammals2', 'Animalia_mtDNA_Mammals3.txt':'mammals3', 'Animalia_mtDNA_Primates.txt':'primates', 'Animalia_mtDNA_Vertebrata.txt':'vertebrata', 'Fungi_mtDNA.txt':'fungi', 'Plants_mtDNA.txt':'plants', 'Protists_mtDNA.txt':'protistsmt', 'Protists_ptDNA.txt':'protistspt', 'H.sapiens_P.troglodytes_nDNA+mtDNA.txt':'index_animalia', 'B.napus_B.oleracea_nDNA+cpDNA.txt':'index_plants', 'E.coli_E.fergusonii_nDNA+ptDNA.txt':'index_bacteria'};
+var mapsWithReadyFCGRs = {'Animalia_mtDNA_Amphibians.txt':'mtDNA', 'Animalia_mtDNA_Insects.txt':'mtDNA', 'Animalia_mtDNA_Mammals.txt':'mtDNA', 'Animalia_mtDNA_Mammals2.txt':'mtDNA', 'Animalia_mtDNA_Mammals3.txt':'mtDNA','Animalia_mtDNA_Primates.txt':'mtDNA', 'Animalia_mtDNA_Vertebrata.txt':'mtDNA', 'Fungi_mtDNA.txt':'mtDNA', 'Plants_mtDNA.txt':'mtDNA', 'Protists_mtDNA.txt':'mtDNA', 'Protists_ptDNA.txt':'ptDNA', 'H.sapiens_P.troglodytes_nDNA+mtDNA.txt':'index_animalia', 'B.oleracea_B.napus_nDNA+mtDNA.txt':'index_plants', 'E.coli_E.fergusonii_nDNA+ptDNA.txt':'index_bacteria'};
+var mapsWithReadyDistMatrix = {'Animalia_mtDNA_Amphibians.txt':'amphibians', 'Animalia_mtDNA_Insects.txt':'insects', 'Animalia_mtDNA_Mammals.txt':'mammals', 'Animalia_mtDNA_Mammals2.txt':'mammals2', 'Animalia_mtDNA_Mammals3.txt':'mammals3', 'Animalia_mtDNA_Primates.txt':'primates', 'Animalia_mtDNA_Vertebrata.txt':'vertebrata', 'Fungi_mtDNA.txt':'fungi', 'Plants_mtDNA.txt':'plants', 'Protists_mtDNA.txt':'protistsmt', 'Protists_ptDNA.txt':'protistspt', 'H.sapiens_P.troglodytes_nDNA+mtDNA.txt':'index_animalia', 'B.oleracea_B.napus_nDNA+mtDNA.txt':'index_plants', 'E.coli_E.fergusonii_nDNA+ptDNA.txt':'index_bacteria'};
 var mapid, dim1, dim2, dim3, radius, alldata, distMatrix = [];
 var setOfPoints, colors, numberOfLabels, namesOfLabels, legendColors, legendLabels; 
 var globalScaledPointsCoord, globalPointsLabels;      
@@ -729,11 +729,13 @@ function initGraphics(){
 	<tr><td>Radius</td><td><input type="number" id="radius" min="0.005" max="0.1" step="0.005" value='+radius+'></td></tr>\
 	</table>\
 	<input type="submit" value="Re-Draw!" onclick="redraw();">\
-	<br>\
-	<br>Show CGR image: <input type="checkbox" onchange="toggle(\'cgrInfoDiv\');" unchecked>\
-	<br>Show highlight color: <input type="checkbox" onchange="toggle(\'pickcolor\');" unchecked>\
-	<br>Show distances: <input type="checkbox" onchange="toggle(\'distPointsDiv\');" unchecked>\
-	<br>Select on Mouseover: <input type="checkbox" onchange="enableMouseover();" unchecked>\
+	<br><br>\
+	<table>\
+	<tr><td>Show CGR image:</td><td><input type="checkbox" onchange="toggle(\'cgrInfoDiv\');" unchecked></td></tr>\
+	<tr><td>Show highlight color:</td><td><input type="checkbox" onchange="toggle(\'pickcolor\');" unchecked></td></tr>\
+	<tr><td>Show distances:</td><td><input type="checkbox" onchange="toggle(\'distPointsDiv\');" unchecked></td></tr>\
+	<tr><td>Select on Mouseover:</td><td><input type="checkbox" onchange="enableMouseover();" unchecked></td></tr>\
+	</table>\
 	</div>';
 		
 	staticInfoDiv += '<hr color="white" width="60%"><em><strong><font color="yellow" size="4">Legend</font></strong></em><br>'+mapCaption+'<br><br>';
@@ -1154,8 +1156,7 @@ function mapContentParsing() {
 $(document).ready(function(){
 	
 	$("#cgrInfoDiv").hide();
-	//uncomment
-	//$("#distPointsDiv").hide();
+	$("#distPointsDiv").hide();
 
 	if(geturlparamvalue('dbg')=='true'){dbg=true;}    
 	mapid=geturlparamvalue('mapid');
