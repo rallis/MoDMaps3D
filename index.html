@@ -6,10 +6,10 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<<!-- link rel="stylesheet" href="js/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="js/bootstrap.min.css">
 	<script src="js/jquery.min.js"></script>
-	<s -->cript src="js/bootstrap.min.js"></script>
-
+	<script src="js/bootstrap.min.js"></script>
+ -->
 	<script type="text/javascript" src="js/numeric-1.2.6.min.js"></script>
 	<script type="text/javascript" src="js/jszip.min.js"></script>
 	<script type="text/javascript" src="js/FileSaver.min.js"></script>
@@ -23,7 +23,7 @@
 	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
 	var callsNCBIDone, progress;
 	var aidDistInfo = [], map_settings;
-	var labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'black', 'olive', 'purple'];
+	var labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'olive', 'purple', 'black'];
 	
 	function geturlparamvalue(name) {
 		name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -695,7 +695,8 @@
 			$("#inputdatamenu").slideDown();
 
 			$.ajax({url: "./maps/settings_"+$("#extendmapid").val()+".txt", success: function(result){
-				// console.log(result);
+				console.log("./maps/settings_"+$("#extendmapid").val()+".txt");
+				console.log(result);
 				map_settings = result.split("\n");
 				console.log(String(map_settings[0]));
 
@@ -867,7 +868,7 @@
 					<dt><a href="#" id="goto1">Explore a Map</a></dt>
 					<dd>Explore available built-in MoDMaps. These maps provide extensive information for each genomic sequence involved in each map, along with complementary information.</dd>
 					<dt><a href="#" id="goto2">Build a Map</a></dt>
-					<dd>Build a new MoDMap from scratch tailored to your dataset. Include up to 11 categories, with as many sequences you need in each of them. Alternatively, extend a MoDMap adding your points. You can select a "base" map from a variety of available maps and then add your DNA sequences in it.</dd>
+					<dd>Build a new MoDMap from scratch tailored to your dataset. Include up to 12 categories, with as many sequences you need in each of them. Alternatively, extend a MoDMap adding your points. You can select a "base" map from a variety of available maps and then add your DNA sequences in it.</dd>
 					<dt><a href="#" id="goto3">Compute a distance</a></dt>
 					<dd>Compute the distance between any two DNA sequences, given as NCBI accession numbers.</dd>
 				</dl>
@@ -991,6 +992,7 @@
 											<option value="9">9</option>
 											<option value="10">10</option>
 											<option value="11">11</option> 
+											<option value="12">12</option> 
 										</select>
 									</dd>
 								</dl>
@@ -1051,7 +1053,9 @@
 					<dt>Github Code:</dt>
 					<dd><a href="http://github.com/rallis/MoDMaps3D/" target="_blank">http://github.com/rallis/MoDMaps3D/</a></dd>
 					
-
+					
+					<!-- <dt>Publication:</dt>
+					<dd>[PUBLICATION_DOI_LINK]</dd> -->
 				</dl>
 				</p>	
 			</div>
