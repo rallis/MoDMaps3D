@@ -753,7 +753,8 @@ function initGraphics(){
 	<div id="searchstatus"></div><hr color="white" width="60%">';
 
 	// DISTPOINTS DIV
-	distPointsDiv.innerHTML = '<em><strong><font color="yellow" size="4">Distance between Points</font></strong></em><br>\
+	if(mapid in mapsWithReadyDistMatrix){
+		distPointsDiv.innerHTML = '<em><strong><font color="yellow" size="4">Distance between Points</font></strong></em><br>\
 			<table border="0">\
 			<tr>\
 				<td>From:</td>\
@@ -769,6 +770,11 @@ function initGraphics(){
 			<tr>\
 				<td><div id="computeDist"></div></td></tr>\
 			</table><hr color="white" width="60%">';
+	}else{
+		distPointsDiv.innerHTML = '<em><strong><font color="yellow" size="4">Distance between Points</font></strong></em><br>\
+			Distance matrix not available for this map. For computing distance between two NCBI accession numbers, please look at the "Compute a distance" section in the main menu\
+			<hr color="white" width="60%">';
+	}
 	
 	// SET DIMENSIONS IN DROPDOWN MENU
 	document.getElementById("dim1").selectedIndex=dim1;

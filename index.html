@@ -6,9 +6,9 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<!-- <link rel="stylesheet" href="js/bootstrap.min.css">
+	<<!-- link rel="stylesheet" href="js/bootstrap.min.css">
 	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script> -->
+	<s -->cript src="js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="js/numeric-1.2.6.min.js"></script>
 	<script type="text/javascript" src="js/jszip.min.js"></script>
@@ -22,8 +22,8 @@
 	var mapID, allSequences={}, distMatrix=[], fcgrRes=9, getTaxa = false;
 	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
 	var callsNCBIDone, progress;
-	var aidDistInfo = [];
-	var labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'yellow'];
+	var aidDistInfo = [], map_settings;
+	var labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'black', 'olive', 'purple'];
 	
 	function geturlparamvalue(name) {
 		name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -307,6 +307,8 @@
 	function computeAIDdist(){
 		console.log("aid start");
 		$("#aidinfo").empty();
+		$("#aidinfomenu").slideDown();
+		$("#aidinfo").html('<img src="img/loading.gif" width="30" height="30"/>');
 		console.log($("#seq0").val());
 		console.log($("#seq1").val());
 		errorHasOccured = false;
@@ -575,10 +577,34 @@
 
 		$("#goto1").click(function(){$('#guide-tabs li:eq(1) a').tab('show');});
 		$("#goto2").click(function(){$('#guide-tabs li:eq(2) a').tab('show');});
-		$("#goto4").click(function(){$('#guide-tabs li:eq(3) a').tab('show');});
-		$("#goto5").click(function(){$('#guide-tabs li:eq(4) a').tab('show');});
+		$("#goto3").click(function(){$('#guide-tabs li:eq(3) a').tab('show');});
 		$("#kmerslen").val('9');
 		$("#getTaxa").val('0');
+		
+		// $('#guide-tabs li:eq(2) a').tab('show');
+
+		$("#buildmapmenucontent").slideUp();
+		$("#extendmapmenucontent").slideUp();
+		$("#inputdatamenu").slideUp();
+		$("#computemenu").slideUp();
+		
+
+		$("#buildmapmenuheader").click(function(){
+			// console.log("build");
+			$("#buildmapmenucontent").slideDown();
+			$("#inputdatamenu").slideDown();
+			$("#extendmapmenucontent").slideUp();
+			$("#computemenu").slideUp();
+		});
+
+		$("#extendmapmenuheader").click(function(){
+			// console.log("extend");
+			$("#buildmapmenucontent").slideUp();
+			$("#inputdatamenu").slideUp();
+			$("#extendmapmenucontent").slideDown();
+			$("#computemenu").slideUp();
+		});
+
 
 		$("#aid1").click(function(){
 			$("#seq0").empty();
@@ -596,6 +622,7 @@
 		});  
 
 		$("#dataset1").click(function(){
+			$('#allInputData').slideDown();
 			$("#file_contents").empty();
 			$("#file_contents").hide();
 			$("#numofsets").val('2');
@@ -607,9 +634,11 @@
 			$("#colorset0").val('green');
 			$("#colorset1").val('red');
 			$("#stepstatus").hide();
-			$("#mainprogressbar").hide();		
+			$("#mainprogressbar").hide();
+			$("#computemenu").slideUp();		
 		});  
 		$("#dataset2").click(function(){
+			$('#allInputData').slideDown();
 			$("#file_contents").empty();
 			$("#file_contents").hide();
 			$("#numofsets").val('3');
@@ -624,9 +653,11 @@
 			$("#colorset1").val('cyan');
 			$("#colorset2").val('blue');
 			$("#stepstatus").hide();
-			$("#mainprogressbar").hide();		
+			$("#mainprogressbar").hide();	
+			$("#computemenu").slideUp();	
 		});
 		$("#dataset3").click(function(){
+			$('#allInputDataBuild').slideDown();
 			$("#file_contents").empty();
 			$("#file_contents").hide();
 			$("#numofsets").val('5');
@@ -642,7 +673,8 @@
 			$("#nameset3").val('SetD');
 			$("#nameset4").val('SetG');
 			$("#stepstatus").hide();
-			$("#mainprogressbar").hide();		
+			$("#mainprogressbar").hide();	
+			$("#computemenu").slideUp();	
 		});
 
 		$("#kmerslen").change(function(){
@@ -656,8 +688,43 @@
 
 		$("#computedist").click(computeAIDdist);
 
+		$("#processextendmap").click(function(){
+			console.log("extend map started");
+			console.log($("#extendmapid").val());
+
+			$("#inputdatamenu").slideDown();
+
+			$.ajax({url: "./maps/settings_"+$("#extendmapid").val()+".txt", success: function(result){
+				// console.log(result);
+				map_settings = result.split("\n");
+				console.log(String(map_settings[0]));
+
+				$("#numofsets").val(String(parseInt(map_settings[0])+1));
+				$("#numofsets").trigger("change");
+
+				for(var i=0; i<map_settings[0]; i++){
+					$("#nameset"+i).val(map_settings[3*i+1]);
+					$("#colorset"+i).val(map_settings[3*i+2]);	
+					$("#set"+i).html(map_settings[3*i+3]);
+				}
+
+				$("#nameset"+i).val("NEW_points");
+				$("#colorset"+i).val("black");	
+				$("#set"+i).html($("#extrancbi").val());
+
+				// $("#inputdatamenu").slideDown();
+				$("#stepstatus").hide();
+				$("#mainprogressbar").hide();
+				$("#allInputData").slideDown();
+				$("#computemenu").slideUp();
+				// $("#buildmap").click();
+				// let the user click
+			}});
+		});
+
 		$("#buildmap").click(function(){
 			noMDS = false;
+			$("#computemenu").slideDown();
 			$('#allInputData').slideUp();
 			$('#allInputDataMinimized').slideDown();
 			console.log("localStorageKeys before=",Object.keys(localStorage));
@@ -787,9 +854,8 @@
 			<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
 			<li><a data-toggle="tab" href="#menu1">Explore a Map</a></li>
 			<li><a data-toggle="tab" href="#menu2">Build a Map</a></li>
-			<li><a data-toggle="tab" href="#menu4">Extend a Map</a></li>
-			<li><a data-toggle="tab" href="#menu5">Compute a distance</a></li>
-			<li><a data-toggle="tab" href="#menu3">About</a></li>
+			<li><a data-toggle="tab" href="#menu3">Compute a distance</a></li>
+			<li><a data-toggle="tab" href="#menu4">About</a></li>
 		</ul>
 
 		<div class="tab-content">
@@ -801,10 +867,8 @@
 					<dt><a href="#" id="goto1">Explore a Map</a></dt>
 					<dd>Explore available built-in MoDMaps. These maps provide extensive information for each genomic sequence involved in each map, along with complementary information.</dd>
 					<dt><a href="#" id="goto2">Build a Map</a></dt>
-					<dd>Build a new MoDMap from scratch tailored to your dataset. Include up to 11 categories, with as many sequences you need in each of them.</dd>
-					<dt><a href="#" id="goto4">Extend a Map</a></dt>
-					<dd>Extend a MoDMap adding your points. You can select a "base" map from a variety of available maps and add your DNA sequences in it.</dd>
-					<dt><a href="#" id="goto5">Compute a distance</a></dt>
+					<dd>Build a new MoDMap from scratch tailored to your dataset. Include up to 11 categories, with as many sequences you need in each of them. Alternatively, extend a MoDMap adding your points. You can select a "base" map from a variety of available maps and then add your DNA sequences in it.</dd>
+					<dt><a href="#" id="goto3">Compute a distance</a></dt>
 					<dd>Compute the distance between any two DNA sequences, given as NCBI accession numbers.</dd>
 				</dl>
 				<div id="fastafile"></div>
@@ -821,119 +885,175 @@
 				</div>  
 			</div>
 			<div id="menu2" class="tab-pane fade">
-				<h3>Build your map, for your dataset</h3>
-				<p>Samples you can try:<br>
-					<a href="#" id="dataset1">[1] 62 mtDNA primates</a> - 
-					<a href="#" id="dataset2">[2] 112 mtDNA amphibia</a> - 
-					<a href="#" id="dataset3">[3] 39 HIV-1 genomes</a> 
-				</p>
-
-				<p>
-					<div id="allInputDataMinimized">
-						<a href="#" id="allInputDataShow">Show/Hide input data</a>
+				<!-- style="padding-right:0px; border-right: 1px solid #ccc;" -->
+				<div class="col-xs-10" id="buildmapview" >
+					<h3>Build your map, for your dataset</h3>
+					
+					<div class="panel panel-default">
+			      <div class="panel-heading"><label>Choose an option to continue</label>	</div>
+			      <div class="panel-body">
+			      	<label><input type="radio" id="buildmapmenuheader" name="mapmenu"/> Build a MoDMap from your dataset</label><br>
+							<label><input type="radio" id="extendmapmenuheader" name="mapmenu"/> Extend an existing MoDMap</label>
+						</div>
 					</div>
-				</p>
-				<div id="allInputData">
-					<dl class="dl-horizontal">
-						<dt>Length of k-mers:</dt>
-						<dd>
-							<select id="kmerslen">
-								<option value="3">3 bp</option>
-								<option value="4">4 bp</option>
-								<option value="5">5 bp</option>
-								<option value="6">6 bp</option>
-								<option value="7">7 bp</option>
-								<option value="8">8 bp</option>
-								<option value="9">9 bp</option>
-								<option value="10">10 bp</option>
-								<option value="11">11 bp</option>
-								<option value="12">12 bp</option>
-							</select>
-						</dd>
-						<dt>Get Taxonomy:</dt>
-						<dd>
-							<select id="getTaxa">
-								<option value="0">No (Fast)</option>
-								<option value="1">Yes (Slow)</option>
-							</select>
-						</dd>
-						<dt>Number of sets:</dt>
-						<dd>
-							<select id="numofsets">
-								<option value="0">Choose</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option> 
-							</select>
-						</dd>
-					</dl>
 
-					<div id="sets"></div>
+					<!-- <div class="panel panel-default">
+				      <div class="panel-heading">Panel with panel-default class</div>
+				      <div class="panel-body">Panel Content</div>
+				    </div> -->
+
+			    <div class="panel panel-default" id="buildmapmenucontent">
+			      <div class="panel-heading"><label>Info</label></div>
+			      <div class="panel-body">
+			      	<p>Samples you can try:<br>
+								<a href="#" id="dataset1">[1] 62 mtDNA primates</a> - 
+								<a href="#" id="dataset2">[2] 112 mtDNA amphibia</a> - 
+								<a href="#" id="dataset3">[3] 39 HIV-1 genomes</a> 
+							</p>
+			      </div>
+			    </div>
+
+					<div class="panel panel-default" id="extendmapmenucontent">
+						<div class="panel-heading"><label>Info</label></div>
+						<div class="panel-body">
+							<p>Extend a map by adding new points in a set of predefined MoDMaps. The new points can be given as comma separated accession numbers from NCBI. If you do not know the accession number of a species, you can search directly in NCBI from <a href="https://www.ncbi.nlm.nih.gov/nuccore/?term=Homo+sapiens" target="_blank">here</a>.</p>
+
+
+							<p><dl class="dl-horizontal">
+								<dt>Background map:</dt>
+								<dd>
+									<select id="extendmapid">
+									<option value="Animalia_mtDNA_Amphibians">Animalia_mtDNA_Amphibians</option>
+									<option value="Animalia_mtDNA_Insects">Animalia_mtDNA_Insects</option>
+									<option value="Animalia_mtDNA_Mammals">Animalia_mtDNA_Mammals</option>
+									<option value="Animalia_mtDNA_Mammals2">Animalia_mtDNA_Mammals2</option>
+									<option value="Animalia_mtDNA_Mammals3">Animalia_mtDNA_Mammals3</option>
+									<option value="Animalia_mtDNA_Primates">Animalia_mtDNA_Primates</option>
+									<option value="Animalia_mtDNA_Vertebrata">Animalia_mtDNA_Vertebrata</option>
+									<option value="Fungi_mtDNA">Fungi_mtDNA</option>
+									<option value="Plants_mtDNA">Plants_mtDNA</option>
+									<option value="Protists_mtDNA">Protists_mtDNA</option>
+									<option value="Protists_ptDNA">Protists_ptDNA</option>
+									</select>
+								<br></dd>
+								<dt>Extra NCBI numbers:</dt>
+								<dd><input id="extrancbi" type="text" size="15" value="NC_012920"/>
+								</dd>
+								</dl></p>
+
+								<p><input type="submit" id="processextendmap" value="Continue"/></p>
+						</div>
+					</div>
+
+					<div class="panel panel-default" id="inputdatamenu">
+			      <div class="panel-heading"><label>Settings of MoDMap selected</label></div>
+			      <div class="panel-body">
+			      	<p><div id="allInputDataMinimized">
+								<a href="#" id="allInputDataShow">Show/Hide input data</a>
+							</div></p>
+
+							<div id="allInputData">
+								<dl class="dl-horizontal">
+									<dt>Length of k-mers:</dt>
+									<dd>
+										<select id="kmerslen">
+											<option value="3">3 bp</option>
+											<option value="4">4 bp</option>
+											<option value="5">5 bp</option>
+											<option value="6">6 bp</option>
+											<option value="7">7 bp</option>
+											<option value="8">8 bp</option>
+											<option value="9">9 bp</option>
+											<option value="10">10 bp</option>
+											<option value="11">11 bp</option>
+											<option value="12">12 bp</option>
+										</select>
+									</dd>
+									<dt>Get Taxonomy:</dt>
+									<dd>
+										<select id="getTaxa">
+											<option value="0">No (Fast)</option>
+											<option value="1">Yes (Slow)</option>
+										</select>
+									</dd>
+									<dt>Number of sets:</dt>
+									<dd>
+										<select id="numofsets">
+											<option value="0">Choose</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option> 
+										</select>
+									</dd>
+								</dl>
+
+								<div id="sets"></div>
+							</div>
+
+							<p><input type="submit" id="buildmap" value="Compute MoDMap" style="display:none;" /></p>
+
+			      </div>
+			    </div>
+
+					<div class="panel panel-default" id="computemenu">
+						<div class="panel-heading"><label>Computation Results</label></div>
+						<div class="panel-body">
+							<p id="stepstatus"></p>
+							<div id="mainprogressbar" style="display:none;">
+							  <div id="progress"></div>
+							</div>
+							<p id="file_contents"></p>
+						</div>
+					</div>
 
 				</div>
-
-				
-				<p><input type="submit" id="buildmap" value="Compute MoDMap" style="display:none;" /></p>
-
-				<p id="stepstatus"></p>
-				<div id="mainprogressbar" style="display:none;">
-				  <div id="progress"></div>
-				</div>
-				
-				<p id="file_contents"></p>
-			</div>
-			<div id="menu4" class="tab-pane fade">
-				<h3>Extend a map adding your DNA sequences</h3>
-				<p>Extend a map by adding new points in a set of predefined MoDMaps. The new points can be given as NCBI's accession numbers.</p>
-				<p>Soon available!</p>
-
-			</div>
-			<div id="menu5" class="tab-pane fade">
-				<h3>Compute a distance</h3>
-				<p>Compute approximated information distance (AID) between any pair of sequences, giving as input their NCBI accession numbers. </p>
-
-				<p>Samples you can try:
-				<a href="#" id="aid1">[1] H.sapiens vs P.troglodytes</a> - 
-				<a href="#" id="aid2">[2] H.sapiens vs H.neanderthalensis</a> 
-				</p>
-
-				<p>I want to compute AID distance between: 
-					<ol>
-						<li><input id="seq0" type="text" size="10" autofocus ></li>
-						<li><input id="seq1" type="text" size="10" ></li>
-					</ol>	
-					<input type="submit" id="computedist" value="Compute AID distance" />
-				</p>	
-
-				<div id="aidinfo"></div>
-
 			</div>
 			<div id="menu3" class="tab-pane fade">
-				
-				<p>
-					<dl class="dl-horizontal">
-						<dt>Coded by:</dt>
-						<dd>Rallis Karamichalis, 2016</dd>
-						<!-- <dt>Github Page:</dt>
-						<dd><a href="http://rallis.github.io/MoDMaps3D/" target="_blank">http://rallis.github.io/MoDMaps3D/</a></dd> -->
-						<dt>Github Code:</dt>
-						<dd><a href="http://github.com/rallis/MoDMaps3D/" target="_blank">http://github.com/rallis/MoDMaps3D/</a></dd>
-						
-						
-						
-						<!-- <dt>Publication:</dt>
-						<dd>[PUBLICATION_DOI_LINK]</dd> -->
-					</dl>
-				</p>	
+				<h3>Compute a distance</h3>
+				<p>Compute approximated information distance (AID) between any pair of sequences, giving as input their NCBI accession numbers. If you do not know the accession number of a species, you can search directly in NCBI from <a href="https://www.ncbi.nlm.nih.gov/nuccore/?term=Homo+sapiens" target="_blank">here</a>.</p>
 
+				<div class="panel panel-default">
+					<div class="panel-heading"><label>Settings</label></div>
+					<div class="panel-body">
+						<p>Samples you can try:
+						<a href="#" id="aid1">[1] H.sapiens vs P.troglodytes</a> - 
+						<a href="#" id="aid2">[2] H.sapiens vs H.neanderthalensis</a></p>
+						Compute AID distance between: 
+						<ol>
+							<li><input id="seq0" type="text" size="10" autofocus ></li>
+							<li><input id="seq1" type="text" size="10" ></li>
+						</ol>	
+						<input type="submit" id="computedist" value="Compute AID distance" />
+					</div>
+				</div>
+
+				<div class="panel panel-default"  id="aidinfomenu" style="display:none;">
+					<div class="panel-heading"><label>Computation Results</label></div>
+					<div class="panel-body"  id=aidinfo></div>
+				</div>
+
+			</div>
+			<div id="menu4" class="tab-pane fade">
+				<p>
+				<dl class="dl-horizontal">
+					<dt>Coded by:</dt>
+					<dd>Rallis Karamichalis, 2016</dd>
+					<!-- <dt>Github Page:</dt>
+					<dd><a href="http://rallis.github.io/MoDMaps3D/" target="_blank">http://rallis.github.io/MoDMaps3D/</a></dd> -->
+					<dt>Github Code:</dt>
+					<dd><a href="http://github.com/rallis/MoDMaps3D/" target="_blank">http://github.com/rallis/MoDMaps3D/</a></dd>
+					
+
+				</dl>
+				</p>	
 			</div>
 		</div>	
 	</div>
