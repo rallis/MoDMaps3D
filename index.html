@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<!-- <link rel="stylesheet" href="js/bootstrap.min.css">
+<!-- 	<link rel="stylesheet" href="js/bootstrap.min.css">
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
  -->
@@ -387,18 +387,18 @@
 		console.log("input= ",input);
 		$('#progress').html('Parallel computation of '+input.length+' matrices of ~ '+splitBy+'x'+splitBy+' each. Please wait..');
 		var p = new Parallel( input );
-	    
+		
 		var computeChunks = function (chunk) {
 			var bgX = chunk[0], endX = chunk[1], bgY = chunk[2], endY = chunk[3];
 			var allSequencesX = chunk[4], allSequencesY = chunk[5], fcgrRes = chunk[6];
 			var res=[], tmpRow, numerator, denominator ;
-		  	var timeBegin = new Date();
+			var timeBegin = new Date();
 			console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"]");
 
-		  	for(var i = 0; i<allSequencesX.length; i++){
-		  		tmpRow=[];
-		  		for(var j = 0; j<allSequencesY.length; j++){
-		  			numerator = allSequencesX[i][3]['size'] + allSequencesY[j][3]['size'];
+			for(var i = 0; i<allSequencesX.length; i++){
+				tmpRow=[];
+				for(var j = 0; j<allSequencesY.length; j++){
+					numerator = allSequencesX[i][3]['size'] + allSequencesY[j][3]['size'];
 					denominator=0;
 					for(var unionInd=0; unionInd<Math.pow(4,fcgrRes); unionInd++){
 						if( (allSequencesX[i][3]['flatFCGR'][unionInd]==1) || (allSequencesY[j][3]['flatFCGR'][unionInd]==1) ){
@@ -407,21 +407,21 @@
 					}
 					// console.log(i,j,'=',numerator,denominator,2 - numerator*1.0/denominator);
 					tmpRow.push(2 - numerator*1.0/denominator);
-		  		}
-		  		res.push(tmpRow);
-		  	}
+				}
+				res.push(tmpRow);
+			}
 
-		  	var timeEnd = new Date();
+			var timeEnd = new Date();
 			console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"] execution time: "+String((timeEnd-timeBegin)/1000)+" sec");
-		  	return [bgX, endX, bgY, endY, res];
+			return [bgX, endX, bgY, endY, res];
 		};
  
 
- 		function assembleChunks(data){
- 			// console.log("data=",data,data.length);
- 			// console.log("dMat=",distMatrix.length);
+		function assembleChunks(data){
+			// console.log("data=",data,data.length);
+			// console.log("dMat=",distMatrix.length);
 
- 			for(var i=0; i<data.length; i++){
+			for(var i=0; i<data.length; i++){
 				var tmpInfo = data[i];
 				// console.log("tmpInfo=",i,tmpInfo);
 				var bgX = tmpInfo[0], bgY = tmpInfo[2];
@@ -462,7 +462,7 @@
 			
 			setTimeout(computeMDS, 500); 
 
- 		}
+		}
 
 		p.map(computeChunks).then(assembleChunks);		
 	}
@@ -470,9 +470,9 @@
 	function buildFCGR(seq, k){
 		var numOfKmers=0, curmer, curmerInd, kmers={}, mapACGT={"A":0, "C":1, "G":2, "T":3};
 		var newseq = seq.replace(/B|D|E|F|H|I|J|K|L|M|N|O|P|Q|R|S|U|V|W|X|Y|Z/gi, "");
-	    var kmersInds = new Uint8Array(Math.pow(4, k));
-	    if(dbg){console.log((seq.length - newseq.length)+' lost bp');}
-	    for(var i=0; i<newseq.length-k+1; i++){
+		var kmersInds = new Uint8Array(Math.pow(4, k));
+		if(dbg){console.log((seq.length - newseq.length)+' lost bp');}
+		for(var i=0; i<newseq.length-k+1; i++){
 			curmer = newseq.slice(i,i+k);
 			curmerInd = 0;
 			for(var j=0; j<curmer.length; j++){ 
@@ -587,7 +587,11 @@
 		$("#extendmapmenucontent").slideUp();
 		$("#inputdatamenu").slideUp();
 		$("#computemenu").slideUp();
+		$("#hotkeyslist").slideUp();
 		
+		$("#hotkeysshowhide").click(function(){
+			$("#hotkeyslist").slideToggle();
+		});
 
 		$("#buildmapmenuheader").click(function(){
 			// console.log("build");
@@ -672,6 +676,11 @@
 			$("#nameset2").val('SetC');
 			$("#nameset3").val('SetD');
 			$("#nameset4").val('SetG');
+			$("#colorset0").val('blue');
+			$("#colorset1").val('red');
+			$("#colorset2").val('green');
+			$("#colorset3").val('orange');
+			$("#colorset4").val('magenta');
 			$("#stepstatus").hide();
 			$("#mainprogressbar").hide();	
 			$("#computemenu").slideUp();	
@@ -696,7 +705,7 @@
 
 			$.ajax({url: "./maps/settings_"+$("#extendmapid").val()+".txt", success: function(result){
 				console.log("./maps/settings_"+$("#extendmapid").val()+".txt");
-				console.log(result);
+				// console.log(result);
 				map_settings = result.split("\n");
 				console.log(String(map_settings[0]));
 
@@ -801,16 +810,34 @@
 				colorList += '<option value="'+labelColors[i]+'">'+ labelColors[i]+'</option>';
 			}
 
-			$("#file_contents").empty();
-			$("#file_contents").hide();
+			// save previous accessions used
+			var previousdata = [];
+			for(var i=0; i<15; i++){
+				if($("#set"+i).html() != undefined){
+					previousdata.push([ $("#nameset"+i).val(), $("#colorset"+i).val(), $("#set"+i).html() ]);
+				}
+			}
+			console.log(previousdata);
+
+
 			console.log("numofsets=",$("#numofsets").val());
 			$("#sets").html('');
 			for(var i=0; i<$("#numofsets").val(); i++){
 				$("#sets").html($("#sets").html()+'<p>SetName:<input type="text" size="5" id="nameset'+i+'" value="Set['+i+']"> SetColor: <select id="colorset'+i+'">'+colorList+'</select><br><textarea id="set'+i+'" autofocus  rows="2" cols="40"></textarea></p>');
 			}
 			for(var i=0; i<$("#numofsets").val(); i++){$("#colorset"+i).val(labelColors[i]);}
+
+			//restore saved accessions
+			for(var i=0; i<previousdata.length; i++){
+				if($("#set"+i).html() != undefined){
+					$("#nameset"+i).val(previousdata[i][0]);
+					$("#colorset"+i).val(previousdata[i][1]);
+					$("#set"+i).html(previousdata[i][2]);
+				}
+			}
+
+
 			if($("#numofsets").val()>0){$("#buildmap").show();}else{$("#buildmap").hide();}
-			$("#stepstatus").hide();
 		});
 
 		var tmpDataset = geturlparamvalue('dataset');
@@ -890,29 +917,29 @@
 				<div class="col-xs-10" id="buildmapview" >
 					<h3>Build your map, for your dataset</h3>
 					
+					<!-- <div class="panel panel-default">
+					  <div class="panel-heading">Panel with panel-default class</div>
+					  <div class="panel-body">Panel Content</div>
+					</div> -->
+
 					<div class="panel panel-default">
-			      <div class="panel-heading"><label>Choose an option to continue</label>	</div>
-			      <div class="panel-body">
-			      	<label><input type="radio" id="buildmapmenuheader" name="mapmenu"/> Build a MoDMap from your dataset</label><br>
-							<label><input type="radio" id="extendmapmenuheader" name="mapmenu"/> Extend an existing MoDMap</label>
+						<div class="panel-heading"><label>Choose an option to continue</label></div>
+						<div class="panel-body">
+						<label><input type="radio" id="buildmapmenuheader" name="mapmenu"/> Build a MoDMap from your dataset</label><br>
+						<label><input type="radio" id="extendmapmenuheader" name="mapmenu"/> Extend an existing MoDMap</label>
 						</div>
 					</div>
 
-					<!-- <div class="panel panel-default">
-				      <div class="panel-heading">Panel with panel-default class</div>
-				      <div class="panel-body">Panel Content</div>
-				    </div> -->
-
-			    <div class="panel panel-default" id="buildmapmenucontent">
-			      <div class="panel-heading"><label>Info</label></div>
-			      <div class="panel-body">
-			      	<p>Samples you can try:<br>
-								<a href="#" id="dataset1">[1] 62 mtDNA primates</a> - 
-								<a href="#" id="dataset2">[2] 112 mtDNA amphibia</a> - 
-								<a href="#" id="dataset3">[3] 39 HIV-1 genomes</a> 
+					<div class="panel panel-default" id="buildmapmenucontent">
+						<div class="panel-heading"><label>Info</label></div>
+						<div class="panel-body">
+							<p>Samples you can try:<br>
+							<a href="#" id="dataset1">[1] 62 mtDNA primates</a> - 
+							<a href="#" id="dataset2">[2] 112 mtDNA amphibia</a> - 
+							<a href="#" id="dataset3">[3] 39 HIV-1 genomes</a> 
 							</p>
-			      </div>
-			    </div>
+						</div>
+					</div>
 
 					<div class="panel panel-default" id="extendmapmenucontent">
 						<div class="panel-heading"><label>Info</label></div>
@@ -920,36 +947,34 @@
 							<p>Extend a map by adding new points in a set of predefined MoDMaps. The new points can be given as comma separated accession numbers from NCBI. If you do not know the accession number of a species, you can search directly in NCBI from <a href="https://www.ncbi.nlm.nih.gov/nuccore/?term=Homo+sapiens" target="_blank">here</a>.</p>
 
 
-							<p><dl class="dl-horizontal">
-								<dt>Background map:</dt>
-								<dd>
-									<select id="extendmapid">
-									<option value="Animalia_mtDNA_Amphibians">Animalia_mtDNA_Amphibians</option>
-									<option value="Animalia_mtDNA_Insects">Animalia_mtDNA_Insects</option>
-									<option value="Animalia_mtDNA_Mammals">Animalia_mtDNA_Mammals</option>
-									<option value="Animalia_mtDNA_Mammals2">Animalia_mtDNA_Mammals2</option>
-									<option value="Animalia_mtDNA_Mammals3">Animalia_mtDNA_Mammals3</option>
-									<option value="Animalia_mtDNA_Primates">Animalia_mtDNA_Primates</option>
-									<option value="Animalia_mtDNA_Vertebrata">Animalia_mtDNA_Vertebrata</option>
-									<option value="Fungi_mtDNA">Fungi_mtDNA</option>
-									<option value="Plants_mtDNA">Plants_mtDNA</option>
-									<option value="Protists_mtDNA">Protists_mtDNA</option>
-									<option value="Protists_ptDNA">Protists_ptDNA</option>
-									</select>
-								<br></dd>
-								<dt>Extra NCBI numbers:</dt>
-								<dd><input id="extrancbi" type="text" size="15" value="NC_012920"/>
-								</dd>
-								</dl></p>
+							<p>
+							<dl class="dl-horizontal">
+							<dt>Background map:</dt>
+							<dd><select id="extendmapid">
+								<option value="Animalia_mtDNA_Amphibians">Animalia_mtDNA_Amphibians</option>
+								<!-- <option value="Animalia_mtDNA_Insects">Animalia_mtDNA_Insects</option> -->
+								<option value="Animalia_mtDNA_Mammals">Animalia_mtDNA_Mammals</option>
+								<option value="Animalia_mtDNA_Mammals2">Animalia_mtDNA_Mammals2</option>
+								<option value="Animalia_mtDNA_Mammals3">Animalia_mtDNA_Mammals3</option>
+								<option value="Animalia_mtDNA_Primates">Animalia_mtDNA_Primates</option>
+								<option value="Animalia_mtDNA_Vertebrata">Animalia_mtDNA_Vertebrata</option>
+								<option value="Fungi_mtDNA">Fungi_mtDNA</option>
+								<option value="Plants_mtDNA">Plants_mtDNA</option>
+								<option value="Protists_mtDNA">Protists_mtDNA</option>
+								<option value="Protists_ptDNA">Protists_ptDNA</option>
+							</select><br></dd>
+							<dt>Extra NCBI numbers:</dt>
+							<dd><input id="extrancbi" type="text" size="15" value="NC_012920"/></dd>
+							</dl></p>
 
-								<p><input type="submit" id="processextendmap" value="Continue"/></p>
+							<p><input type="submit" id="processextendmap" value="Continue"/></p>
 						</div>
 					</div>
 
 					<div class="panel panel-default" id="inputdatamenu">
-			      <div class="panel-heading"><label>Settings of MoDMap selected</label></div>
-			      <div class="panel-body">
-			      	<p><div id="allInputDataMinimized">
+						<div class="panel-heading"><label>Settings of MoDMap selected</label></div>
+						<div class="panel-body">
+							<p><div id="allInputDataMinimized">
 								<a href="#" id="allInputDataShow">Show/Hide input data</a>
 							</div></p>
 
@@ -1001,19 +1026,18 @@
 							</div>
 
 							<p><input type="submit" id="buildmap" value="Compute MoDMap" style="display:none;" /></p>
-
-			      </div>
-			    </div>
+						</div>
+					</div>
 
 					<div class="panel panel-default" id="computemenu">
-						<div class="panel-heading"><label>Computation Results</label></div>
-						<div class="panel-body">
-							<p id="stepstatus"></p>
-							<div id="mainprogressbar" style="display:none;">
-							  <div id="progress"></div>
-							</div>
-							<p id="file_contents"></p>
+					<div class="panel-heading"><label>Computation Results</label></div>
+					<div class="panel-body">
+						<p id="stepstatus"></p>
+						<div id="mainprogressbar" style="display:none;">
+						  <div id="progress"></div>
 						</div>
+						<p id="file_contents"></p>
+					</div>
 					</div>
 
 				</div>
@@ -1041,21 +1065,44 @@
 					<div class="panel-heading"><label>Computation Results</label></div>
 					<div class="panel-body"  id=aidinfo></div>
 				</div>
-
 			</div>
 			<div id="menu4" class="tab-pane fade">
 				<p>
 				<dl class="dl-horizontal">
 					<dt>Coded by:</dt>
 					<dd>Rallis Karamichalis, 2016</dd>
-					<!-- <dt>Github Page:</dt>
-					<dd><a href="http://rallis.github.io/MoDMaps3D/" target="_blank">http://rallis.github.io/MoDMaps3D/</a></dd> -->
 					<dt>Github Code:</dt>
 					<dd><a href="http://github.com/rallis/MoDMaps3D/" target="_blank">http://github.com/rallis/MoDMaps3D/</a></dd>
+					<dt>HotKeys:</dt>
 					
-					
-					<!-- <dt>Publication:</dt>
-					<dd>[PUBLICATION_DOI_LINK]</dd> -->
+					<dd>
+						<div id="hotkeysshowhide"><a href="#">Show/Hide full list</a></div>
+						<div id="hotkeyslist">
+						While on canvas:
+						<ul>
+						<li>A = Move camera Left</li>
+						<li>D = Move camera Right</li>
+						<li>W = Move camera Up</li>
+						<li>S = Move camera Down</li>
+						<li>E = Zoom camera In</li>
+						<li>Q = Zoom camera Out</li>
+						<li>Ctrl + LeftArrow = Rotate Left</li>
+						<li>Ctrl + UpArrow = Rotate Up</li>
+						<li>Ctrl + RightArrow = Rotate Right</li>
+						<li>Ctrl + DownArrow = Rotate Down</li>
+						<li>Left Mouse Click + Drag = Rotate to any direction</li>
+						</ul>
+
+						General Shortcuts:
+						<ul>
+						<li>Ctrl + F = Search field</li>
+						<li>Ctrl + Alt + R = Reset Camera view, keeping rotation</li>
+						<li>Ctrl + Alt + M = Toggle visibility of right menu</li>
+						<li>Ctrl + Alt + N = Toggle visibility of left menu</li>
+						</ul>
+						</div>
+					</dd>
+
 				</dl>
 				</p>	
 			</div>
