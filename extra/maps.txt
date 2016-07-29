@@ -11,6 +11,8 @@
 	"Animalia_mtDNA_Vertebrata.txt",
 	"Fungi_mtDNA.txt",
 	"Plants_mtDNA.txt",
+	"Archaea_nDNA.txt",
+	"Bacteria_nDNA.txt",
 	"Protists_mtDNA.txt",
 	"Protists_ptDNA.txt"]],
 

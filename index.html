@@ -8,8 +8,8 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<!-- <link rel="stylesheet" href="js/bootstrap.min.css">
 	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
- -->
+	<script src="js/bootstrap.min.js"></script> -->
+
 	<script type="text/javascript" src="js/numeric-1.2.6.min.js"></script>
 	<script type="text/javascript" src="js/jszip.min.js"></script>
 	<script type="text/javascript" src="js/FileSaver.min.js"></script>
@@ -22,7 +22,7 @@
 	var mapID, allSequences={}, distMatrix=[], fcgrRes=9, getTaxa = false;
 	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
 	var callsNCBIDone, progress;
-	var aidDistInfo = [], map_settings;
+	var aidDistInfo = [], map_settings, previousdata = [];
 	var labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'olive', 'purple', 'black'];
 	
 	function geturlparamvalue(name) {
@@ -142,25 +142,25 @@
 			toprint4 = toprint4.slice(0,-2);  //because of space above!
 			toprint4 += '. Number of sequences is '+accIDs.length+ "\n";
 			
-			// // completely debugging part
-			// var toprint5="{";
-			// for(var i=0; i<distMatrix.length; i++){
-			// 	toprint5+='{';
-			// 	for (var j=0; j<distMatrix.length; j++){
-			// 		toprint5+=distMatrix[i][j].toFixed(10)+',';
-			// 	}
-			// 	toprint5 = toprint5.substring(0, toprint5.length - 1);
-			// 	toprint5+='},'
-			// }
-			// toprint5 = toprint5.substring(0, toprint5.length - 1);
-			// toprint5+='}';
+			// completely debugging part
+			var toprint5="{";
+			for(var i=0; i<distMatrix.length; i++){
+				toprint5+='{';
+				for (var j=0; j<distMatrix.length; j++){
+					toprint5+=distMatrix[i][j].toFixed(10)+',';
+				}
+				toprint5 = toprint5.substring(0, toprint5.length - 1);
+				toprint5+='},'
+			}
+			toprint5 = toprint5.substring(0, toprint5.length - 1);
+			toprint5+='}';
 
 			var zip = new JSZip();
 			zip.file("dMatrix.txt", toprint);
 			zip.file("accIDs.txt", toprint2);
 			zip.file("allSequences.txt", toprint3);
 			zip.file("mapheader.txt", toprint4);
-			// zip.file("debug.txt", toprint5);
+			zip.file("debug.txt", toprint5);
 			var content = zip.generate({type:"blob"});
 			// see FileSaver.js
 			saveAs(content, "dataForMMA.zip");
@@ -811,7 +811,7 @@
 			}
 
 			// save previous accessions used
-			var previousdata = [];
+			previousdata = [];
 			for(var i=0; i<15; i++){
 				if($("#set"+i).html() != undefined){
 					previousdata.push([ $("#nameset"+i).val(), $("#colorset"+i).val(), $("#set"+i).html() ]);
@@ -960,11 +960,13 @@
 								<option value="Animalia_mtDNA_Vertebrata">Animalia_mtDNA_Vertebrata</option>
 								<option value="Fungi_mtDNA">Fungi_mtDNA</option>
 								<option value="Plants_mtDNA">Plants_mtDNA</option>
+								<option value="Archaea_nDNA">Archaea_nDNA</option>
+								<option value="Bacteria_nDNA">Bacteria_nDNA</option>
 								<option value="Protists_mtDNA">Protists_mtDNA</option>
 								<option value="Protists_ptDNA">Protists_ptDNA</option>
 							</select><br></dd>
 							<dt>Extra NCBI numbers:</dt>
-							<dd><input id="extrancbi" type="text" size="15" value="NC_012920"/></dd>
+							<dd><input id="extrancbi" type="text" size="15" /></dd>
 							</dl></p>
 
 							<p><input type="submit" id="processextendmap" value="Continue"/></p>
@@ -1104,18 +1106,6 @@
 					</dd>
 
 					
-					<br>bacteria 
-					<br>archea?
-					<br> what if build map fails before dist matrix computation
-					
-
-					<br><br>-------
-					<br>OPTIONAL:
-					<br>description in kingdoms maps
-					<br>show all maps parameter
-
-					<!-- <dt>Publication:</dt>
-					<dd>[PUBLICATION_DOI_LINK]</dd> -->
 				</dl>
 				</p>	
 			</div>
