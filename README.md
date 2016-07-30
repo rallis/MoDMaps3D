@@ -5,9 +5,11 @@ See it in action, here http://rallis.github.io/MoDMaps3D
 
 Samples:
 <ul>
-<li>Phylum Vertebrata with its five subphyla. (<a href="http://rallis.github.io/MoDMaps3D/load.html?mapid=mtDNA_Vertebrata.txt">3158 points here</a>)</li>
-<li>Amphibia, Insecta and Mammalia. (<a href="http://rallis.github.io/MoDMaps3D/load.html?mapid=mtDNA_InsecMamAmph.txt">1497 points here</a>)</li>
-<li>Order Primates and its suborders. (<a href="http://rallis.github.io/MoDMaps3D/load.html?mapid=mtDNA_Primates.txt">132 points here</a>)</li>
+<li>Phylum Vertebrata with its five subphyla. (<a href="http://rallis.github.io/MoDMaps3D/load.html?mapid=Animalia_mtDNA_Vertebrata.txt">3158 points here</a>)</li>
+<li>Class Mammalia. (<a href="http://rallis.github.io/MoDMaps3D/load.html?mapid=Animalia_mtDNA_Mammals.txt">674 points here</a>)</li>
+<li>Class Mammalia (subset). (<a href="http://rallis.github.io/MoDMaps3D/load.html?mapid=Animalia_mtDNA_Mammals2.txt">573 points here</a>)</li>
+<li>Class Mammalia (smaller subset). (<a href="http://rallis.github.io/MoDMaps3D/load.html?mapid=Animalia_mtDNA_Mammals3.txt">230 points here</a>)</li>
+<li>Order Primates and its suborders. (<a href="http://rallis.github.io/MoDMaps3D/load.html?mapid=Animalia_mtDNA_Primates.txt">114 points here</a>)</li>
 </ul>
 
 #### HotKeys:
