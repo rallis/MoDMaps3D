@@ -3,8 +3,8 @@ blue
 5
 Index,Acc,Name,Length,Taxa
 blue
-HIV-1 Subtype B (2295)
-HIV-1 Subtype B
+HIV-1 B (2295)
+HIV-1 B.
 -0.00696372
 -0.815272
 0.591413
