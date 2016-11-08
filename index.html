@@ -626,7 +626,7 @@
 		});  
 
 		$("#dataset1").click(function(){
-			$.ajax({url: "./maps/samples/sample1.txt", success: function(result){
+			$.ajax({url: "./maps/samplemaps/sample1.txt", success: function(result){
 				var result = JSON.parse(result);
 				console.log("Loading: ",result["mapDescription"]);
 				$('#allInputData').slideDown();
@@ -645,7 +645,7 @@
 			}});		
 		});  
 		$("#dataset2").click(function(){
-			$.ajax({url: "./maps/samples/sample2.txt", success: function(result){
+			$.ajax({url: "./maps/samplemaps/sample2.txt", success: function(result){
 				var result = JSON.parse(result);
 				console.log("Loading: ",result["mapDescription"]);
 				$('#allInputData').slideDown();
@@ -664,7 +664,7 @@
 			}});
 		});
 		$("#dataset3").click(function(){
-			$.ajax({url: "./maps/samples/sample3.txt", success: function(result){
+			$.ajax({url: "./maps/samplemaps/sample3.txt", success: function(result){
 				var result = JSON.parse(result);
 				console.log("Loading: ",result["mapDescription"]);
 				$('#allInputData').slideDown();
@@ -694,58 +694,38 @@
 
 		$("#computedist").click(computeAIDdist);
 
-		$("#processextendmap").click(function(){
-			console.log("extend map started");
-			console.log($("#extendmapid").val());
+		// todo: make loader for json here, change code to parse json, py script to convert settings to txt (json)
+			// save inpu data to json
+			// load fasta file
 
+		$("#processextendmap").click(function(){
+			console.log("Extend map started for: ", $("#extendmapid").val());
 			$("#inputdatamenu").slideDown();
 
-			// $.ajax({url: "./maps/samples/sample3.txt", success: function(result){
-			// 	var result = JSON.parse(result);
-			// 	console.log("Loading: ",result["mapDescription"]);
-			// 	$('#allInputData').slideDown();
-			// 	$("#file_contents").empty();
-			// 	$("#file_contents").hide();
-			// 	$("#numofsets").val(result["numofsets"]);
-			// 	$("#numofsets").trigger("change");
-			// 	for(var i=0; i<result["namesets"].length; i++){
-			// 		$("#set"+i).html(result["sets"][i]);
-			// 		$("#nameset"+i).val(result["namesets"][i]);
-			// 		$("#colorset"+i).val(result["colorsets"][i]);		
-			// 	}
-			// 	$("#stepstatus").hide();
-			// 	$("#mainprogressbar").hide();
-			// 	$("#computemenu").slideUp();
-			// }});
-
-			// todo: make loader for json here, change code to parse json, py script to convert settings to txt (json)
-
-			$.ajax({url: "./maps/settings_"+$("#extendmapid").val()+".txt", success: function(result){
-				console.log("./maps/settings_"+$("#extendmapid").val()+".txt");
-				// console.log(result);
-				map_settings = result.split("\n");
-				console.log(String(map_settings[0]));
-
-				$("#numofsets").val(String(parseInt(map_settings[0])+1));
+			$.ajax({url: "./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt", success: function(result){
+				console.log("./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt");
+				var result = JSON.parse(result);
+				console.log("Loading: ",result["mapDescription"]);
+				
+				$('#allInputData').slideDown();
+				$("#file_contents").empty();
+				$("#file_contents").hide();
+				$("#numofsets").val(result["numofsets"]+1);
 				$("#numofsets").trigger("change");
 
-				for(var i=0; i<map_settings[0]; i++){
-					$("#nameset"+i).val(map_settings[3*i+1]);
-					$("#colorset"+i).val(map_settings[3*i+2]);	
-					$("#set"+i).html(map_settings[3*i+3]);
+				for(var i=0; i<result["namesets"].length; i++){
+					$("#set"+i).html(result["sets"][i]);
+					$("#nameset"+i).val(result["namesets"][i]);
+					$("#colorset"+i).val(result["colorsets"][i]);		
 				}
 
 				$("#nameset"+i).val("NEW_points");
 				$("#colorset"+i).val("black");	
 				$("#set"+i).html($("#extrancbi").val());
 
-				// $("#inputdatamenu").slideDown();
 				$("#stepstatus").hide();
 				$("#mainprogressbar").hide();
-				$("#allInputData").slideDown();
 				$("#computemenu").slideUp();
-				// $("#buildmap").click();
-				// let the user click
 			}});
 		});
 
