@@ -626,64 +626,61 @@
 		});  
 
 		$("#dataset1").click(function(){
-			$('#allInputData').slideDown();
-			$("#file_contents").empty();
-			$("#file_contents").hide();
-			$("#numofsets").val('2');
-			$("#numofsets").trigger("change");
-			$("#set0").html('NC_014453,NC_012761,NC_012762,NC_012763,NC_012764,NC_012766,NC_012769,NC_012771,NC_012773,NC_011053,NC_010299,NC_010300,NC_004025,NC_002765');
-			$("#set1").html('NC_018115,NC_018116,NC_018096,NC_018057,NC_018058,NC_018059,NC_018060,NC_018061,NC_018062,NC_018063,NC_016666,NC_015485,NC_015486,NC_014042,NC_014045,NC_014047,NC_014051,NC_013993,NC_012920,NC_012774,NC_012775,NC_012670,NC_011519,NC_011137,NC_011120,NC_009747,NC_009748,NC_008215,NC_008216,NC_008217,NC_008218,NC_008219,NC_008220,NC_008066,NC_007009,NC_006900,NC_006901,NC_005943,NC_002811,NC_002763,NC_002764,NC_001643,NC_001644,NC_001645,NC_001646,NC_001992,NC_002082,NC_002083');	
-			$("#nameset0").val('Strepsirrhini');
-			$("#nameset1").val('Haplorrhini');
-			$("#colorset0").val('green');
-			$("#colorset1").val('red');
-			$("#stepstatus").hide();
-			$("#mainprogressbar").hide();
-			$("#computemenu").slideUp();		
+			$.ajax({url: "./maps/samples/sample1.txt", success: function(result){
+				var result = JSON.parse(result);
+				console.log("Loading: ",result["mapDescription"]);
+				$('#allInputData').slideDown();
+				$("#file_contents").empty();
+				$("#file_contents").hide();
+				$("#numofsets").val(result["numofsets"]);
+				$("#numofsets").trigger("change");
+				for(var i=0; i<result["namesets"].length; i++){
+					$("#set"+i).html(result["sets"][i]);
+					$("#nameset"+i).val(result["namesets"][i]);
+					$("#colorset"+i).val(result["colorsets"][i]);		
+				}
+				$("#stepstatus").hide();
+				$("#mainprogressbar").hide();
+				$("#computemenu").slideUp();
+			}});		
 		});  
 		$("#dataset2").click(function(){
-			$('#allInputData').slideDown();
-			$("#file_contents").empty();
-			$("#file_contents").hide();
-			$("#numofsets").val('3');
-			$("#numofsets").trigger("change");
-			$("#set0").html('NC_017870,NC_017871,NC_015788,NC_015790,NC_015791,NC_015792,NC_015794,NC_015795,NC_015796,NC_014568,NC_014571,NC_014572,NC_013825,NC_013762,NC_012430,NC_010224,NC_009335,NC_008090,NC_008085,NC_008088,NC_008089,NC_008091,NC_008076,NC_008077,NC_008078,NC_008079,NC_008080,NC_008081,NC_008082,NC_008083,NC_008084,NC_007446,NC_006887,NC_006888,NC_006889,NC_006890,NC_006407,NC_006325,NC_006326,NC_006327,NC_006328,NC_006329,NC_006330,NC_006331,NC_006332,NC_006333,NC_006334,NC_006335,NC_006336,NC_006337,NC_006338,NC_006339,NC_006340,NC_006341,NC_006342,NC_006343,NC_006344,NC_006345,NC_006346,NC_005797,NC_004926,NC_004021,NC_002756');
-			$("#set1").html('NC_007911,NC_006404,NC_006301,NC_006302,NC_006303,NC_006304,NC_006305,NC_002471');
-			$("#set2").html('NC_016119,NC_016059,NC_015615,NC_015617,NC_015618,NC_015620,NC_015305,NC_014685,NC_014691,NC_014581,NC_014584,NC_013270,NC_012837,NC_012647,NC_011049,NC_010232,NC_010233,NC_009886,NC_009422,NC_009423,NC_009258,NC_009264,NC_008410,NC_008144,NC_007888,NC_007440,NC_007178,NC_006839,NC_006688,NC_006689,NC_006690,NC_006402,NC_006403,NC_006405,NC_006406,NC_006408,NC_008975,NC_005794,NC_005055,NC_002805,NC_001573');
-			$("#nameset0").val('Caudata');
-			$("#nameset1").val('Gymnophiona');
-			$("#nameset2").val('Anura');
-			$("#colorset0").val('green');
-			$("#colorset1").val('cyan');
-			$("#colorset2").val('blue');
-			$("#stepstatus").hide();
-			$("#mainprogressbar").hide();	
-			$("#computemenu").slideUp();	
+			$.ajax({url: "./maps/samples/sample2.txt", success: function(result){
+				var result = JSON.parse(result);
+				console.log("Loading: ",result["mapDescription"]);
+				$('#allInputData').slideDown();
+				$("#file_contents").empty();
+				$("#file_contents").hide();
+				$("#numofsets").val(result["numofsets"]);
+				$("#numofsets").trigger("change");
+				for(var i=0; i<result["namesets"].length; i++){
+					$("#set"+i).html(result["sets"][i]);
+					$("#nameset"+i).val(result["namesets"][i]);
+					$("#colorset"+i).val(result["colorsets"][i]);		
+				}
+				$("#stepstatus").hide();
+				$("#mainprogressbar").hide();
+				$("#computemenu").slideUp();
+			}});
 		});
 		$("#dataset3").click(function(){
-			$('#allInputDataBuild').slideDown();
-			$("#file_contents").empty();
-			$("#file_contents").hide();
-			$("#numofsets").val('5');
-			$("#numofsets").trigger("change");
-			$("#set0").html('AY521630,AM000053,AM000054,AY521629,AY521631,AM000055,DQ396400');
-			$("#set1").html('AF004394,AF042101,AF256204,AF086817,AF042103,AB428555,AB287363,EU786678');
-			$("#set2").html('U46016,AY713415,AY713416,AY255826,EF514713,DQ207941,DQ369994,EU786673');
-			$("#set3").html('AY773338,AY773341,EF633445,AY322189,AF484516,AJ488927,AY371157,AY795907');
-			$("#set4").html('U88826,AF061642,AY772535,AY586549,AF423760,AY371121,AB231893,EU786670');
-			$("#nameset0").val('SetA');
-			$("#nameset1").val('SetB');
-			$("#nameset2").val('SetC');
-			$("#nameset3").val('SetD');
-			$("#nameset4").val('SetG');
-			$("#colorset0").val('blue');
-			$("#colorset1").val('red');
-			$("#colorset2").val('green');
-			$("#colorset3").val('orange');
-			$("#colorset4").val('magenta');
-			$("#stepstatus").hide();
-			$("#mainprogressbar").hide();	
-			$("#computemenu").slideUp();	
+			$.ajax({url: "./maps/samples/sample3.txt", success: function(result){
+				var result = JSON.parse(result);
+				console.log("Loading: ",result["mapDescription"]);
+				$('#allInputData').slideDown();
+				$("#file_contents").empty();
+				$("#file_contents").hide();
+				$("#numofsets").val(result["numofsets"]);
+				$("#numofsets").trigger("change");
+				for(var i=0; i<result["namesets"].length; i++){
+					$("#set"+i).html(result["sets"][i]);
+					$("#nameset"+i).val(result["namesets"][i]);
+					$("#colorset"+i).val(result["colorsets"][i]);		
+				}
+				$("#stepstatus").hide();
+				$("#mainprogressbar").hide();
+				$("#computemenu").slideUp();
+			}});
 		});
 
 		$("#kmerslen").change(function(){
@@ -702,6 +699,26 @@
 			console.log($("#extendmapid").val());
 
 			$("#inputdatamenu").slideDown();
+
+			// $.ajax({url: "./maps/samples/sample3.txt", success: function(result){
+			// 	var result = JSON.parse(result);
+			// 	console.log("Loading: ",result["mapDescription"]);
+			// 	$('#allInputData').slideDown();
+			// 	$("#file_contents").empty();
+			// 	$("#file_contents").hide();
+			// 	$("#numofsets").val(result["numofsets"]);
+			// 	$("#numofsets").trigger("change");
+			// 	for(var i=0; i<result["namesets"].length; i++){
+			// 		$("#set"+i).html(result["sets"][i]);
+			// 		$("#nameset"+i).val(result["namesets"][i]);
+			// 		$("#colorset"+i).val(result["colorsets"][i]);		
+			// 	}
+			// 	$("#stepstatus").hide();
+			// 	$("#mainprogressbar").hide();
+			// 	$("#computemenu").slideUp();
+			// }});
+
+			// todo: make loader for json here, change code to parse json, py script to convert settings to txt (json)
 
 			$.ajax({url: "./maps/settings_"+$("#extendmapid").val()+".txt", success: function(result){
 				console.log("./maps/settings_"+$("#extendmapid").val()+".txt");
@@ -817,7 +834,7 @@
 					previousdata.push([ $("#nameset"+i).val(), $("#colorset"+i).val(), $("#set"+i).html() ]);
 				}
 			}
-			console.log(previousdata);
+			console.log("previous_accessions",previousdata);
 
 
 			console.log("numofsets=",$("#numofsets").val());
