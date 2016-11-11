@@ -19,6 +19,7 @@
 	<script>
 	var dbg = false, errorHasOccured = false, noMDS = false, splitBy, offlineCompMinSize = 500;
 	var eigenval, eigenvec, eigensystem, finalEigenval, finalEigenvec, points, mapfile ;
+	var fastaFilesLoaded = [], defaultInputType = "ncbi";
 	var mapID, allSequences={}, distMatrix=[], fcgrRes=9, getTaxa = false;
 	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
 	var callsNCBIDone, progress;
@@ -694,18 +695,14 @@
 
 		$("#computedist").click(computeAIDdist);
 
-		// todo: make loader for json here, change code to parse json, py script to convert settings to txt (json)
-			// save inpu data to json
-			// load fasta file
-
-		$("#processextendmap").click(function(){
-			console.log("Extend map started for: ", $("#extendmapid").val());
+		$("#loadrefmap").click(function(){
+			console.log("Loading RefMap: ", $("#extendmapid").val());
 			$("#inputdatamenu").slideDown();
 
 			$.ajax({url: "./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt", success: function(result){
 				console.log("./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt");
 				var result = JSON.parse(result);
-				console.log("Loading: ",result["mapDescription"]);
+				console.log("RefMap Description: ",result["mapDescription"]);
 				
 				$('#allInputData').slideDown();
 				$("#file_contents").empty();
@@ -719,9 +716,20 @@
 					$("#colorset"+i).val(result["colorsets"][i]);		
 				}
 
-				$("#nameset"+i).val("NEW_points");
-				$("#colorset"+i).val("black");	
-				$("#set"+i).html($("#extrancbi").val());
+				$("#nameset"+result["namesets"].length).val("NEW_points");
+				$("#colorset"+result["namesets"].length).val("black");	
+				if( defaultInputType == "ncbi"){
+					$("#set"+result["namesets"].length).html($("#extrancbi").val());
+				}
+				if( defaultInputType == "fasta"){
+					var tmpOut = [];
+					for(var i=0; i<fastaFilesLoaded.length; i++){
+						tmpOut.push("fastaFile"+String(i+1));
+					}
+					// console.log(tmpOut);
+					$("#set"+result["namesets"].length).html(tmpOut.join(","));
+				}
+				
 
 				$("#stepstatus").hide();
 				$("#mainprogressbar").hide();
@@ -769,30 +777,71 @@
 				alert("Your input contains more than ["+offlineCompMinSize+"] sequences. This requires that the last step (MDS) has to be computed offline using either Mathematica or Python. Files and code will be provided to you once you reach that point.");
 			}
 
-			// AJAX CALLS TO NCBI FOR FASTA FILES
-			callsNCBIDone=0;
+			// AJAX CALLS TO NCBI FOR FASTA FILES and/or READING USER FASTA FILES
+			fastaFilesLoadedIndex = 0;
+			callsNCBIDone = 0;
 			for(var i=0; i<accIDs.length; i++){
 				if(!errorHasOccured){
-					loadFastaFromNCBI(i, accIDs[i].trim(), function(ind, accID, output, header){
-						allSequences[ind]=[accID, output.length, /**/, buildFCGR(output, fcgrRes), header];
-						if(getTaxa){
-							getTaxaFromNCBI(ind, accID);
-						}else{
-							callsNCBIDone += 0.5;
-							allSequences[ind][2] = "NotAvailable";
-						}
-						if(dbg){console.log([ind,accID,output.length,'DONE']);}
+
+					if(accIDs[i].trim().substr(0,9) == "fastaFile"){
 						
-						callsNCBIDone += 0.5;
-						progress = callsNCBIDone*100.0/accIDs.length;
-						progress = progress.toFixed(2);
-						if(!errorHasOccured){$('#progress').html(progress+'%');} 
-						if(callsNCBIDone == accIDs.length && !errorHasOccured){
-							time = new Date();
-							step1B = time.getTime();
-							computeDistMatrix();
-						}
-					});
+						// IF IT'S UPLOADED FASTA FILE
+						var reader = new FileReader();
+						reader.onload = (function(f,posInAllSeq, accInAllSeq) {
+							return function(e) { 
+								console.log("fasta: ", accInAllSeq, "fileInfo: ", e.target);
+								var data = e.target.result.split(/\n\r?/gi);
+								var header;
+								if( data.length && data[0][0]==='>' ){ header = data[0]; }
+								while (data.length && data[0][0] === '>') {data.shift();}
+								var outputFasta=data.join('');
+
+								allSequences[posInAllSeq]=[accInAllSeq, outputFasta.length, "NotAvailable", buildFCGR(outputFasta, fcgrRes), header];
+
+								if(true){console.log([posInAllSeq,accInAllSeq,outputFasta.length,'DONE']);}
+								callsNCBIDone += 1;
+
+								// UPDATE PROGRESS AND START computeDistMatrix() IF LAST SEQUENCE IS FASTA
+								progress = callsNCBIDone*100.0/accIDs.length;
+								progress = progress.toFixed(2);
+								if(!errorHasOccured){$('#progress').html(progress+'%');} 
+								if(callsNCBIDone == accIDs.length && !errorHasOccured){
+									time = new Date();
+									step1B = time.getTime();
+									computeDistMatrix();
+								}
+							}
+						})(fastaFilesLoaded[fastaFilesLoadedIndex], i, accIDs[i].trim());
+						
+						reader.readAsText(fastaFilesLoaded[fastaFilesLoadedIndex]);
+						fastaFilesLoadedIndex += 1;
+
+					}else{
+
+						// IF IT'S NCBI ACCESSION NUMBER
+						loadFastaFromNCBI(i, accIDs[i].trim(), function(ind, accID, output, header){
+							allSequences[ind]=[accID, output.length, /**/, buildFCGR(output, fcgrRes), header];
+							if(getTaxa){
+								getTaxaFromNCBI(ind, accID);
+							}else{
+								callsNCBIDone += 0.5;
+								allSequences[ind][2] = "NotAvailable";
+							}
+							if(dbg){console.log([ind,accID,output.length,'DONE']);}
+							callsNCBIDone += 0.5;
+
+							// UPDATE PROGRESS AND START computeDistMatrix() IF LAST SEQUENCE IS NCBI
+							progress = callsNCBIDone*100.0/accIDs.length;
+							progress = progress.toFixed(2);
+							if(!errorHasOccured){$('#progress').html(progress+'%');} 
+							if(callsNCBIDone == accIDs.length && !errorHasOccured){
+								time = new Date();
+								step1B = time.getTime();
+								computeDistMatrix();
+							}
+						});
+					}
+
 				}
 			}
 		});
@@ -862,6 +911,59 @@
 		}else{
 			//console.log('no local dataset');
 		}
+
+		$("#fastafiles").hide();
+		$('input[type=radio][name=extrapointstype]').change(function() {
+      if (this.value == 'ncbi') {
+      	defaultInputType = "ncbi";
+        console.log("ncbi selected..");
+        $("#extrancbi").show();
+      	$("#fastafiles").hide();
+        $("#fastafilesinfo").hide();
+        $("#inputdatamenu").slideUp();
+      	$("#computemenu").slideUp(); 
+      	$("#loadrefmap").show();   	
+      }
+      else if (this.value == 'fasta') {
+      	defaultInputType = "fasta";
+				console.log("fasta selected..");
+				$("#extrancbi").hide();
+      	$("#fastafiles").show();
+				$("#fastafilesinfo").show();
+        $("#inputdatamenu").slideUp();
+      	$("#computemenu").slideUp();
+      	$("#loadrefmap").hide();
+
+      	// Check for the various File API support.
+				if(window.File && window.FileReader && window.FileList && window.Blob){
+					console.log("everything ok");
+				}else{
+					console.log('The File APIs are not fully supported in this browser.');
+					$('#fastafiles').hide()
+					$('#fastafilesinfo').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> ERROR <strong>The File APIs are not fully supported in this browser.</strong> Please use another browser or input NCBI accession numbers instead.</div>');
+					$("#inputdatamenu").slideUp();
+      		$("#computemenu").slideUp(); 
+				}
+
+				if(fastaFilesLoaded.length >0){
+		    	$("#loadrefmap").show();
+		    } 
+      }
+    });
+	
+		$("#fastafiles").change(function(evt){
+			console.log("Loading fasta files metadata..");
+			var files = evt.target.files; 
+			fastaFilesLoaded = files;
+			var output = [];
+	    for (var i = 0, f; f = files[i]; i++) {
+	      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ', f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a','</li>');
+	    }
+	    $("#fastafilesinfo").html('<ul>' + output.join('') + '</ul>');
+	    $("#loadrefmap").show();
+		});
+
+	
 	});
 
 	</script>
@@ -972,11 +1074,24 @@
 								<option value="Protists_mtDNA">Protists_mtDNA</option>
 								<option value="Protists_ptDNA">Protists_ptDNA</option>
 							</select><br></dd>
-							<dt>Extra NCBI numbers:</dt>
-							<dd><input id="extrancbi" type="text" size="15" /></dd>
+							<dt>Extra Sequences:</dt>
+							<dd>
+								<label><input type="radio" name="extrapointstype" value="ncbi" checked="checked">
+								Input comma separated NCBI accession numbers</label><br>
+								<label><input type="radio" name="extrapointstype" value="fasta">
+								Load FASTA files</label><br>
+								<textarea id="extrancbi" rows="2" cols="40"></textarea>
+								<input type="file" id="fastafiles" name="fastafiles[]" multiple >
+								<output id="fastafilesinfo"></output>
+
+							</dd>
+
+							<dt>
+							<!-- Enter comma separated NCBI accessions --OR-- load FASTA files<br>
+							</dd> -->
 							</dl></p>
 
-							<p><input type="submit" id="processextendmap" value="Continue"/></p>
+							<p><input type="submit" id="loadrefmap" value="Continue"/></p>
 						</div>
 					</div>
 
