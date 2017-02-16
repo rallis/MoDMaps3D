@@ -25,7 +25,8 @@
 	var callsNCBIDone, progress;
 	var aidDistInfo = [], map_settings, previousdata = [];
 	var labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'olive', 'purple', 'black'];
-	
+	var tmpMap = false;
+
 	function geturlparamvalue(name) {
 		name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
 		var regexS = "[\\?&]" + name + "=([^&#]*)";
@@ -552,6 +553,11 @@
 
 	$(document).ready(function(){
 
+		if(geturlparamvalue("tmpmaps")=="true"){
+			console.log("Looking at tmp directory NOW..");
+			tmpMap = true;
+		}
+
 		$.ajax({
 			url: "./extra/maps.txt", 
 			cache: false, 
@@ -560,8 +566,8 @@
 			//var result = JSON.parse(result);
 			//console.log(result);
 			var resfetch;
-			if(geturlparamvalue("mapsnotready")=="true"){
-				resfetch=JSON.parse(result)['mapsNotReady'];
+			if(tmpMap){
+				resfetch=JSON.parse(result)['tmpmaps'];
 			}else{
 				resfetch=JSON.parse(result)['maps'];	
 			}
@@ -582,20 +588,41 @@
 				$("#filecontent").html('<img src="img/loading.gif" width="50" height="50"/>');
 				console.log('Loading = '+$(this).text());
 				mapID=$(this).text();
+				
+				var mapPathToLoad = "";
+				var mapPathToLoadInURL = "";
+				if(tmpMap){
+					mapPathToLoad = "./maps/tmp/"+mapID;
+					mapPathToLoadInURL = "tmp/"+mapID;
+				}else{
+					mapPathToLoad = "./maps/"+mapID;
+					mapPathToLoadInURL = mapID;
+				}
+
 				$.ajax({
-					url: "maps/"+mapID, 
+					url: mapPathToLoad, 
 					cache: false,
 					success: function(result){
 						var resfetch=result.split("\n");
 
-						var sublegends = resfetch[6].split("#");
-						var subleg = "<div>&bull; "+sublegends[0]+"</div>";
-						subleg += "<div>&bull; "+sublegends[1]+"</div>";
-						subleg += "<div>&bull; "+sublegends[2]+" sequences</div>";
-						subleg += "<div>&bull; "+sublegends[3]+"</div>";
-						subleg += "<div>&bull; Avg.Seq.Length: "+sublegends[4]+"</div>";
+						if(resfetch[6].indexOf("#") > -1){
+							// NEW TYPE OF LEGEND WITH INFO SPLIIT BY #
+							console.log("Found legend, split by #");
+							var sublegends = resfetch[6].split("#");
+							var subleg = "<div>&bull; "+sublegends[0]+"</div>";
+							subleg += "<div>&bull; "+sublegends[1]+"</div>";
+							subleg += "<div>&bull; "+sublegends[2]+" sequences</div>";
+							subleg += "<div>&bull; "+sublegends[3]+"</div>";
+							subleg += "<div>&bull; Avg.Seq.Length: "+sublegends[4]+"</div>";
+							
+							$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+subleg+'</p><a href="load.html?mapid='+mapPathToLoadInURL+'" target="_blank">Show Map</a><p></p>');
+						}else{
+							// BACKWARD COMPATIBILITY LEGEND
+							console.log("BACKWARD COMPATIBILITY LEGEND");
+							$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+resfetch[6]+'</p><a href="load.html?mapid='+mapPathToLoadInURL+'" target="_blank">Show Map</a><p></p>');
+						}
+
 						
-						$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+subleg+'</p><a href="load.html?mapid='+mapID+'" target="_blank">Show Map</a><p></p>');
 					}
 				});
 			});
