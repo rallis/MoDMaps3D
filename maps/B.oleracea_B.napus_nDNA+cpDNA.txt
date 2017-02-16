@@ -4,7 +4,7 @@ blue,red
 Index,Acc,Name,Length,Fragment
 blue,red
 B.oleracea (180), B.napus (380)
-Composite signature (nuclear + chloroplast); Sampling from B.napus and B.oleracea; Number of genomic DNA sequences is 560; FCGR with k=9; Approx. Information
+B.oleracea and B.napus#nDNA+cpDNA, composite genomic signatures#28 chromosome#Approx.Inf.Dist (k=9)#303022
 0.124249
 -0.984574
 0.584572
@@ -13,7 +13,7 @@ Composite signature (nuclear + chloroplast); Sampling from B.napus and B.olerace
 1
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 217
 0.132369
 -0.924934
@@ -23,7 +23,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 2
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 20
 0.187321
 -0.913613
@@ -33,7 +33,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 3
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 89
 0.263134
 -0.816
@@ -43,7 +43,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 4
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 144
 0.233881
 -0.818802
@@ -53,7 +53,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 5
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 201
 0.26123
 -0.777359
@@ -63,7 +63,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 6
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 86
 0.282057
 -0.773739
@@ -73,7 +73,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 7
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 157
 0.482783
 -0.442649
@@ -83,7 +83,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 8
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 94
 0.283758
 -0.638924
@@ -93,7 +93,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 9
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 232
 0.874828
 0.102
@@ -103,7 +103,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 10
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 178
 0.478771
 -0.450598
@@ -113,7 +113,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 11
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 126
 0.301388
 -0.69205
@@ -123,7 +123,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 12
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 15
 0.451713
 -0.350018
@@ -133,7 +133,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 13
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 199
 0.120378
 -0.919797
@@ -143,7 +143,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 14
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 112
 0.275043
 -0.738497
@@ -153,7 +153,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 15
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 186
 0.240922
 -0.852478
@@ -163,7 +163,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 16
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 93
 0.402426
 -0.552289
@@ -173,7 +173,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 17
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 168
 0.411956
 -0.639397
@@ -183,7 +183,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 18
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 240
 0.343217
 -0.69353
@@ -193,7 +193,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 19
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 213
 0.2443
 -0.872155
@@ -203,7 +203,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 20
 NC_027748.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome shotgun sequence
-150000
+303366
 251
 0.14882
 -0.910568
@@ -213,7 +213,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C1  BOL  whole genome
 21
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 173
 0.214384
 -0.848384
@@ -223,7 +223,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 22
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 312
 0.157165
 -0.899246
@@ -233,7 +233,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 23
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 30
 0.250086
 -0.781078
@@ -243,7 +243,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 24
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 78
 0.172754
 -0.891591
@@ -253,7 +253,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 25
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 15
 0.390023
 -0.496079
@@ -263,7 +263,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 26
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 287
 0.460428
 -0.566398
@@ -273,7 +273,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 27
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 226
 0.253187
 -0.74008
@@ -283,7 +283,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 28
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 168
 0.745271
 -0.154855
@@ -293,7 +293,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 29
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 106
 0.309979
 -0.725621
@@ -303,7 +303,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 30
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 151
 0.865241
 0.0788619
@@ -313,7 +313,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 31
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 229
 0.646115
 -0.185406
@@ -323,7 +323,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 32
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 183
 0.418029
 -0.485359
@@ -333,7 +333,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 33
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 210
 0.363049
 -0.707746
@@ -343,7 +343,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 34
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 319
 0.25875
 -0.749792
@@ -353,7 +353,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 35
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 311
 0.139843
 -0.925398
@@ -363,7 +363,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 36
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 295
 0.226905
 -0.786681
@@ -373,7 +373,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 37
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 177
 0.0927519
 -0.995686
@@ -383,7 +383,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 38
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 255
 0.135059
 -0.957394
@@ -393,7 +393,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 39
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 12
 0.290763
 -0.837349
@@ -403,7 +403,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 40
 NC_027749.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome shotgun sequence
-150000
+303366
 69
 0.274404
 -0.855733
@@ -413,7 +413,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C2  BOL  whole genome
 41
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 4
 0.218135
 -0.92738
@@ -423,7 +423,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 42
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 393
 0.246384
 -0.896099
@@ -433,7 +433,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 43
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 95
 0.135991
 -0.893628
@@ -443,7 +443,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 44
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 342
 0.179079
 -0.928275
@@ -453,7 +453,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 45
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 297
 0.174529
 -0.923483
@@ -463,7 +463,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 46
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 328
 0.0719647
 -0.915786
@@ -473,7 +473,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 47
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 292
 0.198006
 -0.918216
@@ -483,7 +483,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 48
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 263
 0.224997
 -0.897522
@@ -493,7 +493,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 49
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 49
 0.198053
 -0.894364
@@ -503,7 +503,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 50
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 387
 0.374755
 -0.583891
@@ -513,7 +513,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 51
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 114
 0.304024
 -0.705477
@@ -523,7 +523,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 52
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 22
 0.844967
 0.235103
@@ -533,7 +533,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 53
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 165
 0.291945
 -0.726728
@@ -543,7 +543,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 54
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 176
 0.302626
 -0.684157
@@ -553,7 +553,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 55
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 389
 0.0735581
 -0.939743
@@ -563,7 +563,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 56
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 314
 0.202118
 -0.874055
@@ -573,7 +573,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 57
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 308
 0.113206
 -0.931954
@@ -583,7 +583,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 58
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 149
 0.175987
 -0.89651
@@ -593,7 +593,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 59
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 12
 0.211402
 -0.837143
@@ -603,7 +603,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 60
 NC_027750.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome shotgun sequence
-150000
+303366
 59
 0.0176476
 -0.980871
@@ -613,7 +613,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C3  BOL  whole genome
 61
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 24
 0.226553
 -0.877932
@@ -623,7 +623,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 62
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 177
 0.187736
 -0.917082
@@ -633,7 +633,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 63
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 276
 0.0505343
 -0.893348
@@ -643,7 +643,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 64
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 28
 0.201283
 -0.862383
@@ -653,7 +653,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 65
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 137
 0.170688
 -0.910003
@@ -663,7 +663,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 66
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 5
 0.286143
 -0.779067
@@ -673,7 +673,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 67
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 150
 0.53474
 -0.472742
@@ -683,7 +683,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 68
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 140
 0.613701
 -0.35403
@@ -693,7 +693,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 69
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 107
 0.564143
 -0.199692
@@ -703,7 +703,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 70
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 265
 0.412925
 -0.571564
@@ -713,7 +713,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 71
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 142
 0.623637
 -0.198486
@@ -723,7 +723,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 72
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 99
 0.486007
 -0.49327
@@ -733,7 +733,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 73
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 33
 0.760767
 -0.0174761
@@ -743,7 +743,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 74
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 121
 0.245949
 -0.780198
@@ -753,7 +753,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 75
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 69
 0.110057
 -0.9081
@@ -763,7 +763,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 76
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 37
 0.175337
 -0.898969
@@ -773,7 +773,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 77
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 292
 0.117355
 -0.939281
@@ -783,7 +783,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 78
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 44
 0.187948
 -0.884415
@@ -793,7 +793,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 79
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 132
 0.194317
 -0.930172
@@ -803,7 +803,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 80
 NC_027751.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome shotgun sequence
-150000
+303366
 278
 0.221393
 -0.939745
@@ -813,7 +813,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C4  BOL  whole genome
 81
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 130
 0.247945
 -0.869162
@@ -823,7 +823,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 82
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 189
 0.186508
 -0.928645
@@ -833,7 +833,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 83
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 199
 0.213066
 -0.914574
@@ -843,7 +843,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 84
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 169
 0.403619
 -0.720095
@@ -853,7 +853,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 85
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 18
 0.221166
 -0.844454
@@ -863,7 +863,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 86
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 41
 0.205297
 -0.866443
@@ -873,7 +873,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 87
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 94
 0.346335
 -0.647236
@@ -883,7 +883,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 88
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 142
 0.204303
 -0.868373
@@ -893,7 +893,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 89
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 25
 0.600428
 -0.160167
@@ -903,7 +903,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 90
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 196
 0.495211
 -0.34733
@@ -913,7 +913,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 91
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 216
 0.236452
 -0.759546
@@ -923,7 +923,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 92
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 123
 0.931667
 0.158785
@@ -933,7 +933,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 93
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 230
 0.220339
 -0.749136
@@ -943,7 +943,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 94
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 225
 0.200351
 -0.892869
@@ -953,7 +953,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 95
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 61
 0.24696
 -0.873196
@@ -963,7 +963,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 96
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 264
 0.169206
 -0.925521
@@ -973,7 +973,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 97
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 221
 1.
 0.365483
@@ -983,7 +983,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 98
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 188
 0.20506
 -0.833114
@@ -993,7 +993,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 99
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 108
 0.20104
 -0.883043
@@ -1003,7 +1003,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 100
 NC_027752.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome shotgun sequence
-150000
+303366
 60
 0.88515
 0.111569
@@ -1013,7 +1013,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C5  BOL  whole genome
 101
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 189
 0.47349
 -0.46113
@@ -1023,7 +1023,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 102
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 15
 0.2767
 -0.773466
@@ -1033,7 +1033,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 103
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 148
 0.209216
 -0.889707
@@ -1043,7 +1043,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 104
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 204
 0.271519
 -0.607495
@@ -1053,7 +1053,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 105
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 142
 0.212165
 -0.810664
@@ -1063,7 +1063,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 106
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 87
 0.409705
 -0.454155
@@ -1073,7 +1073,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 107
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 173
 0.314445
 -0.72313
@@ -1083,7 +1083,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 108
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 184
 0.181318
 -0.930094
@@ -1093,7 +1093,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 109
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 224
 0.287626
 -0.787136
@@ -1103,7 +1103,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 110
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 19
 0.211836
 -0.877375
@@ -1113,7 +1113,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 111
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 29
 0.157206
 -0.945738
@@ -1123,7 +1123,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 112
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 199
 0.309829
 -0.757354
@@ -1133,7 +1133,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 113
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 185
 0.12337
 -0.945508
@@ -1143,7 +1143,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 114
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 144
 0.10328
 -0.971741
@@ -1153,7 +1153,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 115
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 93
 0.252418
 -0.853447
@@ -1163,7 +1163,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 116
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 12
 0.178108
 -0.929465
@@ -1173,7 +1173,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 117
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 128
 0.0927761
 -0.939131
@@ -1183,7 +1183,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 118
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 237
 0.146373
 -0.97256
@@ -1193,7 +1193,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 119
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 6
 0.15342
 -0.920062
@@ -1203,7 +1203,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 120
 NC_027753.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome shotgun sequence
-150000
+303366
 194
 0.778021
 0.0519658
@@ -1213,7 +1213,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C6  BOL  whole genome
 121
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 46
 0.193655
 -0.841216
@@ -1223,7 +1223,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 122
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 246
 0.373583
 -0.578349
@@ -1233,7 +1233,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 123
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 269
 0.351841
 -0.575965
@@ -1243,7 +1243,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 124
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 38
 0.558428
 -0.331086
@@ -1253,7 +1253,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 125
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 71
 0.309945
 -0.644038
@@ -1263,7 +1263,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 126
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 293
 0.561459
 -0.367965
@@ -1273,7 +1273,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 127
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 248
 0.194302
 -0.847269
@@ -1283,7 +1283,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 128
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 249
 0.165461
 -0.925967
@@ -1293,7 +1293,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 129
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 35
 0.513736
 -0.378835
@@ -1303,7 +1303,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 130
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 172
 0.272079
 -0.854013
@@ -1313,7 +1313,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 131
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 279
 0.212671
 -0.820959
@@ -1323,7 +1323,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 132
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 288
 0.103596
 -0.981702
@@ -1333,7 +1333,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 133
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 262
 0.0961071
 -1.
@@ -1343,7 +1343,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 134
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 170
 0.142417
 -0.964345
@@ -1353,7 +1353,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 135
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 150
 0.234751
 -0.857497
@@ -1363,7 +1363,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 136
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 140
 0.216257
 -0.902327
@@ -1373,7 +1373,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 137
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 18
 0.151609
 -0.915759
@@ -1383,7 +1383,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 138
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 73
 0.205371
 -0.940558
@@ -1393,7 +1393,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 139
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 207
 0.2623
 -0.886371
@@ -1403,7 +1403,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 140
 NC_027754.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome shotgun sequence
-150000
+303366
 210
 0.718177
 0.0168844
@@ -1413,7 +1413,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C7  BOL  whole genome
 141
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 72
 0.639946
 -0.0042787
@@ -1423,7 +1423,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 142
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 121
 0.21904
 -0.8259
@@ -1433,7 +1433,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 143
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 246
 0.969333
 0.241562
@@ -1443,7 +1443,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 144
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 77
 0.621319
 -0.242239
@@ -1453,7 +1453,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 145
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 195
 0.786195
 0.007487
@@ -1463,7 +1463,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 146
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 98
 0.386669
 -0.713896
@@ -1473,7 +1473,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 147
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 162
 0.188777
 -0.798005
@@ -1483,7 +1483,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 148
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 74
 0.198721
 -0.841072
@@ -1493,7 +1493,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 149
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 58
 0.218236
 -0.883688
@@ -1503,7 +1503,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 150
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 93
 0.183028
 -0.819746
@@ -1513,7 +1513,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 151
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 166
 0.101344
 -0.963017
@@ -1523,7 +1523,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 152
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 41
 0.251317
 -0.793642
@@ -1533,7 +1533,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 153
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 170
 0.0983733
 -0.939545
@@ -1543,7 +1543,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 154
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 149
 0.196251
 -0.832674
@@ -1553,7 +1553,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 155
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 68
 0.247244
 -0.857433
@@ -1563,7 +1563,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 156
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 250
 0.161438
 -0.950497
@@ -1573,7 +1573,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 157
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 42
 0.0660114
 -0.93815
@@ -1583,7 +1583,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 158
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 124
 0.177768
 -0.887105
@@ -1593,7 +1593,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 159
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 125
 0.162244
 -0.959487
@@ -1603,7 +1603,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 160
 NC_027755.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome shotgun sequence
-150000
+303366
 143
 0.0929817
 -0.908167
@@ -1613,7 +1613,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C8  BOL  whole genome
 161
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 71
 0.113105
 -0.987587
@@ -1623,7 +1623,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 162
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 130
 0.0999075
 -0.941986
@@ -1633,7 +1633,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 163
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 132
 0.259795
 -0.881339
@@ -1643,7 +1643,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 164
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 30
 0.217415
 -0.849691
@@ -1653,7 +1653,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 165
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 10
 0.255114
 -0.801025
@@ -1663,7 +1663,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 166
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 31
 0.359217
 -0.553733
@@ -1673,7 +1673,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 167
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 66
 0.261761
 -0.813194
@@ -1683,7 +1683,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 168
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 58
 0.339057
 -0.70219
@@ -1693,7 +1693,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 169
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 92
 0.200615
 -0.849332
@@ -1703,7 +1703,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 170
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 273
 0.2487
 -0.797129
@@ -1713,7 +1713,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 171
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 163
 0.265931
 -0.80844
@@ -1723,7 +1723,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 172
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 311
 0.231719
 -0.856778
@@ -1733,7 +1733,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 173
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 310
 0.900884
 0.0683089
@@ -1743,7 +1743,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 174
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 144
 0.335663
 -0.661064
@@ -1753,7 +1753,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 175
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 35
 0.680084
 -0.175191
@@ -1763,7 +1763,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 176
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 145
 0.240411
 -0.832038
@@ -1773,7 +1773,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 177
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 217
 0.182754
 -0.896424
@@ -1783,7 +1783,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 178
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 182
 0.303834
 -0.850399
@@ -1793,7 +1793,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 179
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 143
 0.176191
 -0.909025
@@ -1803,7 +1803,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 180
 NC_027756.1
 Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome shotgun sequence
-150000
+303366
 176
 -0.452218
 -0.415353
@@ -1813,7 +1813,7 @@ Brassica oleracea var. oleracea cultivar TO1000 chromosome C9  BOL  whole genome
 181
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 70
 -0.260831
 -0.524961
@@ -1823,7 +1823,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 182
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 170
 0.138121
 0.296007
@@ -1833,7 +1833,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 183
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 136
 -0.557799
 -0.559392
@@ -1843,7 +1843,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 184
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 223
 -0.505031
 -0.495302
@@ -1853,7 +1853,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 185
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 235
 -0.200758
 -0.291535
@@ -1863,7 +1863,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 186
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 65
 -0.469854
 -0.58819
@@ -1873,7 +1873,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 187
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 253
 -0.0437683
 0.115907
@@ -1883,7 +1883,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 188
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 242
 -0.518754
 -0.630495
@@ -1893,7 +1893,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 189
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 2
 -0.377153
 -0.497742
@@ -1903,7 +1903,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 190
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 284
 -0.474092
 -0.344558
@@ -1913,7 +1913,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 191
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 288
 -0.556824
 -0.629621
@@ -1923,7 +1923,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 192
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 186
 -0.045794
 0.114244
@@ -1933,7 +1933,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 193
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 258
 0.306019
 1.
@@ -1943,7 +1943,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 194
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 1
 -0.55186
 -0.531575
@@ -1953,7 +1953,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 195
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 99
 -0.234345
 -0.339448
@@ -1963,7 +1963,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 196
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 66
 0.131771
 0.537349
@@ -1973,7 +1973,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 197
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 231
 -0.571505
 -0.628037
@@ -1983,7 +1983,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 198
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 110
 -0.078198
 0.0796211
@@ -1993,7 +1993,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 199
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 73
 -0.518114
 -0.623972
@@ -2003,7 +2003,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 200
 NC_027757.1
 Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 60
 -0.514065
 -0.591759
@@ -2013,7 +2013,7 @@ Brassica napus cultivar ZS11 chromosome A1  Brassica_napus_assembly_v1.0  whole 
 201
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 187
 -0.452835
 -0.450484
@@ -2023,7 +2023,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 202
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 117
 -0.533875
 -0.57691
@@ -2033,7 +2033,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 203
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 9
 -0.485179
 -0.639837
@@ -2043,7 +2043,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 204
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 125
 -0.542793
 -0.719278
@@ -2053,7 +2053,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 205
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 39
 -0.46699
 -0.577206
@@ -2063,7 +2063,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 206
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 49
 -0.594824
 -0.727857
@@ -2073,7 +2073,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 207
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 97
 -0.617818
 -0.582268
@@ -2083,7 +2083,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 208
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 13
 -0.480693
 -0.552958
@@ -2093,7 +2093,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 209
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 42
 -0.21086
 -0.212957
@@ -2103,7 +2103,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 210
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 136
 0.105489
 0.159196
@@ -2113,7 +2113,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 211
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 167
 -0.525899
 -0.601038
@@ -2123,7 +2123,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 212
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 124
 -0.589465
 -0.577316
@@ -2133,7 +2133,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 213
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 191
 -0.545993
 -0.48192
@@ -2143,7 +2143,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 214
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 189
 -0.478998
 -0.580372
@@ -2153,7 +2153,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 215
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 52
 -0.383413
 -0.587929
@@ -2163,7 +2163,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 216
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 185
 -0.562757
 -0.666682
@@ -2173,7 +2173,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 217
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 64
 -0.532528
 -0.602131
@@ -2183,7 +2183,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 218
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 175
 -0.548929
 -0.639511
@@ -2193,7 +2193,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 219
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 113
 -0.577369
 -0.522295
@@ -2203,7 +2203,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 220
 NC_027758.1
 Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 11
 -0.392701
 -0.577709
@@ -2213,7 +2213,7 @@ Brassica napus cultivar ZS11 chromosome A2  Brassica_napus_assembly_v1.0  whole 
 221
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 297
 -0.451277
 -0.524805
@@ -2223,7 +2223,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 222
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 220
 -0.669713
 -0.623612
@@ -2233,7 +2233,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 223
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 143
 -0.408169
 -0.513784
@@ -2243,7 +2243,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 224
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 30
 -0.405426
 -0.57256
@@ -2253,7 +2253,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 225
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 294
 -0.567048
 -0.654534
@@ -2263,7 +2263,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 226
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 159
 -0.50042
 -0.524427
@@ -2273,7 +2273,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 227
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 246
 -0.51794
 -0.588483
@@ -2283,7 +2283,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 228
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 29
 -0.531192
 -0.652016
@@ -2293,7 +2293,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 229
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 89
 -0.661463
 -0.073307
@@ -2303,7 +2303,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 230
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 237
 -0.299864
 -0.395041
@@ -2313,7 +2313,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 231
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 140
 -0.423223
 -0.555156
@@ -2323,7 +2323,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 232
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 172
 -0.589367
 -0.657246
@@ -2333,7 +2333,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 233
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 138
 -0.361979
 -0.245108
@@ -2343,7 +2343,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 234
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 44
 -0.62025
 -0.648126
@@ -2353,7 +2353,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 235
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 309
 -0.341854
 -0.57326
@@ -2363,7 +2363,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 236
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 306
 -0.478542
 -0.57185
@@ -2373,7 +2373,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 237
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 222
 -0.403271
 -0.526599
@@ -2383,7 +2383,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 238
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 149
 -0.59426
 -0.407393
@@ -2393,7 +2393,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 239
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 63
 -0.444308
 -0.609215
@@ -2403,7 +2403,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 240
 NC_027759.1
 Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 291
 -0.162902
 -0.0127493
@@ -2413,7 +2413,7 @@ Brassica napus cultivar ZS11 chromosome A3  Brassica_napus_assembly_v1.0  whole 
 241
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 253
 -0.184029
 0.675684
@@ -2423,7 +2423,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 242
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 148
 -0.479708
 -0.567546
@@ -2433,7 +2433,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 243
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 100
 -0.4964
 -0.322549
@@ -2443,7 +2443,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 244
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 39
 -0.534236
 -0.640499
@@ -2453,7 +2453,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 245
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 145
 -0.461479
 -0.599677
@@ -2463,7 +2463,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 246
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 47
 -0.280813
 -0.157557
@@ -2473,7 +2473,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 247
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 222
 -0.433109
 -0.566348
@@ -2483,7 +2483,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 248
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 237
 -0.604124
 -0.607527
@@ -2493,7 +2493,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 249
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 221
 -0.328714
 -0.382881
@@ -2503,7 +2503,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 250
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 6
 -0.0200552
 0.332044
@@ -2513,7 +2513,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 251
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 225
 -0.474785
 -0.513585
@@ -2523,7 +2523,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 252
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 168
 -0.387338
 -0.443797
@@ -2533,7 +2533,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 253
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 26
 -0.56687
 -0.589948
@@ -2543,7 +2543,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 254
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 142
 -0.598648
 -0.646209
@@ -2553,7 +2553,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 255
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 28
 -0.584159
 -0.573932
@@ -2563,7 +2563,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 256
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 133
 -0.561765
 -0.606794
@@ -2573,7 +2573,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 257
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 92
 -0.0809423
 -0.125376
@@ -2583,7 +2583,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 258
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 116
 -0.492729
 -0.601063
@@ -2593,7 +2593,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 259
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 61
 -0.333193
 -0.503114
@@ -2603,7 +2603,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 260
 NC_027760.1
 Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 147
 -0.541079
 -0.629371
@@ -2613,7 +2613,7 @@ Brassica napus cultivar ZS11 chromosome A4  Brassica_napus_assembly_v1.0  whole 
 261
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 132
 -0.394331
 -0.611019
@@ -2623,7 +2623,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 262
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 75
 -0.547553
 -0.669394
@@ -2633,7 +2633,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 263
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 79
 -0.0207226
 0.128496
@@ -2643,7 +2643,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 264
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 98
 -0.545692
 -0.643029
@@ -2653,7 +2653,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 265
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 149
 -0.525697
 -0.519002
@@ -2663,7 +2663,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 266
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 195
 -0.451443
 -0.493401
@@ -2673,7 +2673,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 267
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 5
 0.183694
 0.47462
@@ -2683,7 +2683,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 268
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 16
 -0.487379
 -0.613457
@@ -2693,7 +2693,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 269
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 47
 -0.401499
 -0.553
@@ -2703,7 +2703,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 270
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 202
 -0.466161
 -0.566567
@@ -2713,7 +2713,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 271
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 189
 0.05769
 0.285084
@@ -2723,7 +2723,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 272
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 147
 -0.155205
 -0.239309
@@ -2733,7 +2733,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 273
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 85
 -0.440362
 -0.501111
@@ -2743,7 +2743,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 274
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 36
 -0.58062
 -0.521595
@@ -2753,7 +2753,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 275
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 194
 -0.562028
 -0.541191
@@ -2763,7 +2763,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 276
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 138
 -0.380381
 -0.287972
@@ -2773,7 +2773,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 277
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 155
 -0.0915893
 0.0240198
@@ -2783,7 +2783,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 278
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 159
 -0.387407
 -0.563471
@@ -2793,7 +2793,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 279
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 133
 0.37415
 0.656253
@@ -2803,7 +2803,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 280
 NC_027761.1
 Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 197
 -0.336009
 -0.267322
@@ -2813,7 +2813,7 @@ Brassica napus cultivar ZS11 chromosome A5  Brassica_napus_assembly_v1.0  whole 
 281
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 88
 -0.505684
 -0.620152
@@ -2823,7 +2823,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 282
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 280
 -0.466773
 -0.613228
@@ -2833,7 +2833,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 283
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 30
 0.0328966
 0.697524
@@ -2843,7 +2843,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 284
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 24
 -0.404925
 -0.641113
@@ -2853,7 +2853,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 285
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 79
 -0.455351
 -0.523059
@@ -2863,7 +2863,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 286
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 236
 -0.299283
 -0.32353
@@ -2873,7 +2873,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 287
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 211
 -0.0883476
 -0.147506
@@ -2883,7 +2883,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 288
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 289
 -0.586923
 -0.479193
@@ -2893,7 +2893,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 289
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 281
 -0.388603
 -0.528135
@@ -2903,7 +2903,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 290
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 75
 -0.054268
 -0.0581585
@@ -2913,7 +2913,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 291
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 290
 -0.456035
 -0.601979
@@ -2923,7 +2923,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 292
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 204
 -0.212937
 -0.35923
@@ -2933,7 +2933,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 293
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 35
 -0.530016
 -0.606579
@@ -2943,7 +2943,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 294
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 165
 -0.227448
 -0.169182
@@ -2953,7 +2953,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 295
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 155
 -0.243817
 -0.337533
@@ -2963,7 +2963,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 296
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 95
 -0.337885
 -0.2423
@@ -2973,7 +2973,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 297
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 260
 -0.305491
 -0.249111
@@ -2983,7 +2983,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 298
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 94
 -0.466177
 -0.508602
@@ -2993,7 +2993,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 299
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 162
 -0.579495
 -0.548656
@@ -3003,7 +3003,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 300
 NC_027762.1
 Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 256
 -0.107031
 0.20226
@@ -3013,7 +3013,7 @@ Brassica napus cultivar ZS11 chromosome A6  Brassica_napus_assembly_v1.0  whole 
 301
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 63
 -0.643928
 -0.630969
@@ -3023,7 +3023,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 302
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 171
 -0.540801
 -0.60497
@@ -3033,7 +3033,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 303
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 23
 -0.582297
 -0.648577
@@ -3043,7 +3043,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 304
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 66
 -0.746049
 -0.482639
@@ -3053,7 +3053,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 305
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 188
 -0.607171
 -0.538748
@@ -3063,7 +3063,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 306
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 246
 -0.384518
 -0.365073
@@ -3073,7 +3073,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 307
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 68
 -0.596665
 -0.618679
@@ -3083,7 +3083,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 308
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 267
 -0.54502
 -0.638753
@@ -3093,7 +3093,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 309
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 181
 -0.394
 -0.589007
@@ -3103,7 +3103,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 310
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 147
 -0.579081
 -0.555013
@@ -3113,7 +3113,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 311
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 76
 -0.259051
 -0.282475
@@ -3123,7 +3123,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 312
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 60
 -0.611896
 -0.55921
@@ -3133,7 +3133,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 313
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 166
 -0.494598
 -0.622354
@@ -3143,7 +3143,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 314
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 33
 -0.502529
 -0.550886
@@ -3153,7 +3153,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 315
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 143
 0.244347
 0.601208
@@ -3163,7 +3163,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 316
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 56
 -0.312204
 -0.294389
@@ -3173,7 +3173,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 317
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 140
 -0.241857
 0.274998
@@ -3183,7 +3183,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 318
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 6
 -0.357265
 -0.650795
@@ -3193,7 +3193,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 319
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 119
 -0.508617
 -0.509581
@@ -3203,7 +3203,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 320
 NC_027763.1
 Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 54
 -0.70042
 -0.401842
@@ -3213,7 +3213,7 @@ Brassica napus cultivar ZS11 chromosome A7  Brassica_napus_assembly_v1.0  whole 
 321
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 93
 -0.54246
 -0.632815
@@ -3223,7 +3223,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 322
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 127
 -0.492127
 -0.560701
@@ -3233,7 +3233,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 323
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 149
 -0.471419
 -0.53415
@@ -3243,7 +3243,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 324
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 2
 -0.385662
 -0.615896
@@ -3253,7 +3253,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 325
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 36
 -0.36033
 -0.410054
@@ -3263,7 +3263,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 326
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 144
 -0.486372
 -0.63506
@@ -3273,7 +3273,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 327
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 117
 -0.456073
 -0.595019
@@ -3283,7 +3283,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 328
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 85
 -0.558507
 -0.586368
@@ -3293,7 +3293,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 329
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 27
 -0.582103
 -0.620287
@@ -3303,7 +3303,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 330
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 63
 -0.0993509
 0.0868344
@@ -3313,7 +3313,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 331
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 136
 -0.560805
 -0.575156
@@ -3323,7 +3323,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 332
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 99
 -0.387293
 -0.552081
@@ -3333,7 +3333,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 333
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 16
 -0.50168
 -0.604898
@@ -3343,7 +3343,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 334
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 3
 -0.416875
 -0.565659
@@ -3353,7 +3353,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 335
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 71
 0.171282
 0.778559
@@ -3363,7 +3363,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 336
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 132
 -0.322585
 -0.508951
@@ -3373,7 +3373,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 337
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 98
 -0.491261
 -0.673514
@@ -3383,7 +3383,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 338
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 135
 -0.331736
 -0.56893
@@ -3393,7 +3393,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 339
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 45
 -0.333888
 -0.504938
@@ -3403,7 +3403,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 340
 NC_027764.1
 Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 55
 -0.513171
 -0.335236
@@ -3413,7 +3413,7 @@ Brassica napus cultivar ZS11 chromosome A8  Brassica_napus_assembly_v1.0  whole 
 341
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 252
 -0.403059
 -0.372107
@@ -3423,7 +3423,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 342
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 46
 -0.458457
 -0.610179
@@ -3433,7 +3433,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 343
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 16
 -0.420608
 -0.605707
@@ -3443,7 +3443,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 344
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 176
 0.140299
 0.37351
@@ -3453,7 +3453,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 345
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 122
 -0.467117
 -0.491844
@@ -3463,7 +3463,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 346
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 244
 0.0382703
 0.141975
@@ -3473,7 +3473,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 347
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 239
 -0.400608
 -0.626546
@@ -3483,7 +3483,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 348
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 77
 -0.20492
 -0.135273
@@ -3493,7 +3493,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 349
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 262
 -0.441518
 -0.371063
@@ -3503,7 +3503,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 350
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 221
 -0.197033
 -0.308911
@@ -3513,7 +3513,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 351
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 256
 -0.536413
 -0.567326
@@ -3523,7 +3523,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 352
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 130
 -0.519084
 -0.615451
@@ -3533,7 +3533,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 353
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 57
 -0.590012
 -0.527583
@@ -3543,7 +3543,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 354
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 277
 -0.280834
 -0.470455
@@ -3553,7 +3553,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 355
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 165
 -0.553514
 -0.650673
@@ -3563,7 +3563,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 356
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 49
 -0.40488
 -0.526055
@@ -3573,7 +3573,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 357
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 150
 -0.546963
 -0.501179
@@ -3583,7 +3583,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 358
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 20
 -0.48182
 -0.625286
@@ -3593,7 +3593,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 359
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 175
 -0.832317
 -0.243208
@@ -3603,7 +3603,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 360
 NC_027765.1
 Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 84
 -0.428049
 -0.511913
@@ -3613,7 +3613,7 @@ Brassica napus cultivar ZS11 chromosome A9  Brassica_napus_assembly_v1.0  whole 
 361
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 79
 -0.410109
 -0.554171
@@ -3623,7 +3623,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 362
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 102
 -0.525721
 -0.620558
@@ -3633,7 +3633,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 363
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 127
 -0.750123
 -0.238546
@@ -3643,7 +3643,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 364
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 17
 -0.541412
 -0.46213
@@ -3653,7 +3653,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 365
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 113
 -0.533913
 -0.555341
@@ -3663,7 +3663,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 366
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 22
 -0.548308
 -0.597678
@@ -3673,7 +3673,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 367
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 48
 -0.564439
 -0.602937
@@ -3683,7 +3683,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 368
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 29
 -0.628774
 -0.583392
@@ -3693,7 +3693,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 369
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 63
 -0.254773
 -0.0545668
@@ -3703,7 +3703,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 370
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 95
 -0.352201
 -0.530715
@@ -3713,7 +3713,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 371
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 20
 -0.496794
 -0.593285
@@ -3723,7 +3723,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 372
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 16
 -0.506379
 -0.577482
@@ -3733,7 +3733,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 373
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 54
 -0.453623
 -0.432144
@@ -3743,7 +3743,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 374
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 96
 -0.350236
 -0.310661
@@ -3753,7 +3753,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 375
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 93
 -0.445676
 -0.527864
@@ -3763,7 +3763,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 376
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 21
 -0.417223
 -0.515247
@@ -3773,7 +3773,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 377
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 128
 -0.311825
 -0.541141
@@ -3783,7 +3783,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 378
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 129
 -0.438717
 -0.485347
@@ -3793,7 +3793,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 379
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 31
 -0.329416
 -0.422721
@@ -3803,7 +3803,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 380
 NC_027766.1
 Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 88
 -0.352357
 -0.347553
@@ -3813,7 +3813,7 @@ Brassica napus cultivar ZS11 chromosome A10  Brassica_napus_assembly_v1.0  whole
 381
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 158
 -0.418241
 -0.204034
@@ -3823,7 +3823,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 382
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 48
 -0.0150755
 0.539877
@@ -3833,7 +3833,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 383
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 244
 -0.562146
 -0.572468
@@ -3843,7 +3843,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 384
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 65
 -0.260636
 -0.369812
@@ -3853,7 +3853,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 385
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 232
 -0.443049
 -0.300071
@@ -3863,7 +3863,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 386
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 149
 -0.385685
 -0.600728
@@ -3873,7 +3873,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 387
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 245
 -0.296262
 0.0921549
@@ -3883,7 +3883,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 388
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 59
 -0.218478
 -0.2199
@@ -3893,7 +3893,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 389
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 138
 0.118316
 0.300702
@@ -3903,7 +3903,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 390
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 192
 0.0890329
 0.17236
@@ -3913,7 +3913,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 391
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 140
 -0.194948
 -0.327446
@@ -3923,7 +3923,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 392
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 210
 -0.592157
 -0.597519
@@ -3933,7 +3933,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 393
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 7
 -0.560511
 -0.551985
@@ -3943,7 +3943,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 394
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 112
 -0.471538
 -0.512503
@@ -3953,7 +3953,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 395
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 172
 -0.62397
 -0.543281
@@ -3963,7 +3963,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 396
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 92
 0.0951206
 0.377327
@@ -3973,7 +3973,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 397
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 254
 -0.439262
 -0.371943
@@ -3983,7 +3983,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 398
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 44
 -0.568764
 -0.602454
@@ -3993,7 +3993,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 399
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 187
 -0.267654
 -0.215744
@@ -4003,7 +4003,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 400
 NC_027767.1
 Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 159
 -0.30372
 -0.183618
@@ -4013,7 +4013,7 @@ Brassica napus cultivar ZS11 chromosome C1  Brassica_napus_assembly_v1.0  whole 
 401
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 69
 -0.494868
 -0.211912
@@ -4023,7 +4023,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 402
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 160
 -0.63293
 -0.4005
@@ -4033,7 +4033,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 403
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 206
 -0.102872
 -0.0381826
@@ -4043,7 +4043,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 404
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 66
 -0.142217
 -0.136248
@@ -4053,7 +4053,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 405
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 147
 -0.463373
 -0.567458
@@ -4063,7 +4063,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 406
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 236
 -0.608889
 -0.615109
@@ -4073,7 +4073,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 407
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 181
 -0.5255
 -0.486757
@@ -4083,7 +4083,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 408
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 221
 -0.511567
 -0.516643
@@ -4093,7 +4093,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 409
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 97
 -0.356138
 -0.468245
@@ -4103,7 +4103,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 410
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 149
 -0.24883
 -0.189264
@@ -4113,7 +4113,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 411
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 112
 -0.359417
 -0.486133
@@ -4123,7 +4123,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 412
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 207
 -0.436864
 -0.492463
@@ -4133,7 +4133,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 413
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 235
 -0.284075
 -0.411221
@@ -4143,7 +4143,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 414
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 68
 -0.440883
 -0.47974
@@ -4153,7 +4153,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 415
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 262
 -0.340898
 -0.531095
@@ -4163,7 +4163,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 416
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 115
 -0.724325
 -0.443796
@@ -4173,7 +4173,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 417
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 24
 -0.470038
 -0.503159
@@ -4183,7 +4183,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 418
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 193
 -0.553491
 -0.572068
@@ -4193,7 +4193,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 419
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 254
 -0.456487
 -0.565452
@@ -4203,7 +4203,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 420
 NC_027768.1
 Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 6
 -0.416485
 -0.515334
@@ -4213,7 +4213,7 @@ Brassica napus cultivar ZS11 chromosome C2  Brassica_napus_assembly_v1.0  whole 
 421
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 247
 -0.276214
 -0.331157
@@ -4223,7 +4223,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 422
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 214
 -0.562002
 -0.38674
@@ -4233,7 +4233,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 423
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 77
 -0.463658
 -0.580422
@@ -4243,7 +4243,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 424
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 316
 -0.413393
 -0.567226
@@ -4253,7 +4253,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 425
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 169
 0.202435
 0.614155
@@ -4263,7 +4263,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 426
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 185
 -0.555207
 -0.642805
@@ -4273,7 +4273,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 427
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 205
 -0.495771
 -0.646871
@@ -4283,7 +4283,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 428
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 152
 -0.531523
 -0.561101
@@ -4293,7 +4293,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 429
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 136
 -0.0752997
 -0.275748
@@ -4303,7 +4303,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 430
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 120
 -0.588927
 -0.560716
@@ -4313,7 +4313,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 431
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 86
 -0.546485
 -0.571199
@@ -4323,7 +4323,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 432
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 313
 -0.463221
 -0.582592
@@ -4333,7 +4333,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 433
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 223
 -0.2208
 -0.372896
@@ -4343,7 +4343,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 434
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 168
 -1.
 -0.0746578
@@ -4353,7 +4353,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 435
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 34
 -0.452665
 -0.461085
@@ -4363,7 +4363,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 436
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 1
 -0.464292
 -0.460453
@@ -4373,7 +4373,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 437
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 184
 -0.303908
 -0.286632
@@ -4383,7 +4383,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 438
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 190
 -0.529178
 -0.524113
@@ -4393,7 +4393,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 439
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 307
 -0.191965
 -0.00976625
@@ -4403,7 +4403,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 440
 NC_027769.1
 Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 266
 -0.450432
 -0.58969
@@ -4413,7 +4413,7 @@ Brassica napus cultivar ZS11 chromosome C3  Brassica_napus_assembly_v1.0  whole 
 441
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 311
 -0.357714
 -0.360378
@@ -4423,7 +4423,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 442
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 92
 -0.400663
 -0.507203
@@ -4433,7 +4433,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 443
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 34
 -0.249502
 -0.381115
@@ -4443,7 +4443,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 444
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 322
 0.00706531
 -0.00225541
@@ -4453,7 +4453,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 445
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 331
 -0.478906
 0.14298
@@ -4463,7 +4463,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 446
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 56
 -0.261123
 -0.496406
@@ -4473,7 +4473,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 447
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 183
 -0.103191
 -0.109399
@@ -4483,7 +4483,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 448
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 281
 -0.435642
 -0.378341
@@ -4493,7 +4493,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 449
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 39
 -0.50979
 -0.33256
@@ -4503,7 +4503,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 450
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 343
 -0.480472
 -0.529162
@@ -4513,7 +4513,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 451
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 282
 -0.43178
 -0.459362
@@ -4523,7 +4523,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 452
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 214
 -0.416926
 -0.384058
@@ -4533,7 +4533,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 453
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 286
 -0.527077
 -0.499103
@@ -4543,7 +4543,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 454
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 168
 -0.32966
 -0.507046
@@ -4553,7 +4553,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 455
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 261
 -0.557783
 -0.508193
@@ -4563,7 +4563,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 456
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 252
 -0.537608
 -0.58713
@@ -4573,7 +4573,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 457
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 251
 -0.616913
 -0.554912
@@ -4583,7 +4583,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 458
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 290
 -0.640374
 -0.555651
@@ -4593,7 +4593,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 459
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 109
 -0.375026
 -0.511573
@@ -4603,7 +4603,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 460
 NC_027770.1
 Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 132
 -0.48318
 -0.528951
@@ -4613,7 +4613,7 @@ Brassica napus cultivar ZS11 chromosome C4  Brassica_napus_assembly_v1.0  whole 
 461
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 195
 -0.2423
 -0.308661
@@ -4623,7 +4623,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 462
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 66
 -0.509631
 -0.579165
@@ -4633,7 +4633,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 463
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 8
 -0.314266
 -0.231486
@@ -4643,7 +4643,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 464
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 200
 -0.508204
 -0.609452
@@ -4653,7 +4653,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 465
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 53
 -0.693987
 -0.506191
@@ -4663,7 +4663,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 466
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 143
 -0.367504
 -0.443902
@@ -4673,7 +4673,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 467
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 47
 -0.45131
 -0.49668
@@ -4683,7 +4683,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 468
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 67
 -0.441931
 -0.456449
@@ -4693,7 +4693,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 469
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 91
 -0.424547
 -0.500508
@@ -4703,7 +4703,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 470
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 134
 -0.564718
 -0.496168
@@ -4713,7 +4713,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 471
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 173
 -0.329808
 -0.421145
@@ -4723,7 +4723,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 472
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 119
 -0.401028
 -0.566715
@@ -4733,7 +4733,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 473
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 10
 -0.380156
 -0.264494
@@ -4743,7 +4743,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 474
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 14
 -0.345468
 -0.285035
@@ -4753,7 +4753,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 475
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 169
 -0.201803
 -0.125296
@@ -4763,7 +4763,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 476
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 6
 -0.651482
 -0.516741
@@ -4773,7 +4773,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 477
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 55
 -0.463433
 -0.522459
@@ -4783,7 +4783,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 478
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 161
 -0.477576
 -0.0869609
@@ -4793,7 +4793,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 479
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 186
 -0.410746
 -0.43825
@@ -4803,7 +4803,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 480
 NC_027771.1
 Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 203
 -0.603757
 -0.594429
@@ -4813,7 +4813,7 @@ Brassica napus cultivar ZS11 chromosome C5  Brassica_napus_assembly_v1.0  whole 
 481
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 118
 -0.398406
 -0.581522
@@ -4823,7 +4823,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 482
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 117
 -0.285561
 -0.396073
@@ -4833,7 +4833,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 483
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 202
 -0.464384
 -0.515976
@@ -4843,7 +4843,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 484
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 107
 -0.449507
 -0.504679
@@ -4853,7 +4853,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 485
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 8
 -0.491952
 -0.589854
@@ -4863,7 +4863,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 486
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 168
 0.0127987
 0.37533
@@ -4873,7 +4873,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 487
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 147
 -0.417916
 -0.343408
@@ -4883,7 +4883,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 488
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 119
 -0.530532
 -0.555784
@@ -4893,7 +4893,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 489
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 196
 -0.450858
 -0.500749
@@ -4903,7 +4903,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 490
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 7
 -0.40273
 -0.549144
@@ -4913,7 +4913,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 491
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 142
 0.193394
 0.527194
@@ -4923,7 +4923,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 492
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 126
 -0.392084
 -0.120256
@@ -4933,7 +4933,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 493
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 61
 -0.213661
 -0.0925955
@@ -4943,7 +4943,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 494
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 216
 -0.513572
 -0.465357
@@ -4953,7 +4953,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 495
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 124
 -0.378214
 -0.452188
@@ -4963,7 +4963,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 496
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 56
 -0.371507
 -0.253544
@@ -4973,7 +4973,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 497
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 198
 -0.611386
 -0.56326
@@ -4983,7 +4983,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 498
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 68
 -0.534958
 -0.535006
@@ -4993,7 +4993,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 499
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 9
 0.0307519
 -0.0649871
@@ -5003,7 +5003,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 500
 NC_027772.1
 Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 79
 -0.328875
 -0.278693
@@ -5013,7 +5013,7 @@ Brassica napus cultivar ZS11 chromosome C6  Brassica_napus_assembly_v1.0  whole 
 501
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 185
 -0.847583
 -0.0539357
@@ -5023,7 +5023,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 502
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 35
 -0.0786003
 -0.0165237
@@ -5033,7 +5033,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 503
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 111
 -0.574875
 -0.662821
@@ -5043,7 +5043,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 504
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 228
 -0.211967
 -0.118678
@@ -5053,7 +5053,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 505
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 178
 -0.301558
 -0.225945
@@ -5063,7 +5063,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 506
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 93
 -0.394393
 -0.577026
@@ -5073,7 +5073,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 507
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 61
 -0.189578
 -0.139755
@@ -5083,7 +5083,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 508
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 195
 -0.448886
 -0.581027
@@ -5093,7 +5093,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 509
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 59
 -0.592086
 -0.580951
@@ -5103,7 +5103,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 510
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 44
 -0.407925
 -0.568204
@@ -5113,7 +5113,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 511
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 21
 -0.581338
 -0.59811
@@ -5123,7 +5123,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 512
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 171
 -0.53211
 -0.601271
@@ -5133,7 +5133,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 513
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 8
 -0.508194
 -0.607873
@@ -5143,7 +5143,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 514
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 25
 -0.500836
 -0.585476
@@ -5153,7 +5153,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 515
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 13
 -0.0462616
 0.0639624
@@ -5163,7 +5163,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 516
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 138
 -0.324924
 -0.344804
@@ -5173,7 +5173,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 517
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 191
 -0.593961
 -0.620741
@@ -5183,7 +5183,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 518
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 22
 -0.442519
 -0.552502
@@ -5193,7 +5193,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 519
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 217
 -0.20984
 0.120649
@@ -5203,7 +5203,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 520
 NC_027773.1
 Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 225
 -0.357112
 0.282065
@@ -5213,7 +5213,7 @@ Brassica napus cultivar ZS11 chromosome C7  Brassica_napus_assembly_v1.0  whole 
 521
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 193
 -0.0931603
 0.149492
@@ -5223,7 +5223,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 522
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 83
 0.184194
 0.504254
@@ -5233,7 +5233,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 523
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 7
 -0.248704
 -0.249509
@@ -5243,7 +5243,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 524
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 198
 -0.396195
 -0.462695
@@ -5253,7 +5253,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 525
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 200
 -0.41899
 -0.500974
@@ -5263,7 +5263,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 526
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 21
 -0.363432
 -0.466955
@@ -5273,7 +5273,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 527
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 57
 -0.15324
 -0.305716
@@ -5283,7 +5283,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 528
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 144
 -0.47881
 -0.62672
@@ -5293,7 +5293,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 529
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 209
 -0.491429
 -0.589583
@@ -5303,7 +5303,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 530
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 143
 -0.518293
 -0.485023
@@ -5313,7 +5313,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 531
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 50
 -0.48855
 -0.539392
@@ -5323,7 +5323,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 532
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 76
 -0.464382
 -0.591474
@@ -5333,7 +5333,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 533
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 126
 -0.225277
 0.193109
@@ -5343,7 +5343,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 534
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 167
 -0.288294
 -0.464282
@@ -5353,7 +5353,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 535
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 211
 -0.555685
 -0.509143
@@ -5363,7 +5363,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 536
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 19
 -0.429493
 -0.584048
@@ -5373,7 +5373,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 537
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 120
 -0.433818
 -0.555981
@@ -5383,7 +5383,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 538
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 217
 -0.476191
 -0.531203
@@ -5393,7 +5393,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 539
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 30
 -0.566277
 -0.508077
@@ -5403,7 +5403,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 540
 NC_027774.1
 Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 160
 -0.918246
 -0.0994101
@@ -5413,7 +5413,7 @@ Brassica napus cultivar ZS11 chromosome C8  Brassica_napus_assembly_v1.0  whole 
 541
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 39
 -0.21861
 0.0104073
@@ -5423,7 +5423,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 542
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 104
 -0.486349
 -0.490172
@@ -5433,7 +5433,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 543
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 75
 -0.444792
 -0.375222
@@ -5443,7 +5443,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 544
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 41
 -0.53273
 -0.389095
@@ -5453,7 +5453,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 545
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 64
 -0.038566
 0.0152977
@@ -5463,7 +5463,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 546
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 7
 -0.453878
 -0.55095
@@ -5473,7 +5473,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 547
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 26
 -0.0482548
 0.0910719
@@ -5483,7 +5483,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 548
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 59
 -0.994301
 -0.0895221
@@ -5493,7 +5493,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 549
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 52
 -0.543624
 -0.46869
@@ -5503,7 +5503,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 550
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 33
 -0.367381
 -0.227358
@@ -5513,7 +5513,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 551
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 22
 -0.476718
 -0.530995
@@ -5523,7 +5523,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 552
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 83
 -0.659479
 -0.522842
@@ -5533,7 +5533,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 553
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 5
 -0.417683
 -0.470817
@@ -5543,7 +5543,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 554
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 20
 -0.471576
 -0.540187
@@ -5553,7 +5553,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 555
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 138
 -0.378846
 -0.209672
@@ -5563,7 +5563,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 556
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 133
 -0.0985456
 -0.0898725
@@ -5573,7 +5573,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 557
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 16
 -0.598881
 -0.581371
@@ -5583,7 +5583,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 558
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 128
 -0.460644
 -0.362714
@@ -5593,7 +5593,7 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 559
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 97
 -0.485887
 -0.634703
@@ -5603,5 +5603,5 @@ Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole 
 560
 NC_027775.1
 Brassica napus cultivar ZS11 chromosome C9  Brassica_napus_assembly_v1.0  whole genome shotgun sequence
-150000
+302860
 112

@@ -2,22 +2,21 @@
 	
 	
 	["Kingdoms", 
-	["Animalia_mtDNA_Amphibians.txt",
-	"Animalia_mtDNA_Insects.txt",
-	"Animalia_mtDNA_Mammals.txt",
-	"Animalia_mtDNA_Mammals2.txt",
-	"Animalia_mtDNA_Mammals3.txt",
-	"Animalia_mtDNA_Primates.txt",
-	"Animalia_mtDNA_Vertebrata.txt",
+	["Animalia_mtDNA_ClassMammalia.txt",
+	"Animalia_mtDNA_ClassAmphibia.txt",
+	"Animalia_mtDNA_ClassInsecta.txt",
+	"Animalia_mtDNA_OrderPrimates.txt",
+	"Animalia_mtDNA_PhylumVertebrata.txt",
 	"Fungi_mtDNA.txt",
 	"Plants_mtDNA.txt",
-	"Archaea_nDNA.txt",
-	"Bacteria_nDNA.txt",
 	"Protists_mtDNA.txt",
-	"Protists_ptDNA.txt"]],
+	"Protists_ptDNA.txt",
+	"Archaea_nDNA.txt",
+	"Bacteria_nDNA.txt"
+	]],
 
 
-	["Closely Related Species - Additive Genomic Signatures", 
+	["Closely Related Species - Composite Genomic Signatures", 
 	["H.sapiens_P.troglodytes_nDNA+mtDNA.txt",
 	"B.oleracea_B.napus_nDNA+cpDNA.txt",
 	"E.coli_E.fergusonii_nDNA+ptDNA.txt"]]

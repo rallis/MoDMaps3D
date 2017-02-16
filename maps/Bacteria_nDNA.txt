@@ -4,7 +4,7 @@ blue,red,green,orange
 Index,Acc,Name,Length,Taxa
 blue,red,green,orange
 Aquificae (16),Fusobacteria (22),Spirochaetes (51),Thermotogae (32)
-Number of sequences is 121
+Bacteria#nDNA, complete genome#121#Approx.Inf.Dist (k=9)#2017111
 -0.42094118967332006
 -0.2133063445219348
 -0.39245576214866557

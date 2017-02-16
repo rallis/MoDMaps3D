@@ -4,7 +4,7 @@ blue,red
 Index,Acc,Name,Length,Fragment
 blue,red
 E.coli (20), E.fergusonii (20)
-Composite signature (nuclear + plasmid); Sampling from E.coli and E.fergusonii; Number of genomic DNA sequences is 40; FCGR with k=9; Approx. Information
+E.coli and E.fergusonii#nDNA+ptDNA, composite genomic signatures#2 chromosome#Approx.Inf.Dist (k=9)#251105
 0.831436
 1.
 -0.704659
@@ -13,7 +13,7 @@ Composite signature (nuclear + plasmid); Sampling from E.coli and E.fergusonii; 
 1
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 4
 0.865118
 -0.332153
@@ -23,7 +23,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 2
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 29
 1.
 -0.477591
@@ -33,7 +33,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 3
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 5
 0.828169
 -0.285778
@@ -43,7 +43,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 4
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 11
 0.878694
 -0.395649
@@ -53,7 +53,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 5
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 12
 0.816838
 -0.783877
@@ -63,7 +63,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 6
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 23
 0.901976
 -0.633289
@@ -73,7 +73,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 7
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 8
 0.915177
 -0.670737
@@ -83,7 +83,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 8
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 19
 0.875547
 -0.823098
@@ -93,7 +93,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 9
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 21
 0.880611
 -1.
@@ -103,7 +103,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 10
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 15
 0.955145
 -0.788946
@@ -113,7 +113,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 11
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 28
 0.924482
 -0.716101
@@ -123,7 +123,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 12
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 16
 0.918681
 -0.803857
@@ -133,7 +133,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 13
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 25
 0.968958
 -0.666301
@@ -143,7 +143,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 14
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 30
 0.947951
 -0.555489
@@ -153,7 +153,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 15
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 2
 0.883894
 -0.956777
@@ -163,7 +163,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 16
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 17
 0.945231
 -0.68858
@@ -173,7 +173,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 17
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 14
 0.923444
 0.324436
@@ -183,7 +183,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 18
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 22
 0.898477
 0.316347
@@ -193,7 +193,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 19
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 13
 0.858974
 -0.302771
@@ -203,7 +203,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 20
 NC_000913.3
 Escherichia coli str. K-12 substr. MG1655  complete genome
-150000
+297060
 7
 -0.977831
 -0.455204
@@ -213,7 +213,7 @@ Escherichia coli str. K-12 substr. MG1655  complete genome
 21
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 9
 -0.900864
 0.248448
@@ -223,7 +223,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 22
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 8
 -0.951134
 -0.261437
@@ -233,7 +233,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 23
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 4
 -0.981372
 -0.423351
@@ -243,7 +243,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 24
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 15
 -0.986056
 -0.462865
@@ -253,7 +253,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 25
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 28
 -0.959863
 -0.462468
@@ -263,7 +263,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 26
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 2
 -0.927197
 -0.398201
@@ -273,7 +273,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 27
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 29
 -0.958406
 -0.480654
@@ -283,7 +283,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 28
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 19
 -0.992068
 -0.501639
@@ -293,7 +293,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 29
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 5
 -0.987953
 -0.558272
@@ -303,7 +303,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 30
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 27
 -1.
 -0.594351
@@ -313,7 +313,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 31
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 10
 -0.982578
 -0.572833
@@ -323,7 +323,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 32
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 1
 -0.942262
 -0.734411
@@ -333,7 +333,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 33
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 11
 -0.901133
 -0.669906
@@ -343,7 +343,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 34
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 16
 -0.97633
 -0.58547
@@ -353,7 +353,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 35
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 6
 -0.893799
 -0.689403
@@ -363,7 +363,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 36
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 23
 -0.932744
 -0.5791
@@ -373,7 +373,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 37
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 14
 -0.955428
 -0.52307
@@ -383,7 +383,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 38
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 12
 -0.933481
 -0.289209
@@ -393,7 +393,7 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 39
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 24
 -0.917776
 -0.338619
@@ -403,5 +403,5 @@ Escherichia fergusonii ATCC 35469 chromosome  complete genome
 40
 NC_011740.1
 Escherichia fergusonii ATCC 35469 chromosome  complete genome
-150000
+205150
 7

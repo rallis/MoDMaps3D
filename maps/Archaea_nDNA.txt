@@ -4,7 +4,7 @@ blue,red,green,orange
 Index,Acc,Name,Length,Taxa
 blue,red,green,orange
 DPANN group (2),Euryarchaeota (166),TACK group (87),unclassified Archaea (4) 
-Archaea nDNA. Number of sequences is 259.
+Archaea#nDNA, complete genome#259#Approx.Inf.Dist (k=9)#2423807
 0.7101893651268646
 -0.3510443418093466
 -0.8971047365355328

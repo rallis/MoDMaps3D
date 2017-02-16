@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html> <html lang="en">
 <head>
-	<title>MoDMaps3D - Three Dimensional Molecular Distance Maps</title>
+	<title>MoDMaps3D - Main Menu</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -245,13 +245,17 @@
 		}
 		mapfile = mapfile.slice(0,-1);
 		mapfile += "\n";
+		
 		// line 7
 		// OLD mapfile += "No Description given\n";
 		for(var i=0; i<$("#numofsets").val(); i++){
 			mapfile += $("#nameset"+i).val() + ', ';
 		}
 		mapfile = mapfile.slice(0,-2);  //because of space above!
-		mapfile += '. Number of sequences is '+accIDs.length+ "\n";
+		// old mapfile
+		// mapfile += '. Number of sequences is '+accIDs.length+ "\n";
+		mapfile += '#User-input sequences#'+accIDs.length+"#Approx.Inf.Dist#NA\n";
+
 		// rest of the lines
 		for(var i=0; i<numOfSeq; i++){
 			for(var j=0; j<points[i].length; j++){
@@ -294,7 +298,11 @@
 			<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
 			<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p>\
 			<p>Step 3 (MDS) DONE in ~'+(step3B-step3A)/1000+' sec</p></strong>');
-		$("#stepstatus").html($("#stepstatus").html()+'<p><a href="load.html?mapid=local'+mapTimeStamp+'" target="_blank">Show MoDMap</a> or <a href="#" id="viewfile">view contents</a>.</p>');
+		$("#stepstatus").html($("#stepstatus").html()+'<p><a href="load.html?mapid=local'+mapTimeStamp+'" target="_blank">Show MoDMap</a>');
+		if(dbg){
+			$("#stepstatus").html($("#stepstatus").html()+' or <a href="#viewfile" id="viewfile">view contents</a>');
+		}
+		$("#stepstatus").html($("#stepstatus").html()+'</p>');
 		$("#mainprogressbar").hide();
 		$("#viewfile").click(function(){
 			$("#file_contents").toggle();
@@ -544,7 +552,7 @@
 
 	$(document).ready(function(){
 
-		$.ajax({url: "./extra/maps.txt", success: function(result){
+		$.ajax({url: "./extra/maps.txt", cache: false, success: function(result){
 			// LOAD FILENAMES OF MAPS 
 			//var result = JSON.parse(result);
 			//console.log(result);
@@ -570,7 +578,15 @@
 					url: "maps/"+mapID, 
 					success: function(result){
 						var resfetch=result.split("\n");
-						$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+resfetch[6]+'</p><a href="load.html?mapid='+mapID+'" target="_blank">Show Map</a><p></p>');
+
+						var sublegends = resfetch[6].split("#");
+						var subleg = "<div>&bull; "+sublegends[0]+"</div>";
+						subleg += "<div>&bull; "+sublegends[1]+"</div>";
+						subleg += "<div>&bull; "+sublegends[2]+" sequences</div>";
+						subleg += "<div>&bull; "+sublegends[3]+"</div>";
+						subleg += "<div>&bull; Avg.Seq.Length: "+sublegends[4]+"</div>";
+						
+						$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+subleg+'</p><a href="load.html?mapid='+mapID+'" target="_blank">Show Map</a><p></p>');
 					}
 				});
 			});
@@ -699,7 +715,10 @@
 			console.log("Loading RefMap: ", $("#extendmapid").val());
 			$("#inputdatamenu").slideDown();
 
-			$.ajax({url: "./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt", success: function(result){
+			$.ajax({
+				url: "./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt", 
+				cache: "false",
+				success: function(result){
 				console.log("./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt");
 				var result = JSON.parse(result);
 				console.log("RefMap Description: ",result["mapDescription"]);
@@ -869,7 +888,7 @@
 			console.log("numofsets=",$("#numofsets").val());
 			$("#sets").html('');
 			for(var i=0; i<$("#numofsets").val(); i++){
-				$("#sets").html($("#sets").html()+'<p>SetName:<input type="text" size="5" id="nameset'+i+'" value="Set['+i+']"> SetColor: <select id="colorset'+i+'">'+colorList+'</select><br><textarea id="set'+i+'" autofocus  rows="2" cols="40"></textarea></p>');
+				$("#sets").html($("#sets").html()+'<p>GroupName: <input type="text" size="5" id="nameset'+i+'" value="Set['+i+']"> GroupColor: <select id="colorset'+i+'">'+colorList+'</select><br>Insert comma separated NCBI accession numbers:<br><textarea id="set'+i+'" autofocus  rows="2" cols="40"></textarea></p>');
 			}
 			for(var i=0; i<$("#numofsets").val(); i++){$("#colorset"+i).val(labelColors[i]);}
 
@@ -990,7 +1009,7 @@
 		<ul class="nav nav-tabs" id="guide-tabs">
 			<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
 			<li><a data-toggle="tab" href="#menu1">Explore a Map</a></li>
-			<li><a data-toggle="tab" href="#menu2">Build a Map</a></li>
+			<li><a data-toggle="tab" href="#menu2">Build or Extend a Map</a></li>
 			<li><a data-toggle="tab" href="#menu3">Compute a distance</a></li>
 			<li><a data-toggle="tab" href="#menu4">About</a></li>
 		</ul>
@@ -1003,7 +1022,7 @@
 				<dl class="dl-horizontal">
 					<dt><a href="#" id="goto1">Explore a Map</a></dt>
 					<dd>Explore available built-in MoDMaps. These maps provide extensive information for each genomic sequence involved in each map, along with complementary information.</dd>
-					<dt><a href="#" id="goto2">Build a Map</a></dt>
+					<dt><a href="#" id="goto2">Build or Extend a Map</a></dt>
 					<dd>Build a new MoDMap from scratch tailored to your dataset. Include up to 12 categories, with as many sequences you need in each of them. Alternatively, extend a MoDMap adding your points. You can select a "base" map from a variety of available maps and then add your DNA sequences in it.</dd>
 					<dt><a href="#" id="goto3">Compute a distance</a></dt>
 					<dd>Compute the distance between any two DNA sequences, given as NCBI accession numbers.</dd>
@@ -1060,24 +1079,23 @@
 							<dl class="dl-horizontal">
 							<dt>Background map:</dt>
 							<dd><select id="extendmapid">
-								<option value="Animalia_mtDNA_Amphibians">Animalia_mtDNA_Amphibians</option>
-								<option value="Animalia_mtDNA_Insects">Animalia_mtDNA_Insects</option>
-								<option value="Animalia_mtDNA_Mammals">Animalia_mtDNA_Mammals</option>
-								<option value="Animalia_mtDNA_Mammals2">Animalia_mtDNA_Mammals2</option>
-								<option value="Animalia_mtDNA_Mammals3">Animalia_mtDNA_Mammals3</option>
-								<option value="Animalia_mtDNA_Primates">Animalia_mtDNA_Primates</option>
-								<option value="Animalia_mtDNA_Vertebrata">Animalia_mtDNA_Vertebrata</option>
+								<option value="Animalia_mtDNA_ClassAmphibia">Animalia_mtDNA_ClassAmphibia</option>
+								<!-- INSECTS REMOVED BECAUSE OF TOO MANY SUBSETS 21>>10 -->
+								<!-- <option value="Animalia_mtDNA_ClassInsecta">Animalia_mtDNA_ClassInsecta</option> -->
+								<option value="Animalia_mtDNA_ClassMammalia">Animalia_mtDNA_ClassMammalia</option>
+								<option value="Animalia_mtDNA_OrderPrimates">Animalia_mtDNA_OrderPrimates</option>
+								<option value="Animalia_mtDNA_PhylumVertebrata">Animalia_mtDNA_PhylumVertebrata</option>
 								<option value="Fungi_mtDNA">Fungi_mtDNA</option>
 								<option value="Plants_mtDNA">Plants_mtDNA</option>
-								<option value="Archaea_nDNA">Archaea_nDNA</option>
-								<option value="Bacteria_nDNA">Bacteria_nDNA</option>
 								<option value="Protists_mtDNA">Protists_mtDNA</option>
 								<option value="Protists_ptDNA">Protists_ptDNA</option>
+								<option value="Archaea_nDNA">Archaea_nDNA</option>
+								<option value="Bacteria_nDNA">Bacteria_nDNA</option>
 							</select><br></dd>
 							<dt>Extra Sequences:</dt>
 							<dd>
 								<label><input type="radio" name="extrapointstype" value="ncbi" checked="checked">
-								Input comma separated NCBI accession numbers</label><br>
+								Insert comma separated NCBI accession numbers</label><br>
 								<label><input type="radio" name="extrapointstype" value="fasta">
 								Load FASTA files</label><br>
 								<textarea id="extrancbi" rows="2" cols="40"></textarea>
@@ -1126,7 +1144,7 @@
 											<option value="1">Yes (Slow)</option>
 										</select>
 									</dd>
-									<dt>Number of sets:</dt>
+									<dt>Number of groups:</dt>
 									<dd>
 										<select id="numofsets">
 											<option value="0">Choose</option>

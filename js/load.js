@@ -1,26 +1,59 @@
 /*========================================================== 
-% Version 4
-% Coded by Rallis Karamichalis, 2016.
+% Version 5
+% Coded by Rallis Karamichalis, 2017.
 % ----------------------------------------------------------
 % This is a vizualization tool for creating 
 % 3D Molecular Distance Maps (MoDMaps3D). 
 % ==========================================================*/
 
-var MoDMaps3D = { 'version':'4.0', 
-		'dbg':false, 
-		'gglSearchEnabled':true, 
-		'realtimeHighlight':true, 
-		'selectonmouseover':false,
-		'highlightColor':parseInt("0x28EE2F") };
+var MoDMaps3D = { 
+	'version':'5.0', 
+	'dbg':false, 
+	'gglSearchEnabled':true, 
+	'realtimeHighlight':true, 
+	'selectonmouseover':false,
+	'highlightColor':parseInt("0x"+document.getElementById("pickbtn").value)
+};
 console.log(MoDMaps3D);
+
 
 var dbg = MoDMaps3D['dbg'];                   
 var gglSearchEnabled = MoDMaps3D['gglSearchEnabled']; 
 var realtimeHighlight = MoDMaps3D['realtimeHighlight'];
 var selectOnMouseover = MoDMaps3D['selectonmouseover'];
 var highlightColor = MoDMaps3D['highlightColor'];   
-var mapsWithReadyFCGRs = {'Animalia_mtDNA_Amphibians.txt':'mtDNA', 'Animalia_mtDNA_Insects.txt':'mtDNA', 'Animalia_mtDNA_Mammals.txt':'mtDNA', 'Animalia_mtDNA_Mammals2.txt':'mtDNA', 'Animalia_mtDNA_Mammals3.txt':'mtDNA','Animalia_mtDNA_Primates.txt':'mtDNA', 'Animalia_mtDNA_Vertebrata.txt':'mtDNA', 'Fungi_mtDNA.txt':'mtDNA', 'Plants_mtDNA.txt':'mtDNA', 'Protists_mtDNA.txt':'mtDNA', 'Protists_ptDNA.txt':'ptDNA', 'H.sapiens_P.troglodytes_nDNA+mtDNA.txt':'index_animalia', 'B.oleracea_B.napus_nDNA+cpDNA.txt':'index_plants', 'E.coli_E.fergusonii_nDNA+ptDNA.txt':'index_bacteria', 'Bacteria_nDNA.txt':'nDNA_bacteria', 'Archaea_nDNA.txt':'nDNA_archaea'};
-var mapsWithReadyDistMatrix = {'Animalia_mtDNA_Amphibians.txt':'amphibians', 'Animalia_mtDNA_Insects.txt':'insects', 'Animalia_mtDNA_Mammals.txt':'mammals', 'Animalia_mtDNA_Mammals2.txt':'mammals2', 'Animalia_mtDNA_Mammals3.txt':'mammals3', 'Animalia_mtDNA_Primates.txt':'primates', 'Animalia_mtDNA_Vertebrata.txt':'vertebrata', 'Fungi_mtDNA.txt':'fungi', 'Plants_mtDNA.txt':'plants', 'Protists_mtDNA.txt':'protistsmt', 'Protists_ptDNA.txt':'protistspt', 'H.sapiens_P.troglodytes_nDNA+mtDNA.txt':'index_animalia', 'B.oleracea_B.napus_nDNA+cpDNA.txt':'index_plants', 'E.coli_E.fergusonii_nDNA+ptDNA.txt':'index_bacteria', 'Bacteria_nDNA.txt':'bacteria', 'Archaea_nDNA.txt':'archaea'};
+var mapsWithReadyFCGRs = {
+	'Animalia_mtDNA_ClassAmphibia.txt':'mtDNA', 
+	'Animalia_mtDNA_ClassInsecta.txt':'mtDNA', 
+	'Animalia_mtDNA_ClassMammalia.txt':'mtDNA', 
+	'Animalia_mtDNA_OrderPrimates.txt':'mtDNA', 
+	'Animalia_mtDNA_PhylumVertebrata.txt':'mtDNA', 
+	'Fungi_mtDNA.txt':'mtDNA', 
+	'Plants_mtDNA.txt':'mtDNA', 
+	'Protists_mtDNA.txt':'mtDNA', 
+	'H.sapiens_P.troglodytes_nDNA+mtDNA.txt':'index_animalia', 
+	'B.oleracea_B.napus_nDNA+cpDNA.txt':'index_plants', 
+	'E.coli_E.fergusonii_nDNA+ptDNA.txt':'index_bacteria', 
+	'Bacteria_nDNA.txt':'nDNA_bacteria', 
+	'Archaea_nDNA.txt':'nDNA_archaea',
+	'Protists_ptDNA.txt':'ptDNA'
+};
+var mapsWithReadyDistMatrix = {
+	'Animalia_mtDNA_ClassAmphibia.txt':'amphibians', 
+	'Animalia_mtDNA_ClassInsecta.txt':'insects', 
+	'Animalia_mtDNA_ClassMammalia.txt':'mammals', 
+	'Animalia_mtDNA_OrderPrimates.txt':'primates', 
+	'Animalia_mtDNA_PhylumVertebrata.txt':'vertebrata', 
+	'Fungi_mtDNA.txt':'fungi', 
+	'Plants_mtDNA.txt':'plants', 
+	'Protists_mtDNA.txt':'protistsmt', 
+	'H.sapiens_P.troglodytes_nDNA+mtDNA.txt':'index_animalia', 
+	'B.oleracea_B.napus_nDNA+cpDNA.txt':'index_plants', 
+	'E.coli_E.fergusonii_nDNA+ptDNA.txt':'index_bacteria', 
+	'Bacteria_nDNA.txt':'bacteria', 
+	'Archaea_nDNA.txt':'archaea',
+	'Protists_ptDNA.txt':'protistspt'
+};
 var mapid, dim1, dim2, dim3, radius, alldata, distMatrix = [];
 var setOfPoints, colors, numberOfLabels, namesOfLabels, legendColors, legendLabels; 
 var globalScaledPointsCoord, globalPointsLabels;      
@@ -125,7 +158,7 @@ function startSearch(){
 		}else if(howManySearchResults<=10){
 			$("#searchstatus").html(searchOutput);
 		}else{
-			$("#searchstatus").html('Found '+howManySearchResults+' matches. To select a specific point, please narrow it down to less than 10 results. <input type="button" value="Plot this dataset!" onclick="saveAndPlot()">');
+			$("#searchstatus").html('Found '+howManySearchResults+' matches showing in ``highlght color`` (see left). To select a specific point, please narrow it down to less than 10 results. <input type="button" value="Plot this dataset!" onclick="saveAndPlot()">');
 		}            
 
 		if(realtimeHighlight){
@@ -173,7 +206,7 @@ function selectAndFill(id){
 	intersectedPoint = {x:offsets[selectedIndex].x, y:offsets[selectedIndex].y, z:offsets[selectedIndex].z};
 	console.log("SELECTED point is= "+selectedIndex);
 	selectedPoint = intersectedPoint;
-	$("#searchstatus").html("Take a closer look, point is selected!!");
+	$("#searchstatus").html("Take a closer look, point is selected and highlighted!");
 	updateSelectedMesh();
 	updateInfoDiv();
 }
@@ -276,9 +309,6 @@ function updateInfoDiv() {
 					if(mapsWithReadyFCGRs[mapid].substring(0,6)=='index_'){
 						// map with intra, where accessions cannot be used
 						console.log("intra map!");
-						// console.log(mapsWithReadyFCGRs[mapid]);
-						// console.log(globalPointsLabels[selectedIndex]);
-						// console.log(indLabel);
 
 						fcgrInfo='<a href="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][0]+'.png" target="_blank"><img src="fcgrs/'+mapsWithReadyFCGRs[mapid]+'/'+globalPointsLabels[selectedIndex][0]+'.png" height="200px" width="200px" alt="FCGR IMAGE NOT AVAILABLE" title="Click here to Zoom In"></a>';
 					}else{
@@ -330,6 +360,7 @@ function updateInfoDiv() {
 	// DISTPOINTS DIV
 	if(document.getElementById("fromHere")!=undefined){$("#fromHere").val(fromIndex);}
 	if(document.getElementById("toHere")!=undefined){$("#toHere").val(toIndex);}
+
 }
 
 // CLONE GEOMETRY
@@ -418,7 +449,8 @@ function toggleright(){
 function changeHighlightColor(){
 	highlightColor= parseInt('0x'+ $("#pickbtn").val());
 	MoDMaps3D['highlightColor'] = highlightColor;
-	alert("Highlight color has changed!\nClick on any point to see it in action!");
+	updateRealTimeSelectedMesh();
+	// alert("Highlight color has changed!\nClick on any point to see it in action!");
 }
 
 // REDRAW MAP WITH NEW SETTINGS AS SET BY USER
@@ -692,16 +724,19 @@ function initGraphics(){
 	
 	var colorTitle = document.createElement("font");
 	colorTitle.style.color = "yellow";
-	colorTitle.appendChild(document.createTextNode("Pick Highlight Color"));
+	colorTitle.appendChild(document.createTextNode("Change Highlight Color"));
 	var colorTitle2 = document.createElement("strong");
 	var colorTitle3 = document.createElement("em");
 	colorTitle2.appendChild(colorTitle);
 	colorTitle3.appendChild(colorTitle2);
 	document.getElementById("pickcolor").insertBefore(colorTitle3,document.getElementById("pickbtn"));
 	document.getElementById("pickcolor").appendChild(separator);
+	
+	// for correct order
+	document.getElementById("rightmenu").appendChild(distPointsDiv);
 	document.getElementById("rightmenu").appendChild(document.getElementById("pickcolor"));
 	
-	document.getElementById("rightmenu").appendChild(distPointsDiv);
+	
 
 	$("#pointInfoDiv").css({
 		"display": "block",
@@ -732,13 +767,21 @@ function initGraphics(){
 	<br><br>\
 	<table>\
 	<tr><td>Show CGR image:</td><td><input type="checkbox" onchange="toggle(\'cgrInfoDiv\');" unchecked></td></tr>\
-	<tr><td>Show highlight color:</td><td><input type="checkbox" onchange="toggle(\'pickcolor\');" unchecked></td></tr>\
 	<tr><td>Show distances:</td><td><input type="checkbox" onchange="toggle(\'distPointsDiv\');" unchecked></td></tr>\
-	<tr><td>Select on Mouseover:</td><td><input type="checkbox" onchange="enableMouseover();" unchecked></td></tr>\
+	<tr><td>Show highlight color:</td><td><input type="checkbox" onchange="toggle(\'pickcolor\');" unchecked></td></tr>\
+	<tr><td>Select mouseover:</td><td><input type="checkbox" onchange="enableMouseover();" unchecked></td></tr>\
 	</table>\
 	</div>';
-		
-	staticInfoDiv += '<hr color="white" width="60%"><em><strong><font color="yellow" size="4">Legend</font></strong></em><br>'+mapCaption+'<br><br>';
+	
+	var sublegends = mapCaption.split("#");
+	var subleg = "<div>&bull; "+sublegends[0]+"</div>";
+	subleg += "<div>&bull; "+sublegends[1]+"</div>";
+	subleg += "<div>&bull; "+sublegends[2]+" sequences</div>";
+	subleg += "<div>&bull; "+sublegends[3]+"</div>";
+	subleg += "<div>&bull; Avg.Seq.Length: "+sublegends[4]+"</div>";
+	// console.log(sublegends);
+	
+	staticInfoDiv += '<hr color="white" width="60%"><em><strong><font color="yellow" size="4">Legend</font></strong></em><br>'+subleg+'<br>';
 	//<hr color="white" width="60%">';   
 
 	for (var styleInd=0; styleInd<legendColors.length; styleInd++) {
@@ -858,7 +901,12 @@ function initGraphics(){
 				console.log("FINAL Closest point is= "+selectedIndex);
 				
 				selectedPoint = op;
-				//// for disabling selection 
+				
+				// reset search field when user has selected a point
+				$("#tosearch").val("");
+				startSearch();
+
+				// for disabling selection 
 				updateSelectedMesh();
 				updateInfoDiv();      
 			}         
