@@ -552,11 +552,19 @@
 
 	$(document).ready(function(){
 
-		$.ajax({url: "./extra/maps.txt", cache: false, success: function(result){
+		$.ajax({
+			url: "./extra/maps.txt", 
+			cache: false, 
+			success: function(result){
 			// LOAD FILENAMES OF MAPS 
 			//var result = JSON.parse(result);
 			//console.log(result);
-			var resfetch=JSON.parse(result)['maps'];
+			var resfetch;
+			if(geturlparamvalue("mapsnotready")=="true"){
+				resfetch=JSON.parse(result)['mapsNotReady'];
+			}else{
+				resfetch=JSON.parse(result)['maps'];	
+			}
 			var outcome='';
 			for(i=0;i<resfetch.length;i++){
 				outcome+='<div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#modmap-accordion-'+i+'" href="#modmap-collapse-'+i+'">'+resfetch[i][0]+'&nbsp;&nbsp;<span class="badge">'+resfetch[i][1].length+'</span></a></h4></div>';
@@ -576,6 +584,7 @@
 				mapID=$(this).text();
 				$.ajax({
 					url: "maps/"+mapID, 
+					cache: false,
 					success: function(result){
 						var resfetch=result.split("\n");
 
@@ -643,7 +652,10 @@
 		});  
 
 		$("#dataset1").click(function(){
-			$.ajax({url: "./maps/samplemaps/sample1.txt", success: function(result){
+			$.ajax({
+				url: "./maps/samplemaps/sample1.txt", 
+				cache: false,
+				success: function(result){
 				var result = JSON.parse(result);
 				console.log("Loading: ",result["mapDescription"]);
 				$('#allInputData').slideDown();
@@ -662,7 +674,10 @@
 			}});		
 		});  
 		$("#dataset2").click(function(){
-			$.ajax({url: "./maps/samplemaps/sample2.txt", success: function(result){
+			$.ajax({
+				url: "./maps/samplemaps/sample2.txt", 
+				cache: false,
+				success: function(result){
 				var result = JSON.parse(result);
 				console.log("Loading: ",result["mapDescription"]);
 				$('#allInputData').slideDown();
@@ -681,7 +696,10 @@
 			}});
 		});
 		$("#dataset3").click(function(){
-			$.ajax({url: "./maps/samplemaps/sample3.txt", success: function(result){
+			$.ajax({
+				url: "./maps/samplemaps/sample3.txt", 
+				cache: false,
+				success: function(result){
 				var result = JSON.parse(result);
 				console.log("Loading: ",result["mapDescription"]);
 				$('#allInputData').slideDown();
@@ -717,7 +735,7 @@
 
 			$.ajax({
 				url: "./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt", 
-				cache: "false",
+				cache: false,
 				success: function(result){
 				console.log("./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt");
 				var result = JSON.parse(result);
