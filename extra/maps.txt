@@ -38,6 +38,11 @@
 		"mitomap_23k.txt"
 		]],
 
+		["mtDNA_various",
+		["mtDNA_Hominidae_Hylobatidae.txt",
+		"mtDNA_Insects_Mammals_Amphibians.txt"
+		]],
+
 		["Haplogroups (Human mtDNA)",
 		["Haplogroups_1_k=6.txt",
 		"Haplogroups_1_k=9.txt",
