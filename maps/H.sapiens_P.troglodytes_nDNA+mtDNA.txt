@@ -4,7 +4,7 @@ blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,blue,
 Index,Acc,Name,Length,Fragment
 blue,red
 H.sapiens (480), P.troglodytes (500)
-H.sapiens and P.troglodytes#nDNA+mtDNA, composite genomic signatures#49 chromosome#Approx.Inf.Dist (k=9)#166561
+H.sapiens and P.troglodytes#nDNA+mtDNA, composite genomic signatures#980 fragments#Approx.Inf.Dist.(k=9)#166,561
 0.430543
 -0.565782
 -0.809697

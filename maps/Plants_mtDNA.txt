@@ -4,7 +4,7 @@ blue,red,green
 Index,Acc,Name,Length,Taxa
 blue,red,green
 Glaucocystophyceae (4),Rhodophyta (46),Viridiplantae (256)
-Kingdom Plants#mtDNA, complete genome#306#Approx.Inf.Dist (k=9)#199225
+Kingdom Plants#mtDNA, complete genome#306 sequences#Approx.Inf.Dist.(k=9)#199,225
 0.865475
 -0.84067
 0.435368

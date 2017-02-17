@@ -4,7 +4,7 @@ blue,red
 Index,Acc,Name,Length,Taxa
 blue,red
 Hominidae (10),Hylobatidae (7)
-taxa#mtDNA, complete genome#17#Approx.Inf.Dist (k=9)#16498.5
+taxa#mtDNA, complete genome#17#Approx.Inf.Dist.(k=9)#16498.5
 0.55199
 0.0616332
 0.266691

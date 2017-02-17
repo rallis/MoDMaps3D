@@ -5,8 +5,9 @@
 	["Animalia_mtDNA_ClassMammalia.txt",
 	"Animalia_mtDNA_ClassAmphibia.txt",
 	"Animalia_mtDNA_ClassInsecta.txt",
+	"Animalia_mtDNA_Ins_Mam_Amph.txt",
 	"Animalia_mtDNA_OrderPrimates.txt",
-	"Animalia_mtDNA_PhylumVertebrata.txt",
+	"Animalia_mtDNA_Vertebrata.txt",
 	"Fungi_mtDNA.txt",
 	"Plants_mtDNA.txt",
 	"Protists_mtDNA.txt",
@@ -20,7 +21,20 @@
 	["H.sapiens_P.troglodytes_nDNA+mtDNA.txt",
 	"B.oleracea_B.napus_nDNA+cpDNA.txt",
 	"E.coli_E.fergusonii_nDNA+ptDNA.txt"
-	]]
+	]],
+
+	["Viruses",
+	["Viruses_HIV1.txt",
+	"Vir1_NCBI.txt",
+	"Vir2_subsetOf_Vir1.txt",
+	"Vir3_subsetOf_Vir2.txt",
+	"Vir4_subsetOf_Vir3.txt"
+	]],
+
+	["Human Mitochondrial Haplogroups",
+	["Haplogroups_All.txt",
+	"Haplogroups_African.txt"
+	]]	
 
 ],
 
@@ -39,8 +53,7 @@
 		]],
 
 		["mtDNA_various",
-		["mtDNA_Hominidae_Hylobatidae.txt",
-		"mtDNA_Insects_Mammals_Amphibians.txt"
+		["mtDNA_Hominidae_Hylobatidae.txt"
 		]],
 
 		["Haplogroups (Human mtDNA)",
@@ -73,12 +86,7 @@
 
 		["Viruses",
 		["virus_hiv1.txt",
-		"viral1.txt",
-		"viral2.txt",
-		"viral3.txt",
-		"viral4.txt",
 		"hiv_tempmap1.txt",
-		"hiv_tempmap2.txt",
 		"hiv_tempmap3.txt",
 		"hiv_tempmap4.txt",
 		"hiv_tempmap5.txt",

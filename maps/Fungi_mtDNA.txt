@@ -4,7 +4,7 @@ blue
 Index,Acc,Name,Length,Taxa
 blue
 Fungi (311)
-Kingdom Fungi#mtDNA, complete genome#311#Approx.Inf.Dist (k=9)#46963
+Kingdom Fungi#mtDNA, complete genome#311 sequences#Approx.Inf.Dist.(k=9)#46,963
 0.765066
 0.12994
 -0.0169803

@@ -4,7 +4,7 @@ blue,green,red,cyan,orange
 Index,Acc,Name,Length,Taxa
 blue,green,red,cyan,orange
 Land Plants (58),Green algae (87),Red algae (17),Stramenopile (36),Alveolata (13)
-Protists#ptDNA, complete genome#211#Approx.Inf.Dist (k=9)#145337
+Protists#ptDNA, complete genome#211 sequences#Approx.Inf.Dist.(k=9)#145,337
 0.1867286018561687
 0.6162574664951957
 0.590817200218863

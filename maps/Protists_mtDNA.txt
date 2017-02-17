@@ -4,7 +4,7 @@ blue,red,orange,pink,gray,green,brown,yellow,purple,cyan
 Index,Acc,Name,Length,Taxa
 blue,red,orange,pink,gray,green,brown,yellow,purple,cyan
 Phaeophyceae (34),Haemosporida (23),Ciliophora (8),Amoebozoa (10),Piroplasmida (6),Oomycetes (18),Raphidophyceae (2),Bacillariophyta (10),Blastocystis (4),Cryptophyta (2)
-Protists#mtDNA, complete genome#117#Approx.Inf.Dist (k=9)#33108
+Protists#mtDNA, complete genome#117 sequences#Approx.Inf.Dist.(k=9)#33,108
 -0.586695
 -0.181368
 -0.495371

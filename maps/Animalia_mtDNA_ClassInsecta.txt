@@ -1,10 +1,10 @@
-126,8,5,6,77,95,11,1,17,149,3,47,3,20,0,5,10,110,7,1,294
-cyan,cyan,cyan,cyan,orange,red,red,red,red,blue,blue,yellow,green,lime,lime,lime,purple,magenta,magenta,magenta,brown
+126,8,5,6,77,95,11,1,17,149,3,47,3,20,5,10,110,7,1,294
+cyan,cyan,cyan,cyan,orange,red,red,red,red,blue,blue,yellow,green,lime,lime,purple,magenta,magenta,magenta,brown
 5
 Index,Acc,Name,Length,Taxa
-cyan,black,black,black,orange,red,black,black,black,blue,black,yellow,green,lime,black,black,purple,magenta,black,black,brown
-Hemiptera (126),Psocoptera (8),Thysanoptera (5),Phthiraptera (6),Dictyoptera (77),Coleoptera (95),Megaloptera (11),Raphidioptera (1),Neuroptera (17),Diptera (149),Mecoptera (3),Hymenoptera (47),Ephemeroptera (3),Odonata (20),Thysanura (0),Archaeognatha (5),Phasmatodea (10),Orthoptera (110),Plecoptera (7),Mantophasmatodea (1),Lepidoptera (294)
-Class Insecta#mtDNA, complete genome#995#Approx.Inf.Dist (k=9)#15681
+cyan,cyan,cyan,cyan,orange,red,red,red,red,blue,blue,yellow,green,lime,lime,purple,magenta,magenta,magenta,brown
+Hemiptera (126),Psocoptera (8),Thysanoptera (5),Phthiraptera (6),Dictyoptera (77),Coleoptera (95),Megaloptera (11),Raphidioptera (1),Neuroptera (17),Diptera (149),Mecoptera (3),Hymenoptera (47),Ephemeroptera (3),Odonata (20),Archaeognatha (5),Phasmatodea (10),Orthoptera (110),Plecoptera (7),Mantophasmatodea (1),Lepidoptera (294)
+Class Insecta#mtDNA, complete genome#995 sequences#Approx.Inf.Dist.(k=9)#15,681
 -0.294733
 -0.0788106
 -0.327321

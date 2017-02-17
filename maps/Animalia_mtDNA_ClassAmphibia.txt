@@ -4,7 +4,7 @@ green,cyan,blue
 Index,Acc,Name,Length,Taxa
 green,cyan,blue
 Caudata (95),Gymnophiona (34),Anura (162)
-Class Amphibia#mtDNA, complete genome#291#Approx.Inf.Dist (k=9)#17532
+Class Amphibia#mtDNA, complete genome#291 sequences#Approx.Inf.Dist.(k=9)#17,532
 0.379882
 -0.421862
 -0.0403779

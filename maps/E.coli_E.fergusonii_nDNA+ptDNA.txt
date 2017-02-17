@@ -4,7 +4,7 @@ blue,red
 Index,Acc,Name,Length,Fragment
 blue,red
 E.coli (20), E.fergusonii (20)
-E.coli and E.fergusonii#nDNA+ptDNA, composite genomic signatures#2 chromosome#Approx.Inf.Dist (k=9)#251105
+E.coli and E.fergusonii#nDNA+ptDNA, composite genomic signatures#40 fragments#Approx.Inf.Dist.(k=9)#251,105
 0.831436
 1.
 -0.704659

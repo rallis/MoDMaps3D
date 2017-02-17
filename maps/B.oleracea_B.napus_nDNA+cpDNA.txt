@@ -4,7 +4,7 @@ blue,red
 Index,Acc,Name,Length,Fragment
 blue,red
 B.oleracea (180), B.napus (380)
-B.oleracea and B.napus#nDNA+cpDNA, composite genomic signatures#28 chromosome#Approx.Inf.Dist (k=9)#303022
+B.oleracea and B.napus#nDNA+cpDNA, composite genomic signatures#560 fragments#Approx.Inf.Dist.(k=9)#303,022
 0.124249
 -0.984574
 0.584572

@@ -27,7 +27,8 @@ var mapsWithReadyFCGRs = {
 	'Animalia_mtDNA_ClassInsecta.txt':'mtDNA', 
 	'Animalia_mtDNA_ClassMammalia.txt':'mtDNA', 
 	'Animalia_mtDNA_OrderPrimates.txt':'mtDNA', 
-	'Animalia_mtDNA_PhylumVertebrata.txt':'mtDNA', 
+	'Animalia_mtDNA_Vertebrata.txt':'mtDNA', 
+	'Animalia_mtDNA_Ins_Mam_Amph.txt':'mtDNA',
 	'Fungi_mtDNA.txt':'mtDNA', 
 	'Plants_mtDNA.txt':'mtDNA', 
 	'Protists_mtDNA.txt':'mtDNA', 
@@ -43,7 +44,8 @@ var mapsWithReadyDistMatrix = {
 	'Animalia_mtDNA_ClassInsecta.txt':'insects', 
 	'Animalia_mtDNA_ClassMammalia.txt':'mammals', 
 	'Animalia_mtDNA_OrderPrimates.txt':'primates', 
-	'Animalia_mtDNA_PhylumVertebrata.txt':'vertebrata', 
+	'Animalia_mtDNA_Vertebrata.txt':'vertebrata', 
+	'Animalia_mtDNA_Ins_Mam_Amph.txt':'ins_mam_amphi',
 	'Fungi_mtDNA.txt':'fungi', 
 	'Plants_mtDNA.txt':'plants', 
 	'Protists_mtDNA.txt':'protistsmt', 
@@ -95,6 +97,12 @@ function geturlparamvalue(name) {
 		return -1;
 	}
 }
+
+// CHANGE DOCUMENT TITLE TO CURRENT MAP NAME
+if(geturlparamvalue('mapid').length > 0){
+	document.title = "MoDMaps3D - "+geturlparamvalue('mapid');	
+}
+
 
 // SEARCH FUNCTION 
 function startSearch(){
@@ -776,7 +784,7 @@ function initGraphics(){
 	var sublegends = mapCaption.split("#");
 	var subleg = "<div>&bull; "+sublegends[0]+"</div>";
 	subleg += "<div>&bull; "+sublegends[1]+"</div>";
-	subleg += "<div>&bull; "+sublegends[2]+" sequences</div>";
+	subleg += "<div>&bull; "+sublegends[2]+"</div>";
 	subleg += "<div>&bull; "+sublegends[3]+"</div>";
 	subleg += "<div>&bull; Avg.Seq.Length: "+sublegends[4]+"</div>";
 	// console.log(sublegends);

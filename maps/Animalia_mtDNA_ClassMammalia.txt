@@ -4,7 +4,7 @@ blue,red,green,cyan,purple,orange,brown
 Index,Acc,Name,Length,Taxa
 blue,red,green,cyan,purple,orange,brown
 Afrotheria (16),Glires (147),Primates (148),Laurasiatheria (494),Xenarthra (30),Metatheria (34),Monotremata (3)
-Class Mammalia#mtDNA, complete genome#872#Approx.Inf.Dist (k=9)#16578
+Class Mammalia#mtDNA, complete genome#872 sequences#Approx.Inf.Dist.(k=9)#16,578
 0.609073
 0.0528095
 0.125779

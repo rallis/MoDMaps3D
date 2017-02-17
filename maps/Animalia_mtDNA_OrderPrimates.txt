@@ -4,7 +4,7 @@ green,red
 Index,Acc,Name,Length,Taxa
 green,red
 Strepsirrhini (33),Haplorrhini (115)
-Order Primates#mtDNA, complete genome#148#Approx.Inf.Dist (k=9)#16629
+Order Primates#mtDNA, complete genome#148 sequences#Approx.Inf.Dist.(k=9)#16,629
 -0.525763
 -0.601673
 -0.213592
