@@ -2,8 +2,7 @@
 	
 	
 	["Kingdoms", 
-	[
-	"Animalia_mtDNA_Vertebrata.txt",
+	["Animalia_mtDNA_Vertebrata.txt",
 	"Animalia_mtDNA_Ins_Mam_Amph.txt",
 	"Animalia_mtDNA_ClassMammalia.txt",
 	"Animalia_mtDNA_ClassAmphibia.txt",
