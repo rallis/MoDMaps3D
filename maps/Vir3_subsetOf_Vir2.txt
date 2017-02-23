@@ -1,8 +1,8 @@
 563,230,191
-red,orange,black
+red,orange,cyan
 5
 Index,Acc,Name,Length,Taxa
-red,orange,black
+red,orange,cyan
 Reoviridae (563),Polydnaviridae (230),Satellite Nucleic Acids (191)
 Viruses#genomic sequence#984 sequences#Approx.Inf.Dist.(k=9)#3,040
 -0.766527

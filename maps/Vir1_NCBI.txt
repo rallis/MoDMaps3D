@@ -1,8 +1,8 @@
 1080,563,478,230,191
-blue,red,green,orange,black
+blue,red,green,orange,cyan
 5
 Index,Acc,Name,Length,Taxa
-blue,red,green,orange,black
+blue,red,green,orange,cyan
 Caudovirales (1080),Reoviridae (563),Geminiviridae (478),Polydnaviridae (230),Satellite Nucleic Acids (191)
 Viruses#genomic sequence#2,542 sequences#Approx.Inf.Dist.(k=9)#31,833
 -0.804239

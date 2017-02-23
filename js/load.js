@@ -41,7 +41,8 @@ var mapsWithReadyFCGRs = {
 	'Vir1_NCBI.txt':'vir',
 	'Vir2_subsetOf_Vir1.txt':'vir',
 	'Vir3_subsetOf_Vir2.txt':'vir',
-	'Vir4_subsetOf_Vir3.txt':'vir'
+	'Vir4_subsetOf_Vir3.txt':'vir',
+	'Viruses_HIV1.txt':'hiv1'
 };
 var mapsWithReadyDistMatrix = {
 	'Animalia_mtDNA_ClassAmphibia.txt':'amphibians', 
@@ -62,7 +63,8 @@ var mapsWithReadyDistMatrix = {
 	'Vir1_NCBI.txt':'vir1',
 	'Vir2_subsetOf_Vir1.txt':'vir2',
 	'Vir3_subsetOf_Vir2.txt':'vir3',
-	'Vir4_subsetOf_Vir3.txt':'vir4'
+	'Vir4_subsetOf_Vir3.txt':'vir4',
+	'Viruses_HIV1.txt':'hiv1'
 };
 var mapid, dim1, dim2, dim3, radius, alldata, distMatrix = [];
 var setOfPoints, colors, numberOfLabels, namesOfLabels, legendColors, legendLabels; 
