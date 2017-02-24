@@ -137,12 +137,15 @@
 			for(var i=0; i<accIDsSets.length; i++){ toprint4 += $("#colorset"+i).val() + ","; }
 			toprint4 = toprint4.slice(0,-1);
 			toprint4 += "\n";
-			for(var i=0; i<accIDsSets.length; i++){ toprint4 += $("#nameset"+i).val()+" ("+accIDsSets[i].length+"),"; }
+			for(var i=0; i<accIDsSets.length; i++){toprint4 +=$("#nameset"+i).val()+" ("+accIDsSets[i].length+"),";}
 			toprint4 = toprint4.slice(0,-1);
 			toprint4 += "\n";
+
 			for(var i=0; i<$("#numofsets").val(); i++){ toprint4 += $("#nameset"+i).val() + ', '; }
 			toprint4 = toprint4.slice(0,-2);  //because of space above!
-			toprint4 += '. Number of sequences is '+accIDs.length+ "\n";
+			// OLD: toprint4 += '. Number of sequences is '+accIDs.length+ "\n";
+			toprint4 += '#User-input sequences#'+accIDs.length+"#Approx.Inf.Dist#NA\n";
+			
 			
 			// completely debugging part
 			var toprint5="{";
