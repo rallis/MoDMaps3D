@@ -823,6 +823,7 @@ function initGraphics(){
 	<tr><td>Show distances:</td><td><input type="checkbox" onchange="toggle(\'distPointsDiv\');" unchecked></td></tr>\
 	<tr><td>Show highlight color:</td><td><input type="checkbox" onchange="toggle(\'pickcolor\');" unchecked></td></tr>\
 	<tr><td>Select mouseover:</td><td><input type="checkbox" onchange="enableMouseover();" unchecked></td></tr>\
+	<tr><td><a href="#" onclick="shareLink();"><font color="yellow">Share</font></a> what you see!</td></tr>\
 	</table>\
 	</div>';
 	
