@@ -144,6 +144,10 @@ function shareLink(){
             var output=xmlhttp.responseText;
             prompt('Copy link, then click OK', output.substring(0,output.length - 1));
         }
+
+        if (xmlhttp.readyState==4 && xmlhttp.status==500){
+            prompt('Error while shortening URL. Please try again later..', xmlhttp.responseText);
+        }
     }
     xmlhttp.open("GET",'https://api-ssl.bitly.com/v3/shorten?access_token=c955e303139646c6a8abd9ecbd06662693677e27&longUrl='+encodeURIComponent(shareLink)+'&format=txt',true);
     xmlhttp.send();
