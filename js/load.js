@@ -126,7 +126,8 @@ function shareLink(){
     var meshesX= meshes[0].rotation.x;
     var meshesY= meshes[0].rotation.y; 
 
-    var shareLink = baseLink+"load.html?mapid="+mapid +"&dim1="+dim1selected+"&dim2="+dim2selected+"&dim3="+dim3selected+"&radius="+radiusSelected+"&cameraX="+camX+"&cameraY="+camY+"&cameraZ="+camZ+"&meshesRotX="+meshesX+"&meshesRotY="+meshesY+"&autonavigate=true";
+    var baseLink = window.location["origin"] + window.location["pathname"];
+    var shareLink = baseLink+"?mapid="+mapid +"&dim1="+dim1selected+"&dim2="+dim2selected+"&dim3="+dim3selected+"&radius="+radiusSelected+"&cameraX="+camX+"&cameraY="+camY+"&cameraZ="+camZ+"&meshesRotX="+meshesX+"&meshesRotY="+meshesY+"&autonavigate=true";
 
     if(document.getElementById('tosearch').value.length>=4){
         shareLink = shareLink + '&search='+document.getElementById('tosearch').value;
