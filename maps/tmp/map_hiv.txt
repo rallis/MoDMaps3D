@@ -4,7 +4,7 @@ blue,red,green,orange,magenta,yellow,brown,lime,gray
 Index,Acc,Name,Length,Taxa
 blue,red,green,orange,magenta,yellow,brown,lime,gray
 type=B (2295),type=C (1114),type=A1 (315),type=D (79),type=G (72),type=F1 (53),type=O (49),type=U (15),type=N (11)
-taxa#mtDNA, complete genome#4003#Approx.Inf.Dist (k=9)#8982.31
+HIV-1 subtypes#HIV-1, complete genome#4003#Approx.Inf.Dist (k=9)#8982.31
 -0.919941
 0.80279
 -0.0110848
