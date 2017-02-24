@@ -113,6 +113,40 @@ if(geturlparamvalue('mapid').length > 0){
 	document.title = "MoDMaps3D - "+geturlparamvalue('mapid');	
 }
 
+// SHARE WHAT YOU SEE FUNCTION
+function shareLink(){
+    dim1selected=document.getElementById("dim1").options[document.getElementById("dim1").selectedIndex].value;
+    dim2selected=document.getElementById("dim2").options[document.getElementById("dim2").selectedIndex].value;
+    dim3selected=document.getElementById("dim3").options[document.getElementById("dim3").selectedIndex].value;
+    radiusSelected=parseFloat(document.getElementById("radius").value);
+    if(dbg){alert("You selected: "+dim1selected+"-"+dim2selected+"-"+dim3selected+" and radius="+radiusSelected);}
+    var camX = camera.position.x;
+    var camY = camera.position.y;
+    var camZ = camera.position.z;
+    var meshesX= meshes[0].rotation.x;
+    var meshesY= meshes[0].rotation.y; 
+
+    var shareLink = baseLink+"load.html?mapid="+mapid +"&dim1="+dim1selected+"&dim2="+dim2selected+"&dim3="+dim3selected+"&radius="+radiusSelected+"&cameraX="+camX+"&cameraY="+camY+"&cameraZ="+camZ+"&meshesRotX="+meshesX+"&meshesRotY="+meshesY+"&autonavigate=true";
+
+    if(document.getElementById('tosearch').value.length>=4){
+        shareLink = shareLink + '&search='+document.getElementById('tosearch').value;
+    }
+   
+    var xmlhttp;
+    if (window.XMLHttpRequest){ // IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }else{ // code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            var output=xmlhttp.responseText;
+            prompt('Copy link, then click OK', output.substring(0,output.length - 1));
+        }
+    }
+    xmlhttp.open("GET",'https://api-ssl.bitly.com/v3/shorten?access_token=c955e303139646c6a8abd9ecbd06662693677e27&longUrl='+encodeURIComponent(shareLink)+'&format=txt',true);
+    xmlhttp.send();
+}
 
 // SEARCH FUNCTION 
 function startSearch(){
