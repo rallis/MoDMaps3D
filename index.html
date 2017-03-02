@@ -655,6 +655,9 @@
 			$("#inputdatamenu").slideDown();
 			$("#extendmapmenucontent").slideUp();
 			$("#computemenu").slideUp();
+			$("#numofsets").val(0);
+			$("#numofsets").trigger("change");
+			// $("#selectnumofsets").css({"border-color": "red", "border-width":"5px", "border-style":"solid"});
 		});
 
 		$("#extendmapmenuheader").click(function(){
@@ -918,6 +921,12 @@
 		});
 
 		$("#numofsets").change(function(){
+			if($("#numofsets").val() == 0){
+				$("#selectnumofsets").css({"border-color": "red", "border-width":"5px", "border-style":"solid"});
+			}else{
+				$("#selectnumofsets").css({"border-color": "white", "border-width":"1px", "border-style":"solid"});
+			}
+			
 			var colorList = '';
 			for(var i=0; i<labelColors.length; i++){
 				colorList += '<option value="'+labelColors[i]+'">'+ labelColors[i]+'</option>';
@@ -956,6 +965,7 @@
 		var tmpDataset = geturlparamvalue('dataset');
 		if(tmpDataset!=-1 && tmpDataset.slice(0,5)=='local'){
 			newDataset = localStorage.getItem("dataset"+tmpDataset.slice(5));
+			$("#buildmapmenuheader").click();
 			$('#guide-tabs li:eq(2) a').tab('show');
 			$("#file_contents").empty();
 			$("#file_contents").hide();
@@ -966,7 +976,6 @@
 			$("#mainprogressbar").hide();
 			
 			// he came here for building, not extending, right?!
-			$("#buildmapmenuheader").click();
 			// OR
 			// $("#buildmapmenucontent").slideDown();
 			// $("#inputdatamenu").slideDown();
@@ -1196,7 +1205,7 @@
 										</select>
 									</dd>
 									<dt>Number of groups:</dt>
-									<dd>
+									<dd id="selectnumofsets">
 										<select id="numofsets">
 											<option value="0">Choose</option>
 											<option value="1">1</option>
