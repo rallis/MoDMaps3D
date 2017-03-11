@@ -20,7 +20,7 @@
 	["Closely Related Species - Composite Genomic Signatures", 
 	["H.sapiens_P.troglodytes_nDNA+mtDNA.txt",
 	"B.oleracea_B.napus_nDNA+cpDNA.txt",
-	"E.coli_E.fergusonii_nDNA+ptDNA.txt"
+	"E.coli_E.fergusonii_nDNA+pDNA.txt"
 	]],
 
 	["Viruses",

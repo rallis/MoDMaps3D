@@ -922,9 +922,13 @@
 
 		$("#numofsets").change(function(){
 			if($("#numofsets").val() == 0){
-				$("#selectnumofsets").css({"border-color": "red", "border-width":"5px", "border-style":"solid"});
+				$("#numofsets").css({"border-color": "red", "border-width":"5px", "border-style":"solid"});
 			}else{
-				$("#selectnumofsets").css({"border-color": "white", "border-width":"1px", "border-style":"solid"});
+				// DEFAULT VALUES as reported in chrome by jquery
+				// $("#numofsets").css("border-color");
+				// $("#numofsets").css("border-width");
+				// $("#numofsets").css("border-style");
+				$("#numofsets").css({"border-color": "rgb(169, 169, 169)", "border-width":"0.666667px", "border-style":"solid"});
 			}
 			
 			var colorList = '';
@@ -1142,7 +1146,7 @@
 								<option value="Animalia_mtDNA_ClassMammalia">Animalia_mtDNA_ClassMammalia</option>
 								<option value="Animalia_mtDNA_OrderPrimates">Animalia_mtDNA_OrderPrimates</option>
 								<option value="Animalia_mtDNA_Vertebrata">Animalia_mtDNA_Vertebrata</option>
-								<option value="Animalia_mtDNA_Ins_Mam_Amph">Animalia_mtDNA_Insects_Mammals_Amphibians</option>
+								<option value="Animalia_mtDNA_Ins_Mam_Amph">Animalia_mtDNA_Ins_Mam_Amph</option>
 								<option value="Fungi_mtDNA">Fungi_mtDNA</option>
 								<option value="Plants_mtDNA">Plants_mtDNA</option>
 								<option value="Protists_mtDNA">Protists_mtDNA</option>
