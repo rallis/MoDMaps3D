@@ -297,7 +297,7 @@
 		if(typeof(Storage) !== "undefined") {
 			try{
 				localStorage.setItem("mapfile"+mapTimeStamp, mapfile);
-				localStorage.setItem("distMatrix"+mapTimeStamp, distMatrix);	
+				// localStorage.setItem("distMatrix"+mapTimeStamp, distMatrix);	
 			}catch(err){
 				console.log(err.message);
 				errorHasOccured = true;
