@@ -1,30 +1,31 @@
 ﻿<!DOCTYPE html> <html lang="en">
 <head>
-	<title>HaploMaps3D - Main Menu</title>
+	<title>MoDMaps3D - Main Menu</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
-	<link rel="stylesheet" href="js/bootstrap.min.css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- <link rel="stylesheet" href="js/bootstrap.min.css">
 	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script> -->
 
 	<script type="text/javascript" src="js/numeric-1.2.6.min.js"></script>
 	<script type="text/javascript" src="js/jszip.min.js"></script>
 	<script type="text/javascript" src="js/FileSaver.min.js"></script>
 	<script type="text/javascript" src="js/parallel.js"></script>
-	<script type="text/javascript" src="js/seedrandom.js"></script>
 	<script type="text/javascript" src="js/jsfeat.js"></script>
-	<script type="text/javascript" src="js/clustering.js"></script>
-	
 
 	<script>
-	var dbg = false, errorHasOccured = false, dataset;
-	var randSeed = '12345';
-	var xmap;
-	var mtDNAquery;  
-	var runLocally = false;
+	var dbg = false, errorHasOccured = false, noMDS = false, splitBy, offlineCompMinSize = 500;
+	var eigenval, eigenvec, eigensystem, finalEigenval, finalEigenvec, points, mapfile ;
+	var fastaFilesLoaded = [], defaultInputType = "ncbi";
+	var mapID, allSequences={}, distMatrix=[], fcgrRes=9, getTaxa = false;
+	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
+	var callsNCBIDone, progress;
+	var aidDistInfo = [], map_settings, previousdata = [];
+	var labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'olive', 'purple', 'black'];
+	var tmpMap = false;
 
 	function geturlparamvalue(name) {
 		name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -38,17 +39,471 @@
 		}
 	}
 
-	function emptyLocalStorage(){
-		for (var a in localStorage){ 
-			delete localStorage[a]; 
+	function computeMDS(){
+		time = new Date();
+		step3A = time.getTime();
+		console.log("BEGIN computeMDS()");	
+		
+		// pre-processign MDS
+
+		// part 1
+		var numOfSeq = distMatrix.length;
+		var distMatrixSqTotals = [];
+		for(var i=0; i<numOfSeq; i++){
+			var tmpColSum = 0;
+			for(var j=0; j<numOfSeq; j++){
+				tmpColSum += Math.pow(distMatrix[i][j], 2);
+			}
+			distMatrixSqTotals.push(tmpColSum);
 		}
+		if(dbg){console.log('sqtotals=',distMatrixSqTotals);}
+		
+		// part 2
+		var sumOfSqTotals = 0;
+		for(var i=0; i<numOfSeq; i++){
+			sumOfSqTotals += distMatrixSqTotals[i];
+		}
+		if(dbg){console.log('sumofsqtotals=',sumOfSqTotals);}
+		
+		// part 3
+		var distMatrixCentered = [];
+		for(var i=0; i<numOfSeq; i++){
+			distMatrixCentered.push([]);
+			for(var j=0; j<numOfSeq; j++){
+				var tmpVal = -(1/2)*(Math.pow(distMatrix[i][j], 2) - (1/numOfSeq)*distMatrixSqTotals[i] - (1/numOfSeq)*distMatrixSqTotals[j] + (1/(Math.pow(numOfSeq, 2)))* sumOfSqTotals);
+				distMatrixCentered[i].push(tmpVal);
+			}
+		}
+		
+		//DEBUGING FOR PRINTING dMatrix
+		if(noMDS){
+			if(dbg){console.log(distMatrixCentered);}
+			
+			$('#progress').html('<p>Please continue computation offline. <br> <strong>Instructions:</strong>\
+				<ul><li>Download zip file (It is downloaded automatically)</li>\
+				<li>Extract zip contents to a directory of your choice</li>\
+				<li>Download either <a href="./extra/mds.nb" target="_blank">MDS-Mathematica</a> or <a href="./extra/mds.py" target="_blank">MDS-Python</a> code and place it in the same directory</li>\
+				<li>Run the code, you should get an output file [map_output.txt]</li>\
+				<li>Open [map_output.txt], copy its content and paste it <a href="./extra/input.html" target="_blank">here</a></li>\
+				</ul></p>');
+			console.log('COPY/PASTE MATHEMATICA');
+			
+			var toprint="{";
+			for(var i=0; i<distMatrixCentered.length; i++){
+				toprint+='{';
+				for (var j=0; j<distMatrixCentered.length; j++){
+					toprint+=distMatrixCentered[i][j].toFixed(10)+',';
+				}
+				toprint = toprint.substring(0, toprint.length - 1);
+				toprint+='},'
+			}
+			toprint = toprint.substring(0, toprint.length - 1);
+			toprint+='}';
+			
+			var toprint2='{';
+			for(var i=0; i<accIDsSets.length; i++){
+				toprint2 += '{';
+				for(var j=0; j<accIDsSets[i].length; j++){
+					toprint2 += '"'+accIDsSets[i][j]+'",';
+				}
+				toprint2 = toprint2.substring(0, toprint2.length - 1);
+				toprint2 +='},'
+			}
+			toprint2 = toprint2.substring(0, toprint2.length - 1);
+			toprint2 +='}';
+			
+			var toprint3='{';
+			var totalNumOfSeq = Object.keys(allSequences).length;
+			for(var i=0; i<totalNumOfSeq; i++){
+				toprint3 += '{';
+				toprint3 += '"'+allSequences[i][0]+'",';
+				toprint3 += '"'+allSequences[i][1]+'",';
+				toprint3 += '"'+allSequences[i][2]+'",';
+				toprint3 += '"'+allSequences[i][4]+'",';
+				toprint3 = toprint3.substring(0, toprint3.length - 1);
+				toprint3 +='},'
+			}
+			toprint3 = toprint3.substring(0, toprint3.length - 1);
+			toprint3 +='}';
+
+			var toprint4 = '';
+			for(var i=0; i<accIDsSets.length; i++){	toprint4 += accIDsSets[i].length + ",";	}
+			toprint4 = toprint4.slice(0,-1);
+			toprint4 += "\n";
+			for(var i=0; i<accIDsSets.length; i++){ toprint4 += $("#colorset"+i).val() + ","; }
+			toprint4 = toprint4.slice(0,-1);
+			toprint4 += "\n";
+			toprint4 += "5\nIndex,Acc,Name,Length,Taxa\n";
+			for(var i=0; i<accIDsSets.length; i++){ toprint4 += $("#colorset"+i).val() + ","; }
+			toprint4 = toprint4.slice(0,-1);
+			toprint4 += "\n";
+			for(var i=0; i<accIDsSets.length; i++){toprint4 +=$("#nameset"+i).val()+" ("+accIDsSets[i].length+"),";}
+			toprint4 = toprint4.slice(0,-1);
+			toprint4 += "\n";
+
+			for(var i=0; i<$("#numofsets").val(); i++){ toprint4 += $("#nameset"+i).val() + ', '; }
+			toprint4 = toprint4.slice(0,-2);  //because of space above!
+			// OLD: toprint4 += '. Number of sequences is '+accIDs.length+ "\n";
+			toprint4 += '#User-input sequences#'+accIDs.length+"#Approx.Inf.Dist#NA\n";
+			
+			
+			// completely debugging part
+			var toprint5="{";
+			for(var i=0; i<distMatrix.length; i++){
+				toprint5+='{';
+				for (var j=0; j<distMatrix.length; j++){
+					toprint5+=distMatrix[i][j].toFixed(10)+',';
+				}
+				toprint5 = toprint5.substring(0, toprint5.length - 1);
+				toprint5+='},'
+			}
+			toprint5 = toprint5.substring(0, toprint5.length - 1);
+			toprint5+='}';
+
+			var zip = new JSZip();
+			zip.file("dMatrix.txt", toprint);
+			zip.file("accIDs.txt", toprint2);
+			zip.file("allSequences.txt", toprint3);
+			zip.file("mapheader.txt", toprint4);
+			zip.file("debug.txt", toprint5);
+			var content = zip.generate({type:"blob"});
+			// see FileSaver.js
+			saveAs(content, "dataForMMA.zip");
+			return;
+		}
+		
+
+		// EIGENVALUES - EIGENVECTORS
+		var res2;
+		// part 4 NEW MDS
+		var data_type = jsfeat.F64_t | jsfeat.C1_t;
+		var columns = numOfSeq, rows = numOfSeq;
+		var my_matrix = new jsfeat.matrix_t(columns, rows, data_type);
+		my_matrix.data = [].concat.apply([], distMatrixCentered);    
+		var my_eigenvec = new jsfeat.matrix_t(columns, rows, data_type);
+		var my_eigenval = new jsfeat.matrix_t(columns, rows, data_type);
+		jsfeat.linalg.eigenVV(my_matrix, my_eigenvec, my_eigenval);
+		
+		// var eigenval, eigenvec, eigensystem;
+		eigenval = my_eigenval.data;
+		eigenvec = [];
+		for( var mdsInd = 0; mdsInd < numOfSeq; mdsInd++){
+			eigenvec.push(my_eigenvec.data.slice( mdsInd*numOfSeq, (mdsInd+1)*numOfSeq ));
+
+
+		// try{
+		// 	res2 = numeric.eig(distMatrixCentered);	
+		// }catch(err){
+		// 	console.log(err.message);
+		// 	errorHasOccured = true;
+		// 	$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.</div>');
+		// 	return;
+		// }
+		// if(dbg){console.log('numeric.js=',res2['lambda']['x']);}
+
+		// eigenval = res2['lambda']['x'];
+		// eigenvec = numeric.transpose(res2['E']['x']);   /// here transpose!!!
+
+		
+		eigensystem =[];
+		for(var i=0; i<numOfSeq; i++){
+			eigensystem.push([eigenval[i], eigenvec[i]]);
+		}
+		if(dbg){console.log("eigensystem=",eigensystem);}
+		eigensystem.sort(function (a,b){ return Math.abs(b[0]) - Math.abs(a[0]) });
+		if(dbg){console.log("eigensystem=",eigensystem);}
+		
+
+		// PICK 5 LARGEST AND POSITIVE
+		finalEigenvec=[];
+		finalEigenval=[];
+		for(var i=0; i<numOfSeq; i++){
+			if(eigensystem[i][0]>0){
+				finalEigenvec.push(eigensystem[i][1]);
+				finalEigenval.push(eigensystem[i][0]);
+			}
+			if(dbg){console.log("i-th eigeinvalue= [",i,"] [",eigensystem[i][0],"]");}
+			if(finalEigenvec.length === 5){break;}
+		}
+		if(dbg){console.log("finalEigenval=",finalEigenval);}
+		if(dbg){console.log("finalEigenvec=",finalEigenvec);}
+		
+		// POINTS COORDINATES
+		points = numeric.dot(numeric.transpose(finalEigenvec), numeric.sqrt(numeric.T.diag(finalEigenval)['x']));
+		if(dbg){console.log("points=",points);}
+		
+		// MIN-MAX PER DIMENSION (FOR LATER SCALING)
+		var allMinMax =[], tmpMinMax = numeric.transpose(points);
+		for(var i=0; i<5; i++){
+			allMinMax.push( [ Math.min.apply(Math,tmpMinMax[i]) , Math.max.apply(Math,tmpMinMax[i]) ] );
+		}
+		if(dbg){console.log(allMinMax);}
+		
+
+		// PRODUCING MAPFILE
+		mapfile = '';
+		// line 1
+		for(var i=0; i<accIDsSets.length; i++){
+			mapfile += accIDsSets[i].length + ",";
+		}
+		mapfile = mapfile.slice(0,-1);
+		mapfile += "\n";
+		// line 2
+		for(var i=0; i<accIDsSets.length; i++){
+			mapfile += $("#colorset"+i).val() + ",";
+		}
+		mapfile = mapfile.slice(0,-1);
+		mapfile += "\n";
+		// line 3+4
+		mapfile += "5\nIndex,Acc,Name,Length,Taxa\n";
+		// line 5
+		for(var i=0; i<accIDsSets.length; i++){
+			mapfile += $("#colorset"+i).val() + ",";
+		}
+		mapfile = mapfile.slice(0,-1);
+		mapfile += "\n";
+		// line 6
+		for(var i=0; i<accIDsSets.length; i++){
+			mapfile += $("#nameset"+i).val()+" ("+accIDsSets[i].length+"),";
+		}
+		mapfile = mapfile.slice(0,-1);
+		mapfile += "\n";
+		
+		// line 7
+		// OLD mapfile += "No Description given\n";
+		for(var i=0; i<$("#numofsets").val(); i++){
+			mapfile += $("#nameset"+i).val() + ', ';
+		}
+		mapfile = mapfile.slice(0,-2);  //because of space above!
+		// old mapfile
+		// mapfile += '. Number of sequences is '+accIDs.length+ "\n";
+		mapfile += '#User-input sequences#'+accIDs.length+"#Approx.Inf.Dist#NA\n";
+
+		// rest of the lines
+		for(var i=0; i<numOfSeq; i++){
+			for(var j=0; j<points[i].length; j++){
+				mapfile += ((2*points[i][j] - allMinMax[j][0] - allMinMax[j][1]) / ( allMinMax[j][1] - allMinMax[j][0] ) ) +"\n";	
+			}
+			mapfile += i+"\n";                      // INDEX
+			mapfile += allSequences[i][0]+"\n";     // ACC
+			mapfile += allSequences[i][4].split("|").pop().trim()+"\n";     // NAME
+			mapfile += allSequences[i][1]+"\n";     // LENGTH
+			mapfile += allSequences[i][2]+"\n";     // TAXA
+		}
+		mapfile = mapfile.slice(0,-1);
+		if(dbg){console.log("c/p=\n",mapfile);}
+
+		var mapTimeStamp = new Date().getTime();
+		if(typeof(Storage) !== "undefined") {
+			try{
+				localStorage.setItem("mapfile"+mapTimeStamp, mapfile);
+				localStorage.setItem("distMatrix"+mapTimeStamp, distMatrix);	
+			}catch(err){
+				console.log(err.message);
+				errorHasOccured = true;
+				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+err.message+'</strong>]. Consider emptying localStorage.</div>');
+				return;
+			}
+		} else {
+			console.log("ERROR! NO LOCAL STORAGE AVAILABLE!?");
+			alert("ERROR! NO LOCAL STORAGE AVAILABLE!?");
+		}
+		
+		$('#progress').html('100%');
+		$("#file_contents").html('<pre>'+mapfile+'</pre>');
+		$("#file_contents").hide();
+		// END OF MDS
+		
+
+		time = new Date();
+		step3B = time.getTime();
+		$("#stepstatus").html('\
+			<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
+			<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p>\
+			<p>Step 3 (MDS) DONE in ~'+(step3B-step3A)/1000+' sec</p></strong>');
+		$("#stepstatus").html($("#stepstatus").html()+'<p><a href="load.html?mapid=local'+mapTimeStamp+'" target="_blank">Show MoDMap</a>');
+		if(dbg){
+			$("#stepstatus").html($("#stepstatus").html()+' or <a href="#viewfile" id="viewfile">view contents</a>');
+		}
+		$("#stepstatus").html($("#stepstatus").html()+'</p>');
+		$("#mainprogressbar").hide();
+		$("#viewfile").click(function(){
+			$("#file_contents").toggle();
+		});
+
+		// list local storage for debuging
+		if(dbg){for (var a in localStorage) {console.log(a);}}
+		if(dbg){console.log(Object.keys(localStorage));}
 	}
 
-	function buildFCGR(seq, k, accID, localDBG = false){
-		var numOfKmers=0, curmer, curmerInd, mapACGT={"A":0, "C":1, "G":2, "T":3};
+	function computeAIDdist(){
+		console.log("aid start");
+		$("#aidinfo").empty();
+		$("#aidinfomenu").slideDown();
+		$("#aidinfo").html('<img src="img/loading.gif" width="30" height="30"/>');
+		console.log($("#seq0").val());
+		console.log($("#seq1").val());
+		errorHasOccured = false;
+
+		var gotBothSequences = 0;
+		for (var indSeq=0; indSeq<2; indSeq++){
+			loadFastaFromNCBI(indSeq, $("#seq"+indSeq).val(), function(ind, accID, output, header){
+				aidDistInfo[ind] = [accID, header, output.length,  buildFCGR(output, fcgrRes)];
+				if(dbg){console.log([ind,accID,output.length, header,'DONE']);}
+				
+				gotBothSequences += 1;
+				if(gotBothSequences == 2 && !errorHasOccured){
+					
+					console.log("finished computation");
+					var aidinfotext = "<strong>NCBI: ["+aidDistInfo[0][0]+"]</strong> - Length: "+aidDistInfo[0][2]+"<br>Header: "+aidDistInfo[0][1]+"<br><br> <strong>NCBI: ["+aidDistInfo[1][0]+"]</strong> - Length: "+aidDistInfo[1][2]+"<br>Header: "+aidDistInfo[1][1]+"<br><br>";
+					
+					var aidnumerator = aidDistInfo[0][3]['size'] + aidDistInfo[1][3]['size'];
+					var aiddenominator=0;
+					for(var unionInd=0; unionInd<Math.pow(4,fcgrRes); unionInd++){
+						if( (aidDistInfo[0][3]['flatFCGR'][unionInd]==1) || (aidDistInfo[1][3]['flatFCGR'][unionInd]==1) ){
+							aiddenominator++;
+						} 
+					}
+					console.log(aidnumerator,aiddenominator,2 - aidnumerator*1.0/aiddenominator);
+					
+					aidinfotext += "<strong>AID: </strong>"+ String((2 - aidnumerator*1.0/aiddenominator).toFixed(5));
+					$("#aidinfo").html(aidinfotext);
+
+
+				}
+
+			});	
+		}
+
+		console.log("aid end");
+	}
+
+	function computeDistMatrix(){
+		time = new Date();
+		step2A = time.getTime();
+		console.log("BEGIN computeDistMatrix()");	
+		$("#stepstatus").html('\
+			<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</strong></p>\
+			<p>Step 2 of 3: (AID)</p>');
+		$('#progress').html('0%');
+
+		var dim=accIDs.length;
+		distMatrix=[];
+		for(var i=0; i<dim; i++){
+			distMatrix.push([]);
+			for(var j=0; j<dim; j++){
+				distMatrix[i].push(0);
+			}
+		}
+		
+		splitBy = Math.max(Math.ceil(dim/5), 50);
+		console.log("splitBy= ",splitBy);
+		var input = []
+		for(var i=1; i<= Math.ceil(dim/splitBy); i++){
+			for(var j=i; j<= Math.ceil(dim/splitBy); j++){
+				var minX, maxX, minY, maxY;
+				minX = (i-1)*splitBy;
+				maxX = Math.min(i*splitBy-1,dim-1);
+				minY = (j-1)*splitBy;
+				maxY = Math.min(j*splitBy-1,dim-1);
+				var allSequencesX = [] , allSequencesY = [];
+				for(var i00=minX; i00<=maxX; i00++){
+					allSequencesX.push(allSequences[i00]);
+				}
+				for(var i00=minY; i00<=maxY; i00++){
+					allSequencesY.push(allSequences[i00]);
+				}
+				input.push([minX, maxX, minY, maxY, allSequencesX, allSequencesY, fcgrRes]);
+			}
+		}
+		console.log("input= ",input);
+		$('#progress').html('Parallel computation of '+input.length+' matrices of ~ '+splitBy+'x'+splitBy+' each. Please wait..');
+		var p = new Parallel( input );
+		
+		var computeChunks = function (chunk) {
+			var bgX = chunk[0], endX = chunk[1], bgY = chunk[2], endY = chunk[3];
+			var allSequencesX = chunk[4], allSequencesY = chunk[5], fcgrRes = chunk[6];
+			var res=[], tmpRow, numerator, denominator ;
+			var timeBegin = new Date();
+			console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"]");
+
+			for(var i = 0; i<allSequencesX.length; i++){
+				tmpRow=[];
+				for(var j = 0; j<allSequencesY.length; j++){
+					numerator = allSequencesX[i][3]['size'] + allSequencesY[j][3]['size'];
+					denominator=0;
+					for(var unionInd=0; unionInd<Math.pow(4,fcgrRes); unionInd++){
+						if( (allSequencesX[i][3]['flatFCGR'][unionInd]==1) || (allSequencesY[j][3]['flatFCGR'][unionInd]==1) ){
+							denominator++;
+						} 
+					}
+					// console.log(i,j,'=',numerator,denominator,2 - numerator*1.0/denominator);
+					tmpRow.push(2 - numerator*1.0/denominator);
+				}
+				res.push(tmpRow);
+			}
+
+			var timeEnd = new Date();
+			console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"] execution time: "+String((timeEnd-timeBegin)/1000)+" sec");
+			return [bgX, endX, bgY, endY, res];
+		};
+ 
+
+		function assembleChunks(data){
+			// console.log("data=",data,data.length);
+			// console.log("dMat=",distMatrix.length);
+
+			for(var i=0; i<data.length; i++){
+				var tmpInfo = data[i];
+				// console.log("tmpInfo=",i,tmpInfo);
+				var bgX = tmpInfo[0], bgY = tmpInfo[2];
+				var endX = tmpInfo[1], endY = tmpInfo[3];
+				for(var indexRow=0; indexRow<= endX - bgX; indexRow++){
+					for(var indexCol=0; indexCol<= endY -bgY; indexCol++){
+						// console.log(bgX + indexRow, bgY + indexCol, tmpInfo[4][indexRow][indexCol],distMatrix[bgX + indexRow][bgY + indexCol]);
+						distMatrix[bgX + indexRow][bgY + indexCol] = tmpInfo[4][indexRow][indexCol];
+						distMatrix[bgY + indexCol][bgX + indexRow] = tmpInfo[4][indexRow][indexCol];
+						
+					}
+				}
+			}	
+			
+			// if(dbg){console.log(distMatrix);}
+			// var toprint="{";
+			// for(var i=0; i<distMatrix.length; i++){
+			// 	toprint+='{';
+			// 	for (var j=0; j<distMatrix.length; j++){
+			// 		toprint+=distMatrix[i][j]+',';
+			// 	}
+			// 	toprint = toprint.substring(0, toprint.length - 1);
+			// 	toprint+='},'
+			// }
+			// toprint = toprint.substring(0, toprint.length - 1);
+			// toprint+='}';
+			// console.log('COPY/PASTE MATHEMATICA');
+			// console.log("Eigensystem[",toprint,"]");
+
+
+			time = new Date();
+			step2B = time.getTime();		
+			$("#stepstatus").html('\
+				<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
+				<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p></strong>\
+				<p>Step 3 of 3: (MDS)</p>');
+			$('#progress').html('Please wait.. (browser may freeze for a while) <img src="img/loading.gif" width="30" height="30"/>');
+			
+			setTimeout(computeMDS, 500); 
+
+		}
+
+		p.map(computeChunks).then(assembleChunks);		
+	}
+
+	function buildFCGR(seq, k){
+		var numOfKmers=0, curmer, curmerInd, kmers={}, mapACGT={"A":0, "C":1, "G":2, "T":3};
 		var newseq = seq.replace(/B|D|E|F|H|I|J|K|L|M|N|O|P|Q|R|S|U|V|W|X|Y|Z/gi, "");
 		var kmersInds = new Uint8Array(Math.pow(4, k));
-		if(localDBG){console.log('FCGR ['+accID+']: '+(seq.length - newseq.length)+' lost bp');}
+		if(dbg){console.log((seq.length - newseq.length)+' lost bp');}
 		for(var i=0; i<newseq.length-k+1; i++){
 			curmer = newseq.slice(i,i+k);
 			curmerInd = 0;
@@ -58,623 +513,556 @@
 			
 			if(kmersInds[curmerInd]==0){
 				numOfKmers++;
-				kmersInds[curmerInd] = 1; // because it's AID, so we need CGR
-				// kmersInds[curmerInd] += 1; // if FCGR i.e Manhattan etc
+				kmersInds[curmerInd]=1;
 			}
 
 		}
-		if(localDBG){console.log('FCGR ['+accID+']: Distinct kmers ['+numOfKmers+'] out of ['+kmersInds.length+']');}
+		if(dbg){console.log(numOfKmers+' #kmers '+kmersInds.length);}
 		return {"size":numOfKmers, "flatFCGR":kmersInds};
 	}
 
-	class MoDMap3D {
+	function loadFastaFromNCBI(ind, accID, callback){
+		$.ajax({
+			url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&rettype=fasta&retmode=text&id="+accID,
+			success: function(result){
+				var data = result.split(/\n\r?/gi);
+				var header;
+				if( data.length && data[0][0]==='>' ){ header = data[0]; }
+				while (data.length && data[0][0] === '>') {data.shift();}
+				var outputFasta=data.join('');
+				if(dbg){console.log('['+accID+'] len='+outputFasta.length);}
+				callback(ind, accID, outputFasta, header);
+			},
+			error: function(xhr, status, error) {
+				console.log('STATUS=',status,'ERROR from loadFastaFromNCBI=',error);
+				errorHasOccured = true;
+				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
+				$('#aidinfo').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
 
-		constructor (accIDsSets, kMer = 9, taxaInfo = false, namesets = [], descr = "No_Description") {
-			this.id = + new Date();
-			this.accIDsSets = accIDsSets;
-			this.accIDs = [];
-			this.kMer = kMer;
-			this.taxaInfo = taxaInfo;
-			this.descr = descr;
-			this.namesets = namesets;
-			this.allSequences = [];
-			this.error = false;
-			this.errorReason = '';
-			this.calls2NCBI = 0;
-			this.totalNumOfSeq = 0;
-			this.totalNumOfSeqEachGroup = [];
-			var noNameSet = false;
-			if(this.namesets.length == 0){ noNameSet = true; }
-			for(var i=0; i<this.accIDsSets.length; i++){
-				this.totalNumOfSeqEachGroup.push(this.accIDsSets[i].length);
-				if(noNameSet ){ this.namesets.push("NA"); }
-				for(var j=0; j<this.accIDsSets[i].length; j++){
-					this.totalNumOfSeq += 1;
-					this.allSequences.push(["", "", "NA", "", "" ]);
-					this.accIDs.push(this.accIDsSets[i][j]);
-				}
 			}
-			this.distMatrix = [];
-			this.finalEigenvec = [];
-			this.finalEigenval = [];
-			this.finalPoints = [];
-			this.labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'olive', 'purple', 'black'];
-			this.loadSequencesStart = '';
-			this.loadSequencesEnd = '';
-		}
-
-		toString (){ return "MoDMap ID= ["+this.id+"], Groups= ["+this.accIDsSets.length + "] each ["+this.totalNumOfSeqEachGroup+"] total= ["+this.accIDs.length+"], k= [" + this.kMer + "], Taxa= [" + this.taxaInfo+"], Description= ["+this.descr+"], Namesets= ["+this.namesets+"]"; }
-
-		print (){ console.log( this.toString() ); }
-
-		loadFastaFromNCBICallback (ind, accID, output, header, localDBG = false){
-			this.allSequences[ind][0] = accID;
-			this.allSequences[ind][1] = output.length;
-			this.allSequences[ind][3] = buildFCGR(output, this.kMer, accID, localDBG);
-			this.allSequences[ind][4] = header;
-			if(this.taxaInfo && !runLocally){ this.calls2NCBI += 0.5; }else{ this.calls2NCBI += 1; }
-			if(localDBG){console.log("loadFastaCB: ",[ind,accID,output.length,'DONE']);}
-			if(this.calls2NCBI%100 == 0){ console.log('Completed '+this.calls2NCBI+' of '+this.totalNumOfSeq+' calls ('+(100*this.calls2NCBI/this.totalNumOfSeq).toFixed(2)+'%)'); }
-			if(this.calls2NCBI == this.totalNumOfSeq && !this.error){ 
-				this.loadSequencesEnd = + new Date();
-				console.log("loadSequences for ["+this.id+"] COMPLETED in ["+((this.loadSequencesEnd-this.loadSequencesStart)/1000)+"] sec");
-				this.computeDistMatrix(localDBG); 
-			}
-			// console.log("getFastaCB-NCBI: ",accID, this.calls2NCBI, this.totalNumOfSeq);
-		}	
-
-		loadFastaFromNCBI(ind, accID, callback, callbackObj, localDBG = false){
-			var urlToLoad;
-			// console.log("runLocally=",runLocally);
-			if(runLocally){ 
-				urlToLoad = "http://localhost/haplomaps3d/allfiles/"+accID+".fasta"; 
-			}else{
-				urlToLoad = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&rettype=fasta&retmode=text&id="+accID;
-			}
-			$.ajax({
-				url: urlToLoad,
-				success: function(result){
-					var data = result.split(/\n\r?/gi);
-					var header;
-					if( data.length && data[0][0]==='>' ){ header = data[0]; }
-					while (data.length && data[0][0] === '>') {data.shift();}
-					var outputFasta=data.join('');
-					if(localDBG){console.log('loadFasta: ['+accID+'] len= ['+outputFasta.length+']');}
-					callback.apply(callbackObj, [ind, accID, outputFasta, header, localDBG]);
-				},
-				error: function(xhr, status, error) {
-					this.error = true;
-					this.errorReason = 'On "loadFastaFromNCBI" ['+accID+'], Status= ['+status+'], Error= ['+error+']';
-				}
-			});
-		}
-
-		getTaxaFromNCBICallback (ind, accID, taxa, localDBG = false){
-			this.allSequences[ind][2] = taxa;
-			if(this.taxaInfo){ this.calls2NCBI += 0.5; }else{ this.calls2NCBI += 1; }
-			if(localDBG){console.log("getTaxaCB: ["+accID+"]");}
-			if(this.calls2NCBI%100 == 0){ console.log('Completed '+this.calls2NCBI+' of '+this.totalNumOfSeq+' calls ('+(100*this.calls2NCBI/this.totalNumOfSeq).toFixed(2)+'%)'); }
-			if(this.calls2NCBI == this.totalNumOfSeq && !this.error){ 
-				this.loadSequencesEnd = + new Date();
-				console.log("loadSequences for ["+this.id+"] COMPLETED in ["+((this.loadSequencesEnd-this.loadSequencesStart)/1000)+"] sec");
-				this.computeDistMatrix(localDBG); 
-			}
-			// console.log("getTaxaCB-NCBI: ",accID, this.calls2NCBI, this.totalNumOfSeq);
-		}
-
-		getTaxaFromNCBI(ind, accID, callback, callbackObj, localDBG = false){
-			$.ajax({
-				url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=gb&retmode=xml&id="+accID,
-				success: function(result){
-					var taxaString = new XMLSerializer().serializeToString(result);
-					var taxa = /<GBSeq_taxonomy>(.*)<\/GBSeq_taxonomy>/g.exec(taxaString);
-					if(localDBG){console.log("getTaxa: ["+accID+"] taxa: ["+taxa[1]+"]");}
-					callback.apply(callbackObj, [ind, accID, taxa[1].trim(), localDBG]);
-				},
-				error: function(xhr, status, error) {
-					this.error = true;
-					this.errorReason = 'On "getTaxaFromNCBI" ['+accID+'], Status= ['+status+'], Error= ['+error+']';
-				}
-			});		
-		}
-
-		loadSequences(localDBG = false){
-			console.log("loadSequences for ["+this.id+"]");
-			if(this.accIDs.length < 5){
-				this.error = true;
-				this.errorReason = 'Found '+this.accIDs.length+' sequences. Please enter at least 5 sequences and try again.';
-			}
-			this.loadSequencesStart = + new Date();
-			for(var i=0; i<this.accIDs.length; i++){
-				if(!this.error){
-					this.loadFastaFromNCBI(i, this.accIDs[i].trim(), this.loadFastaFromNCBICallback, this, localDBG);
-					if(this.taxaInfo && !runLocally){ this.getTaxaFromNCBI(i, this.accIDs[i].trim(), this.getTaxaFromNCBICallback, this, localDBG); }
-				}
-			}
-		}
-
-		computeDistMatrix(localDBG = false){
-			console.log("computeDistMatrix for ["+this.id+"]");	
-			var t1 = + new Date(), t2;
-
-			var dim = this.totalNumOfSeq;
-			for(var i=0; i<dim; i++){
-				this.distMatrix.push([]);
-				for(var j=0; j<dim; j++){
-					this.distMatrix[i].push(0);
-				}
-			}
-			
-			var splitBy = Math.min( Math.max(Math.ceil(dim/5), 50) , 100);
-			if(localDBG){ console.log("splitBy= ",splitBy); }
-			var input = []
-			for(var i=1; i<= Math.ceil(dim/splitBy); i++){
-				for(var j=i; j<= Math.ceil(dim/splitBy); j++){
-					var minX, maxX, minY, maxY;
-					minX = (i-1)*splitBy;
-					maxX = Math.min(i*splitBy-1,dim-1);
-					minY = (j-1)*splitBy;
-					maxY = Math.min(j*splitBy-1,dim-1);
-					var allSequencesX = [] , allSequencesY = [];
-					for(var i00=minX; i00<=maxX; i00++){
-						allSequencesX.push(this.allSequences[i00]);
-					}
-					for(var i00=minY; i00<=maxY; i00++){
-						allSequencesY.push(this.allSequences[i00]);
-					}
-					input.push([minX, maxX, minY, maxY, allSequencesX, allSequencesY, this.kMer]);
-				}
-			}
-			if(localDBG){ console.log("input= ",input); }
-			console.log('Parallel computation of '+input.length+' matrices of ~ '+Math.min(splitBy,this.totalNumOfSeq)+'x'+Math.min(splitBy,this.totalNumOfSeq)+' each. Please wait..');
-
-			var p = new Parallel( input );
-			
-			var computeChunks = function (chunk) {
-				var bgX = chunk[0], endX = chunk[1], bgY = chunk[2], endY = chunk[3];
-				var allSequencesX = chunk[4], allSequencesY = chunk[5], fcgrRes = chunk[6];
-				var res=[], tmpRow, numerator, denominator ;
-				var timeBegin = new Date();
-				// console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"]");
-				
-				for(var i = 0; i<allSequencesX.length; i++){
-					tmpRow=[];
-					for(var j = 0; j<allSequencesY.length; j++){
-						numerator = allSequencesX[i][3]['size'] + allSequencesY[j][3]['size'];
-						denominator=0;
-						for(var unionInd=0; unionInd<Math.pow(4,fcgrRes); unionInd++){
-							if( (allSequencesX[i][3]['flatFCGR'][unionInd]==1) || (allSequencesY[j][3]['flatFCGR'][unionInd]==1) ){
-								denominator++;
-							} 
-						}
-						// console.log(i,j,'=',numerator,denominator,2 - numerator*1.0/denominator);
-						tmpRow.push(2 - numerator*1.0/denominator);
-					}
-					res.push(tmpRow);
-				}
-				
-				var timeEnd = new Date();
-				console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"] in ["+String((timeEnd-timeBegin)/1000)+"] sec");
-				return [bgX, endX, bgY, endY, res];
-			};
-
-			p.map(computeChunks).then(data => {
-				
-				for(var i=0; i<data.length; i++){
-					var tmpInfo = data[i];
-					// console.log("tmpInfo=",i,tmpInfo);
-					var bgX = tmpInfo[0], bgY = tmpInfo[2];
-					var endX = tmpInfo[1], endY = tmpInfo[3];	
-					for(var indexRow=0; indexRow<= endX - bgX; indexRow++){
-						for(var indexCol=0; indexCol<= endY -bgY; indexCol++){
-							this.distMatrix[bgX + indexRow][bgY + indexCol] = tmpInfo[4][indexRow][indexCol];
-							this.distMatrix[bgY + indexCol][bgX + indexRow] = tmpInfo[4][indexRow][indexCol];
-						}
-					}
-
-				}
-
-				if(localDBG){ console.log(this.distMatrix); }
-				t2 = + new Date();
-				console.log("computeDistMatrix for ["+this.id+"]  COMPLETED in ["+((t2-t1)/1000)+"] sec");
-				this.computeMDS(localDBG);
-			  });
-		}
-
-		computeMDS(localDBG = false){
-			console.log("computeMDS for ["+this.id+"]"); 	
-			var t1 = + new Date(), t2;
-
-			// pre-processign MDS
-			// part 1
-			var numOfSeq = this.totalNumOfSeq;
-			var distMatrixSqTotals = [];
-			for(var i=0; i<numOfSeq; i++){
-				var tmpColSum = 0;
-				for(var j=0; j<numOfSeq; j++){
-					tmpColSum += Math.pow(this.distMatrix[i][j], 2);
-				}
-				distMatrixSqTotals.push(tmpColSum);
-			}
-			if(localDBG){console.log('sqtotals=',distMatrixSqTotals);}
-			
-			// part 2
-			var sumOfSqTotals = 0;
-			for(var i=0; i<numOfSeq; i++){
-				sumOfSqTotals += distMatrixSqTotals[i];
-			}
-			if(localDBG){console.log('sumofsqtotals=',sumOfSqTotals);}
-			
-			// part 3
-			var distMatrixCentered = [];
-			for(var i=0; i<numOfSeq; i++){
-				distMatrixCentered.push([]);
-				for(var j=0; j<numOfSeq; j++){
-					var tmpVal = -(1/2)*(Math.pow(this.distMatrix[i][j], 2) - (1/numOfSeq)*distMatrixSqTotals[i] - (1/numOfSeq)*distMatrixSqTotals[j] + (1/(Math.pow(numOfSeq, 2)))* sumOfSqTotals);
-					distMatrixCentered[i].push(tmpVal);
-				}
-			}
-
-			// part 4 NEW MDS
-			var data_type = jsfeat.F64_t | jsfeat.C1_t;
-			var columns = numOfSeq, rows = numOfSeq;
-			var my_matrix = new jsfeat.matrix_t(columns, rows, data_type);
-			my_matrix.data = [].concat.apply([], distMatrixCentered);    
-			var my_eigenvec = new jsfeat.matrix_t(columns, rows, data_type);
-			var my_eigenval = new jsfeat.matrix_t(columns, rows, data_type);
-			jsfeat.linalg.eigenVV(my_matrix, my_eigenvec, my_eigenval);
-			
-			var eigenval, eigenvec, eigensystem;
-			eigenval = my_eigenval.data;
-			eigenvec = [];
-			for( var mdsInd = 0; mdsInd < numOfSeq; mdsInd++){
-				eigenvec.push(my_eigenvec.data.slice( mdsInd*numOfSeq, (mdsInd+1)*numOfSeq ));
-			}
-			
-			// NEW MDS LOG
-			// console.log("eigenval!! =",eigenval);
-			// console.log("eigenvec!! =",eigenvec);
-			// console.log("len(val)=",eigenval.length);
-			// console.log("len(vec)=",eigenvec.length);
-
-			// OLD MDS
-			// var res2, eigenval, eigenvec, eigensystem;
-			// try{
-			// 	res2 = numeric.eig(distMatrixCentered);	
-			// }catch(err){
-			// 	console.log(err.message);
-			// 	this.error = true;
-			// 	this.errorReason = 'MDS ERROR ['+err.message+'] on MoDMap3D ['+this.id+']. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers';
-			// 	// return;
-			// }
-			// if(localDBG){console.log('numeric.js=',res2['lambda']['x']);}
-			// eigenval = res2['lambda']['x'];
-			// eigenvec = numeric.transpose(res2['E']['x']);   /// here transpose!!!
-			
-			eigensystem =[];
-			for(var i=0; i<numOfSeq; i++){
-				eigensystem.push([eigenval[i], eigenvec[i]]);
-			}
-			if(localDBG){console.log("eigensystem=",eigensystem);}
-			eigensystem.sort(function (a,b){ return Math.abs(b[0]) - Math.abs(a[0]) });
-			if(localDBG){console.log("eigensystem=",eigensystem);}
-		
-			// part 5
-			// PICK 5 LARGEST AND POSITIVE
-			for(var i=0; i<numOfSeq; i++){
-				if(eigensystem[i][0]>0){
-					this.finalEigenvec.push(eigensystem[i][1]);
-					this.finalEigenval.push(eigensystem[i][0]);
-				}
-				if(localDBG){console.log("i-th eigenvalue= [",i,"] [",eigensystem[i][0],"]");}
-				if(this.finalEigenvec.length === 5){break;}
-			}
-			if(localDBG){console.log("finalEigenval=",this.finalEigenval);}
-			if(localDBG){console.log("finalEigenvec=",this.finalEigenvec);}
-			
-			// part 6
-			// POINTS COORDINATES
-			var points = numeric.dot(numeric.transpose(this.finalEigenvec), numeric.sqrt(numeric.T.diag(this.finalEigenval)['x']));
-			if(localDBG){console.log("points=",points);}
-			
-			// part 7
-			// MIN-MAX PER DIMENSION (FOR LATER SCALING)
-			var allMinMax =[], tmpMinMax = numeric.transpose(points);
-			for(var i=0; i<5; i++){
-				allMinMax.push( [ Math.min.apply(Math,tmpMinMax[i]) , Math.max.apply(Math,tmpMinMax[i]) ] );
-			}
-			if(localDBG){console.log("allMinMax=",allMinMax);}
-
-			// part 8
-			// SCALE POINTS
-			for(var i=0; i<numOfSeq; i++){
-				this.finalPoints.push([]);
-				for(var j=0; j<points[i].length; j++){
-					this.finalPoints[i][j] = ((2*points[i][j] - allMinMax[j][0] - allMinMax[j][1]) / ( allMinMax[j][1] - allMinMax[j][0] ) );
-				}
-			}
-			if(localDBG){console.log("finalPoints=",this.finalPoints);}
-
-			t2 = + new Date();
-			console.log("computeMDS for ["+this.id+"] COMPLETED in ["+((t2-t1)/1000)+"] sec");
-			this.toTextFile(localDBG);
-			this.applyClustering(localDBG);
-		}	
-	
-		toTextFile(localDBG = false){
-			if(localDBG){ console.log("toTextFile for ["+this.id+"]"); }
-			// PRODUCING MAPFILE
-			var mapfile = '';
-			// line 1
-			for(var i=0; i<this.accIDsSets.length; i++){
-				mapfile += this.accIDsSets[i].length + ",";
-			}
-			mapfile = mapfile.slice(0,-1);
-			mapfile += "\n";
-			// line 2 
-			for(var i=0; i<this.accIDsSets.length; i++){
-				mapfile += this.labelColors[i] + ",";
-			}
-			mapfile = mapfile.slice(0,-1);
-			mapfile += "\n";
-			// line 3+4
-			mapfile += "5\nIndex,Acc,Name,Length,Taxa\n";
-			// line 5
-			for(var i=0; i<this.accIDsSets.length; i++){
-				mapfile += this.labelColors[i] + ",";
-			}
-			mapfile = mapfile.slice(0,-1);
-			mapfile += "\n";
-			// line 6
-			for(var i=0; i<this.accIDsSets.length; i++){
-				mapfile += this.namesets[i] +" ("+this.accIDsSets[i].length+"),";
-			}
-			mapfile = mapfile.slice(0,-1);
-			mapfile += "\n";
-			// line 7
-			for(var i=0; i<this.accIDsSets.length; i++){
-				mapfile += this.namesets[i] + ', ';
-			}
-			mapfile = mapfile.slice(0,-2);  //because of space above!
-			
-			// old mapfile
-			mapfile += '#'+this.descr+'#'+this.accIDs.length+"#Approx.Inf.Dist#NA\n";
-			// rest of the lines
-			for(var i=0; i<this.totalNumOfSeq; i++){
-				for(var j=0; j<this.finalPoints[i].length; j++){
-					// mapfile += ((2*points[i][j] - allMinMax[j][0] - allMinMax[j][1]) / ( allMinMax[j][1] - allMinMax[j][0] ) ) +"\n";	
-					mapfile += this.finalPoints[i][j] +"\n";	
-				}
-				mapfile += i+"\n";                      // INDEX
-				mapfile += this.allSequences[i][0]+"\n";     // ACC
-				mapfile += this.allSequences[i][4].split("|").pop().trim()+"\n";     // NAME
-				mapfile += this.allSequences[i][1]+"\n";     // LENGTH
-				mapfile += this.allSequences[i][2]+"\n";     // TAXA
-			}
-			mapfile = mapfile.slice(0,-1);
-			if(localDBG){console.log("c/p=\n",mapfile);}
-
-
-			if(typeof(Storage) !== "undefined") {
-				try{
-					localStorage.setItem("mapfile"+this.id, mapfile);
-					// localStorage.setItem("distMatrix"+this.id, this.distMatrix);	
-				}catch(err){
-					console.log(err.message);
-					this.error = true;
-					this.errorReason = 'Error ['+err.message+']. Consider emptying localStorage.';
-				}
-			} else {
-				console.log("ERROR! NO LOCAL STORAGE AVAILABLE!?");
-				alert("ERROR! NO LOCAL STORAGE AVAILABLE!?");
-			}
-
-			
-			// 	// list local storage for debuging
-			if(localDBG){for (var a in localStorage) {console.log(a);}}
-			if(localDBG){console.log(Object.keys(localStorage));}
-			// for (var a in localStorage){ delete localStorage[a]; }
-		
-			// change this accordingly
-			$("#result").html( $("#result").html() + '<a href="./load.html?mapid=local'+this.id+'" target="_blank">Show MoDMap</a>');			
-			console.log(this);
-		}
-
-		applyClustering(localDBG = false){
-			console.log("start CLUSTERING");
-			
-			var datasetOfPoints = [];
-			for(var i=0; i < this.finalPoints.length; i++){
-				datasetOfPoints.push(this.finalPoints[i].slice(0,3));
-			} 
-			if(localDBG){ console.log("dataset has been formed"); }
-
-			// dbscan
-			var dbscan = new DBSCAN();
-			var clusters_dbscan = dbscan.run(datasetOfPoints, 0.2, 5);
-			var noise_dbscan  = dbscan.noise;
-			console.log("clusters-DBSCAN=",clusters_dbscan);
-			console.log("noise-DBSCAN=",noise_dbscan);
-			for(var i=0; i<noise_dbscan.length; i++){
-				console.log(this.allSequences[noise_dbscan[i]]);
-			}	
-
-			// optics
-			var optics = new OPTICS();
-			var clusters_optics = optics.run(datasetOfPoints, 0.2, 5);
-			console.log("clusters-OPTICS=",clusters_optics);
-			var plot_optics = optics.getReachabilityPlot();
-			console.log("reachability-plot=",plot_optics);
-	
-			// kmeans
-			var kmeans = new KMEANS();
-			var clusters_kmeans = kmeans.run(datasetOfPoints, 3);
-			var noise_kmeans  = kmeans.noise;
-			console.log("clusters-KMEANS=",clusters_kmeans);
-			
-			// silhouette inter intra
-			// dbscan + decision tree		
-			// @load.js computeaid function();
-			// mean inter dist
-			// save object?
-			// k closest in distMatr?
-			// 10 closest in Euclidean space
-
-			// var allNN = [];
-			// var a,m1,m2,m3,allNNres;
-			// for(var i=0; i<this.distMatrix.length; i++){
-			// 	a = this.distMatrix[i].slice(0,50);
-			// 	m1 = eval(a.join('+'))/a.length;
-				
-			// 	a = this.distMatrix[i].slice(50,100);
-			// 	m2 = eval(a.join('+'))/a.length;
-
-			// 	a = this.distMatrix[i].slice(100,150);
-			// 	m3 = eval(a.join('+'))/a.length;
-
-			// 	if((m1<m2)&&(m1<m3)){ allNNres = 1; }
-			// 	if((m2<m1)&&(m2<m3)){ allNNres = 2; }
-			// 	if((m3<m1)&&(m3<m2)){ allNNres = 3; }
-			// 	allNN.push(allNNres);
-
-			// 	if((0<=i)&&(i<150)&&(allNNres!=1)){ console.log(i,allNNres,m1,m2,m3,this.allSequences[i]); }
-			// 	if((150<=i)&&(i<300)&&(allNNres!=2)){ console.log(i,allNNres,m1,m2,m3,this.allSequences[i]); }
-			// 	if((300<=i)&&(i<450)&&(allNNres!=3)){ console.log(i,allNNres,m1,m2,m3,this.allSequences[i]); }
-
-			// }
-			// console.log(allNN);
-
-
-			console.log("end CLUSTERING");
-		}
-
+		});
 	}
 
-	function selectHaplo(arr, typeHaplo){ return arr.filter(selectHaploHelp(typeHaplo)); }
-
-	function selectHaploHelp(typeHaplo){
-		return function(element){
-			if( (element[3] > 16000) && element[4] && (element[4].length > 0) ){
-				return element[4][2].startsWith(typeHaplo);
-			}else{
-				return false;
-			}
-		}
-	}
-
-	function getRandomInt(min, max) {
-		min = Math.ceil(min);
-		max = Math.floor(max);
-		return Math.floor(Math.random() * (max - min)) + min;
-	}
-	
-	function buildMoDMapForHaplogroups(mtDNAquery, haplos, howmany = 50, kMer = 9, taxaInfo = true, namesets = [], localDBG = false){
-		Math.seedrandom(randSeed); // you set it once
-		var datasetToPlot = [], accToPlot = [], tmpSel = [], finalSel = [], randSample = [], randInd = -1;
-		for (var i = 0; i < haplos.length; i++) {
-			randSample = [];
-			randInd = -1;
-			tmpSel = selectHaplo(dataset, haplos[i]);
-			finalSel = [];
-			if(tmpSel.length > howmany){
-				while( randSample.length < howmany){
-					randInd = getRandomInt(0, tmpSel.length);
-					if(!(randInd in randSample)){
-						randSample.push(randInd);
-					}else{
-						// console.log("it is already!");
-					}
+	function getTaxaFromNCBI(ind, idNCBI){
+		if(dbg){console.log("getting taxa for id=",ind);}
+		$.ajax({
+			url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=gb&retmode=xml&id="+idNCBI,
+			success: function(result){
+				// res=result;
+				// console.log("res=", result);
+				var taxaString = new XMLSerializer().serializeToString(result);
+				var taxa = /<GBSeq_taxonomy>(.*)<\/GBSeq_taxonomy>/g.exec(taxaString);
+				if(dbg){console.log("taxa=", taxa[1]);}
+				allSequences[ind][2] = taxa[1].trim();
+				
+				callsNCBIDone += 0.5;
+				progress = callsNCBIDone*100.0/accIDs.length;
+				progress = progress.toFixed(2);
+				if(!errorHasOccured){$('#progress').html(progress+'%');}
+				if(callsNCBIDone == accIDs.length && !errorHasOccured){
+					time = new Date();
+					step1B = time.getTime();
+					computeDistMatrix();
 				}
-			}else{
-				for(var j=0; j<tmpSel.length; j++){
-					randSample.push(j);
-				}
+			},
+			error: function(xhr, status, error) {
+				console.log('STATUS=',status,'ERROR getTaxaFromNCBI=',error);
+				errorHasOccured = true;
+				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching Taxonomy data from NCBI for [<strong>'+idNCBI+'</strong>]</div>');
 			}
-			if(localDBG){ console.log(randSample); }
-			for(var j=0; j<randSample.length; j++){
-				finalSel.push(tmpSel[randSample[j]]);
-			}
-			datasetToPlot.push(finalSel);
-		}
-		
-		for(var i=0; i<datasetToPlot.length; i++){
-			accToPlot.push([]);
-			for(var j=0; j< howmany; j++){
-				if(datasetToPlot[i].length > j){ accToPlot[i].push(datasetToPlot[i][j][2]); }
-			}
-		}
-		if(localDBG){ console.log("mtDNAquery=", mtDNAquery); }
-		if(mtDNAquery != ""){ accToPlot.push([mtDNAquery]); }
-		if(localDBG){ console.log(accToPlot); }
-
-		var curHaploMap = new MoDMap3D( accToPlot, kMer, taxaInfo, namesets);
-		return curHaploMap;
+		});		
 	}
-	
 
 	$(document).ready(function(){
 
-		emptyLocalStorage();
+		if(geturlparamvalue("tmpmaps")=="true"){
+			console.log("Looking at tmp directory NOW..");
+			tmpMap = true;
+		}
 
 		$.ajax({
-			url: "./extra/haplo.txt", 
+			url: "./extra/maps.txt", 
 			cache: false, 
 			success: function(result){
-				// LOAD available accessions
-				var resfetch = JSON.parse(result)['dataset'];	
-				dataset = resfetch;
-				$("#startHaplo").show();	
-			},
-			error: function(){
-				console.log('Error loading main dataset..');
+			// LOAD FILENAMES OF MAPS 
+			//var result = JSON.parse(result);
+			//console.log(result);
+			var resfetch;
+			if(tmpMap){
+				resfetch=JSON.parse(result)['tmpmaps'];
+			}else{
+				resfetch=JSON.parse(result)['maps'];	
+			}
+			var outcome='';
+			for(i=0;i<resfetch.length;i++){
+				outcome+='<div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#modmap-accordion-'+i+'" href="#modmap-collapse-'+i+'">'+resfetch[i][0]+'&nbsp;&nbsp;<span class="badge">'+resfetch[i][1].length+'</span></a></h4></div>';
+				var tmp='<div id="modmap-collapse-'+i+'" class="panel-collapse collapse out"><div class="panel-body"><ul class="list-group large-group">';
+				for(var j=0; j<resfetch[i][1].length; j++){
+					tmp+='<li class="list-group-item"><a href="#">'+resfetch[i][1][j]+'</a></li>';
+				}
+				tmp+='</ul></div></div>';
+				outcome+=tmp;
+			}
+			$('#listgroupsofmaps').html(outcome);
+
+			// LOAD PREVIEW CONTENT FOR EACH FILENAME
+			$(".list-group-item").click(function() {
+				$("#filecontent").html('<img src="img/loading.gif" width="50" height="50"/>');
+				console.log('Loading = '+$(this).text());
+				mapID=$(this).text();
+				
+				var mapPathToLoad = "";
+				var mapPathToLoadInURL = "";
+				if(tmpMap){
+					mapPathToLoad = "./maps/tmp/"+mapID;
+					mapPathToLoadInURL = "tmp/"+mapID;
+				}else{
+					mapPathToLoad = "./maps/"+mapID;
+					mapPathToLoadInURL = mapID;
+				}
+
+				$.ajax({
+					url: mapPathToLoad, 
+					cache: false,
+					success: function(result){
+						var resfetch=result.split("\n");
+
+						if(resfetch[6].indexOf("#") > -1){
+							// NEW TYPE OF LEGEND WITH INFO SPLIIT BY #
+							console.log("Found legend, split by #");
+							var sublegends = resfetch[6].split("#");
+							var subleg = "<div>&bull; "+sublegends[0]+"</div>";
+							subleg += "<div>&bull; "+sublegends[1]+"</div>";
+							subleg += "<div>&bull; "+sublegends[2]+"</div>";
+							subleg += "<div>&bull; "+sublegends[3]+"</div>";
+							subleg += "<div>&bull; Avg.Seq.Length: "+sublegends[4]+"</div>";
+							
+							$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+subleg+'</p><a href="load.html?mapid='+mapPathToLoadInURL+'" target="_blank">Show Map</a><p></p>');
+						}else{
+							// BACKWARD COMPATIBILITY LEGEND
+							console.log("BACKWARD COMPATIBILITY LEGEND");
+							$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+resfetch[6]+'</p><a href="load.html?mapid='+mapPathToLoadInURL+'" target="_blank">Show Map</a><p></p>');
+						}
+
+						
+					}
+				});
+			});
+		}});
+
+		$("#goto1").click(function(){$('#guide-tabs li:eq(1) a').tab('show');});
+		$("#goto2").click(function(){$('#guide-tabs li:eq(2) a').tab('show');});
+		$("#goto3").click(function(){$('#guide-tabs li:eq(3) a').tab('show');});
+		$("#kmerslen").val('9');
+		$("#getTaxa").val('0');
+		
+		// $('#guide-tabs li:eq(2) a').tab('show');
+
+		$("#buildmapmenucontent").slideUp();
+		$("#extendmapmenucontent").slideUp();
+		$("#inputdatamenu").slideUp();
+		$("#computemenu").slideUp();
+		$("#hotkeyslist").slideUp();
+		
+		$("#hotkeysshowhide").click(function(){
+			$("#hotkeyslist").slideToggle();
+		});
+
+		$("#buildmapmenuheader").click(function(){
+			// console.log("build");
+			$("#buildmapmenucontent").slideDown();
+			$("#inputdatamenu").slideDown();
+			$("#extendmapmenucontent").slideUp();
+			$("#computemenu").slideUp();
+			$("#numofsets").val(0);
+			$("#numofsets").trigger("change");
+			// $("#selectnumofsets").css({"border-color": "red", "border-width":"5px", "border-style":"solid"});
+		});
+
+		$("#extendmapmenuheader").click(function(){
+			// console.log("extend");
+			$("#buildmapmenucontent").slideUp();
+			$("#inputdatamenu").slideUp();
+			$("#extendmapmenucontent").slideDown();
+			$("#computemenu").slideUp();
+		});
+
+
+		$("#aid1").click(function(){
+			$("#seq0").empty();
+			$("#seq0").val("NC_012920");
+			$("#seq1").empty();
+			$("#seq1").val("NC_001643");	
+			computeAIDdist();		
+		}); 
+		$("#aid2").click(function(){
+			$("#seq0").empty();
+			$("#seq0").val("NC_012920");
+			$("#seq1").empty();
+			$("#seq1").val("NC_011137");
+			computeAIDdist();					
+		});  
+
+		$("#dataset1").click(function(){
+			$.ajax({
+				url: "./maps/samplemaps/sample1.txt", 
+				cache: false,
+				success: function(result){
+				var result = JSON.parse(result);
+				console.log("Loading: ",result["mapDescription"]);
+				$('#allInputData').slideDown();
+				$("#file_contents").empty();
+				$("#file_contents").hide();
+				$("#numofsets").val(result["numofsets"]);
+				$("#numofsets").trigger("change");
+				for(var i=0; i<result["namesets"].length; i++){
+					$("#set"+i).html(result["sets"][i]);
+					$("#nameset"+i).val(result["namesets"][i]);
+					$("#colorset"+i).val(result["colorsets"][i]);		
+				}
+				$("#stepstatus").hide();
+				$("#mainprogressbar").hide();
+				$("#computemenu").slideUp();
+			}});		
+		});  
+		$("#dataset2").click(function(){
+			$.ajax({
+				url: "./maps/samplemaps/sample2.txt", 
+				cache: false,
+				success: function(result){
+				var result = JSON.parse(result);
+				console.log("Loading: ",result["mapDescription"]);
+				$('#allInputData').slideDown();
+				$("#file_contents").empty();
+				$("#file_contents").hide();
+				$("#numofsets").val(result["numofsets"]);
+				$("#numofsets").trigger("change");
+				for(var i=0; i<result["namesets"].length; i++){
+					$("#set"+i).html(result["sets"][i]);
+					$("#nameset"+i).val(result["namesets"][i]);
+					$("#colorset"+i).val(result["colorsets"][i]);		
+				}
+				$("#stepstatus").hide();
+				$("#mainprogressbar").hide();
+				$("#computemenu").slideUp();
+			}});
+		});
+		$("#dataset3").click(function(){
+			$.ajax({
+				url: "./maps/samplemaps/sample3.txt", 
+				cache: false,
+				success: function(result){
+				var result = JSON.parse(result);
+				console.log("Loading: ",result["mapDescription"]);
+				$('#allInputData').slideDown();
+				$("#file_contents").empty();
+				$("#file_contents").hide();
+				$("#numofsets").val(result["numofsets"]);
+				$("#numofsets").trigger("change");
+				for(var i=0; i<result["namesets"].length; i++){
+					$("#set"+i).html(result["sets"][i]);
+					$("#nameset"+i).val(result["namesets"][i]);
+					$("#colorset"+i).val(result["colorsets"][i]);		
+				}
+				$("#stepstatus").hide();
+				$("#mainprogressbar").hide();
+				$("#computemenu").slideUp();
+			}});
+		});
+
+		$("#kmerslen").change(function(){
+			fcgrRes = parseInt($("#kmerslen").val());
+			console.log("NEW fcgrRes=",fcgrRes);
+		});
+		$("#getTaxa").change(function(){
+			getTaxa = parseInt($("#getTaxa").val());
+			console.log("NEW getTaxa=", getTaxa);
+		});
+
+		$("#computedist").click(computeAIDdist);
+
+		$("#loadrefmap").click(function(){
+			console.log("Loading RefMap: ", $("#extendmapid").val());
+			$("#inputdatamenu").slideDown();
+
+			$.ajax({
+				url: "./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt", 
+				cache: false,
+				success: function(result){
+				console.log("./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt");
+				var result = JSON.parse(result);
+				console.log("RefMap Description: ",result["mapDescription"]);
+				
+				$('#allInputData').slideDown();
+				$("#file_contents").empty();
+				$("#file_contents").hide();
+				$("#numofsets").val(result["numofsets"]+1);
+				$("#numofsets").trigger("change");
+
+				for(var i=0; i<result["namesets"].length; i++){
+					$("#set"+i).html(result["sets"][i]);
+					$("#nameset"+i).val(result["namesets"][i]);
+					$("#colorset"+i).val(result["colorsets"][i]);		
+				}
+
+				$("#nameset"+result["namesets"].length).val("NEW_points");
+				$("#colorset"+result["namesets"].length).val("black");	
+				if( defaultInputType == "ncbi"){
+					$("#set"+result["namesets"].length).html($("#extrancbi").val());
+				}
+				if( defaultInputType == "fasta"){
+					var tmpOut = [];
+					for(var i=0; i<fastaFilesLoaded.length; i++){
+						tmpOut.push("fastaFile"+String(i+1));
+					}
+					// console.log(tmpOut);
+					$("#set"+result["namesets"].length).html(tmpOut.join(","));
+				}
+				
+
+				$("#stepstatus").hide();
+				$("#mainprogressbar").hide();
+				$("#computemenu").slideUp();
+			}});
+		});
+
+		$("#buildmap").click(function(){
+			noMDS = false;
+			$("#computemenu").slideDown();
+			$('#allInputData').slideUp();
+			$('#allInputDataMinimized').slideDown();
+			console.log("localStorageKeys before=",Object.keys(localStorage));
+			localStorage.clear();
+			console.log("localStorageKeys after=",Object.keys(localStorage));
+			time = new Date();
+			step1A = time.getTime();
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#mainprogressbar").show();
+			$("#stepstatus").show();
+			$("#stepstatus").html('Step 1 of 3: (NCBI + FCGRs)');
+			$('#progress').html('0%'); 
+			errorHasOccured = false;
+			
+			// GET "accIDs"
+			accIDsSets=[];
+			for(var i=0; i<$("#numofsets").val(); i++){
+				console.log(i,$("#set"+i).val().split(","));
+				var tmpSet = $("#set"+i).val().split(",");
+				if(tmpSet[0]!=""){
+					accIDsSets.push(tmpSet);
+				}
+			}
+			accIDs = [].concat.apply([], accIDsSets);
+			console.log("accIDs=",accIDs);
+			console.log("In total = " + accIDs.length + " sequences.");
+			if(accIDs.length < 5){
+				errorHasOccured = true;
+				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>Found '+accIDs.length+' sequences.</strong>] Please enter at least 5 sequences and try again.]</div>');
+				return;
+			}
+			if(accIDs.length > offlineCompMinSize ){
+				noMDS = true;
+				alert("Your input contains more than ["+offlineCompMinSize+"] sequences. This requires that the last step (MDS) has to be computed offline using either Mathematica or Python. Files and code will be provided to you once you reach that point.");
+			}
+
+			// AJAX CALLS TO NCBI FOR FASTA FILES and/or READING USER FASTA FILES
+			fastaFilesLoadedIndex = 0;
+			callsNCBIDone = 0;
+			for(var i=0; i<accIDs.length; i++){
+				if(!errorHasOccured){
+
+					if(accIDs[i].trim().substr(0,9) == "fastaFile"){
+						
+						// IF IT'S UPLOADED FASTA FILE
+						var reader = new FileReader();
+						reader.onload = (function(f,posInAllSeq, accInAllSeq) {
+							return function(e) { 
+								console.log("fasta: ", accInAllSeq, "fileInfo: ", e.target);
+								var data = e.target.result.split(/\n\r?/gi);
+								var header;
+								if( data.length && data[0][0]==='>' ){ header = data[0]; }
+								while (data.length && data[0][0] === '>') {data.shift();}
+								var outputFasta=data.join('');
+
+								allSequences[posInAllSeq]=[accInAllSeq, outputFasta.length, "NotAvailable", buildFCGR(outputFasta, fcgrRes), header];
+
+								if(true){console.log([posInAllSeq,accInAllSeq,outputFasta.length,'DONE']);}
+								callsNCBIDone += 1;
+
+								// UPDATE PROGRESS AND START computeDistMatrix() IF LAST SEQUENCE IS FASTA
+								progress = callsNCBIDone*100.0/accIDs.length;
+								progress = progress.toFixed(2);
+								if(!errorHasOccured){$('#progress').html(progress+'%');} 
+								if(callsNCBIDone == accIDs.length && !errorHasOccured){
+									time = new Date();
+									step1B = time.getTime();
+									computeDistMatrix();
+								}
+							}
+						})(fastaFilesLoaded[fastaFilesLoadedIndex], i, accIDs[i].trim());
+						
+						reader.readAsText(fastaFilesLoaded[fastaFilesLoadedIndex]);
+						fastaFilesLoadedIndex += 1;
+
+					}else{
+
+						// IF IT'S NCBI ACCESSION NUMBER
+						loadFastaFromNCBI(i, accIDs[i].trim(), function(ind, accID, output, header){
+							allSequences[ind]=[accID, output.length, /**/, buildFCGR(output, fcgrRes), header];
+							if(getTaxa){
+								getTaxaFromNCBI(ind, accID);
+							}else{
+								callsNCBIDone += 0.5;
+								allSequences[ind][2] = "NotAvailable";
+							}
+							if(dbg){console.log([ind,accID,output.length,'DONE']);}
+							callsNCBIDone += 0.5;
+
+							// UPDATE PROGRESS AND START computeDistMatrix() IF LAST SEQUENCE IS NCBI
+							progress = callsNCBIDone*100.0/accIDs.length;
+							progress = progress.toFixed(2);
+							if(!errorHasOccured){$('#progress').html(progress+'%');} 
+							if(callsNCBIDone == accIDs.length && !errorHasOccured){
+								time = new Date();
+								step1B = time.getTime();
+								computeDistMatrix();
+							}
+						});
+					}
+
+				}
 			}
 		});
-
-		$("#startHaplo").click(function(){
-
-			var ls1 = [ "L1", "L2", "L3", "L4", "L5"];
-			var ls2 = [ "L1a", "L1b", "L1c"];
-			var ls3 = [ "N", "X", "Y"];
-			var ls4 = [ "O", "p", "H"];
-			var ls5 = [ "L3", "M", "Q"]; //done
-			var ls6 = ["L3", "L4"];
-
-			mtDNAquery = "";//"NC_012920";
-			
-			haploListToUse = ls6;
-			// clone list to add mtDNAquery to the names
-			var namesets = (JSON.parse(JSON.stringify(haploListToUse)));
-			namesets.push("mtDNAquery");
-			console.log(haploListToUse);
-			console.log(namesets);
-
-			xmap = buildMoDMapForHaplogroups(mtDNAquery, haploListToUse, 150, 9, true, namesets);
-			// accToPlot = [ ["A04321.1","A07867.1","AB078005.1","AB097870.1","AB221005.1","AB221125.1","AB221126.1","AB253432.1","AB286955.1","AB286956.1","AB287363.1","AB287364.1","AB287365.1","AB287366.1","AB287367.1","AB287368.1","AB287369.1","AB287370.1","AB287371.1","AB287372.1","AB289587.1","AB289588.1","AB289589.1","AB289590.1","AB428551.1","AB428552.1","AB428553.1","AB428554.1","AB428555.1","AB428556.1","AB428557.1","AB428558.1","AB428559.1","AB428560.1","AB428561.1","AB428562.1","AB480692.1","AB480693.1","AB480694.1","AB480695.1","AB480696.1","AB480697.1","AB480698.1","AB485638.1","AB485639.1","AB485640.1","AB485641.1","AB485642.1","AB564744.1","AB564745.1","AB564746.1","AB565478.1","AB565479.1","AB565495.1","AB565496.1","AB565497.1","AB565498.1","AB565499.1","AB565500.1","AB565501.1","AB565502.1","AB604946.1","AB604947.1","AB604948.1","AB604949.1","AB604950.1","AB604951.1","AB641836.2","AB641837.2","AB731663.1","AB731664.1","AB731665.1","AB731666.1","AB731667.1","AB731668.1","AB731669.1","AB731670.1","AF003887.1","AF003888.1","AF004394.1","AF033819.3","AF042100.1","AF042101.1","AF042102.1","AF042103.1","AF042104.1","AF042105.1","AF042106.1","AF049494.1","AF049495.1","AF069140.1","AF070521.1","AF086817.1","AF146728.1","AF224507.1","AF256204.1","AF256205.1","AF256206.1","AF256207.1","AF256208.1","AF256209.1","AF256210.1","AF256211.1","AF286365.1","AF538302.1","AF538303.1","AF538304.1","AF538305.1","AF538306.1","AF538307.1","AJ006287.1","AJ271445.1","AX032749.1","AX078307.1","AY037268.1","AY037269.1","AY037270.1","AY037282.1","AY173951.1","AY173952.1","AY173953.1","AY173954.1","AY173955.1","AY173956.1","AY180905.1","AY308760.1","AY308761.1","AY308762.1","AY314044.1","AY314045.1","AY314046.1","AY314047.1","AY314048.1","AY314049.1","AY314050.1","AY314051.1","AY314052.1","AY314053.1","AY314054.1","AY314055.1","AY314056.1","AY314057.1","AY314058.1","AY314059.1","AY314060.1","AY314061.1","AY314062.1","AY314063.1","AY331282.1","AY331283.1","AY331284.1","AY331285.1","AY331286.1","AY331287.1","AY331288.1","AY331289.1","AY331290.1","AY331291.1","AY331292.1","AY331293.1","AY331294.1","AY331295.1","AY331296.1","AY331297.1","AY332236.1","AY332237.1","AY352275.1","AY423381.1","AY423382.1","AY423383.1","AY423384.1","AY423385.1","AY423386.1","AY423387.1","AY560107.1","AY560108.1","AY560109.1","AY560110.1","AY561236.1","AY561237.1","AY561238.1","AY561239.1","AY561240.1","AY586542.2","AY586543.2","AY682547.1","AY713408.1","AY713409.1","AY713410.1","AY713411.1","AY713412.1","AY751406.1","AY751407.1","AY779550.1","AY779551.1","AY779552.1","AY779553.1","AY779554.1","AY779555.1","AY779557.1","AY779558.1","AY779559.1","AY779560.1","AY779561.1","AY779562.1","AY779563.1","AY779564.1","AY781126.1","AY781127.1","AY795904.1","AY795905.1","AY818644.1","AY819715.1","AY835748.1","AY835749.1","AY835750.1","AY835751.1","AY835752.1","AY835753.1","AY835754.1","AY835755.1","AY835756.1","AY835757.1","AY835758.1","AY835759.1","AY835760.1","AY835761.1","AY835762.1","AY835763.1","AY835764.1","AY835765.1","AY835766.1","AY835767.1","AY835768.1","AY835769.1","AY835770.1","AY835771.1","AY835772.1","AY835773.1","AY835774.1","AY835775.1","AY835776.1","AY835777.1","AY835778.1","AY835779.1","AY835780.1","AY835781.1","AY839827.2","AY857022.1","AY857144.1","AY857165.1","AY945710.1","AY945711.1","AY970946.1","AY970947.1","AY970948.1","AY970949.1","AY970950.1","BD238372.1","BD298114.1","CS272319.1","D10112.1","D86068.1","D86069.1","DL260745.1","DL464814.1","DQ007901.1","DQ007902.1","DQ007903.1","DQ127534.1","DQ127535.1","DQ127536.1","DQ127537.1","DQ127538.1","DQ127539.1","DQ127548.1","DQ127549.1","DQ127550.1","DQ127551.1","DQ207940.1","DQ207942.1","DQ207943.1","DQ295192.1","DQ295193.1","DQ295194.1","DQ295195.2","DQ295196.2","DQ322223.1","DQ322224.1","DQ322225.1","DQ322226.1","DQ322227.1","DQ322228.1","DQ322229.1","DQ322230.1","DQ322239.1","DQ354112.1","DQ354114.1","DQ354116.1","DQ354118.1","DQ354119.1","DQ358805.1","DQ358808.1","DQ358809.1","DQ358810.1","DQ383746.1","DQ383748.1","DQ383749.1","DQ383750.1","DQ383751.1","DQ383752.1","DQ396398.1","DQ487188.1","DQ487189.1","DQ487190.1","DQ487191.1","DQ672623.1","DQ676870.1","DQ676871.1","DQ676874.1","DQ676875.1","DQ676876.1","DQ676877.1","DQ676878.1","DQ676879.1","DQ676880.1","DQ676881.1","DQ676882.1","DQ676883.1","DQ676884.1","DQ676885.1","DQ676886.1","DQ676887.1","DQ823362.1","DQ823363.1","DQ823364.1","DQ837381.1","DQ853436.1","DQ853437.1","DQ853438.1","DQ853439.1","DQ853440.1","DQ853441.1","DQ853442.1","DQ853443.1","DQ853444.1","DQ853445.1","DQ853446.1","DQ853447.1","DQ853448.1","DQ853449.1","DQ853450.1","DQ853451.1","DQ853452.1","DQ853453.1","DQ853454.1","DQ853455.1","DQ853456.1","DQ853457.1","DQ853458.1","DQ853459.1","DQ853460.1","DQ853461.1","DQ853462.1","DQ853463.1","DQ853464.1","DQ854714.1","DQ854715.1","DQ854716.1","DQ886031.1","DQ886032.1","DQ886033.1","DQ886034.1","DQ886035.1","DQ886036.1","DQ886037.1","DQ990880.1","EF057102.2","EF175209.1","EF175210.1","EF175211.1","EF175212.1","EF178338.1","EF178354.1","EF178358.1","EF363122.1","EF363123.1","EF363124.1","EF363125.1","EF363126.1","EF363127.1","EF514697.1","EF514698.1","EF514699.1","EF514700.1","EF514701.1","EF514702.1","EF514703.1","EF514704.1","EF514705.1","EF514706.1","EF514707.1","EF514708.1","EF514709.1","EF514710.1","EF514711.1","EF514712.1","EF637046.1","EF637047.1","EF637048.1","EF637049.1","EF637050.1","EF637051.1","EF637053.1","EF637054.1","EF637056.1","EF637057.1","EF694037.1","EU547186.1","EU616639.1","EU616640.1","EU616641.1","EU616642.1","EU616643.1","EU616644.1","EU616645.1","EU616649.1","EU786672.1","EU786674.1","EU786675.1","EU786676.1","EU786677.1","EU786678.1","EU786679.1","EU786680.1","EU839596.1","EU839597.1","EU839598.1","EU839600.1","EU839601.1","EU839602.1","EU839603.1","EU839604.1","EU839605.1","EU839606.1","EU839607.1","EU839608.1","EU839609.1","EU839610.1","FB341548.1","FB707281.1","FJ195086.1","FJ195088.1","FJ195089.1","FJ195090.1","FJ195091.1","FJ388890.1","FJ388891.1","FJ388895.1","FJ388898.1","FJ388899.1","FJ388904.1","FJ388905.1","FJ388910.1","FJ388911.1","FJ388912.1","FJ388914.1","FJ388915.1","FJ388916.1","FJ388918.1","FJ388919.1","FJ388920.1","FJ388923.1","FJ388924.1","FJ388927.1","FJ388930.1","FJ388931.1","FJ388933.1","FJ388934.1","FJ388935.1","FJ388936.1","FJ388937.1","FJ388939.1","FJ388940.1","FJ388941.1","FJ388947.1","FJ388949.1","FJ388955.1","FJ388956.1","FJ388957.1","FJ388958.1","FJ388959.1","FJ388960.1","FJ388962.1","FJ388963.1","FJ388964.1","FJ388965.1","FJ403482.1","FJ460499.1","FJ460500.1","FJ460501.1","FJ469682.1","FJ469683.1","FJ469684.1","FJ469685.1","FJ469686.1","FJ469687.1","FJ469688.1","FJ469689.1","FJ469690.1","FJ469691.1","FJ469692.1","FJ469693.1","FJ469694.1","FJ469695.1","FJ469696.1","FJ469697.1","FJ469698.1","FJ469699.1","FJ469700.1","FJ469701.1","FJ469702.1","FJ469703.1","FJ469704.1","FJ469705.1","FJ469706.1","FJ469707.1","FJ469708.1","FJ469709.1","FJ469710.1","FJ469711.1","FJ469712.1","FJ469713.1","FJ469714.1","FJ469715.1","FJ469716.1","FJ469717.1","FJ469718.1","FJ469719.1","FJ469720.1","FJ469721.1","FJ469722.1","FJ469723.1","FJ469724.1","FJ469725.1","FJ469726.1","FJ469727.1","FJ469729.1","FJ469730.1","FJ469731.1","FJ469732.1","FJ469733.1","FJ469734.1","FJ469735.1","FJ469737.1","FJ469738.1","FJ469739.1","FJ469740.1","FJ469741.1","FJ469742.1","FJ469743.1","FJ469744.1","FJ469745.1","FJ469746.1","FJ469747.1","FJ469748.1","FJ469749.1","FJ469750.1","FJ469751.1","FJ469752.1","FJ469753.1","FJ469754.1","FJ469755.1","FJ469756.1","FJ469757.1","FJ469758.1","FJ469759.1","FJ469760.1","FJ469761.1","FJ469762.1","FJ469763.1","FJ469764.1","FJ469765.1","FJ469766.1","FJ469767.1","FJ469768.1","FJ469769.1","FJ469770.1","FJ469771.1","FJ469772.1","FJ495818.1","FJ495819.1","FJ495820.1","FJ495821.1","FJ495822.1","FJ495823.1","FJ495824.1","FJ495825.1","FJ495826.1","FJ495937.1","FJ495939.1","FJ495940.1","FJ495941.1","FJ495942.1","FJ495943.1","FJ496000.1","FJ496001.1","FJ496002.1","FJ496003.1","FJ496004.1","FJ496005.1","FJ496006.1","FJ496007.1","FJ496072.1","FJ496073.1","FJ496074.1","FJ496075.1","FJ496076.1","FJ496077.1","FJ496078.1","FJ496079.1","FJ496080.1","FJ496081.1","FJ496082.1","FJ496083.1","FJ496084.1","FJ496085.1","FJ496145.1","FJ496146.1","FJ496147.1","FJ496148.1","FJ496149.1","FJ496150.1","FJ496151.1","FJ496152.1","FJ496153.1","FJ496154.1","FJ496155.1","FJ496156.1","FJ496157.1","FJ496158.1","FJ496159.1","FJ496160.1","FJ496161.1","FJ496162.1","FJ496163.1","FJ496164.1","FJ496165.1","FJ496166.1","FJ496167.1","FJ496168.1","FJ496169.1","FJ496170.1","FJ496171.1","FJ496172.1","FJ496174.1","FJ496175.1","FJ496176.1","FJ496177.1","FJ496178.1","FJ496179.1","FJ496180.1","FJ496181.1","FJ496182.1","FJ496184.1","FJ647145.1","FJ670524.1","FJ670525.1","FJ670531.1","FJ694790.1","FJ853620.1","FJ853622.1","FW555696.1","GQ372988.1","GQ372990.1","GQ386774.1","GQ386775.1","GQ386776.1","GQ386777.1","GQ386778.1","GQ386779.1","GQ386780.1","GQ386781.1","GQ386782.1","GQ386783.1","GQ386784.1","GQ386785.1","GQ386786.1","GQ386787.1","GQ386788.1","GQ386789.1","GQ386790.1","GQ386791.1","GQ386792.1","GQ386793.1","GQ386794.1","GQ386795.1","GU177863.1","GU362881.1","GU362883.1","GU362885.1","GU362886.1","GU647196.1","GU647197.1","GU647198.1","GU733713.1","GU733714.1","GU733715.1","GU733716.1","GU733717.1","HH978650.1","HI964165.1","HM469972.1","HM469973.1","HM469974.1","HM469975.1","HM469976.1","HM469977.1","HM469978.1","HM469979.1","HM469980.1","HM469981.1","HM469982.1","HM469983.1","HM586187.1","HM586193.1","HM586198.1","HM586200.1","HM586202.1","HM586204.1","HM586206.1","HM586207.1","HM586208.1","HM586209.1","HM586210.1","HM586211.1","HM586212.1","HQ215554.1","HQ215556.1","JA806687.1","JF320003.1","JF320005.1","JF320006.1","JF320008.1","JF320009.1","JF320010.1","JF320012.1","JF320013.1","JF320014.1","JF320015.1","JF320016.1","JF320017.1","JF320018.1","JF320019.1","JF320020.1","JF320021.1","JF320022.1","JF320023.1","JF320024.1","JF320025.1","JF320026.1","JF320027.1","JF320028.1","JF320029.1","JF320030.1","JF320031.1","JF320032.1","JF320033.1","JF320034.1","JF320035.1","JF320036.1","JF320038.1","JF320039.1","JF320040.1","JF320041.1","JF320042.1","JF320043.1","JF320044.1","JF320045.1","JF320046.1","JF320047.1","JF320048.1","JF320049.1","JF320050.1","JF320051.1","JF320052.1","JF320053.1","JF320054.1","JF320055.1","JF320056.1","JF320058.1","JF320059.1","JF320060.1","JF320061.1","JF320062.1","JF320064.1","JF320065.1","JF320066.1","JF320067.1","JF320068.1","JF320069.1","JF320070.1","JF320071.1","JF320081.1","JF320082.1","JF320097.1","JF320098.1","JF320120.1","JF320121.1","JF320122.1","JF320123.1","JF320124.1","JF320125.1","JF320126.1","JF320127.1","JF320128.1","JF320129.1","JF320144.1","JF320145.1","JF320146.1","JF320147.1","JF320148.1","JF320149.1","JF320150.1","JF320151.1","JF320152.1","JF320153.1","JF320154.1","JF320155.1","JF320156.1","JF320157.1","JF320158.1","JF320160.1","JF320161.1","JF320162.1","JF320163.1","JF320164.1","JF320165.1","JF320166.1","JF320167.1","JF320169.1","JF320171.1","JF320179.1","JF320181.1","JF320182.1","JF320183.1","JF320185.1","JF320186.1","JF320187.1","JF320188.1","JF320189.1","JF320190.1","JF320191.1","JF320192.1","JF320193.1","JF320194.1","JF320195.1","JF320196.1","JF320197.1","JF320198.1","JF320199.1","JF320200.1","JF320201.1","JF320202.1","JF320203.1","JF320204.1","JF320205.1","JF320206.1","JF320207.1","JF320208.1","JF320209.1","JF320211.1","JF320212.1","JF320213.1","JF320214.1","JF320215.1","JF320216.1","JF320217.1","JF320218.1","JF320219.1","JF320220.1","JF320221.1","JF320222.1","JF320223.1","JF320224.1","JF320225.1","JF320226.1","JF320227.1","JF320241.1","JF320242.1","JF320243.1","JF320244.1","JF320245.1","JF320247.1","JF320250.1","JF320251.1","JF320253.1","JF320255.1","JF320256.1","JF320257.1","JF320263.1","JF320267.1","JF320268.1","JF320269.1","JF320271.1","JF320356.1","JF320361.1","JF320363.1","JF320364.1","JF320365.1","JF320366.1","JF320374.1","JF320411.1","JF320412.1","JF320413.1","JF320414.1","JF320415.1","JF320416.1","JF320417.1","JF320418.1","JF320419.1","JF320420.1","JF320422.1","JF320423.1","JF320424.1","JF320425.1","JF320426.1","JF320427.1","JF320428.1","JF320429.1","JF320430.1","JF320431.1","JF320460.1","JF320461.1","JF320462.1","JF320463.1","JF320464.1","JF320465.1","JF320466.1","JF320467.1","JF320468.1","JF320469.1","JF320470.1","JF320477.1","JF320478.1","JF320482.1","JF320483.1","JF320484.1","JF320485.1","JF320486.1","JF320487.1","JF320488.1","JF320489.1","JF320490.1","JF320491.1","JF320492.1","JF320515.1","JF320516.1","JF320518.1","JF320519.1","JF320526.1","JF320529.1","JF320530.1","JF320531.1","JF320532.1","JF320533.1","JF320534.1","JF320535.1","JF320536.1","JF320559.1","JF320561.1","JF320562.1","JF320563.1","JF320564.1","JF320565.1","JF320566.1","JF320567.1","JF320568.1","JF320577.1","JF320613.1","JF320615.1","JF320616.1","JF320617.1","JF320619.1","JF320620.1","JF320621.1","JF320622.1","JF320624.1","JF320626.1","JF320627.1","JF320628.1","JF320629.1","JF683736.1","JF683738.1","JF683741.1","JF683742.1","JF683743.1","JF683746.1","JF683747.1","JF683749.1","JF683750.1","JF683751.1","JF683753.1","JF683754.1","JF683756.1","JF683764.1","JF683765.1","JF683769.1","JF683773.1","JF683775.1","JF683778.1","JF683781.1","JF683784.1","JF683785.1","JF683787.1","JF683788.1","JF683790.1","JF683791.1","JF683793.1","JF683794.1","JF683796.1","JF683797.1","JF683801.1","JF683804.1","JF683805.1","JF683807.1","JF683808.1","JF683809.1","JF689852.1","JF689854.1","JF689856.1","JF689857.1","JF689859.1","JF689860.1","JF689862.1","JF689863.1","JF689864.1","JF689865.1","JF689866.1","JF689867.1","JF689868.1","JF689870.1","JF689871.1","JF689872.1","JF689873.1","JF689874.1","JF689875.1","JF689876.1","JF689877.1","JF689879.1","JF689883.1","JF689884.1","JF689885.1","JF689886.1","JF689887.1","JF689889.1","JF689890.1","JF689892.1","JF689894.1","JF689895.1","JF689896.1","JF689897.1","JF932468.1","JF932469.1","JF932470.1","JF932471.1","JF932472.1","JF932473.1","JF932474.1","JF932475.1","JF932476.1","JF932477.1","JF932478.1","JF932479.1","JF932480.1","JF932481.1","JF932482.1","JF932483.1","JF932484.1","JF932485.1","JF932486.1","JF932487.1","JF932488.1","JF932489.1","JF932490.1","JF932491.1","JF932492.1","JF932493.1","JF932494.1","JF932495.1","JF932496.1","JF932497.1","JF932498.1","JF932499.1","JF932500.1","JN024100.1","JN024101.1","JN024103.1","JN024104.1","JN024105.1","JN024106.1","JN024107.1","JN024108.1","JN024109.1","JN024110.1","JN024111.1","JN024112.1","JN024113.1","JN024114.1","JN024115.1","JN024116.1","JN024117.1","JN024118.1","JN024119.1","JN024120.1","JN024121.1","JN024122.1","JN024123.1","JN024124.1","JN024125.1","JN024126.1","JN024127.1","JN024128.1","JN024129.1","JN024130.1","JN024131.1","JN024132.1","JN024133.1","JN024134.1","JN024135.1","JN024136.1","JN024137.1","JN024138.1","JN024139.1","JN024140.1","JN024141.1","JN024142.1","JN024143.1","JN024144.1","JN024145.1","JN024146.1","JN024147.1","JN024148.1","JN024149.1","JN024150.1","JN024151.1","JN024152.1","JN024153.1","JN024154.1","JN024155.1","JN024156.1","JN024157.1","JN024158.1","JN024159.1","JN024160.1","JN024161.1","JN024162.1","JN024163.1","JN024164.1","JN024165.1","JN024166.1","JN024167.1","JN024168.1","JN024169.1","JN024170.1","JN024171.1","JN024172.1","JN024173.1","JN024174.1","JN024175.1","JN024176.1","JN024177.1","JN024179.1","JN024180.1","JN024181.1","JN024182.1","JN024183.1","JN024184.1","JN024185.1","JN024186.1","JN024187.1","JN024188.1","JN024189.1","JN024190.1","JN024191.1","JN024192.1","JN024193.1","JN024194.1","JN024195.1","JN024196.1","JN024197.1","JN024198.1","JN024199.1","JN024200.1","JN024201.1","JN024202.1","JN024203.1","JN024204.1","JN024205.1","JN024206.1","JN024208.1","JN024209.1","JN024210.1","JN024211.1","JN024212.1","JN024213.1","JN024214.1","JN024215.1","JN024216.1","JN024217.1","JN024218.1","JN024219.1","JN024220.1","JN024221.1","JN024222.1","JN024223.1","JN024224.1","JN024226.1","JN024227.1","JN024228.1","JN024229.1","JN024230.1","JN024231.1","JN024232.1","JN024233.1","JN024234.1","JN024235.1","JN024236.1","JN024237.1","JN024238.1","JN024239.1","JN024241.1","JN024242.1","JN024243.1","JN024244.1","JN024245.1","JN024246.1","JN024247.1","JN024248.1","JN024249.1","JN024250.1","JN024251.1","JN024252.1","JN024253.1","JN024254.1","JN024255.1","JN024256.1","JN024257.1","JN024258.1","JN024259.1","JN024260.1","JN024261.1","JN024262.1","JN024263.1","JN024264.1","JN024265.1","JN024266.1","JN024267.1","JN024268.1","JN024269.1","JN024270.1","JN024271.1","JN024272.1","JN024273.1","JN024274.1","JN024275.1","JN024276.1","JN024277.1","JN024278.1","JN024279.1","JN024280.1","JN024281.1","JN024282.1","JN024284.1","JN024285.1","JN024286.1","JN024287.1","JN024288.1","JN024289.1","JN024290.1","JN024291.1","JN024292.1","JN024293.1","JN024294.1","JN024295.1","JN024296.1","JN024297.1","JN024298.1","JN024299.1","JN024300.1","JN024301.1","JN024302.1","JN024303.1","JN024304.1","JN024305.1","JN024306.1","JN024307.1","JN024308.1","JN024309.1","JN024310.1","JN024311.1","JN024312.1","JN024313.1","JN024314.1","JN024315.1","JN024316.1","JN024317.1","JN024318.1","JN024319.1","JN024320.1","JN024321.1","JN024322.1","JN024323.1","JN024324.1","JN024325.1","JN024326.1","JN024327.1","JN024328.1","JN024329.1","JN024330.1","JN024331.1","JN024332.1","JN024333.1","JN024334.1","JN024335.1","JN024336.1","JN024337.1","JN024338.1","JN024339.1","JN024340.1","JN024341.1","JN024342.1","JN024343.1","JN024344.1","JN024345.1","JN024346.1","JN024347.1","JN024348.1","JN024349.1","JN024350.1","JN024351.1","JN024352.1","JN024353.1","JN024354.1","JN024355.1","JN024356.1","JN024357.1","JN024358.1","JN024359.1","JN024360.1","JN024361.1","JN024362.1","JN024363.1","JN024364.1","JN024365.1","JN024366.1","JN024367.1","JN024368.1","JN024369.1","JN024370.1","JN024371.1","JN024372.1","JN024373.1","JN024374.1","JN024375.1","JN024376.1","JN024377.1","JN024378.1","JN024379.1","JN024380.1","JN024381.1","JN024382.1","JN024383.1","JN024384.1","JN024385.1","JN024386.1","JN024387.1","JN024388.1","JN024389.1","JN024390.1","JN024391.1","JN024392.1","JN024393.1","JN024394.1","JN024395.1","JN024396.1","JN024397.1","JN024398.1","JN024399.1","JN024400.1","JN024401.1","JN024402.1","JN024403.1","JN024404.1","JN024405.1","JN024406.1","JN024407.1","JN024408.1","JN024409.1","JN024410.1","JN024411.1","JN024412.1","JN024413.1","JN024414.1","JN024415.1","JN024416.1","JN024417.1","JN024418.1","JN024419.1","JN024420.1","JN024421.1","JN024422.1","JN024423.1","JN024424.1","JN024425.1","JN024426.1","JN024427.1","JN024428.1","JN024429.1","JN024430.1","JN024431.1","JN024432.1","JN024434.1","JN024435.1","JN024436.1","JN024437.1","JN024438.1","JN024439.1","JN024440.1","JN024441.1","JN024442.1","JN024443.1","JN024444.1","JN024445.1","JN024446.1","JN024447.1","JN024448.1","JN024449.1","JN024450.1","JN024451.1","JN024452.1","JN024453.1","JN024454.1","JN024455.1","JN024456.1","JN024457.1","JN024458.1","JN024459.1","JN024460.1","JN024461.1","JN024462.1","JN024463.1","JN024464.1","JN024465.1","JN024466.1","JN024467.1","JN024468.1","JN024469.1","JN024470.1","JN024471.1","JN024472.1","JN024474.1","JN024475.1","JN024476.1","JN024477.1","JN024478.1","JN024479.1","JN024481.1","JN024482.1","JN024483.1","JN024484.1","JN024485.1","JN024486.1","JN024487.1","JN024488.1","JN024489.1","JN024490.1","JN024491.1","JN024492.1","JN024493.1","JN024494.1","JN024495.1","JN024496.1","JN024497.1","JN024498.1","JN024499.1","JN024500.1","JN024501.1","JN024502.1","JN024503.1","JN024504.1","JN024505.1","JN024506.1","JN024507.1","JN024508.1","JN024509.1","JN024510.1","JN024511.1","JN024512.1","JN024513.1","JN024514.1","JN024515.1","JN024516.1","JN024517.1","JN024518.1","JN024519.1","JN024520.1","JN024521.1","JN024522.1","JN024523.1","JN024524.1","JN024525.1","JN024526.1","JN024527.1","JN024528.1","JN024529.1","JN024530.1","JN024531.1","JN024532.1","JN024533.1","JN024534.1","JN024535.1","JN024536.1","JN024537.1","JN024538.1","JN024539.1","JN024540.1","JN024541.1","JN024542.1","JN024543.1","JN024544.1","JN024545.1","JN024546.1","JN024547.1","JN024548.1","JN024549.1","JN024550.1","JN024551.1","JN024552.1","JN024553.1","JN024554.1","JN024555.1","JN024556.1","JN024557.1","JN024558.1","JN024559.1","JN024560.1","JN024561.1","JN024562.1","JN024563.1","JN024564.1","JN024565.1","JN024566.1","JN024567.1","JN024568.1","JN024569.1","JN024570.1","JN024571.1","JN024572.1","JN024573.1","JN235958.1","JN235959.1","JN235965.1","JN248321.1","JN248329.1","JN248333.1","JN248335.1","JN248337.1","JN248343.1","JN248344.1","JN248345.1","JN248346.1","JN248347.1","JN248348.1","JN248353.1","JN248354.1","JN251896.1","JN251901.1","JN251906.1","JN397362.1","JN397363.1","JN397364.1","JN397365.1","JN692431.1","JN692432.1","JN692433.1","JN692435.1","JN692436.1","JN692439.1","JN692443.1","JN692444.1","JN692445.1","JN692446.1","JN692447.1","JN692450.1","JN692451.1","JN692452.1","JN692453.1","JN692455.1","JN692457.1","JN692458.1","JN692460.1","JN692461.1","JN692462.1","JN692463.1","JN692464.1","JN692465.1","JN692466.1","JN692467.1","JN692468.1","JN692469.1","JN692470.1","JN692471.1","JN692472.1","JN692473.1","JN692474.1","JN692475.1","JN692476.1","JN692479.1","JN692480.1","JN860769.1","JN944897.1","JN944898.1","JN944899.1","JN944900.1","JN944901.1","JN944902.1","JN944903.1","JN944905.1","JN944907.1","JN944909.1","JN944911.1","JN944912.1","JN944913.1","JN944914.1","JN944915.1","JN944917.1","JN944918.1","JN944920.1","JN944921.1","JN944922.1","JN944923.1","JN944924.1","JN944925.1","JN944926.1","JN944928.1","JN944930.1","JN944931.1","JN944932.1","JN944933.1","JN944934.1","JN944936.1","JN944938.1","JN944939.1","JN944940.1","JN944941.1","JN944942.1","JN944943.1","JN944944.1","JN944945.1","JN944946.1","JN944947.1","JN944948.1","JQ316126.1","JQ316127.2","JQ316128.1","JQ316129.1","JQ316130.1","JQ316131.1","JQ316132.1","JQ316133.1","JQ316134.1","JQ316135.1","JQ341411.1","JQ403019.1","JQ403021.1","JQ403022.1","JQ403023.1","JQ403024.1","JQ403025.1","JQ403026.1","JQ403029.1","JQ403030.1","JQ403031.1","JQ403032.1","JQ403033.1","JQ403034.1","JQ403035.1","JQ403036.1","JQ403037.1","JQ403038.1","JQ403039.1","JQ403040.1","JQ403042.1","JQ403045.1","JQ403048.1","JQ403049.1","JQ403050.1","JQ403051.1","JQ403052.1","JQ403053.1","JQ403054.1","JQ403055.1","JQ403056.1","JQ403059.1","JQ403060.1","JQ403061.1","JQ403062.1","JQ403064.1","JQ403066.1","JQ403067.1","JQ403068.1","JQ403069.1","JQ403070.1","JQ403071.1","JQ403074.1","JQ403078.1","JQ403082.1","JQ403083.1","JQ403085.1","JQ403086.1","JQ403087.1","JQ403088.1","JQ403089.1","JQ403091.1","JQ403092.1","JQ403093.1","JQ403094.1","JQ403095.1","JQ403096.1","JQ403097.1","JQ403099.1","JQ403100.1","JQ403101.1","JQ403102.1","JQ403104.1","JQ403105.1","JQ403107.1","JQ416158.1","JQ416159.1","JQ416160.1","JQ416161.1","JQ416162.1","JQ429433.2","JX140652.1","JX140653.1","JX140654.1","JX140655.1","JX140656.1","JX140657.1","JX140658.1","JX140659.1","JX446795.1","JX446796.1","JX446797.1","JX446798.1","JX446799.1","JX446800.1","JX446801.1","JX446802.1","JX446803.1","JX446804.1","JX446805.1","JX446806.1","JX447156.1","JX447157.1","JX447158.1","JX447159.1","JX447160.1","JX447161.1","JX447162.1","JX447163.1","JX447164.1","JX447165.1","JX500707.1","JX500708.1","JX500709.1","JX503071.1","JX503072.1","JX503073.1","JX503074.1","JX503075.1","JX503076.1","JX503080.1","JX503081.1","JX503082.1","JX503083.1","JX863919.1","JX863921.1","JX863922.1","JX863923.1","JX863924.1","JX960597.1","JX960598.1","JX960599.1","JX974235.1","JX974236.1","JX974237.1","JX974238.1","JX974239.1","JX974240.1","JX974241.1","JX974242.1","JX974243.1","K02007.1","K02013.1","K02083.1","K03455.1","KC113005.1","KC473824.1","KC473825.1","KC473826.1","KC473827.1","KC473828.1","KC473829.1","KC473830.1","KC473831.1","KC473832.1","KC473833.1","KC473834.1","KC473835.1","KC473841.1","KC473842.1","KC473843.1","KC473846.1","KC596066.1","KC596067.1","KC596069.1","KC797171.1","KC797172.1","KC797173.1","KC797174.1","KC797175.1","KC797176.1","KC797177.1","KC797178.1","KC797215.1","KC797216.1","KC797217.1","KC797218.1","KC797219.1","KC797220.1","KC797221.1","KC797222.1","KC797223.1","KC797224.1","KC797225.1","KC797227.1","KC797228.1","KC797229.1","KC899011.1","KC935958.1","KC935959.1","KF384798.1","KF384799.1","KF384800.1","KF384801.1","KF384802.1","KF384803.1","KF384804.1","KF384805.1","KF384806.1","KF384807.1","KF384808.1","KF384809.1","KF384810.1","KF384811.1","KF384812.1","KF384813.1","KF384814.1","KF526120.1","KF526122.1","KF526123.1","KF526141.1","KF526145.1","KF526174.1","KF526175.1","KF526176.1","KF526177.1","KF526178.1","KF526179.1","KF526181.1","KF526192.1","KF526201.1","KF526202.1","KF526203.1","KF526204.1","KF526228.1","KF526231.1","KF526236.1","KF526245.1","KF526254.1","KF526255.1","KF526261.1","KF526265.1","KF526270.1","KF526276.1","KF526279.1","KF526280.1","KF526287.1","KF526298.1","KF526312.1","KF526318.1","KF526323.1","KF561440.1","KF561441.1","KF561442.1","KF561443.1","KF716494.1","KF716495.1","KF716496.1","KF716497.1","KF716498.1","KF990605.1","KF990606.1","KF990607.1","KF990608.1","KJ019215.1","KJ140245.1","KJ140246.1","KJ140247.1","KJ140248.1","KJ140249.1","KJ140250.1","KJ140251.1","KJ140252.1","KJ140253.1","KJ140254.1","KJ140255.1","KJ140256.1","KJ140257.1","KJ140258.1","KJ140259.2","KJ140260.1","KJ140261.1","KJ140262.1","KJ140263.1","KJ140264.1","KJ140265.1","KJ140266.1","KJ140267.1","KJ704789.1","KJ704790.1","KJ704791.1","KJ704792.1","KJ704793.1","KJ704794.1","KJ704795.1","KJ769147.1","KJ849767.1","KJ849780.1","KJ849784.1","KJ849785.1","KJ849786.1","KJ849790.1","KJ849796.1","KJ849799.1","KJ849801.1","KJ849803.1","KJ849804.1","KJ849805.1","KJ849807.1","KJ849808.1","KJ849811.1","KJ849812.1","KJ849814.1","KJ849815.1","KJ849817.1","KJ849818.1","KJ849820.1","KJ925006.1","KJ948656.1","KJ948657.1","KJ948660.1","KP109511.1","KP109512.1","KP109514.1","KP109515.1","KP109518.1","KP411822.1","KP411823.1","KP411824.1","KP411825.1","KP411827.1","KP411828.1","KP411829.1","KR914675.1","KR914676.1","KR914678.1","KT124741.1","KT124742.1","KT124743.1","KT124744.1","KT124745.1","KT124747.1","KT124748.1","KT124749.1","KT124750.1","KT124751.1","KT124752.1","KT124753.1","KT124754.1","KT124755.1","KT124756.1","KT124757.1","KT124758.1","KT124759.1","KT124760.1","KT124761.1","KT124762.1","KT124763.1","KT124764.1","KT124765.1","KT124766.1","KT124767.1","KT124768.1","KT124769.1","KT124770.1","KT124771.1","KT124772.1","KT124773.1","KT124774.1","KT124775.1","KT124776.1","KT124778.1","KT124779.1","KT124780.1","KT124781.1","KT124782.1","KT124783.1","KT124784.1","KT124785.1","KT124787.1","KT124788.1","KT124789.1","KT124790.1","KT124791.1","KT124793.1","KT124794.1","KT124796.1","KT124797.1","KT124798.1","KT124799.1","KT124800.1","KT124801.1","KT124802.1","KT124803.1","KT124804.1","KT124805.1","KT124806.1","KT124807.1","KT124808.1","KT124809.1","KT124810.1","KT124811.1","KT124812.1","KT124813.1","KT124814.1","KT200348.1","KT200349.1","KT200350.1","KT200351.1","KT200352.1","KT200353.1","KT200354.1","KT200355.1","KT200356.1","KT200357.1","KT200358.1","KT259308.1","KT259309.1","KT259310.1","KT259311.1","KT259312.1","KT259313.1","KT259314.1","KT259315.1","KT259316.1","KT259317.1","KT259318.1","KT259319.1","KT276255.1","KT276256.1","KT276262.1","KT276263.1","KT276264.1","KT276266.1","KT276267.1","KT276268.1","KT284371.1","KT284372.1","KT284373.1","KT284374.1","KT284375.1","KT284376.1","KT284377.1","KT284378.1","KT427650.1","KT427669.1","KT427670.1","KT427671.1","KT427673.1","KT427675.1","KT427676.1","KT427680.1","KT427681.1","KT427682.1","KT427683.1","KT427684.1","KT427685.1","KT427686.1","KT427687.1","KT427688.1","KT427689.1","KT427690.1","KT427691.1","KT427692.1","KT427693.1","KT427694.1","KT427695.1","KT427696.1","KT427697.1","KT427699.1","KT427700.1","KT427701.1","KT427702.1","KT427703.1","KT427704.1","KT427706.1","KT427708.1","KT427709.1","KT427711.1","KT427712.1","KT427713.1","KT427715.1","KT427716.1","KT427717.1","KT427718.1","KT427719.1","KT427720.1","KT427721.1","KT427723.1","KT427724.1","KT427725.1","KT427726.1","KT427727.1","KT427728.1","KT427729.1","KT427730.1","KT427731.1","KT427733.1","KT427734.1","KT427735.1","KT427737.1","KT427738.1","KT427739.1","KT427740.1","KT427741.1","KT427742.1","KT427743.1","KT427744.1","KT427745.1","KT427747.1","KT427748.1","KT427749.1","KT427750.1","KT427751.1","KT427753.1","KT427754.1","KT427755.1","KT427756.1","KT427757.1","KT427761.1","KT427762.1","KT427763.1","KT427764.1","KT427765.1","KT427766.1","KT427767.1","KT427768.1","KT427769.1","KT427770.1","KT427771.1","KT427772.1","KT427775.1","KT427777.1","KT427781.1","KT427783.1","KT427784.1","KT427785.1","KT427786.1","KT427787.1","KT427788.1","KT427791.1","KT427792.1","KT427794.1","KT427796.1","KT427797.1","KT427799.1","KT427802.1","KT427803.1","KT427804.1","KT427805.1","KT427808.1","KT427811.1","KT427813.1","KT427815.1","KT427819.1","KT427824.1","KT427826.1","KT427827.1","KT427829.1","KT427830.1","KT427831.1","KT427869.1","KT427870.1","KT427872.1","KT427873.1","KU168257.1","KU168258.1","KU168259.1","KU168260.1","KU168261.1","KU641402.1","KU685583.1","KU685584.1","KU685585.1","KU685586.1","KU685588.1","KU685589.1","KU685590.1","KU685591.1","KX228802.1","KX228803.1","KX228805.1","KX228806.1","KX228807.1","KX228825.1","KX505396.1","KX505419.1","KX505446.1","KX505448.1","KX505450.1","KX505453.1","KX505457.1","KX505475.1","KX505487.1","KX505504.1","KX505505.1","KX505508.1","KX505536.1","KX505552.1","KX505555.1","KX505583.1","KX505589.1","KX505609.1","KX505616.1","KX505652.1","KX505686.1","KX505739.1","L02317.1","L31963.1","M15654.1","M17449.1","M17451.1","M26727.1","M38429.1","M38431.1","M93258.1","M93259.1","NC_001802.1","U12055.1","U21135.1","U23487.1","U26546.1","U26942.1","U34603.1","U34604.1","U39362.2","U43096.1","U43141.1","U63632.1","U69584.1","U69585.1","U69586.1","U69587.1","U69588.1","U69589.1","U69590.1","U69591.1","U69592.1","U69593.1","U71182.1","X01762.1","Z11530.1"],
-			// ["AB023804.1","AB097871.1","AB254141.1","AB254142.1","AB254143.1","AB254144.1","AB254145.1","AB254146.1","AB254147.1","AB254148.1","AB254149.1","AB254150.1","AB254151.1","AB254152.1","AB254153.2","AB254154.1","AB254155.1","AB254156.1","AB485643.1","AB485644.1","AB485645.1","AB485646.1","AB485647.1","AF067154.1","AF067155.1","AF067157.1","AF067158.1","AF067159.1","AF110959.1","AF110960.1","AF110961.1","AF110962.1","AF110963.1","AF110964.1","AF110965.1","AF110966.1","AF110967.1","AF110968.1","AF110969.1","AF110970.1","AF110971.1","AF110972.1","AF110973.1","AF110974.1","AF110975.1","AF110976.1","AF110977.1","AF110978.1","AF110979.1","AF110980.1","AF110981.1","AF286223.1","AF286224.1","AF286225.1","AF286227.1","AF286228.1","AF286231.1","AF286232.1","AF286233.1","AF286234.1","AF286235.1","AF290027.1","AF290028.1","AF290029.1","AF290030.1","AF321523.1","AF361874.1","AF361875.1","AF411966.1","AF411967.1","AF443074.1","AF443075.1","AF443076.1","AF443077.1","AF443078.1","AF443079.1","AF443080.1","AF443081.1","AF443082.1","AF443083.1","AF443084.1","AF443085.1","AF443086.1","AF443087.1","AF443088.1","AF443089.1","AF443090.1","AF443091.1","AF443092.1","AF443093.1","AF443094.1","AF443095.1","AF443096.1","AF443097.1","AF443098.1","AF443099.1","AF443100.1","AF443101.1","AF443102.1","AF443103.1","AF443104.1","AF443105.1","AF443107.1","AF443108.1","AF443109.1","AF443110.1","AF443111.1","AF443112.1","AF443113.1","AF443114.1","AF443115.1","AF457054.1","AX455917.1","AX455929.1","AY043173.1","AY043174.1","AY043175.1","AY043176.1","AY049708.1","AY049709.1","AY049710.1","AY049711.1","AY118165.1","AY118166.1","AY158533.1","AY158534.1","AY158535.1","AY162223.1","AY162224.1","AY162225.1","AY228556.1","AY228557.1","AY253303.1","AY253304.1","AY253307.1","AY253308.1","AY253310.1","AY253312.1","AY253313.1","AY253317.1","AY253320.1","AY253321.1","AY253322.1","AY255823.1","AY255824.1","AY255825.1","AY255826.1","AY444800.1","AY444801.1","AY463217.1","AY463218.1","AY463219.1","AY463220.1","AY463221.1","AY463222.1","AY463223.1","AY463224.1","AY463225.1","AY463226.1","AY463227.1","AY463228.1","AY463229.1","AY463230.1","AY463231.1","AY463232.1","AY463233.1","AY463234.1","AY463236.1","AY463237.1","AY563169.1","AY563170.1","AY585264.1","AY585265.1","AY585266.1","AY585267.1","AY585268.1","AY703908.1","AY703909.1","AY703910.1","AY703911.1","AY713413.1","AY713414.1","AY713415.1","AY713416.1","AY713417.1","AY727522.1","AY727523.1","AY727524.1","AY727525.1","AY734550.1","AY734551.1","AY734556.1","AY734558.1","AY734559.1","AY734560.1","AY772690.1","AY772691.1","AY772692.1","AY772693.1","AY772694.1","AY772695.1","AY772696.1","AY772698.1","AY772699.1","AY772700.1","AY795906.1","AY805330.1","AY838565.1","AY838566.1","AY838567.1","AY838568.1","AY878054.1","AY878055.1","AY878056.1","AY878057.1","AY878058.1","AY878059.1","AY878060.1","AY878061.1","AY878062.1","AY878063.1","AY878064.1","AY878065.1","AY878068.1","AY878070.1","AY878071.1","AY878072.1","AY901965.1","AY901966.1","AY901967.1","AY901968.1","AY901969.1","AY901970.1","AY901971.1","AY901972.1","AY901973.1","AY901974.1","AY901975.1","AY901976.1","AY901977.1","AY901978.1","AY901979.1","AY901980.1","AY901981.1","AY945738.1","AY967806.1","BD437615.1","BD437626.1","DQ011165.1","DQ011166.1","DQ011167.1","DQ011169.1","DQ011170.1","DQ011171.1","DQ011172.1","DQ011173.1","DQ011174.1","DQ011175.1","DQ011176.1","DQ011177.1","DQ011178.1","DQ011179.1","DQ011180.1","DQ056404.1","DQ056405.1","DQ056406.1","DQ056408.1","DQ056409.1","DQ056410.1","DQ056411.1","DQ056412.1","DQ056413.1","DQ056414.1","DQ056415.1","DQ056416.1","DQ056417.1","DQ056418.1","DQ093585.1","DQ093586.1","DQ093587.1","DQ093588.1","DQ093589.1","DQ093590.1","DQ093591.1","DQ093592.1","DQ093593.1","DQ093594.1","DQ093595.1","DQ093596.1","DQ093597.1","DQ093598.1","DQ093599.1","DQ093600.1","DQ093601.1","DQ093602.1","DQ093604.1","DQ093605.1","DQ093607.1","DQ164104.1","DQ164105.1","DQ164106.1","DQ164107.1","DQ164108.1","DQ164109.1","DQ164110.1","DQ164111.1","DQ164112.1","DQ164113.1","DQ164114.1","DQ164115.1","DQ164116.1","DQ164117.1","DQ164118.1","DQ164119.1","DQ164121.1","DQ164122.1","DQ164126.1","DQ164127.1","DQ164129.1","DQ207941.1","DQ275642.1","DQ275643.1","DQ275644.1","DQ275645.1","DQ275646.1","DQ275647.1","DQ275648.1","DQ275649.1","DQ275650.1","DQ275651.1","DQ275652.1","DQ275653.1","DQ275654.1","DQ275655.1","DQ275656.1","DQ275657.1","DQ275658.1","DQ275659.1","DQ275660.1","DQ275661.1","DQ275664.1","DQ351216.1","DQ351217.1","DQ351218.1","DQ351219.1","DQ351220.1","DQ351221.1","DQ351222.1","DQ351223.1","DQ351224.1","DQ351225.1","DQ351226.1","DQ351227.1","DQ351228.1","DQ351229.1","DQ351230.1","DQ351231.1","DQ351232.1","DQ351233.1","DQ351234.1","DQ351235.1","DQ351237.1","DQ369976.1","DQ369977.1","DQ369978.1","DQ369979.1","DQ369980.1","DQ369981.1","DQ369982.1","DQ369983.1","DQ369984.1","DQ369985.1","DQ369986.1","DQ369987.1","DQ369988.1","DQ369989.1","DQ369990.1","DQ369991.1","DQ369992.1","DQ369993.1","DQ369994.1","DQ369995.1","DQ369996.1","DQ369997.1","DQ396364.1","DQ396365.1","DQ396366.1","DQ396367.1","DQ396368.1","DQ396369.1","DQ396370.1","DQ396371.1","DQ396372.1","DQ396373.1","DQ396374.1","DQ396375.1","DQ396376.1","DQ396377.1","DQ396378.1","DQ396380.1","DQ396381.1","DQ396382.1","DQ396383.1","DQ396384.1","DQ396385.1","DQ396386.1","DQ396387.1","DQ396388.1","DQ396389.1","DQ396390.1","DQ396391.1","DQ396392.1","DQ396393.1","DQ396394.1","DQ396395.1","DQ396396.1","DQ396397.1","DQ396399.1","DQ445631.1","DQ445632.1","DQ445633.1","DQ445634.1","DQ445635.1","DQ445637.1","DQ978981.1","EF469243.2","EF514713.1","EF694032.1","EF694033.1","EF694034.1","EF694035.1","EF694036.1","EU293444.1","EU293445.1","EU293446.1","EU293447.1","EU293448.1","EU293449.1","EU293450.1","EU786673.1","EU786681.1","EU884500.1","FJ388901.1","FJ388913.1","FJ388948.1","FJ388952.1","FJ496185.1","FJ496186.1","FJ496187.1","FJ496188.1","FJ496189.1","FJ496190.1","FJ496191.1","FJ496192.1","FJ496193.1","FJ496194.1","FJ496195.1","FJ496196.1","FJ496197.1","FJ496198.1","FJ496199.1","FJ496200.1","FJ496201.1","FJ496202.1","FJ496203.1","FJ496204.1","FJ496205.1","FJ496207.1","FJ496209.1","FJ496210.1","FJ496212.1","FJ496213.1","FJ496214.1","FJ670521.1","GQ999972.1","GQ999973.1","GQ999974.1","GQ999975.1","GQ999976.1","GQ999977.1","GQ999978.1","GQ999979.1","GQ999980.1","GQ999981.1","GQ999982.1","GQ999983.1","GQ999984.1","GQ999985.1","GQ999986.1","GQ999987.1","GQ999988.1","GQ999989.1","GQ999990.1","GQ999991.1","JF683740.1","JF683755.1","JF683768.1","JF683770.1","JF683776.1","JF683777.1","JF683803.1","JN188292.1","JN692434.1","JX140662.1","JX140663.1","JX140664.1","JX140665.1","JX140666.1","JX140667.1","JX140668.1","JX140669.1","JX974244.1","JX974245.1","JX974246.1","JX976632.1","JX976633.1","JX976634.1","JX976635.1","JX976636.1","JX976637.1","JX976638.1","JX976639.1","JX976640.1","JX976641.1","JX976642.1","JX976646.1","JX976647.1","JX976648.1","JX976649.1","JX976650.1","JX976651.1","JX976652.1","JX976659.1","JX976660.1","JX976661.1","JX976662.1","JX976663.1","JX976664.1","JX976665.1","JX976666.1","JX976667.1","JX976668.1","JX976669.1","JX976670.1","JX976671.1","JX976672.1","JX976673.1","JX976674.1","JX976675.1","JX976676.1","JX976677.1","JX976678.1","JX976679.1","JX976680.1","JX976681.1","JX976682.1","JX976683.1","JX976684.1","JX976685.1","JX976686.1","JX976688.1","JX976689.1","JX976690.1","JX976691.1","JX976692.1","JX976693.1","JX976707.1","JX976708.1","JX976709.1","JX976710.1","JX976711.1","JX976712.1","JX976713.1","JX976715.1","JX976716.1","JX976717.1","JX976718.1","JX976719.1","JX976720.1","JX976729.1","JX976730.1","KC156114.1","KC156115.1","KC156116.1","KC156117.1","KC156118.1","KC156119.1","KC156120.1","KC156121.1","KC156122.1","KC156123.1","KC156124.1","KC156125.1","KC156126.1","KC156127.1","KC156128.1","KC156129.1","KC156130.1","KC156210.1","KC156211.1","KC156212.1","KC156213.1","KC156214.1","KC156215.1","KC156216.1","KC156217.1","KC156218.1","KC156219.1","KC156220.1","KC156221.1","KC870038.1","KC898980.1","KC898995.1","KC898996.1","KF250403.1","KF250404.1","KF526207.1","KF526209.1","KF526210.1","KF526212.1","KF526213.1","KF526214.1","KF526216.1","KF526218.1","KF526225.1","KF526226.1","KF526227.1","KF527172.1","KF527173.1","KF716466.1","KF716467.1","KF766537.1","KF766538.1","KF766539.1","KF766540.1","KF766541.1","KF766542.1","KF835515.1","KF835522.1","KP109480.1","KP109481.1","KP109482.1","KP109483.1","KP109484.1","KP109485.1","KP109486.1","KP109487.1","KP109488.1","KP109489.1","KP109494.1","KP109495.1","KP109496.1","KP109516.1","KP109517.1","KP109520.1","KP109521.1","KP109522.1","KP109523.1","KP109524.1","KP109525.1","KP109526.1","KP109527.1","KP411830.1","KP411831.1","KP411832.1","KP411833.1","KP411834.1","KP411835.1","KP411836.1","KP411837.1","KP411838.1","KP411839.1","KR820294.1","KR820295.1","KR820296.1","KR820297.1","KR820298.1","KR820299.1","KR820300.1","KR820302.1","KR820303.1","KR820304.1","KR820305.1","KR820306.1","KR820307.1","KR820308.1","KR820309.1","KR820310.1","KR820311.1","KR820312.1","KR820313.1","KR820314.1","KR820315.1","KR820316.1","KR820317.1","KR820318.1","KR820319.1","KR820320.1","KR820321.1","KR820322.1","KR820323.1","KR820324.1","KR820325.1","KR820326.1","KR820327.1","KR820328.1","KR820329.1","KR820330.1","KR820331.1","KR820332.1","KR820333.1","KR820334.1","KR820335.1","KR820336.1","KR820337.1","KR820338.1","KR820339.1","KR820340.1","KR820341.1","KR820342.1","KR820343.1","KR820344.1","KR820345.1","KR820346.1","KR820347.1","KR820348.1","KR820349.1","KR820350.1","KR820351.1","KR820352.1","KR820353.1","KR820354.1","KR820355.1","KR820356.1","KR820357.1","KR820358.1","KR820359.1","KR820360.1","KR820361.1","KR820362.1","KR820363.1","KR820364.1","KR820365.1","KR820366.1","KR820367.1","KR820369.1","KR820370.1","KR820371.1","KR820372.1","KR820373.1","KR820374.1","KR820375.1","KR820376.1","KR820377.1","KR820378.1","KR820379.1","KR820380.1","KR820381.1","KR820382.1","KR820383.1","KR820384.1","KR820385.1","KR820386.1","KR820387.1","KR820388.1","KR820389.1","KR820390.1","KR820391.1","KR820392.1","KR820393.1","KR820394.1","KR820395.1","KR820396.1","KR820397.1","KR820398.1","KR820399.1","KR820400.1","KR820401.1","KR820402.1","KR820403.1","KR820404.1","KR820405.1","KR820406.1","KR820407.1","KR820408.1","KR820409.1","KR820410.1","KR820411.1","KR820412.1","KR820413.1","KR820414.1","KR820415.1","KR820416.1","KR820417.1","KR820418.1","KR820419.1","KR820420.1","KR820421.1","KR820422.1","KR820423.1","KR820424.1","KR820425.1","KR820426.1","KR820427.1","KR820428.1","KR820429.1","KR820430.1","KR820431.1","KR820432.1","KR820433.1","KR820434.1","KR820435.1","KR820436.1","KR820437.1","KR820438.1","KR820439.1","KR820440.1","KR820441.1","KR820442.1","KR820443.1","KR820444.1","KR820445.1","KR820446.1","KR820447.1","KR820448.1","KR820449.1","KT022362.1","KT022366.1","KT022371.1","KT124786.1","KT183051.1","KT183052.1","KT183053.1","KT183054.1","KT183055.1","KT183056.1","KT183057.1","KT183058.1","KT183059.1","KT183060.1","KT183061.1","KT183062.1","KT183064.1","KT183065.1","KT183066.1","KT183067.1","KT183068.1","KT183069.1","KT183070.1","KT183071.1","KT183072.1","KT183078.1","KT183079.1","KT183080.1","KT183081.1","KT183082.1","KT183083.1","KT183084.1","KT183085.1","KT183086.1","KT183087.1","KT183088.1","KT183089.1","KT183090.1","KT183091.1","KT183092.1","KT183093.1","KT183094.1","KT183095.1","KT183096.1","KT183097.1","KT183098.1","KT183099.1","KT183100.1","KT183101.1","KT183102.1","KT183103.1","KT183104.1","KT183105.1","KT183106.1","KT183107.1","KT183123.1","KT183125.1","KT183126.1","KT183127.1","KT183128.1","KT183129.1","KT183130.1","KT183131.1","KT183132.1","KT183133.1","KT183134.1","KT183135.1","KT183136.1","KT183137.1","KT183138.1","KT183139.1","KT183140.1","KT183141.1","KT183142.1","KT183143.1","KT183144.1","KT183145.1","KT183146.1","KT183147.1","KT183148.1","KT183149.1","KT183150.1","KT183151.1","KT183152.1","KT183153.1","KT183154.1","KT183155.1","KT183156.1","KT183157.1","KT183158.1","KT183159.1","KT183160.1","KT183161.1","KT183163.1","KT183164.1","KT183165.1","KT183166.1","KT183168.1","KT183169.1","KT183170.1","KT183171.1","KT183172.1","KT183173.1","KT183174.1","KT183175.1","KT183176.1","KT183177.1","KT183178.1","KT183179.1","KT183180.1","KT183181.1","KT183182.1","KT183183.1","KT183184.1","KT183185.1","KT183186.1","KT183187.1","KT183188.1","KT183189.1","KT183190.1","KT183191.1","KT183193.1","KT183195.1","KT183196.1","KT183197.1","KT183198.1","KT183199.1","KT183200.1","KT183201.1","KT183202.1","KT183203.1","KT183204.1","KT183205.1","KT183206.1","KT183207.1","KT183208.1","KT183209.1","KT183210.1","KT183211.1","KT183212.1","KT183213.1","KT183214.1","KT183215.1","KT183216.1","KT183217.1","KT183218.1","KT183219.1","KT183220.1","KT183221.1","KT183223.1","KT183224.1","KT183225.1","KT183226.1","KT183227.1","KT183229.1","KT183230.1","KT183231.1","KT183232.1","KT183234.1","KT183235.1","KT183236.1","KT183237.1","KT183238.1","KT183239.1","KT183240.1","KT183241.1","KT183242.1","KT183243.1","KT183244.1","KT183245.1","KT183246.1","KT183247.1","KT183248.1","KT183250.1","KT183252.1","KT183253.1","KT183254.1","KT183255.1","KT183256.1","KT183257.1","KT183258.1","KT183259.1","KT183260.1","KT183261.1","KT183262.1","KT183263.1","KT183264.1","KT183265.1","KT183266.1","KT183267.1","KT183268.1","KT183269.1","KT183270.1","KT183271.1","KT183272.1","KT183274.1","KT183275.1","KT183276.1","KT183278.1","KT183279.1","KT183280.1","KT183281.1","KT183282.1","KT183283.1","KT183284.1","KT183285.1","KT183286.1","KT183287.1","KT183288.1","KT183289.1","KT183290.1","KT183292.1","KT183295.1","KT183296.1","KT183297.1","KT183298.1","KT183299.1","KT183300.1","KT183301.1","KT183302.1","KT183303.1","KT183304.1","KT183305.1","KT183306.1","KT183307.1","KT183308.1","KT183309.1","KT183310.1","KT183336.1","KT183337.1","KT183338.1","KT183339.1","KT183340.1","KT183341.1","KT276258.1","KT427674.1","KT427677.1","KT427678.1","KT427736.1","KT427752.1","KT427800.1","KT427806.1","KT427810.1","KT427817.1","KU168262.1","KU168263.1","KU168308.1","KU319528.1","KU319529.1","KU319530.1","KU319531.1","KU319532.1","KU319533.1","KU319534.1","KU319535.1","KU319536.1","KU319537.1","KU319538.1","KU319539.1","KU319540.1","KU319541.1","KU319542.1","KU319543.1","KU319544.1","KU319545.1","KU319546.1","KU319547.1","KU319548.1","KU319549.1","KU319550.1","KU319551.1","KU341722.1","KU341723.1","KU341724.1","KU341725.1","KU341726.1","KU341727.1","KU341728.1","KU341729.1","KU341730.1","KU341731.1","KX228799.1","KX228818.1","KX228820.1","KX228821.1","KX389612.1","U46016.1","U52953.1"],
-			// ["AB098330.1","AB098331.1","AB098332.1","AB098333.1","AB253421.1","AB253422.1","AB253428.1","AB253429.1","AB287376.1","AB287377.1","AB287378.1","AB287379.1","AB485632.1","AF004885.1","AF069669.1","AF069670.1","AF069671.1","AF069673.1","AF107771.1","AF193275.1","AF361872.1","AF361873.1","AF413987.1","AF457052.1","AF457053.1","AF457055.1","AF457063.1","AF457065.1","AF457066.1","AF457067.1","AF457068.1","AF457069.1","AF457070.1","AF457075.1","AF457077.1","AF457079.1","AF457080.1","AF457081.1","AF457083.1","AF457084.1","AF457086.1","AF457089.1","AF484478.1","AF484493.1","AF484507.1","AF484508.1","AF484509.1","AF484512.1","AF539405.1","AM000053.1","AM000054.1","AM000055.1","AY253305.1","AY253314.1","AY322184.1","AY322185.1","AY322190.1","AY322193.1","AY500393.1","AY521629.1","AY521630.1","AY521631.1","AY713406.1","AY713407.1","AY829203.1","AY829205.1","AY829206.1","AY829208.1","AY829209.1","AY829210.1","AY829212.1","DQ207944.1","DQ396400.1","DQ676872.1","DQ676873.1","DQ823356.1","DQ823357.1","DQ823358.1","DQ823359.1","DQ823360.1","DQ823361.1","DQ823365.1","DQ823366.1","DQ823367.1","EF545108.1","EF589039.1","EF589040.1","EF589041.1","EF589042.1","EF589043.1","EF589044.1","EU110085.1","EU110087.1","EU110088.1","EU110092.1","EU110094.1","EU110095.1","EU110097.1","EU861977.1","FJ388892.1","FJ388893.1","FJ388894.1","FJ388903.1","FJ388906.1","FJ388909.1","FJ388925.1","FJ388932.1","FJ388938.1","FJ388942.1","FJ388946.1","FJ388950.1","FJ388951.1","FJ623475.1","FJ623476.1","FJ623477.1","FJ623478.1","FJ623479.1","FJ623480.1","FJ623481.1","FJ623482.1","FJ623483.1","FJ623484.1","FJ623485.1","FJ623486.1","FJ623487.1","FJ623488.1","FJ670519.1","FJ670523.1","FJ864679.1","JF683737.1","JF683748.1","JF683759.1","JF683760.1","JF683761.1","JF683763.1","JF683767.1","JF683779.1","JF683780.1","JF683782.1","JF683783.1","JF683798.1","JQ292891.1","JQ292892.1","JQ292893.1","JQ292894.1","JQ292895.1","JQ292896.1","JQ292897.1","JQ292898.1","JQ292899.1","JQ292900.1","JQ403028.1","JX140650.1","JX140651.1","JX236669.1","JX236671.1","JX236676.1","JX236677.1","JX236678.1","JX500694.1","JX500695.1","JX500696.1","KC596070.1","KF716472.1","KF716474.1","KF716475.1","KF716478.1","KF716486.1","KF716491.1","KF716492.1","KF716499.1","KF716500.1","KF859745.1","KJ190253.1","KJ190254.1","KJ190256.1","KJ190257.1","KJ190258.1","KJ190259.1","KJ190260.1","KJ190261.1","KJ190262.1","KJ190263.1","KJ190264.1","KJ190265.1","KJ190266.1","KJ190267.1","KJ190268.1","KJ190269.1","KJ190270.1","KJ190271.1","KJ190273.1","KJ190274.1","KJ948658.1","KP109490.1","KP109528.1","KP223729.1","KP223730.1","KP223731.1","KP223732.1","KP223733.1","KP223734.1","KP223735.1","KP223736.1","KP223737.1","KP223738.1","KP223739.1","KP223740.1","KP223741.1","KP223742.1","KP223743.1","KP223744.1","KP223745.1","KP223746.1","KP223747.1","KP223748.1","KP223749.1","KP223750.1","KP223751.1","KP223752.1","KP223753.1","KP223754.1","KP223755.1","KP223756.1","KP223757.1","KP223758.1","KP223759.1","KP223760.1","KP223761.1","KP223762.1","KP223763.1","KP223765.1","KP223766.1","KP223767.1","KP223768.1","KP223769.1","KP223770.1","KP223771.1","KP223772.1","KP223773.1","KP223774.1","KP223775.1","KP223776.1","KP223777.1","KP223778.1","KP223779.1","KP223780.1","KP223781.1","KP223797.1","KP223799.1","KP223815.1","KP223835.1","KP223836.1","KP223837.1","KP223838.1","KP223839.1","KP223840.1","KP223841.1","KP223842.1","KP223843.1","KP223844.1","KP223845.1","KP223846.1","KP223847.1","KP223848.1","KP223849.1","KP223850.1","KP223851.1","KP223852.1","KP223853.1","KP223854.1","KP718918.1","KP718928.1","KT022360.1","KT022361.1","KT022363.1","KT022364.1","KT022365.1","KT022367.1","KT022368.1","KT022369.1","KT022370.1","KT022372.1","KT022373.1","KT022374.1","KT022375.1","KT022376.1","KT022377.1","KT022378.1","KT022380.1","KT022381.1","KT022382.1","KT022383.1","KT022384.1","KT152839.1","KT152840.1","KT152841.1","KT152842.1","KT152843.1","KT152844.1","KT152845.1","KT152846.1","KT152847.1","KT183312.1","KT183313.1","KT183314.1","KT183315.1","KT183316.1","KT983615.1","KU168256.1","KU168305.1","KX228810.1","KX228815.1","M62320.1","U51190.1"],
-			// ["A07108.1","A14116.1","A34828.1","AB485648.1","AB485649.1","AB485650.1","AB485651.1","AF457090.1","AF484477.1","AF484480.1","AF484481.1","AF484483.1","AF484485.1","AF484486.1","AF484487.1","AF484489.1","AF484490.1","AF484494.1","AF484495.1","AF484497.1","AF484498.1","AF484499.1","AF484502.1","AF484504.1","AF484505.1","AF484506.1","AF484511.1","AF484513.1","AF484514.1","AF484515.1","AF484516.1","AF484518.1","AF484519.1","AJ320484.1","AJ488926.1","AJ488927.1","AJ519488.1","AJ519489.1","AY253311.1","AY304496.1","AY322189.1","AY371155.1","AY371156.1","AY371157.1","AY713418.1","AY773338.1","AY773339.1","AY773340.1","AY773341.1","AY795903.1","AY795907.1","DQ054367.2","EF633445.1","FJ388945.1","JQ403079.1","JX140670.1","JX236668.1","JX236670.1","JX236672.1","JX236673.1","JX236679.1","K03454.1","KC596071.1","KC596072.1","KF716476.1","KF716479.1","KF716480.1","KF716501.1","KF716502.1","KF716503.1","KJ787683.1","KJ787684.1","KP109501.1","KU168271.1","KU168272.1","M22639.1","M27323.1","U88822.1","U88824.1"],
-			// ["AB231893.1","AB287003.1","AB287004.1","AB485662.1","AB485663.1","AF061640.1","AF061641.1","AF061642.1","AF084936.1","AF423760.1","AF450098.1","AY371121.1","AY586547.2","AY586548.2","AY586549.2","AY612637.1","AY772535.1","DQ168573.1","DQ168575.1","DQ168576.1","DQ168579.1","EU786670.1","FJ389363.1","FJ389364.1","FJ389365.1","FJ389366.1","FJ389367.1","FJ670520.1","FJ670530.1","FR846408.1","FR846409.1","FR846410.1","GU362882.1","HM067749.1","JN106043.1","JN248582.1","JN248584.1","JN248586.1","JN248591.1","JN248593.1","JX140674.1","JX140675.1","JX140676.1","KF716477.1","KJ948662.1","KP109502.1","KP718915.1","KP718923.1","KP718925.1","KR017776.1","KT022379.1","KT276261.1","KU168277.1","KU168278.1","KU168300.1","KU168302.1","KU685592.1","KX228801.1","KX228812.1","KX389618.1","KX389619.1","KX389620.1","KX389625.1","KX389626.1","KX389631.1","KX389636.1","KX389641.1","KX389642.1","KX389645.1","KX389646.1","KX389648.1","U88826.1"],
-			// ["AB485656.1","AB485657.1","AB485658.1","AB485659.1","AF005494.1","AF075703.1","AF077336.1","AJ249238.1","AY173957.1","AY173958.1","DQ189088.1","DQ979023.1","DQ979024.1","DQ979025.1","EU446022.1","FJ670516.2","FJ771006.1","FJ771007.1","FJ771008.1","FJ771009.1","FJ771010.1","FJ900266.1","FJ900267.1","FJ900268.1","GQ290462.1","JF683771.1","JX140671.1","KC113009.1","KJ849782.1","KJ849791.1","KJ883137.1","KJ883138.1","KJ883139.1","KJ883140.1","KJ883141.1","KJ883142.1","KJ883143.1","KJ883144.1","KJ883145.1","KJ883146.1","KJ883147.1","KJ883148.1","KJ883149.1","KJ883150.1","KJ883151.1","KJ883152.1","KT276257.1","KT276260.1","KT427774.1","KT427814.1","KU168274.1","KU168275.1","KU168276.1"],
-			// ["AF286236.1","AF457101.1","AY046058.1","EF029066.1","EF029067.1","EF029068.1","EF029069.1","FJ388921.1","HM215249.1","HM215251.1","JF683772.1","JX140679.1","KP718920.1","KP718929.1","KU168299.1"]
-			// ];
-			// xmap = new MoDMap3D( accToPlot , 9, false, []);
-			
-			xmap.print();
-			xmap.loadSequences(false);
-
+		
+		$("#allInputDataShow").click(function(){
+			$("#allInputData").slideToggle();
 		});
 
+		$("#numofsets").change(function(){
+			if($("#numofsets").val() == 0){
+				$("#numofsets").css({"border-color": "red", "border-width":"5px", "border-style":"solid"});
+			}else{
+				// DEFAULT VALUES as reported in chrome by jquery
+				// $("#numofsets").css("border-color");
+				// $("#numofsets").css("border-width");
+				// $("#numofsets").css("border-style");
+				$("#numofsets").css({"border-color": "rgb(169, 169, 169)", "border-width":"0.666667px", "border-style":"solid"});
+			}
+			
+			var colorList = '';
+			for(var i=0; i<labelColors.length; i++){
+				colorList += '<option value="'+labelColors[i]+'">'+ labelColors[i]+'</option>';
+			}
 
-		// simpelmap = new MoDMap3D( [ 
-		// 	["NC_014453","NC_012761","NC_012762","NC_012763","NC_012764","NC_012766","NC_012769","NC_012771","NC_012773","NC_011053","NC_010299","NC_010300","NC_004025","NC_002765"], 
-		// 	["NC_018115","NC_018116","NC_018096","NC_018057","NC_018058","NC_018059","NC_018060","NC_018061","NC_018062","NC_018063","NC_016666","NC_015485","NC_015486","NC_014042","NC_014045","NC_014047","NC_014051","NC_013993","NC_012920","NC_012774","NC_012775","NC_012670","NC_011519","NC_011137","NC_011120","NC_009747","NC_009748","NC_008215","NC_008216","NC_008217","NC_008218","NC_008219","NC_008220","NC_008066","NC_007009","NC_006900","NC_006901","NC_005943","NC_002811","NC_002763","NC_002764","NC_001643","NC_001644","NC_001645","NC_001646","NC_001992","NC_002082","NC_002083"]] , 9, true, ["Streps", "Haplo"] );
-		// // simpelmap = new MoDMap3D( [ 
-		// // 	["NC_014453","NC_012761","NC_012762","NC_012763","NC_012764","NC_012766"], 
-		// // 	["NC_018115","NC_018116","NC_018096","NC_018057","NC_018058","NC_018059"]], 9 , true, ["Test1", "Test2"]);
-		// simpelmap.print(); 
-		// simpelmap.loadSequences(false);
+			// save previous accessions used
+			previousdata = [];
+			for(var i=0; i<15; i++){
+				if($("#set"+i).html() != undefined){
+					previousdata.push([ $("#nameset"+i).val(), $("#colorset"+i).val(), $("#set"+i).html() ]);
+				}
+			}
+			console.log("previous_accessions",previousdata);
 
 
+			console.log("numofsets=",$("#numofsets").val());
+			$("#sets").html('');
+			for(var i=0; i<$("#numofsets").val(); i++){
+				$("#sets").html($("#sets").html()+'<p>GroupName: <input type="text" size="5" id="nameset'+i+'" value="Set['+i+']"> GroupColor: <select id="colorset'+i+'">'+colorList+'</select><br>Insert comma separated NCBI accession numbers:<br><textarea id="set'+i+'" autofocus  rows="2" cols="40"></textarea></p>');
+			}
+			for(var i=0; i<$("#numofsets").val(); i++){$("#colorset"+i).val(labelColors[i]);}
+
+			//restore saved accessions
+			for(var i=0; i<previousdata.length; i++){
+				if($("#set"+i).html() != undefined){
+					$("#nameset"+i).val(previousdata[i][0]);
+					$("#colorset"+i).val(previousdata[i][1]);
+					$("#set"+i).html(previousdata[i][2]);
+				}
+			}
+
+
+			if($("#numofsets").val()>0){$("#buildmap").show();}else{$("#buildmap").hide();}
+		});
+
+		var tmpDataset = geturlparamvalue('dataset');
+		if(tmpDataset!=-1 && tmpDataset.slice(0,5)=='local'){
+			newDataset = localStorage.getItem("dataset"+tmpDataset.slice(5));
+			$("#buildmapmenuheader").click();
+			$('#guide-tabs li:eq(2) a').tab('show');
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#numofsets").val('1');
+			$("#numofsets").trigger("change");
+			$("#set0").html(newDataset);
+			$("#stepstatus").hide();
+			$("#mainprogressbar").hide();
+			
+			// he came here for building, not extending, right?!
+			// OR
+			// $("#buildmapmenucontent").slideDown();
+			// $("#inputdatamenu").slideDown();
+			// $("#extendmapmenucontent").slideUp();
+			// $("#computemenu").slideUp();
+
+
+			//$("#buildmap").click(); allow user to change settings if wanted
+		}else{
+			//console.log('no local dataset');
+		}
+
+		$("#fastafiles").hide();
+		$('input[type=radio][name=extrapointstype]').change(function() {
+      if (this.value == 'ncbi') {
+      	defaultInputType = "ncbi";
+        console.log("ncbi selected..");
+        $("#extrancbi").show();
+      	$("#fastafiles").hide();
+        $("#fastafilesinfo").hide();
+        $("#inputdatamenu").slideUp();
+      	$("#computemenu").slideUp(); 
+      	$("#loadrefmap").show();   	
+      }
+      else if (this.value == 'fasta') {
+      	defaultInputType = "fasta";
+				console.log("fasta selected..");
+				$("#extrancbi").hide();
+      	$("#fastafiles").show();
+				$("#fastafilesinfo").show();
+        $("#inputdatamenu").slideUp();
+      	$("#computemenu").slideUp();
+      	$("#loadrefmap").hide();
+
+      	// Check for the various File API support.
+				if(window.File && window.FileReader && window.FileList && window.Blob){
+					console.log("everything ok");
+				}else{
+					console.log('The File APIs are not fully supported in this browser.');
+					$('#fastafiles').hide()
+					$('#fastafilesinfo').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> ERROR <strong>The File APIs are not fully supported in this browser.</strong> Please use another browser or input NCBI accession numbers instead.</div>');
+					$("#inputdatamenu").slideUp();
+      		$("#computemenu").slideUp(); 
+				}
+
+				if(fastaFilesLoaded.length >0){
+		    	$("#loadrefmap").show();
+		    } 
+      }
+    });
+	
+		$("#fastafiles").change(function(evt){
+			console.log("Loading fasta files metadata..");
+			var files = evt.target.files; 
+			fastaFilesLoaded = files;
+			var output = [];
+	    for (var i = 0, f; f = files[i]; i++) {
+	      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ', f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a','</li>');
+	    }
+	    $("#fastafilesinfo").html('<ul>' + output.join('') + '</ul>');
+	    $("#loadrefmap").show();
+		});
+
+	
 	});
 
 	</script>
@@ -694,33 +1082,257 @@
 <body>
 
 	<div class = "page-header">
-		<h1 class="text-center">HaploMaps3D</h1>
-		 <!-- (Tell us your mtDNA, and we will tell you who your mother is!!) -->
+		<h1 class="text-center">MoDMaps3D</h1>
 	</div>
 
 	<div class="container">
 		<ul class="nav nav-tabs" id="guide-tabs">
 			<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-			<li><a data-toggle="tab" href="#about">About</a></li>
+			<li><a data-toggle="tab" href="#menu1">Explore a Map</a></li>
+			<li><a data-toggle="tab" href="#menu2">Build or Extend a Map</a></li>
+			<li><a data-toggle="tab" href="#menu3">Compute a distance</a></li>
+			<li><a data-toggle="tab" href="#menu4">About</a></li>
 		</ul>
 
 		<div class="tab-content">
 			<div id="home" class="tab-pane fade in active">
-				<h3>Welcome to HaploMaps3D!</h3>
-				<input type="text" id="qmtdna" />
-				<input type="submit" id="startHaplo" name="startHaplo" value="Find out!" style="display:none;"/>
-				<div class="col-xs-6 " id="file_contents">
-				</div>  
-				<div class="col-xs-6 " id="result">
-				</div> 
+				<h3>Welcome to MoDMaps3D!</h3>
+				<p>Here are some of the things you can do with three dimensional Molecular Distance Maps.</p>
+
+				<dl class="dl-horizontal">
+					<dt><a href="#" id="goto1">Explore a Map</a></dt>
+					<dd>Explore available built-in MoDMaps. These maps provide extensive information for each genomic sequence involved in each map, along with complementary information.</dd>
+					<dt><a href="#" id="goto2">Build or Extend a Map</a></dt>
+					<dd>Build a new MoDMap from scratch tailored to your dataset. Include up to 12 categories, with as many sequences you need in each of them. Alternatively, extend a MoDMap adding your points. You can select a "base" map from a variety of available maps and then add your DNA sequences in it.</dd>
+					<dt><a href="#" id="goto3">Compute a distance</a></dt>
+					<dd>Compute the distance between any two DNA sequences, given as NCBI accession numbers.</dd>
+				</dl>
+				<div id="fastafile"></div>
 			</div>
-			<div id="about" class="tab-pane fade">
+			<div id="menu1" class="tab-pane fade">
+				<h3>Explore available MoDMaps</h3>
+				<p>Here you can find a list of available built-in MoDMaps to explore. Select a map from sidebar, preview its content, and click on "Show Map" to see it in action.</p>
+				
+				<div class="col-xs-5">
+					<div id="listgroupsofmaps" class="panel panel-default">
+					</div>
+				</div>
+				<div class="col-xs-6 " id="filecontent">
+				</div>  
+			</div>
+			<div id="menu2" class="tab-pane fade">
+				<!-- style="padding-right:0px; border-right: 1px solid #ccc;" -->
+				<div class="col-xs-10" id="buildmapview" >
+					<h3>Build your map, for your dataset</h3>
+					
+					<!-- <div class="panel panel-default">
+					  <div class="panel-heading">Panel with panel-default class</div>
+					  <div class="panel-body">Panel Content</div>
+					</div> -->
+
+					<div class="panel panel-default">
+						<div class="panel-heading"><label>Choose an option to continue</label></div>
+						<div class="panel-body">
+						<label><input type="radio" id="buildmapmenuheader" name="mapmenu"/> Build a MoDMap from your dataset</label><br>
+						<label><input type="radio" id="extendmapmenuheader" name="mapmenu"/> Extend an existing MoDMap</label>
+						</div>
+					</div>
+
+					<div class="panel panel-default" id="buildmapmenucontent">
+						<div class="panel-heading"><label>Info</label></div>
+						<div class="panel-body">
+							<p>If you do not know the accession number of a species, you can search directly in NCBI from <a href="https://www.ncbi.nlm.nih.gov/nuccore/?term=Homo+sapiens" target="_blank">here</a>. Samples you can try: 
+							<a href="#" id="dataset1">[1] 62 mtDNA primates</a> - 
+							<a href="#" id="dataset2">[2] 112 mtDNA amphibia</a> - 
+							<a href="#" id="dataset3">[3] 39 HIV-1 genomes</a> 
+							</p>
+						</div>
+					</div>
+
+					<div class="panel panel-default" id="extendmapmenucontent">
+						<div class="panel-heading"><label>Info</label></div>
+						<div class="panel-body">
+							<p>Extend a map by adding new points in a set of predefined MoDMaps. The new points can be given as comma separated accession numbers from NCBI. If you do not know the accession number of a species, you can search directly in NCBI from <a href="https://www.ncbi.nlm.nih.gov/nuccore/?term=Homo+sapiens" target="_blank">here</a>.</p>
+
+
+							<p>
+							<dl class="dl-horizontal">
+							<dt>Background map:</dt>
+							<dd><select id="extendmapid">
+								<option value="Animalia_mtDNA_ClassAmphibia">Animalia_mtDNA_ClassAmphibia</option>
+								<!-- INSECTS REMOVED BECAUSE OF TOO MANY SUBSETS 21>>10 -->
+								<!-- <option value="Animalia_mtDNA_ClassInsecta">Animalia_mtDNA_ClassInsecta</option> -->
+								<option value="Animalia_mtDNA_ClassMammalia">Animalia_mtDNA_ClassMammalia</option>
+								<option value="Animalia_mtDNA_OrderPrimates">Animalia_mtDNA_OrderPrimates</option>
+								<option value="Animalia_mtDNA_Vertebrata">Animalia_mtDNA_Vertebrata</option>
+								<option value="Animalia_mtDNA_Ins_Mam_Amph">Animalia_mtDNA_Ins_Mam_Amph</option>
+								<option value="Fungi_mtDNA">Fungi_mtDNA</option>
+								<option value="Plants_mtDNA">Plants_mtDNA</option>
+								<option value="Protists_mtDNA">Protists_mtDNA</option>
+								<option value="Protists_ptDNA">Protists_ptDNA</option>
+								<option value="Archaea_nDNA">Archaea_nDNA</option>
+								<option value="Bacteria_nDNA">Bacteria_nDNA</option>
+								<option value="Viruses_HIV1">Viruses_HIV1</option>
+								<option value="Haplogroups_All">Haplogroups_All</option>
+								<option value="chimeras1">chimeras1</option>
+								<option value="chimeras2">chimeras2</option>
+							</select><br></dd>
+							<dt>Extra Sequences:</dt>
+							<dd>
+								<label><input type="radio" name="extrapointstype" value="ncbi" checked="checked">
+								Insert comma separated NCBI accession numbers</label><br>
+								<label><input type="radio" name="extrapointstype" value="fasta">
+								Load FASTA files</label><br>
+								<textarea id="extrancbi" rows="2" cols="40"></textarea>
+								<input type="file" id="fastafiles" name="fastafiles[]" multiple >
+								<output id="fastafilesinfo"></output>
+
+							</dd>
+
+							<dt>
+							<!-- Enter comma separated NCBI accessions --OR-- load FASTA files<br>
+							</dd> -->
+							</dl></p>
+
+							<p><input type="submit" id="loadrefmap" value="Continue"/></p>
+						</div>
+					</div>
+
+					<div class="panel panel-default" id="inputdatamenu">
+						<div class="panel-heading"><label>Settings of MoDMap selected</label></div>
+						<div class="panel-body">
+							<p><div id="allInputDataMinimized">
+								<a href="#" id="allInputDataShow">Show/Hide input data</a>
+							</div></p>
+
+							<div id="allInputData">
+								<dl class="dl-horizontal">
+									<dt>Length of k-mers:</dt>
+									<dd>
+										<select id="kmerslen">
+											<option value="3">3 bp</option>
+											<option value="4">4 bp</option>
+											<option value="5">5 bp</option>
+											<option value="6">6 bp</option>
+											<option value="7">7 bp</option>
+											<option value="8">8 bp</option>
+											<option value="9">9 bp</option>
+											<option value="10">10 bp</option>
+											<option value="11">11 bp</option>
+											<option value="12">12 bp</option>
+										</select>
+									</dd>
+									<dt>Get Taxonomy:</dt>
+									<dd>
+										<select id="getTaxa">
+											<option value="0">No (Fast)</option>
+											<option value="1">Yes (Slow)</option>
+										</select>
+									</dd>
+									<dt>Number of groups:</dt>
+									<dd id="selectnumofsets">
+										<select id="numofsets">
+											<option value="0">Choose</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option> 
+											<option value="12">12</option>
+											<option value="13">13</option>
+											<option value="14">14</option>
+											<option value="15">15</option> 
+										</select>
+									</dd>
+								</dl>
+
+								<div id="sets"></div>
+							</div>
+
+							<p><input type="submit" id="buildmap" value="Compute MoDMap" style="display:none;" /></p>
+						</div>
+					</div>
+
+					<div class="panel panel-default" id="computemenu">
+					<div class="panel-heading"><label>Computation Results</label></div>
+					<div class="panel-body">
+						<p id="stepstatus"></p>
+						<div id="mainprogressbar" style="display:none;">
+						  <div id="progress"></div>
+						</div>
+						<p id="file_contents"></p>
+					</div>
+					</div>
+
+				</div>
+			</div>
+			<div id="menu3" class="tab-pane fade">
+				<h3>Compute a distance</h3>
+				<p>Compute approximated information distance (AID) between any pair of sequences, giving as input their NCBI accession numbers. AID distance has a value in [0,1]. If you do not know the accession number of a species, you can search directly in NCBI from <a href="https://www.ncbi.nlm.nih.gov/nuccore/?term=Homo+sapiens" target="_blank">here</a>.</p>
+
+				<div class="panel panel-default">
+					<div class="panel-heading"><label>Settings</label></div>
+					<div class="panel-body">
+						<p>Samples you can try:
+						<a href="#" id="aid1">[1] H.sapiens vs P.troglodytes</a> - 
+						<a href="#" id="aid2">[2] H.sapiens vs H.neanderthalensis</a></p>
+						Compute AID distance between (input NCBI accession numbers): 
+						<ol>
+							<li><input id="seq0" type="text" size="10" autofocus ></li>
+							<li><input id="seq1" type="text" size="10" ></li>
+						</ol>	
+						<input type="submit" id="computedist" value="Compute AID distance" />
+					</div>
+				</div>
+
+				<div class="panel panel-default"  id="aidinfomenu" style="display:none;">
+					<div class="panel-heading"><label>Computation Results</label></div>
+					<div class="panel-body"  id=aidinfo></div>
+				</div>
+			</div>
+			<div id="menu4" class="tab-pane fade">
 				<p>
 				<dl class="dl-horizontal">
 					<dt>Coded by:</dt>
-					<dd>Rallis Karamichalis, 2017</dd>
+					<dd>Rallis Karamichalis, 2016</dd>
 					<dt>Github Code:</dt>
-					<dd><a href="http://github.com/rallis/HaploMaps3D/" target="_blank">http://github.com/rallis/HaploMaps3D/</a></dd>					
+					<dd><a href="http://github.com/rallis/MoDMaps3D/" target="_blank">http://github.com/rallis/MoDMaps3D/</a></dd>
+					<dt>HotKeys:</dt>
+					
+					<dd>
+						<div id="hotkeysshowhide"><a href="#">Show/Hide full list</a></div>
+						<div id="hotkeyslist">
+						While on canvas:
+						<ul>
+						<li>A = Move camera Left</li>
+						<li>D = Move camera Right</li>
+						<li>W = Move camera Up</li>
+						<li>S = Move camera Down</li>
+						<li>E = Zoom camera In</li>
+						<li>Q = Zoom camera Out</li>
+						<li>Ctrl + LeftArrow = Rotate Left</li>
+						<li>Ctrl + UpArrow = Rotate Up</li>
+						<li>Ctrl + RightArrow = Rotate Right</li>
+						<li>Ctrl + DownArrow = Rotate Down</li>
+						<li>Left Mouse Click + Drag = Rotate to any direction</li>
+						</ul>
+
+						General Shortcuts:
+						<ul>
+						<li>Ctrl + F = Search field</li>
+						<li>Ctrl + Alt + R = Reset Camera view, keeping rotation</li>
+						<li>Ctrl + Alt + M = Toggle visibility of right menu</li>
+						<li>Ctrl + Alt + N = Toggle visibility of left menu</li>
+						</ul>
+						</div>
+					</dd>
+					
 				</dl>
 				</p>	
 			</div>
