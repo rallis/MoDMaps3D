@@ -189,7 +189,7 @@
 		eigenvec = [];
 		for( var mdsInd = 0; mdsInd < numOfSeq; mdsInd++){
 			eigenvec.push(my_eigenvec.data.slice( mdsInd*numOfSeq, (mdsInd+1)*numOfSeq ));
-
+		}
 
 		// try{
 		// 	res2 = numeric.eig(distMatrixCentered);	
@@ -1055,11 +1055,11 @@
 			var files = evt.target.files; 
 			fastaFilesLoaded = files;
 			var output = [];
-	    for (var i = 0, f; f = files[i]; i++) {
-	      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ', f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a','</li>');
-	    }
-	    $("#fastafilesinfo").html('<ul>' + output.join('') + '</ul>');
-	    $("#loadrefmap").show();
+		    for (var i = 0, f; f = files[i]; i++) {
+		      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ', f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a','</li>');
+		    }
+		    $("#fastafilesinfo").html('<ul>' + output.join('') + '</ul>');
+		    $("#loadrefmap").show();
 		});
 
 	
