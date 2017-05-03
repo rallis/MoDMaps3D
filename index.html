@@ -174,23 +174,31 @@
 		
 
 		// EIGENVALUES - EIGENVECTORS
-		var res2;
-		// part 4 NEW MDS
-		var data_type = jsfeat.F64_t | jsfeat.C1_t;
-		var columns = numOfSeq, rows = numOfSeq;
-		var my_matrix = new jsfeat.matrix_t(columns, rows, data_type);
-		my_matrix.data = [].concat.apply([], distMatrixCentered);    
-		var my_eigenvec = new jsfeat.matrix_t(columns, rows, data_type);
-		var my_eigenval = new jsfeat.matrix_t(columns, rows, data_type);
-		jsfeat.linalg.eigenVV(my_matrix, my_eigenvec, my_eigenval);
-		
-		// var eigenval, eigenvec, eigensystem;
-		eigenval = my_eigenval.data;
-		eigenvec = [];
-		for( var mdsInd = 0; mdsInd < numOfSeq; mdsInd++){
-			eigenvec.push(my_eigenvec.data.slice( mdsInd*numOfSeq, (mdsInd+1)*numOfSeq ));
+		try{
+			var res2;
+			// part 4 NEW MDS
+			var data_type = jsfeat.F64_t | jsfeat.C1_t;
+			var columns = numOfSeq, rows = numOfSeq;
+			var my_matrix = new jsfeat.matrix_t(columns, rows, data_type);
+			my_matrix.data = [].concat.apply([], distMatrixCentered);    
+			var my_eigenvec = new jsfeat.matrix_t(columns, rows, data_type);
+			var my_eigenval = new jsfeat.matrix_t(columns, rows, data_type);
+			jsfeat.linalg.eigenVV(my_matrix, my_eigenvec, my_eigenval);
+			
+			// var eigenval, eigenvec, eigensystem;
+			eigenval = my_eigenval.data;
+			eigenvec = [];
+			for( var mdsInd = 0; mdsInd < numOfSeq; mdsInd++){
+				eigenvec.push(my_eigenvec.data.slice( mdsInd*numOfSeq, (mdsInd+1)*numOfSeq ));
+			}
+		}catch(err){
+			console.log(err.message);
+			errorHasOccured = true;
+			$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.</div>');
+			return;
 		}
 
+		
 		// try{
 		// 	res2 = numeric.eig(distMatrixCentered);	
 		// }catch(err){
