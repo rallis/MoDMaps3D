@@ -539,7 +539,7 @@
 	function loadFastaFromNCBI(ind, accID, callback){
 		$.ajax({
 			tryCount : 0,
-        	retryLimit : 5,
+        	retryLimit : 5000,
         	url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&rettype=fasta&retmode=text&id="+accID,
 			success: function(result){
 				var data = result.split(/\n\r?/gi);
@@ -564,7 +564,7 @@
 				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
 				$('#aidinfo').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
 
-          
+
 			}
 		});
 	}
