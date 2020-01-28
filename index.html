@@ -552,17 +552,19 @@
 			},
 			error: function(xhr, status, error) {
 				console.log('STATUS=',status,'ERROR from loadFastaFromNCBI=',error);
-				errorHasOccured = true;
-				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
-				$('#aidinfo').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
-
+				
 				this.tryCount++;
 				if (this.tryCount <= this.retryLimit) {
 					//try again
 					console.log("tryCount is now", this.tryCount);
 					$.ajax(this);
 					return;
-				}            
+				}  
+				errorHasOccured = true;
+				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
+				$('#aidinfo').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
+
+          
 			}
 		});
 	}
