@@ -536,10 +536,50 @@
 		return {"size":numOfKmers, "flatFCGR":kmersInds};
 	}
 
+
+	exponentialBackoff(sometimesFails, 10, 100, function(result) {
+		console.log('the result is',result);
+	});
+
+	// A function that keeps trying, "toTry" until it returns true or has
+	// tried "max" number of times. First retry has a delay of "delay".
+	// "callback" is called upon success.
+	function exponentialBackoff(toTry, max, delay, callback) {
+		console.log('max',max,'next delay',delay);
+		var result = toTry();
+		
+		if (result) {
+			callback(result);
+		} else {
+			if (max > 0) {
+				setTimeout(function() {
+					exponentialBackoff(toTry, --max, delay * 2, callback);
+				}, delay);
+
+			} else {
+				console.log('we give up');   
+			}
+		}
+	}
+
+	// function sometimesFails() {
+	// 	var percentFail = 0.8;
+		
+	// 	return Math.random() >= 0.8;
+	// }
+
+	// function consoleLog() {
+	// 	var args = [].slice.apply(arguments);
+		
+	// 	document.querySelector('#result').innerHTML += '\n' + args.join(' - ');
+	// }
+
+
 	function loadFastaFromNCBI(ind, accID, callback){
 		$.ajax({
 			tryCount : 0,
-        	retryLimit : 5000,
+        	retryLimit : 5,
+			delay:500,
         	url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&rettype=fasta&retmode=text&id="+accID,
 			success: function(result){
 				var data = result.split(/\n\r?/gi);
@@ -557,7 +597,18 @@
 				if (this.tryCount <= this.retryLimit) {
 					//try again
 					console.log("tryCount is now", this.tryCount);
-					$.ajax(this);
+					// $.ajax(this);
+
+					this.delay = 2 * this.delay;
+					console.log("delay is now", this.delay);
+					
+					setTimeout($.ajax(this), delay);
+
+					// setTimeout(function() {
+					// 	exponentialBackoff(toTry, --max, delay * 2, callback);
+					// }, delay);
+
+					
 					return;
 				}  
 				errorHasOccured = true;
