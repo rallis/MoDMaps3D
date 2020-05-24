@@ -1,0 +1,76 @@
+{
+  "description": "39 HIV-1  7,8,8,8,8",
+  "kmer": 9,
+  "enable_taxa_info": false,
+  "groups": [
+    {
+      "name": "SetA",
+      "color": "blue",
+      "accession_numbers": [
+        "AY521630",
+        "AM000053",
+        "AM000054",
+        "AY521629",
+        "AY521631",
+        "AM000055",
+        "DQ396400"
+      ]
+    },
+    {
+      "name": "SetB",
+      "color": "red",
+      "accession_numbers": [
+        "AF004394",
+        "AF042101",
+        "AF256204",
+        "AF086817",
+        "AF042103",
+        "AB428555",
+        "AB287363",
+        "EU786678"
+      ]
+    },
+    {
+      "name": "SetC",
+      "color": "green",
+      "accession_numbers": [
+        "U46016",
+        "AY713415",
+        "AY713416",
+        "AY255826",
+        "EF514713",
+        "DQ207941",
+        "DQ369994",
+        "EU786673"
+      ]
+    },
+    {
+      "name": "SetD",
+      "color": "orange",
+      "accession_numbers": [
+        "AY773338",
+        "AY773341",
+        "EF633445",
+        "AY322189",
+        "AF484516",
+        "AJ488927",
+        "AY371157",
+        "AY795907"
+      ]
+    },
+    {
+      "name": "SetG",
+      "color": "magenta",
+      "accession_numbers": [
+        "U88826",
+        "AF061642",
+        "AY772535",
+        "AY586549",
+        "AF423760",
+        "AY371121",
+        "AB231893",
+        "EU786670"
+      ]
+    }
+  ]
+}

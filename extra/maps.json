@@ -1,0 +1,194 @@
+{
+  "maps": [
+    {
+      "category": "Kingdoms",
+      "files": [
+        "Animalia_mtDNA_Vertebrata.txt",
+        "Animalia_mtDNA_Ins_Mam_Amph.txt",
+        "Animalia_mtDNA_ClassMammalia.txt",
+        "Animalia_mtDNA_ClassAmphibia.txt",
+        "Animalia_mtDNA_ClassInsecta.txt",
+        "Animalia_mtDNA_OrderPrimates.txt",
+        "Fungi_mtDNA.txt",
+        "Plants_mtDNA.txt",
+        "Protists_mtDNA.txt",
+        "Protists_ptDNA.txt",
+        "Archaea_nDNA.txt",
+        "Bacteria_nDNA.txt"
+      ]
+    },
+    {
+      "category": "Closely Related Species - Composite Genomic Signatures",
+      "files": [
+        "H.sapiens_P.troglodytes_nDNA+mtDNA.txt",
+        "B.oleracea_B.napus_nDNA+cpDNA.txt",
+        "E.coli_E.fergusonii_nDNA+pDNA.txt"
+      ]
+    },
+    {
+      "category": "Viruses",
+      "files": [
+        "Viruses_HIV1.txt",
+        "Vir1_NCBI.txt",
+        "Vir2_subsetOf_Vir1.txt",
+        "Vir3_subsetOf_Vir2.txt",
+        "Vir4_subsetOf_Vir3.txt"
+      ]
+    },
+    {
+      "category": "Human Mitochondrial Haplogroups",
+      "files": [
+        "Haplogroups_All.txt",
+        "Haplogroups_African.txt"
+      ]
+    }
+  ],
+  "dev": [
+    {
+      "category": "Representatives",
+      "files": [
+        "tmp/Representatives_3Kingdoms_1.txt",
+        "tmp/Representatives_3Kingdoms_2.txt"
+      ]
+    },
+    {
+      "category": "MitoMap",
+      "files": [
+        "tmp/mitomap_2k.txt",
+        "tmp/mitomap_5k.txt",
+        "tmp/mitomap_10k.txt",
+        "tmp/mitomap_23k.txt"
+      ]
+    },
+    {
+      "category": "mtDNA_various",
+      "files": [
+        "tmp/mtDNA_Hominidae_Hylobatidae.txt"
+      ]
+    },
+    {
+      "category": "Haplogroups (Human mtDNA)",
+      "files": [
+        "tmp/Haplogroups_1_k=6.txt",
+        "tmp/Haplogroups_1_k=9.txt",
+        "tmp/Haplogroups_2_AllHaplogroups.txt",
+        "tmp/Haplogroups_3_L0-L6.txt",
+        "tmp/Haplogroups_4_AsianBranch.txt",
+        "tmp/Haplogroups_5_L2-L3-L4-L6.txt",
+        "tmp/Haplogroups_6_L3-L4-L6.txt",
+        "tmp/Haplogroups_7_L4-L6.txt",
+        "tmp/Haplogroups_8_M-D-E-G.txt",
+        "tmp/Haplogroups_8_M-E-G.txt",
+        "tmp/Haplogroups_9_EurasiaBranch_1.txt",
+        "tmp/Haplogroups_9_EurasiaBranch_2.txt",
+        "tmp/Haplogroups_9_EurasiaBranch_3.txt",
+        "tmp/Haplogroups_9_EurasiaBranch_4.txt",
+        "tmp/Haplogroups_9_EurasiaBranch_5.txt",
+        "tmp/Haplogroups_9_EurasiaBranch_6.txt",
+        "tmp/Haplogroups_9_EurasiaBranch_7.txt",
+        "tmp/Haplogroups_10_Hsubgroups.txt",
+        "tmp/Haplogroups_11_Human_Chimp.txt",
+        "tmp/Haplogroups_11_Human_k=8.txt"
+      ]
+    },
+    {
+      "category": "Six Kingdoms",
+      "files": [
+        "tmp/six_kingdoms_one_chrom.txt",
+        "tmp/six_kingdoms_sampling.txt"
+      ]
+    },
+    {
+      "category": "Viruses",
+      "files": [
+        "tmp/virus_hiv1.txt",
+        "tmp/hiv_tempmap1.txt",
+        "tmp/hiv_tempmap3.txt",
+        "tmp/hiv_tempmap4.txt",
+        "tmp/hiv_tempmap5.txt",
+        "tmp/hiv_tempmap6.txt"
+      ]
+    },
+    {
+      "category": "Animalia Kingdom",
+      "files": [
+        "tmp/animalia01.txt",
+        "tmp/animalia02.txt",
+        "tmp/animalia03.txt",
+        "tmp/animalia04.txt",
+        "tmp/animalia05.txt",
+        "tmp/animalia06.txt",
+        "tmp/animalia06_comp.txt",
+        "tmp/animalia07.txt",
+        "tmp/animalia07_comp.txt",
+        "tmp/animalia08.txt",
+        "tmp/animalia08_comp.txt",
+        "tmp/animalia09.txt",
+        "tmp/animalia09_comp.txt",
+        "tmp/animalia10.txt",
+        "tmp/animalia10_comp.txt",
+        "tmp/animalia10_comp_asm.txt",
+        "tmp/animalia11.txt",
+        "tmp/animalia11_comp.txt",
+        "tmp/animalia11_comp_asm.txt"
+      ]
+    },
+    {
+      "category": "Archaea Kingdom",
+      "files": [
+        "tmp/archaea1.txt",
+        "tmp/archaea2.txt",
+        "tmp/archaea3.txt",
+        "tmp/archaea4.txt"
+      ]
+    },
+    {
+      "category": "Bacteria Kingdom",
+      "files": [
+        "tmp/bacteria1.txt",
+        "tmp/bacteria2.txt",
+        "tmp/bacteria3.txt",
+        "tmp/bacteria4.txt",
+        "tmp/bacteria5.txt",
+        "tmp/bacteria5_comp.txt"
+      ]
+    },
+    {
+      "category": "Fungi Kingdom",
+      "files": [
+        "tmp/fungi1.txt",
+        "tmp/fungi2.txt",
+        "tmp/fungi3.txt",
+        "tmp/fungi4.txt",
+        "tmp/fungi5.txt",
+        "tmp/fungi5_comp.txt"
+      ]
+    },
+    {
+      "category": "Plantae Kingdom",
+      "files": [
+        "tmp/plants1.txt",
+        "tmp/plants2.txt",
+        "tmp/plants3.txt",
+        "tmp/plants4.txt",
+        "tmp/plants5.txt",
+        "tmp/plants6.txt",
+        "tmp/plants7.txt",
+        "tmp/plants7_comp_cp.txt",
+        "tmp/plants8.txt",
+        "tmp/plants8_comp_cp.txt",
+        "tmp/plants8_comp_cp_mt.txt",
+        "tmp/plants8_comp_mt.txt"
+      ]
+    },
+    {
+      "category": "Protists Kingdom",
+      "files": [
+        "tmp/protists1.txt",
+        "tmp/protists2.txt",
+        "tmp/protists3.txt",
+        "tmp/protists4.txt"
+      ]
+    }
+  ]
+}

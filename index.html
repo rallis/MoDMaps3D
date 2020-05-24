@@ -15,23 +15,21 @@
 	<script type="text/javascript" src="js/FileSaver.min.js"></script>
 	<script type="text/javascript" src="js/parallel.js"></script>
 	<script type="text/javascript" src="js/jsfeat.js"></script>
+	<script type="text/javascript" src="js/modmap3d.js"></script>
 
 	<script>
-	var dbg = false, errorHasOccured = false, noMDS = false, splitBy, offlineCompMinSize = 2000;
-	var eigenval, eigenvec, eigensystem, finalEigenval, finalEigenvec, points, mapfile ;
-	var fastaFilesLoaded = [], defaultInputType = "ncbi";
-	var mapID, allSequences={}, distMatrix=[], fcgrRes=9, getTaxa = false;
-	var accIDs, step1A, step1B, step2A, step2B, step3A, step3B, time;
-	var callsNCBIDone, progress;
-	var aidDistInfo = [], map_settings, previousdata = [];
+	var previousdata = [];
 	var labelColors = ['blue', 'red', 'green', 'orange', 'magenta', 'yellow', 'brown', 'lime', 'gray', 'pink','cyan','seagreen', 'olive', 'purple', 'black'];
-	var tmpMap = false;
+	var fastaFilesLoaded = [];
+	var defaultInputType = "ncbi";
+	var offlineCompMinSize = 2000;
+	var dev = false;
 
 	function geturlparamvalue(name) {
 		name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-		var regexS = "[\\?&]" + name + "=([^&#]*)";
-		var regex = new RegExp(regexS);
-		var results = regex.exec(window.location.href);
+		let regexS = "[\\?&]" + name + "=([^&#]*)";
+		let regex = new RegExp(regexS);
+		let results = regex.exec(window.location.href);
 		if(results!=null){
 			return results[1];
 		}else{
@@ -39,712 +37,33 @@
 		}
 	}
 
-	function computeMDS(){
-		time = new Date();
-		step3A = time.getTime();
-		console.log("BEGIN computeMDS()");	
-		
-		// pre-processign MDS
-
-		// part 1
-		var numOfSeq = distMatrix.length;
-		var distMatrixSqTotals = [];
-		for(var i=0; i<numOfSeq; i++){
-			var tmpColSum = 0;
-			for(var j=0; j<numOfSeq; j++){
-				tmpColSum += Math.pow(distMatrix[i][j], 2);
-			}
-			distMatrixSqTotals.push(tmpColSum);
-		}
-		if(dbg){console.log('sqtotals=',distMatrixSqTotals);}
-		
-		// part 2
-		var sumOfSqTotals = 0;
-		for(var i=0; i<numOfSeq; i++){
-			sumOfSqTotals += distMatrixSqTotals[i];
-		}
-		if(dbg){console.log('sumofsqtotals=',sumOfSqTotals);}
-		
-		// part 3
-		var distMatrixCentered = [];
-		for(var i=0; i<numOfSeq; i++){
-			distMatrixCentered.push([]);
-			for(var j=0; j<numOfSeq; j++){
-				var tmpVal = -(1/2)*(Math.pow(distMatrix[i][j], 2) - (1/numOfSeq)*distMatrixSqTotals[i] - (1/numOfSeq)*distMatrixSqTotals[j] + (1/(Math.pow(numOfSeq, 2)))* sumOfSqTotals);
-				distMatrixCentered[i].push(tmpVal);
-			}
-		}
-		
-		//DEBUGING FOR PRINTING dMatrix
-		if(noMDS){
-			if(dbg){console.log(distMatrixCentered);}
-			
-			$('#progress').html('<p>Please continue computation offline. <br> <strong>Instructions:</strong>\
-				<ul><li>Download zip file (It is downloaded automatically)</li>\
-				<li>Extract zip contents to a directory of your choice</li>\
-				<li>Download either <a href="./extra/mds.nb" target="_blank">MDS-Mathematica</a> or <a href="./extra/mds.py" target="_blank">MDS-Python</a> code and place it in the same directory</li>\
-				<li>Run the code, you should get an output file [map_output.txt]</li>\
-				<li>Open [map_output.txt], copy its content and paste it <a href="./extra/input.html" target="_blank">here</a></li>\
-				</ul></p>');
-			console.log('COPY/PASTE MATHEMATICA');
-			
-			var toprint="{";
-			for(var i=0; i<distMatrixCentered.length; i++){
-				toprint+='{';
-				for (var j=0; j<distMatrixCentered.length; j++){
-					toprint+=distMatrixCentered[i][j].toFixed(10)+',';
-				}
-				toprint = toprint.substring(0, toprint.length - 1);
-				toprint+='},'
-			}
-			toprint = toprint.substring(0, toprint.length - 1);
-			toprint+='}';
-			
-			var toprint2='{';
-			for(var i=0; i<accIDsSets.length; i++){
-				toprint2 += '{';
-				for(var j=0; j<accIDsSets[i].length; j++){
-					toprint2 += '"'+accIDsSets[i][j]+'",';
-				}
-				toprint2 = toprint2.substring(0, toprint2.length - 1);
-				toprint2 +='},'
-			}
-			toprint2 = toprint2.substring(0, toprint2.length - 1);
-			toprint2 +='}';
-			
-			var toprint3='{';
-			var totalNumOfSeq = Object.keys(allSequences).length;
-			for(var i=0; i<totalNumOfSeq; i++){
-				toprint3 += '{';
-				toprint3 += '"'+allSequences[i][0]+'",';
-				toprint3 += '"'+allSequences[i][1]+'",';
-				toprint3 += '"'+allSequences[i][2]+'",';
-				toprint3 += '"'+allSequences[i][4]+'",';
-				toprint3 = toprint3.substring(0, toprint3.length - 1);
-				toprint3 +='},'
-			}
-			toprint3 = toprint3.substring(0, toprint3.length - 1);
-			toprint3 +='}';
-
-			var toprint4 = '';
-			for(var i=0; i<accIDsSets.length; i++){	toprint4 += accIDsSets[i].length + ",";	}
-			toprint4 = toprint4.slice(0,-1);
-			toprint4 += "\n";
-			for(var i=0; i<accIDsSets.length; i++){ toprint4 += $("#colorset"+i).val() + ","; }
-			toprint4 = toprint4.slice(0,-1);
-			toprint4 += "\n";
-			toprint4 += "5\nIndex,Acc,Name,Length,Taxa\n";
-			for(var i=0; i<accIDsSets.length; i++){ toprint4 += $("#colorset"+i).val() + ","; }
-			toprint4 = toprint4.slice(0,-1);
-			toprint4 += "\n";
-			for(var i=0; i<accIDsSets.length; i++){toprint4 +=$("#nameset"+i).val()+" ("+accIDsSets[i].length+"),";}
-			toprint4 = toprint4.slice(0,-1);
-			toprint4 += "\n";
-
-			for(var i=0; i<$("#numofsets").val(); i++){ toprint4 += $("#nameset"+i).val() + ', '; }
-			toprint4 = toprint4.slice(0,-2);  //because of space above!
-			// OLD: toprint4 += '. Number of sequences is '+accIDs.length+ "\n";
-			toprint4 += '#User-input sequences#'+accIDs.length+"#Approx.Inf.Dist#NA\n";
-			
-			
-			// completely debugging part
-			var toprint5="{";
-			for(var i=0; i<distMatrix.length; i++){
-				toprint5+='{';
-				for (var j=0; j<distMatrix.length; j++){
-					toprint5+=distMatrix[i][j].toFixed(10)+',';
-				}
-				toprint5 = toprint5.substring(0, toprint5.length - 1);
-				toprint5+='},'
-			}
-			toprint5 = toprint5.substring(0, toprint5.length - 1);
-			toprint5+='}';
-
-			var zip = new JSZip();
-			zip.file("dMatrix.txt", toprint);
-			zip.file("accIDs.txt", toprint2);
-			zip.file("allSequences.txt", toprint3);
-			zip.file("mapheader.txt", toprint4);
-			zip.file("debug.txt", toprint5);
-			var content = zip.generate({type:"blob"});
-			// see FileSaver.js
-			saveAs(content, "dataForMMA.zip");
-			return;
-		}
-		
-
-		// EIGENVALUES - EIGENVECTORS
-		try{
-			var res2;
-			// part 4 NEW MDS
-			var data_type = jsfeat.F64_t | jsfeat.C1_t;
-			var columns = numOfSeq, rows = numOfSeq;
-			var my_matrix = new jsfeat.matrix_t(columns, rows, data_type);
-			my_matrix.data = [].concat.apply([], distMatrixCentered);    
-			var my_eigenvec = new jsfeat.matrix_t(columns, rows, data_type);
-			var my_eigenval = new jsfeat.matrix_t(columns, rows, data_type);
-			jsfeat.linalg.eigenVV(my_matrix, my_eigenvec, my_eigenval);
-			
-			// var eigenval, eigenvec, eigensystem;
-			eigenval = my_eigenval.data;
-			eigenvec = [];
-			for( var mdsInd = 0; mdsInd < numOfSeq; mdsInd++){
-				eigenvec.push(my_eigenvec.data.slice( mdsInd*numOfSeq, (mdsInd+1)*numOfSeq ));
-			}
-		}catch(err){
-			console.log(err.message);
-			errorHasOccured = true;
-			$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.</div>');
-			return;
-		}
-
-
-		// try{
-		// 	res2 = numeric.eig(distMatrixCentered);	
-		// }catch(err){
-		// 	console.log(err.message);
-		// 	errorHasOccured = true;
-		// 	$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.</div>');
-		// 	return;
-		// }
-		// if(dbg){console.log('numeric.js=',res2['lambda']['x']);}
-
-		// eigenval = res2['lambda']['x'];
-		// eigenvec = numeric.transpose(res2['E']['x']);   /// here transpose!!!
-
-		
-		eigensystem =[];
-		for(var i=0; i<numOfSeq; i++){
-			eigensystem.push([eigenval[i], eigenvec[i]]);
-		}
-		if(dbg){console.log("eigensystem=",eigensystem);}
-		eigensystem.sort(function (a,b){ return Math.abs(b[0]) - Math.abs(a[0]) });
-		if(dbg){console.log("eigensystem=",eigensystem);}
-		
-
-		// PICK 5 LARGEST AND POSITIVE
-		finalEigenvec=[];
-		finalEigenval=[];
-		for(var i=0; i<numOfSeq; i++){
-			if(eigensystem[i][0]>0){
-				finalEigenvec.push(eigensystem[i][1]);
-				finalEigenval.push(eigensystem[i][0]);
-			}
-			if(dbg){console.log("i-th eigeinvalue= [",i,"] [",eigensystem[i][0],"]");}
-			if(finalEigenvec.length === 5){break;}
-		}
-		if(dbg){console.log("finalEigenval=",finalEigenval);}
-		if(dbg){console.log("finalEigenvec=",finalEigenvec);}
-		
-		// POINTS COORDINATES
-		try{
-			points = numeric.dot(numeric.transpose(finalEigenvec), numeric.sqrt(numeric.T.diag(finalEigenval)['x']));
-		}catch(err){
-			console.log(err.message);
-			errorHasOccured = true;
-			$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+err.message+'</strong>] while computing MDS. Internal errors originate from numerical errors in distance matrices. Consider changing/increasing value of length of k-mers.</div>');
-			return;
-		}
-		if(dbg){console.log("points=",points);}
-		
-		// MIN-MAX PER DIMENSION (FOR LATER SCALING)
-		var allMinMax =[], tmpMinMax = numeric.transpose(points);
-		for(var i=0; i<5; i++){
-			allMinMax.push( [ Math.min.apply(Math,tmpMinMax[i]) , Math.max.apply(Math,tmpMinMax[i]) ] );
-		}
-		if(dbg){console.log(allMinMax);}
-		
-
-		// PRODUCING MAPFILE
-		mapfile = '';
-		// line 1
-		for(var i=0; i<accIDsSets.length; i++){
-			mapfile += accIDsSets[i].length + ",";
-		}
-		mapfile = mapfile.slice(0,-1);
-		mapfile += "\n";
-		// line 2
-		for(var i=0; i<accIDsSets.length; i++){
-			mapfile += $("#colorset"+i).val() + ",";
-		}
-		mapfile = mapfile.slice(0,-1);
-		mapfile += "\n";
-		// line 3+4
-		mapfile += "5\nIndex,Acc,Name,Length,Taxa\n";
-		// line 5
-		for(var i=0; i<accIDsSets.length; i++){
-			mapfile += $("#colorset"+i).val() + ",";
-		}
-		mapfile = mapfile.slice(0,-1);
-		mapfile += "\n";
-		// line 6
-		for(var i=0; i<accIDsSets.length; i++){
-			mapfile += $("#nameset"+i).val()+" ("+accIDsSets[i].length+"),";
-		}
-		mapfile = mapfile.slice(0,-1);
-		mapfile += "\n";
-		
-		// line 7
-		// OLD mapfile += "No Description given\n";
-		for(var i=0; i<$("#numofsets").val(); i++){
-			mapfile += $("#nameset"+i).val() + ', ';
-		}
-		mapfile = mapfile.slice(0,-2);  //because of space above!
-		// old mapfile
-		// mapfile += '. Number of sequences is '+accIDs.length+ "\n";
-		mapfile += '#User-input sequences#'+accIDs.length+"#Approx.Inf.Dist#NA\n";
-
-		// rest of the lines
-		for(var i=0; i<numOfSeq; i++){
-			for(var j=0; j<points[i].length; j++){
-				mapfile += ((2*points[i][j] - allMinMax[j][0] - allMinMax[j][1]) / ( allMinMax[j][1] - allMinMax[j][0] ) ) +"\n";	
-			}
-			mapfile += i+"\n";                      // INDEX
-			mapfile += allSequences[i][0]+"\n";     // ACC
-			mapfile += allSequences[i][4].split("|").pop().trim()+"\n";     // NAME
-			mapfile += allSequences[i][1]+"\n";     // LENGTH
-			mapfile += allSequences[i][2]+"\n";     // TAXA
-		}
-		mapfile = mapfile.slice(0,-1);
-		if(dbg){console.log("c/p=\n",mapfile);}
-
-		var mapTimeStamp = new Date().getTime();
-		if(typeof(Storage) !== "undefined") {
-			try{
-				localStorage.setItem("mapfile"+mapTimeStamp, mapfile);
-				// localStorage.setItem("distMatrix"+mapTimeStamp, distMatrix);	
-			}catch(err){
-				console.log(err.message);
-				errorHasOccured = true;
-				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+err.message+'</strong>]. Consider emptying localStorage.</div>');
-				return;
-			}
-		} else {
-			console.log("ERROR! NO LOCAL STORAGE AVAILABLE!?");
-			alert("ERROR! NO LOCAL STORAGE AVAILABLE!?");
-		}
-		
-		$('#progress').html('100%');
-		$("#file_contents").html('<pre>'+mapfile+'</pre>');
-		$("#file_contents").hide();
-		// END OF MDS
-		
-
-		time = new Date();
-		step3B = time.getTime();
-		$("#stepstatus").html('\
-			<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
-			<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p>\
-			<p>Step 3 (MDS) DONE in ~'+(step3B-step3A)/1000+' sec</p></strong>');
-		$("#stepstatus").html($("#stepstatus").html()+'<p><a href="load.html?mapid=local'+mapTimeStamp+'" target="_blank">Show MoDMap</a>');
-		if(dbg){
-			$("#stepstatus").html($("#stepstatus").html()+' or <a href="#viewfile" id="viewfile">view contents</a>');
-		}
-		$("#stepstatus").html($("#stepstatus").html()+'</p>');
-		$("#mainprogressbar").hide();
-		$("#viewfile").click(function(){
-			$("#file_contents").toggle();
-		});
-
-		// list local storage for debuging
-		if(dbg){for (var a in localStorage) {console.log(a);}}
-		if(dbg){console.log(Object.keys(localStorage));}
-	}
-
-	function computeAIDdist(){
-		console.log("aid start");
-		$("#aidinfo").empty();
-		$("#aidinfomenu").slideDown();
-		$("#aidinfo").html('<img src="img/loading.gif" width="30" height="30"/>');
-		console.log($("#seq0").val());
-		console.log($("#seq1").val());
-		errorHasOccured = false;
-
-		var gotBothSequences = 0;
-		for (var indSeq=0; indSeq<2; indSeq++){
-			loadFastaFromNCBI(indSeq, $("#seq"+indSeq).val(), function(ind, accID, output, header){
-				aidDistInfo[ind] = [accID, header, output.length,  buildFCGR(output, fcgrRes)];
-				if(dbg){console.log([ind,accID,output.length, header,'DONE']);}
-				
-				gotBothSequences += 1;
-				if(gotBothSequences == 2 && !errorHasOccured){
-					
-					console.log("finished computation");
-					var aidinfotext = "<strong>NCBI: ["+aidDistInfo[0][0]+"]</strong> - Length: "+aidDistInfo[0][2]+"<br>Header: "+aidDistInfo[0][1]+"<br><br> <strong>NCBI: ["+aidDistInfo[1][0]+"]</strong> - Length: "+aidDistInfo[1][2]+"<br>Header: "+aidDistInfo[1][1]+"<br><br>";
-					
-					var aidnumerator = aidDistInfo[0][3]['size'] + aidDistInfo[1][3]['size'];
-					var aiddenominator=0;
-					for(var unionInd=0; unionInd<Math.pow(4,fcgrRes); unionInd++){
-						if( (aidDistInfo[0][3]['flatFCGR'][unionInd]==1) || (aidDistInfo[1][3]['flatFCGR'][unionInd]==1) ){
-							aiddenominator++;
-						} 
-					}
-					console.log(aidnumerator,aiddenominator,2 - aidnumerator*1.0/aiddenominator);
-					
-					aidinfotext += "<strong>AID: </strong>"+ String((2 - aidnumerator*1.0/aiddenominator).toFixed(5));
-					$("#aidinfo").html(aidinfotext);
-
-
-				}
-
-			});	
-		}
-
-		console.log("aid end");
-	}
-
-	function computeDistMatrix(){
-		time = new Date();
-		step2A = time.getTime();
-		console.log("BEGIN computeDistMatrix()");	
-		$("#stepstatus").html('\
-			<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</strong></p>\
-			<p>Step 2 of 3: (AID)</p>');
-		$('#progress').html('0%');
-
-		var dim=accIDs.length;
-		distMatrix=[];
-		for(var i=0; i<dim; i++){
-			distMatrix.push([]);
-			for(var j=0; j<dim; j++){
-				distMatrix[i].push(0);
-			}
-		}
-		
-		splitBy = Math.max(Math.ceil(dim/5), 50);
-		console.log("splitBy= ",splitBy);
-		var input = []
-		for(var i=1; i<= Math.ceil(dim/splitBy); i++){
-			for(var j=i; j<= Math.ceil(dim/splitBy); j++){
-				var minX, maxX, minY, maxY;
-				minX = (i-1)*splitBy;
-				maxX = Math.min(i*splitBy-1,dim-1);
-				minY = (j-1)*splitBy;
-				maxY = Math.min(j*splitBy-1,dim-1);
-				var allSequencesX = [] , allSequencesY = [];
-				for(var i00=minX; i00<=maxX; i00++){
-					allSequencesX.push(allSequences[i00]);
-				}
-				for(var i00=minY; i00<=maxY; i00++){
-					allSequencesY.push(allSequences[i00]);
-				}
-				input.push([minX, maxX, minY, maxY, allSequencesX, allSequencesY, fcgrRes]);
-			}
-		}
-		console.log("input= ",input);
-		$('#progress').html('Parallel computation of '+input.length+' matrices of ~ '+splitBy+'x'+splitBy+' each. Please wait..');
-		var p = new Parallel( input );
-		
-		var computeChunks = function (chunk) {
-			var bgX = chunk[0], endX = chunk[1], bgY = chunk[2], endY = chunk[3];
-			var allSequencesX = chunk[4], allSequencesY = chunk[5], fcgrRes = chunk[6];
-			var res=[], tmpRow, numerator, denominator ;
-			var timeBegin = new Date();
-			console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"]");
-
-			for(var i = 0; i<allSequencesX.length; i++){
-				tmpRow=[];
-				for(var j = 0; j<allSequencesY.length; j++){
-					numerator = allSequencesX[i][3]['size'] + allSequencesY[j][3]['size'];
-					denominator=0;
-					for(var unionInd=0; unionInd<Math.pow(4,fcgrRes); unionInd++){
-						if( (allSequencesX[i][3]['flatFCGR'][unionInd]==1) || (allSequencesY[j][3]['flatFCGR'][unionInd]==1) ){
-							denominator++;
-						} 
-					}
-					// console.log(i,j,'=',numerator,denominator,2 - numerator*1.0/denominator);
-					tmpRow.push(2 - numerator*1.0/denominator);
-				}
-				res.push(tmpRow);
-			}
-
-			var timeEnd = new Date();
-			console.log("Worker ["+bgX+","+endX+" - "+bgY+","+endY+"] execution time: "+String((timeEnd-timeBegin)/1000)+" sec");
-			return [bgX, endX, bgY, endY, res];
-		};
- 
-
-		function assembleChunks(data){
-			// console.log("data=",data,data.length);
-			// console.log("dMat=",distMatrix.length);
-
-			for(var i=0; i<data.length; i++){
-				var tmpInfo = data[i];
-				// console.log("tmpInfo=",i,tmpInfo);
-				var bgX = tmpInfo[0], bgY = tmpInfo[2];
-				var endX = tmpInfo[1], endY = tmpInfo[3];
-				for(var indexRow=0; indexRow<= endX - bgX; indexRow++){
-					for(var indexCol=0; indexCol<= endY -bgY; indexCol++){
-						// console.log(bgX + indexRow, bgY + indexCol, tmpInfo[4][indexRow][indexCol],distMatrix[bgX + indexRow][bgY + indexCol]);
-						distMatrix[bgX + indexRow][bgY + indexCol] = tmpInfo[4][indexRow][indexCol];
-						distMatrix[bgY + indexCol][bgX + indexRow] = tmpInfo[4][indexRow][indexCol];
-						
-					}
-				}
-			}	
-			
-			// if(dbg){console.log(distMatrix);}
-			// var toprint="{";
-			// for(var i=0; i<distMatrix.length; i++){
-			// 	toprint+='{';
-			// 	for (var j=0; j<distMatrix.length; j++){
-			// 		toprint+=distMatrix[i][j]+',';
-			// 	}
-			// 	toprint = toprint.substring(0, toprint.length - 1);
-			// 	toprint+='},'
-			// }
-			// toprint = toprint.substring(0, toprint.length - 1);
-			// toprint+='}';
-			// console.log('COPY/PASTE MATHEMATICA');
-			// console.log("Eigensystem[",toprint,"]");
-
-
-			time = new Date();
-			step2B = time.getTime();		
-			$("#stepstatus").html('\
-				<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
-				<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p></strong>\
-				<p>Step 3 of 3: (MDS)</p>');
-			$('#progress').html('Please wait.. (browser may freeze for a while) <img src="img/loading.gif" width="30" height="30"/>');
-			
-			setTimeout(computeMDS, 500); 
-
-		}
-
-		p.map(computeChunks).then(assembleChunks);		
-	}
-
-	function buildFCGR(seq, k){
-		var numOfKmers=0, curmer, curmerInd, kmers={}, mapACGT={"A":0, "C":1, "G":2, "T":3};
-		var newseq = seq.replace(/B|D|E|F|H|I|J|K|L|M|N|O|P|Q|R|S|U|V|W|X|Y|Z/gi, "");
-		var kmersInds = new Uint8Array(Math.pow(4, k));
-		if(dbg){console.log((seq.length - newseq.length)+' lost bp');}
-		for(var i=0; i<newseq.length-k+1; i++){
-			curmer = newseq.slice(i,i+k);
-			curmerInd = 0;
-			for(var j=0; j<curmer.length; j++){ 
-				curmerInd += Math.pow(4, k-1-j)*mapACGT[curmer[j]]; 
-			}
-			
-			if(kmersInds[curmerInd]==0){
-				numOfKmers++;
-				kmersInds[curmerInd]=1;
-			}
-
-		}
-		if(dbg){console.log(numOfKmers+' #kmers '+kmersInds.length);}
-		return {"size":numOfKmers, "flatFCGR":kmersInds};
-	}
-
-
-	// exponentialBackoff(sometimesFails, 10, 100, function(result) {
-	// 	console.log('the result is',result);
-	// });
-
-	// // A function that keeps trying, "toTry" until it returns true or has
-	// // tried "max" number of times. First retry has a delay of "delay".
-	// // "callback" is called upon success.
-	// function exponentialBackoff(toTry, max, delay, callback) {
-	// 	console.log('max',max,'next delay',delay);
-	// 	var result = toTry();
-		
-	// 	if (result) {
-	// 		callback(result);
-	// 	} else {
-	// 		if (max > 0) {
-	// 			setTimeout(function() {
-	// 				exponentialBackoff(toTry, --max, delay * 2, callback);
-	// 			}, delay);
-
-	// 		} else {
-	// 			console.log('we give up');   
-	// 		}
-	// 	}
-	// }
-
-	// function sometimesFails() {
-	// 	var percentFail = 0.8;
-		
-	// 	return Math.random() >= 0.8;
-	// }
-
-	// function consoleLog() {
-	// 	var args = [].slice.apply(arguments);
-		
-	// 	document.querySelector('#result').innerHTML += '\n' + args.join(' - ');
-	// }
-
-
-	function loadFastaFromNCBI(ind, accID, callback){
-		console.log(accID, accID.length);
-		$.ajax({
-			// tryCount : 0,
-        	// retryLimit : 3,
-			// delay:500,
-        	// url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&rettype=fasta&retmode=text&id="+accID,
-        	url: "http://localhost:8081/2020/data/"+accID+".fasta",
-			success: function(result){
-				var data = result.split(/\n\r?/gi);
-				var header;
-				if( data.length && data[0][0]==='>' ){ header = data[0]; }
-				while (data.length && data[0][0] === '>') {data.shift();}
-				var outputFasta=data.join('');
-				if(dbg){console.log('['+accID+'] len='+outputFasta.length);}
-				callback(ind, accID, outputFasta, header);
-			},
-			error: function(xhr, status, error) {
-				console.log('STATUS=',status,'ERROR from loadFastaFromNCBI=',error);
-				
-				// this.tryCount++;
-				// if (this.tryCount <= this.retryLimit) {
-				// 	//try again
-				// 	console.log("tryCount is now", this.tryCount);
-				// 	$.ajax(this);
-
-				// 	// this.delay = 2 * this.delay;
-				// 	// console.log("delay is now", this.delay);
-					
-				// 	// setTimeout($.ajax(this), this.delay);
-
-				// 	// setTimeout(function() {
-				// 	// 	exponentialBackoff(toTry, --max, delay * 2, callback);
-				// 	// }, delay);
-
-					
-				// 	return;
-				// }  
-				errorHasOccured = true;
-				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
-				$('#aidinfo').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching data from NCBI for [<strong>'+accID+'</strong>]</div>');
-
-
-			}
-		});
-	}
-
-	function getTaxaFromNCBI(ind, idNCBI){
-		if(dbg){console.log("getting taxa for id=",ind);}
-		$.ajax({
-			url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=gb&retmode=xml&id="+idNCBI,
-			success: function(result){
-				// res=result;
-				// console.log("res=", result);
-				var taxaString = new XMLSerializer().serializeToString(result);
-				var taxa = /<GBSeq_taxonomy>(.*)<\/GBSeq_taxonomy>/g.exec(taxaString);
-				if(dbg){console.log("taxa=", taxa[1]);}
-				allSequences[ind][2] = taxa[1].trim();
-				
-				callsNCBIDone += 0.5;
-				progress = callsNCBIDone*100.0/accIDs.length;
-				progress = progress.toFixed(2);
-				if(!errorHasOccured){$('#progress').html(progress+'%');}
-				if(callsNCBIDone == accIDs.length && !errorHasOccured){
-					time = new Date();
-					step1B = time.getTime();
-					computeDistMatrix();
-				}
-			},
-			error: function(xhr, status, error) {
-				console.log('STATUS=',status,'ERROR getTaxaFromNCBI=',error);
-				errorHasOccured = true;
-				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>'+error+'</strong>] while fetching Taxonomy data from NCBI for [<strong>'+idNCBI+'</strong>]</div>');
-			}
-		});		
-	}
-
 	$(document).ready(function(){
-
-		if(geturlparamvalue("tmpmaps")=="true"){
-			console.log("Looking at tmp directory NOW..");
-			tmpMap = true;
+		
+		if(geturlparamvalue("dev")=="true"){
+			console.log("Dev preview is enabled..");
+			dev = true;
 		}
-
-		$.ajax({
-			url: "./extra/maps.txt", 
-			cache: false, 
-			success: function(result){
-			// LOAD FILENAMES OF MAPS 
-			//var result = JSON.parse(result);
-			//console.log(result);
-			var resfetch;
-			if(tmpMap){
-				resfetch=JSON.parse(result)['tmpmaps'];
-			}else{
-				resfetch=JSON.parse(result)['maps'];	
-			}
-			var outcome='';
-			for(i=0;i<resfetch.length;i++){
-				outcome+='<div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#modmap-accordion-'+i+'" href="#modmap-collapse-'+i+'">'+resfetch[i][0]+'&nbsp;&nbsp;<span class="badge">'+resfetch[i][1].length+'</span></a></h4></div>';
-				var tmp='<div id="modmap-collapse-'+i+'" class="panel-collapse collapse out"><div class="panel-body"><ul class="list-group large-group">';
-				for(var j=0; j<resfetch[i][1].length; j++){
-					tmp+='<li class="list-group-item"><a href="#">'+resfetch[i][1][j]+'</a></li>';
-				}
-				tmp+='</ul></div></div>';
-				outcome+=tmp;
-			}
-			$('#listgroupsofmaps').html(outcome);
-
-			// LOAD PREVIEW CONTENT FOR EACH FILENAME
-			$(".list-group-item").click(function() {
-				$("#filecontent").html('<img src="img/loading.gif" width="50" height="50"/>');
-				console.log('Loading = '+$(this).text());
-				mapID=$(this).text();
-				
-				var mapPathToLoad = "";
-				var mapPathToLoadInURL = "";
-				if(tmpMap){
-					mapPathToLoad = "./maps/tmp/"+mapID;
-					mapPathToLoadInURL = "tmp/"+mapID;
-				}else{
-					mapPathToLoad = "./maps/"+mapID;
-					mapPathToLoadInURL = mapID;
-				}
-
-				$.ajax({
-					url: mapPathToLoad, 
-					cache: false,
-					success: function(result){
-						var resfetch=result.split("\n");
-
-						if(resfetch[6].indexOf("#") > -1){
-							// NEW TYPE OF LEGEND WITH INFO SPLIIT BY #
-							console.log("Found legend, split by #");
-							var sublegends = resfetch[6].split("#");
-							var subleg = "<div>&bull; "+sublegends[0]+"</div>";
-							subleg += "<div>&bull; "+sublegends[1]+"</div>";
-							subleg += "<div>&bull; "+sublegends[2]+"</div>";
-							subleg += "<div>&bull; "+sublegends[3]+"</div>";
-							subleg += "<div>&bull; Avg.Seq.Length: "+sublegends[4]+"</div>";
-							
-							$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+subleg+'</p><a href="load.html?mapid='+mapPathToLoadInURL+'" target="_blank">Show Map</a><p></p>');
-						}else{
-							// BACKWARD COMPATIBILITY LEGEND
-							console.log("BACKWARD COMPATIBILITY LEGEND");
-							$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+resfetch[6]+'</p><a href="load.html?mapid='+mapPathToLoadInURL+'" target="_blank">Show Map</a><p></p>');
-						}
-
-						
-					}
-				});
-			});
-		}});
 
 		$("#goto1").click(function(){$('#guide-tabs li:eq(1) a').tab('show');});
 		$("#goto2").click(function(){$('#guide-tabs li:eq(2) a').tab('show');});
 		$("#goto3").click(function(){$('#guide-tabs li:eq(3) a').tab('show');});
+		
 		$("#kmerslen").val('9');
 		$("#getTaxa").val('0');
-		
-		// $('#guide-tabs li:eq(2) a').tab('show');
 
 		$("#buildmapmenucontent").slideUp();
 		$("#extendmapmenucontent").slideUp();
 		$("#inputdatamenu").slideUp();
 		$("#computemenu").slideUp();
 		$("#hotkeyslist").slideUp();
+		$("#fastafiles").hide();
 		
 		$("#hotkeysshowhide").click(function(){
 			$("#hotkeyslist").slideToggle();
+		});
+
+		$("#allInputDataShow").click(function(){
+			$("#allInputData").slideToggle();
 		});
 
 		$("#buildmapmenuheader").click(function(){
@@ -767,255 +86,155 @@
 		});
 
 
-		$("#aid1").click(function(){
-			$("#seq0").empty();
-			$("#seq0").val("NC_012920");
-			$("#seq1").empty();
-			$("#seq1").val("NC_001643");	
-			computeAIDdist();		
-		}); 
-		$("#aid2").click(function(){
-			$("#seq0").empty();
-			$("#seq0").val("NC_012920");
-			$("#seq1").empty();
-			$("#seq1").val("NC_011137");
-			computeAIDdist();					
-		});  
+		////////////////////////////
+		// [tab] BUILD-EXTEND MAP //
+		////////////////////////////
+
+		function load_dataset(dataset){
+			$('#allInputData').slideDown();
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#numofsets").val(dataset.groups.length);
+			$("#numofsets").trigger("change");
+			for(let i=0; i<dataset.groups.length; i++){
+				let cur_group = dataset.groups[i];
+				$("#set"+i).html(cur_group.accession_numbers.join(","));
+				$("#nameset"+i).val(cur_group.name);
+				$("#colorset"+i).val(cur_group.color);		
+			}
+			$("#stepstatus").hide();	
+			$("#mainprogressbar").hide();
+			$("#computemenu").slideUp();
+		}
 
 		$("#dataset1").click(function(){
-			$.ajax({
-				url: "./maps/samplemaps/sample1.txt", 
-				cache: false,
-				success: function(result){
-				var result = JSON.parse(result);
-				console.log("Loading: ",result["mapDescription"]);
-				$('#allInputData').slideDown();
-				$("#file_contents").empty();
-				$("#file_contents").hide();
-				$("#numofsets").val(result["numofsets"]);
-				$("#numofsets").trigger("change");
-				for(var i=0; i<result["namesets"].length; i++){
-					$("#set"+i).html(result["sets"][i]);
-					$("#nameset"+i).val(result["namesets"][i]);
-					$("#colorset"+i).val(result["colorsets"][i]);		
-				}
-				$("#stepstatus").hide();
-				$("#mainprogressbar").hide();
-				$("#computemenu").slideUp();
-			}});		
+			( async () => {
+				let utils =  new FileUtils();
+				let dataset = await utils.fetch_file("./maps/samplemaps/sample1.json");
+				console.log("dataset=", dataset);
+				load_dataset(dataset);
+			})();
 		});  
+
 		$("#dataset2").click(function(){
-			$.ajax({
-				url: "./maps/samplemaps/sample2.txt", 
-				cache: false,
-				success: function(result){
-				var result = JSON.parse(result);
-				console.log("Loading: ",result["mapDescription"]);
-				$('#allInputData').slideDown();
-				$("#file_contents").empty();
-				$("#file_contents").hide();
-				$("#numofsets").val(result["numofsets"]);
-				$("#numofsets").trigger("change");
-				for(var i=0; i<result["namesets"].length; i++){
-					$("#set"+i).html(result["sets"][i]);
-					$("#nameset"+i).val(result["namesets"][i]);
-					$("#colorset"+i).val(result["colorsets"][i]);		
-				}
-				$("#stepstatus").hide();
-				$("#mainprogressbar").hide();
-				$("#computemenu").slideUp();
-			}});
+			( async () => {
+				let utils =  new FileUtils();
+				let dataset = await utils.fetch_file("./maps/samplemaps/sample2.json");
+				console.log("dataset=", dataset);
+				load_dataset(dataset);
+			})();
 		});
+
 		$("#dataset3").click(function(){
-			$.ajax({
-				url: "./maps/samplemaps/sample3.txt", 
-				cache: false,
-				success: function(result){
-				var result = JSON.parse(result);
-				console.log("Loading: ",result["mapDescription"]);
+			( async () => {
+				let utils =  new FileUtils();
+				let dataset = await utils.fetch_file("./maps/samplemaps/sample3.json");
+				console.log("dataset=", dataset);
+				load_dataset(dataset);
+			})();
+		});
+		
+		$("#loadrefmap").click(function(){
+			( async () => {
+				console.log("Loading RefMap: ", $("#extendmapid").val());
+				$("#inputdatamenu").slideDown();
+
+				let utils =  new FileUtils();
+				let refmap_contents = await utils.fetch_file("./maps/refmaps/refmap_"+$("#extendmapid").val()+".json")
+				console.log(refmap_contents);
+					
 				$('#allInputData').slideDown();
 				$("#file_contents").empty();
 				$("#file_contents").hide();
-				$("#numofsets").val(result["numofsets"]);
+				$("#numofsets").val(refmap_contents.groups.length + 1);
 				$("#numofsets").trigger("change");
-				for(var i=0; i<result["namesets"].length; i++){
-					$("#set"+i).html(result["sets"][i]);
-					$("#nameset"+i).val(result["namesets"][i]);
-					$("#colorset"+i).val(result["colorsets"][i]);		
+
+				for(let i=0; i<refmap_contents.groups.length; i++){
+					let cur_group = refmap_contents.groups[i];
+					$("#set"+i).html(cur_group.accession_numbers.join(","));
+					$("#nameset"+i).val(cur_group.name);
+					$("#colorset"+i).val(cur_group.color);		
 				}
+
+				$("#nameset"+refmap_contents.groups.length).val("NEW_points");
+				$("#colorset"+refmap_contents.groups.length).val("black");	
+				if( defaultInputType == "ncbi"){
+					$("#set"+refmap_contents.groups.length).html($("#extrancbi").val());
+				}
+				if( defaultInputType == "fasta"){
+					let tmpOut = [];
+					for(let i=0; i<fastaFilesLoaded.length; i++){
+						tmpOut.push("fastaFile"+String(i+1));
+					}
+					// console.log(tmpOut);
+					$("#set"+refmap_contents.groups.length).html(tmpOut.join(","));
+				}
+
 				$("#stepstatus").hide();
 				$("#mainprogressbar").hide();
 				$("#computemenu").slideUp();
-			}});
+			})();
+		});
+
+		$('input[type=radio][name=extrapointstype]').change(function() {
+			if (this.value == 'ncbi') {
+				defaultInputType = "ncbi";
+				console.log("ncbi selected..");
+				$("#extrancbi").show();
+				$("#fastafiles").hide();
+				$("#fastafilesinfo").hide();
+				$("#inputdatamenu").slideUp();
+				$("#computemenu").slideUp(); 
+				$("#loadrefmap").show();   	
+			}
+			else if (this.value == 'fasta') {
+				defaultInputType = "fasta";
+				console.log("fasta selected..");
+				$("#extrancbi").hide();
+				$("#fastafiles").show();
+				$("#fastafilesinfo").show();
+				$("#inputdatamenu").slideUp();
+				$("#computemenu").slideUp();
+				$("#loadrefmap").hide();
+
+				// Check for the various File API support.
+				if(window.File && window.FileReader && window.FileList && window.Blob){
+					console.log("everything ok");
+				}else{
+					console.log('The File APIs are not fully supported in this browser.');
+					$('#fastafiles').hide()
+					$('#fastafilesinfo').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> ERROR <strong>The File APIs are not fully supported in this browser.</strong> Please use another browser or input NCBI accession numbers instead.</div>');
+					$("#inputdatamenu").slideUp();
+					$("#computemenu").slideUp(); 
+				}
+
+				if(fastaFilesLoaded.length >0){
+					$("#loadrefmap").show();
+				} 
+			}
+		});
+	
+		$("#fastafiles").change(function(evt){
+			console.log("Loading fasta files metadata..");
+			let files = evt.target.files; 
+			fastaFilesLoaded = files;
+			console.log("fastaFilesLoaded=", fastaFilesLoaded);
+			let output = [];
+		    for (let i = 0, f; f = files[i]; i++) {
+		      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ', f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a','</li>');
+		    }
+		    $("#fastafilesinfo").html('<ul>' + output.join('') + '</ul>');
+		    $("#loadrefmap").show();
 		});
 
 		$("#kmerslen").change(function(){
 			fcgrRes = parseInt($("#kmerslen").val());
 			console.log("NEW fcgrRes=",fcgrRes);
 		});
+
 		$("#getTaxa").change(function(){
 			getTaxa = parseInt($("#getTaxa").val());
 			console.log("NEW getTaxa=", getTaxa);
-		});
-
-		$("#computedist").click(computeAIDdist);
-
-		$("#loadrefmap").click(function(){
-			console.log("Loading RefMap: ", $("#extendmapid").val());
-			$("#inputdatamenu").slideDown();
-
-			$.ajax({
-				url: "./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt", 
-				cache: false,
-				success: function(result){
-				console.log("./maps/refmaps/refmap_"+$("#extendmapid").val()+".txt");
-				var result = JSON.parse(result);
-				console.log("RefMap Description: ",result["mapDescription"]);
-				
-				$('#allInputData').slideDown();
-				$("#file_contents").empty();
-				$("#file_contents").hide();
-				$("#numofsets").val(result["numofsets"]+1);
-				$("#numofsets").trigger("change");
-
-				for(var i=0; i<result["namesets"].length; i++){
-					$("#set"+i).html(result["sets"][i]);
-					$("#nameset"+i).val(result["namesets"][i]);
-					$("#colorset"+i).val(result["colorsets"][i]);		
-				}
-
-				$("#nameset"+result["namesets"].length).val("NEW_points");
-				$("#colorset"+result["namesets"].length).val("black");	
-				if( defaultInputType == "ncbi"){
-					$("#set"+result["namesets"].length).html($("#extrancbi").val());
-				}
-				if( defaultInputType == "fasta"){
-					var tmpOut = [];
-					for(var i=0; i<fastaFilesLoaded.length; i++){
-						tmpOut.push("fastaFile"+String(i+1));
-					}
-					// console.log(tmpOut);
-					$("#set"+result["namesets"].length).html(tmpOut.join(","));
-				}
-				
-
-				$("#stepstatus").hide();
-				$("#mainprogressbar").hide();
-				$("#computemenu").slideUp();
-			}});
-		});
-
-		$("#buildmap").click(function(){
-			noMDS = false;
-			$("#computemenu").slideDown();
-			$('#allInputData').slideUp();
-			$('#allInputDataMinimized').slideDown();
-			console.log("localStorageKeys before=",Object.keys(localStorage));
-			localStorage.clear();
-			console.log("localStorageKeys after=",Object.keys(localStorage));
-			time = new Date();
-			step1A = time.getTime();
-			$("#file_contents").empty();
-			$("#file_contents").hide();
-			$("#mainprogressbar").show();
-			$("#stepstatus").show();
-			$("#stepstatus").html('Step 1 of 3: (NCBI + FCGRs)');
-			$('#progress').html('0%'); 
-			errorHasOccured = false;
-			
-			// GET "accIDs"
-			accIDsSets=[];
-			for(var i=0; i<$("#numofsets").val(); i++){
-				console.log(i,$("#set"+i).val().split(","));
-				var tmpSet = $("#set"+i).val().split(",");
-				if(tmpSet[0]!=""){
-					accIDsSets.push(tmpSet);
-				}
-			}
-			accIDs = [].concat.apply([], accIDsSets);
-			console.log("accIDs=",accIDs);
-			console.log("In total = " + accIDs.length + " sequences.");
-			if(accIDs.length < 5){
-				errorHasOccured = true;
-				$('#progress').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span>'+' ERROR [<strong>Found '+accIDs.length+' sequences.</strong>] Please enter at least 5 sequences and try again.]</div>');
-				return;
-			}
-			if(accIDs.length > offlineCompMinSize ){
-				noMDS = true;
-				alert("Your input contains more than ["+offlineCompMinSize+"] sequences. This requires that the last step (MDS) has to be computed offline using either Mathematica or Python. Files and code will be provided to you once you reach that point.");
-			}
-
-			// AJAX CALLS TO NCBI FOR FASTA FILES and/or READING USER FASTA FILES
-			fastaFilesLoadedIndex = 0;
-			callsNCBIDone = 0;
-			for(var i=0; i<accIDs.length; i++){
-				if(!errorHasOccured){
-
-					if(accIDs[i].trim().substr(0,9) == "fastaFile"){
-						
-						// IF IT'S UPLOADED FASTA FILE
-						var reader = new FileReader();
-						reader.onload = (function(f,posInAllSeq, accInAllSeq) {
-							return function(e) { 
-								console.log("fasta: ", accInAllSeq, "fileInfo: ", e.target);
-								var data = e.target.result.split(/\n\r?/gi);
-								var header;
-								if( data.length && data[0][0]==='>' ){ header = data[0]; }
-								while (data.length && data[0][0] === '>') {data.shift();}
-								var outputFasta=data.join('');
-
-								allSequences[posInAllSeq]=[accInAllSeq, outputFasta.length, "NotAvailable", buildFCGR(outputFasta, fcgrRes), header];
-
-								if(true){console.log([posInAllSeq,accInAllSeq,outputFasta.length,'DONE']);}
-								callsNCBIDone += 1;
-
-								// UPDATE PROGRESS AND START computeDistMatrix() IF LAST SEQUENCE IS FASTA
-								progress = callsNCBIDone*100.0/accIDs.length;
-								progress = progress.toFixed(2);
-								if(!errorHasOccured){$('#progress').html(progress+'%');} 
-								if(callsNCBIDone == accIDs.length && !errorHasOccured){
-									time = new Date();
-									step1B = time.getTime();
-									computeDistMatrix();
-								}
-							}
-						})(fastaFilesLoaded[fastaFilesLoadedIndex], i, accIDs[i].trim());
-						
-						reader.readAsText(fastaFilesLoaded[fastaFilesLoadedIndex]);
-						fastaFilesLoadedIndex += 1;
-
-					}else{
-
-						// IF IT'S NCBI ACCESSION NUMBER
-						loadFastaFromNCBI(i, accIDs[i].trim(), function(ind, accID, output, header){
-							allSequences[ind]=[accID, output.length, /**/, buildFCGR(output, fcgrRes), header];
-							if(getTaxa){
-								getTaxaFromNCBI(ind, accID);
-							}else{
-								callsNCBIDone += 0.5;
-								allSequences[ind][2] = "NotAvailable";
-							}
-							if(dbg){console.log([ind,accID,output.length,'DONE']);}
-							callsNCBIDone += 0.5;
-
-							// UPDATE PROGRESS AND START computeDistMatrix() IF LAST SEQUENCE IS NCBI
-							progress = callsNCBIDone*100.0/accIDs.length;
-							progress = progress.toFixed(2);
-							if(!errorHasOccured){$('#progress').html(progress+'%');} 
-							if(callsNCBIDone == accIDs.length && !errorHasOccured){
-								time = new Date();
-								step1B = time.getTime();
-								computeDistMatrix();
-							}
-						});
-					}
-
-				}
-			}
-		});
-		
-		$("#allInputDataShow").click(function(){
-			$("#allInputData").slideToggle();
 		});
 
 		$("#numofsets").change(function(){
@@ -1029,14 +248,14 @@
 				$("#numofsets").css({"border-color": "rgb(169, 169, 169)", "border-width":"0.666667px", "border-style":"solid"});
 			}
 			
-			var colorList = '';
-			for(var i=0; i<labelColors.length; i++){
+			let colorList = '';
+			for(let i=0; i<labelColors.length; i++){
 				colorList += '<option value="'+labelColors[i]+'">'+ labelColors[i]+'</option>';
 			}
 
 			// save previous accessions used
 			previousdata = [];
-			for(var i=0; i<15; i++){
+			for(let i=0; i<15; i++){
 				if($("#set"+i).html() != undefined){
 					previousdata.push([ $("#nameset"+i).val(), $("#colorset"+i).val(), $("#set"+i).html() ]);
 				}
@@ -1046,13 +265,13 @@
 
 			console.log("numofsets=",$("#numofsets").val());
 			$("#sets").html('');
-			for(var i=0; i<$("#numofsets").val(); i++){
+			for(let i=0; i<$("#numofsets").val(); i++){
 				$("#sets").html($("#sets").html()+'<p>GroupName: <input type="text" size="5" id="nameset'+i+'" value="Set['+i+']"> GroupColor: <select id="colorset'+i+'">'+colorList+'</select><br>Insert comma separated NCBI accession numbers:<br><textarea id="set'+i+'" autofocus  rows="2" cols="40"></textarea></p>');
 			}
-			for(var i=0; i<$("#numofsets").val(); i++){$("#colorset"+i).val(labelColors[i]);}
+			for(let i=0; i<$("#numofsets").val(); i++){$("#colorset"+i).val(labelColors[i]);}
 
 			//restore saved accessions
-			for(var i=0; i<previousdata.length; i++){
+			for(let i=0; i<previousdata.length; i++){
 				if($("#set"+i).html() != undefined){
 					$("#nameset"+i).val(previousdata[i][0]);
 					$("#colorset"+i).val(previousdata[i][1]);
@@ -1060,11 +279,275 @@
 				}
 			}
 
-
-			if($("#numofsets").val()>0){$("#buildmap").show();}else{$("#buildmap").hide();}
+			if($("#numofsets").val()>0){
+				$("#buildmap").show();
+			}else{
+				$("#buildmap").hide();
+			}
 		});
 
-		var tmpDataset = geturlparamvalue('dataset');
+		$("#buildmap").click(function(){
+			$("#computemenu").slideDown();
+			$('#allInputData').slideUp();
+			$('#allInputDataMinimized').slideDown();
+
+			$("#file_contents").empty();
+			$("#file_contents").hide();
+			$("#mainprogressbar").show();
+			$("#stepstatus").show();
+			$("#stepstatus").html('Step 1 of 3: (NCBI + FCGRs)');
+			$('#progress').html('0%'); 
+			
+			(async () => {
+
+				let cur_dataset = {
+					"description": "user-built map",
+					"kmer": parseInt($("#kmerslen").val()),
+					"enable_taxa_info": ($("#getTaxa").val() == "1"),
+					"groups": []
+				}
+				
+				for(let i=0; i<$("#numofsets").val(); i++){
+					console.log(i,$("#set"+i).val().split(","));
+					let tmpSet = $("#set"+i).val().split(",");
+					if(tmpSet[0]!=""){
+						cur_dataset["groups"].push({
+							"name": $("#nameset" + i).val(),
+							"color": $("#colorset" +i ).val(),
+							"accession_numbers": [],
+						});
+						cur_dataset["groups"][i]["accession_numbers"] = tmpSet;
+					}
+				}
+				console.log(JSON.stringify(cur_dataset));
+				
+				let cur_modmap = new MoDMap3D(cur_dataset);
+
+				if(cur_modmap.accession_numbers.length < 5){
+					let alert_msg = new UIUtils().build_alert('<strong>Found ' + cur_modmap.accession_numbers.length + ' sequences.</strong> Please enter at least 5 sequences and try again.', 'danger');
+					$('#progress').html(alert_msg);
+					return;
+				}
+				if(cur_modmap.accession_numbers.length > offlineCompMinSize ){
+					let alert_msg_raw = "Your input contains more than ["+offlineCompMinSize+"] sequences. This requires that the last step (MDS) has to be computed offline using either Mathematica or Python. Files and code will be provided to you once you reach that point.";
+					let alert_msg_html = new UIUtils().build_alert(alert_msg_raw, 'info');
+					$('#stepstatus').html( $('#stepstatus').html() + alert_msg_html);
+					alert(alert_msg_raw);
+				}
+
+				let step1A = new Date().getTime();
+				await cur_modmap.fetch_sequences_and_build_fcgrs(fastaFilesLoaded, "progress");
+				let step1B = new Date().getTime();
+				$("#stepstatus").html('\
+					<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</strong></p>\
+					<p>Step 2 of 3: (AID)</p>');
+				$('#progress').html('0%');
+
+
+				let step2A = new Date().getTime();
+				await cur_modmap.compute_distance_matrix();
+				let step2B = new Date().getTime();
+				$("#stepstatus").html('\
+					<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
+					<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p></strong>\
+					<p>Step 3 of 3: (MDS)</p>');
+				$('#progress').html('Please wait.. (browser may freeze for a while) <img src="img/loading.gif" width="30" height="30"/>');
+            
+
+				if(cur_modmap.accession_numbers.length > offlineCompMinSize ){
+					$('#progress').html('<p>Please continue computation offline. <br> <strong>Instructions:</strong>\
+						<ul><li>Download zip file (It is downloaded automatically)</li>\
+						<li>Extract zip contents to a directory of your choice</li>\
+						<li>Download either <a href="./extra/mds.nb" target="_blank">MDS-Mathematica</a> or <a href="./extra/mds.py" target="_blank">MDS-Python</a> code and place it in the same directory</li>\
+						<li>Run the code, you should get an output file [json_mapfile.json]</li>\
+						<li>Open [json_mapfile.json], copy its content and paste it <a href="./extra/input.html" target="_blank">here</a></li>\
+						</ul></p>');
+					console.log('COPY/PASTE MATHEMATICA');
+
+					cur_modmap.toOfflineComputation();
+					return;
+				}
+
+
+				let step3A = new Date().getTime();
+				await cur_modmap.multidimensional_scaling();
+				let step3B = new Date().getTime();
+				$("#stepstatus").html('\
+					<p><strong>Step 1 (NCBI + FCGRs) DONE in ~'+(step1B-step1A)/1000+' sec</p>\
+					<p>Step 2 (AID) DONE in ~'+(step2B-step2A)/1000+' sec</p>\
+					<p>Step 3 (MDS) DONE in ~'+(step3B-step3A)/1000+' sec</p></strong>');
+				$("#stepstatus").html($("#stepstatus").html()+'<p><a href="load.html?mapid=local'+cur_modmap.id+'" target="_blank">Show MoDMap</a>');
+				$("#stepstatus").html($("#stepstatus").html()+' or <a href="#viewfile" id="viewfile">view contents</a>');
+				$("#stepstatus").html($("#stepstatus").html()+'</p>');
+				$("#mainprogressbar").hide();
+
+				let file_utils = new FileUtils();
+				let map_key = "local" + cur_modmap.id;
+				let map_contents = cur_modmap.toTextFile();
+				console.log("map_key=", map_key);
+
+				file_utils.put(map_key, map_contents);
+
+
+				$("#file_contents").html('<pre>' + file_utils.get(map_key) + '</pre>');
+				$("#file_contents").hide();
+
+				$("#viewfile").click(function(){
+					$("#file_contents").toggle();
+				});
+				
+			})();
+		});
+
+
+		///////////////////////
+		// [tab] COMPUTE AID //
+		///////////////////////
+
+		$("#aid1").click(function(){
+			$("#seq0").empty();
+			$("#seq0").val("NC_012920");
+			$("#seq1").empty();
+			$("#seq1").val("NC_001643");
+			$("#computedist").click();	
+		});
+
+		$("#aid2").click(function(){
+			$("#seq0").empty();
+			$("#seq0").val("NC_012920");
+			$("#seq1").empty();
+			$("#seq1").val("NC_011137");
+			$("#computedist").click();				
+		});  
+		
+		$("#computedist").click(function(){
+			(async() =>{
+				console.log("AID start");
+				$("#aidinfo").empty();
+				$("#aidinfomenu").slideDown();
+				$("#aidinfo").html('<img src="img/loading.gif" width="30" height="30"/>');
+				
+				let kmer_length = parseInt($("#aid-kmer-size").val());
+				let tmp_dataset = {
+					"description": "No_Description",
+					"kmer": kmer_length,
+					"enable_taxa_info": false,
+					"groups": [
+						{
+							"name": "Strepsirrhini",
+							"color": "green",
+							"accession_numbers": [$("#seq0").val(), $("#seq1").val()]
+						},
+					]
+				}
+				console.log(tmp_dataset);
+				
+				if((!Number.isInteger(kmer_length)) || (kmer_length < 2) || (kmer_length > 9)){
+					$('#aidinfo').html(new UIUtils().build_alert('<strong>ERROR</strong>, kmer size must be an integer  2 <= k <= 9', 'danger'));
+					throw Error("kmer size must be an integer  2 <= k <= 9");
+				}
+				
+				let tmp_modmap = new MoDMap3D(tmp_dataset);
+				try{
+					await tmp_modmap.fetch_sequences_and_build_fcgrs([]);
+				}catch (err){
+					$('#aidinfo').html(new UIUtils().build_alert('<strong>ERROR</strong>, ' + err.message, 'danger'));
+					throw err;
+				}
+
+				let aid_distance = tmp_modmap._compute_AID_distance(
+					tmp_modmap.all_sequences_info[0]['fcgr'], 
+					tmp_modmap.all_sequences_info[1]['fcgr'], 9);
+				console.log(aid_distance);
+
+				let seq_1_info = tmp_modmap.all_sequences_info[0];
+				let seq_2_info = tmp_modmap.all_sequences_info[1];
+				let aid_info_text = "<strong>NCBI: ["+seq_1_info['accession_number']+"]</strong> - Length: "+seq_1_info['sequence_length']+"<br>Header: "+seq_1_info['header']+"<br><br>" + 
+								"<strong>NCBI: ["+seq_2_info['accession_number']+"]</strong> - Length: "+seq_2_info['sequence_length']+"<br>Header: "+seq_2_info['header']+"<br><br>" +
+								"<strong>AID (k=" + kmer_length + "): </strong>"+ String(aid_distance.toFixed(5));
+				$("#aidinfo").html(aid_info_text);
+
+				console.log("AID end");
+			})();
+
+		});
+		
+
+		///////////////////////
+		// [tab] EXPLORE MAP //
+		///////////////////////
+		
+		// POPULATE LEFT MENU WITH CATEGORIES AND MAPS IN THEM
+		( async () => {
+			let utils =  new FileUtils();
+			let maps_collection = await utils.fetch_file("./extra/maps.json");
+			console.log("maps_collection=", maps_collection);
+
+			let maps_collection_groups = [];
+			for(let i=0; i<maps_collection.maps.length; i++){
+				maps_collection_groups.push(maps_collection.maps[i]);
+			}
+			if(dev){
+				for(let i=0; i<maps_collection.dev.length; i++){
+					maps_collection_groups.push(maps_collection.dev[i]);
+				}
+			}
+			// console.log(maps_collection_groups);
+
+			let outcome='';
+			for(let i=0; i<maps_collection_groups.length; i++){
+				let maps_group = maps_collection_groups[i];
+				
+				outcome += '<div class="panel-heading">\
+							<h4 class="panel-title">\
+							<a data-toggle="collapse" data-parent="#modmap-accordion-' + i + '" href="#modmap-collapse-' + i + '">' +  maps_group.category + '&nbsp;&nbsp;<span class="badge">' + maps_group.files.length+'</span></a>\
+							</h4></div>';
+				let tmp = '<div id="modmap-collapse-' + i + '" class="panel-collapse collapse out"><div class="panel-body"><ul class="list-group large-group">';
+				for(let j=0; j<maps_group.files.length; j++){
+					tmp += '<li class="list-group-item" id="' + maps_group.files[j] + '"><a href="#">' + maps_group.files[j] + '</a></li>';
+				}
+				tmp+='</ul></div></div>';
+				outcome+=tmp;
+			}
+
+			$('#listgroupsofmaps').html(outcome);
+		})();
+		
+		// LOAD PREVIEW CONTENT FOR EACH FILENAME
+		$("body").on("click", ".list-group-item", function (event) {
+            event.preventDefault();
+			
+			( async () => {
+				$("#filecontent").html('<img src="img/loading.gif" width="50" height="50"/>');
+				console.log('Loading = '+$(this).text());
+				let map_id = $(this).text();
+
+				let utils =  new FileUtils();
+				let map_contents = await utils.fetch_file("./maps/" + map_id, true);
+				// console.log(map_contents);
+
+				let resfetch=map_contents.split("\n");
+				if(resfetch[6].indexOf("#") > -1){
+					// NEW TYPE OF LEGEND WITH INFO SPLIIT BY #
+					console.log("Found legend, split by #");
+					let sublegends = resfetch[6].split("#");
+					let subleg = "<div>&bull; "+sublegends[0]+"</div>";
+					subleg += "<div>&bull; "+sublegends[1]+"</div>";
+					subleg += "<div>&bull; "+sublegends[2]+"</div>";
+					subleg += "<div>&bull; "+sublegends[3]+"</div>";
+					subleg += "<div>&bull; Avg.Seq.Length: "+sublegends[4]+"</div>";
+					$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+subleg+'</p><a href="load.html?mapid='+map_id+'" target="_blank">Show Map</a><p></p>');
+				}else{
+					// BACKWARD COMPATIBILITY LEGEND
+					console.log("BACKWARD COMPATIBILITY LEGEND");
+					$("#filecontent").html('<p id="mapId"><strong>'+resfetch[5]+'</strong></p><p>'+resfetch[6]+'</p><a href="load.html?mapid='+map_id+'" target="_blank">Show Map</a><p></p>');
+				}
+			})();
+		});
+
+
+		// LEGACY, NOT SURE WHAT THE USE CASE IS. Leaving it for now.
+		let tmpDataset = geturlparamvalue('dataset');
 		if(tmpDataset!=-1 && tmpDataset.slice(0,5)=='local'){
 			newDataset = localStorage.getItem("dataset"+tmpDataset.slice(5));
 			$("#buildmapmenuheader").click();
@@ -1076,71 +559,7 @@
 			$("#set0").html(newDataset);
 			$("#stepstatus").hide();
 			$("#mainprogressbar").hide();
-			
-			// he came here for building, not extending, right?!
-			// OR
-			// $("#buildmapmenucontent").slideDown();
-			// $("#inputdatamenu").slideDown();
-			// $("#extendmapmenucontent").slideUp();
-			// $("#computemenu").slideUp();
-
-
-			//$("#buildmap").click(); allow user to change settings if wanted
-		}else{
-			//console.log('no local dataset');
 		}
-
-		$("#fastafiles").hide();
-		$('input[type=radio][name=extrapointstype]').change(function() {
-      if (this.value == 'ncbi') {
-      	defaultInputType = "ncbi";
-        console.log("ncbi selected..");
-        $("#extrancbi").show();
-      	$("#fastafiles").hide();
-        $("#fastafilesinfo").hide();
-        $("#inputdatamenu").slideUp();
-      	$("#computemenu").slideUp(); 
-      	$("#loadrefmap").show();   	
-      }
-      else if (this.value == 'fasta') {
-      	defaultInputType = "fasta";
-				console.log("fasta selected..");
-				$("#extrancbi").hide();
-      	$("#fastafiles").show();
-				$("#fastafilesinfo").show();
-        $("#inputdatamenu").slideUp();
-      	$("#computemenu").slideUp();
-      	$("#loadrefmap").hide();
-
-      	// Check for the various File API support.
-				if(window.File && window.FileReader && window.FileList && window.Blob){
-					console.log("everything ok");
-				}else{
-					console.log('The File APIs are not fully supported in this browser.');
-					$('#fastafiles').hide()
-					$('#fastafilesinfo').html('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> ERROR <strong>The File APIs are not fully supported in this browser.</strong> Please use another browser or input NCBI accession numbers instead.</div>');
-					$("#inputdatamenu").slideUp();
-      		$("#computemenu").slideUp(); 
-				}
-
-				if(fastaFilesLoaded.length >0){
-		    	$("#loadrefmap").show();
-		    } 
-      }
-    });
-	
-		$("#fastafiles").change(function(evt){
-			console.log("Loading fasta files metadata..");
-			var files = evt.target.files; 
-			fastaFilesLoaded = files;
-			var output = [];
-		    for (var i = 0, f; f = files[i]; i++) {
-		      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ', f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a','</li>');
-		    }
-		    $("#fastafilesinfo").html('<ul>' + output.join('') + '</ul>');
-		    $("#loadrefmap").show();
-		});
-
 	
 	});
 
@@ -1366,6 +785,8 @@
 							<li><input id="seq0" type="text" size="10" autofocus ></li>
 							<li><input id="seq1" type="text" size="10" ></li>
 						</ol>	
+						For kmer size:
+						<input id="aid-kmer-size" type="number" min="2" max="12" step="1" value="9"><br><br>
 						<input type="submit" id="computedist" value="Compute AID distance" />
 					</div>
 				</div>

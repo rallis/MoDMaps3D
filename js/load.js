@@ -1319,16 +1319,19 @@ $(document).ready(function(){
 		var tmpMapId = geturlparamvalue('mapid');
 		if(tmpMapId.slice(0,5)=='local'){
 			try{
-				alldata = localStorage.getItem("mapfile"+tmpMapId.slice(5));
+				alldata = localStorage.getItem("local"+tmpMapId.slice(5));
+				console.log(alldata);
 				// if(geturlparamvalue('distmatrix')!='false'){
 				// 	distMatrix = localStorage.getItem("distMatrix"+tmpMapId.slice(5)).split(',');
 				// 	console.log(distMatrix.length);
 				// }
 				mapContentParsing();
 			}catch(err){
+				console.log("error found =", err);
 				document.write('<font color="red" size="4"><b>The mapid you provided ['+mapid+'] cannot be found. <br>Available in localStorage ['+Object.keys(localStorage)+'].</b></font>');
 			}
 		}else{
+			console.log("to make ajax request");
 			$.ajax({
 				type: 'GET',
 				url: "maps/"+mapid, 

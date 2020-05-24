@@ -8,6 +8,8 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+	<script type="text/javascript" src="./../js/modmap3d.js"></script>
+
 	<script>
 
 	$(document).ready(function(){
@@ -15,15 +17,22 @@
 		$("#buildmap").click(function(){
 			console.log("start");
 
-			var mapTimeStamp = new Date().getTime();
-			if(typeof(Storage) !== "undefined") {
-				localStorage.setItem("mapfile"+mapTimeStamp, $("#inputmap").val().trim());
-			} else {
-				console.log("ERROR! NO LOCAL STORAGE AVAILABLE!?");
-				alert("ERROR! NO LOCAL STORAGE AVAILABLE!?");
-			}
-			console.log('../load.html?mapid=local'+mapTimeStamp+'&distmatrix=false');	
-			window.location = '../load.html?mapid=local'+mapTimeStamp+'&distmatrix=false';
+			let map_ts = new Date().getTime();
+			let map_key = "local" + map_ts;
+			let map_value = $("#inputmap").val().trim();
+			console.log(map_key, map_value);
+
+			let json_mapfile = JSON.parse(map_value);
+			console.log(map_key, json_mapfile);
+
+			let file_utils = new FileUtils();
+			let text_mapfile = file_utils.fromJSONToText(json_mapfile);
+			console.log(map_key, text_mapfile);
+			
+			file_utils.put(map_key, text_mapfile);
+
+			console.log('../load.html?mapid=' + map_key + '&distmatrix=false');	
+			window.location = '../load.html?mapid=' + map_key + '&distmatrix=false';
 
 		});
 
