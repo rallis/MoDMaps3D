@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE GBSet PUBLIC "-//NCBI//NCBI GBSeq/EN" "https://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.dtd">
+<GBSet>
+  <GBSeq>
+
+    <GBSeq_locus>CM023664</GBSeq_locus>
+    <GBSeq_length>16561</GBSeq_length>
+    <GBSeq_strandedness>double</GBSeq_strandedness>
+    <GBSeq_moltype>DNA</GBSeq_moltype>
+    <GBSeq_topology>circular</GBSeq_topology>
+    <GBSeq_division>CON</GBSeq_division>
+    <GBSeq_update-date>23-JUN-2020</GBSeq_update-date>
+    <GBSeq_create-date>23-JUN-2020</GBSeq_create-date>
+    <GBSeq_definition>Homo sapiens isolate EgyptRef1 mitochondrion, complete sequence, whole genome shotgun sequence</GBSeq_definition>
+    <GBSeq_primary-accession>CM023664</GBSeq_primary-accession>
+    <GBSeq_accession-version>CM023664.1</GBSeq_accession-version>
+    <GBSeq_other-seqids>
+      <GBSeqid>gb|CM023664.1|</GBSeqid>
+      <GBSeqid>gnl|WGS:JABMBX|ctg1429_pilon</GBSeqid>
+      <GBSeqid>gi|1860688015</GBSeqid>
+    </GBSeq_other-seqids>
+    <GBSeq_secondary-accessions>
+      <GBSecondary-accn>JABMBX010000000</GBSecondary-accn>
+    </GBSeq_secondary-accessions>
+    <GBSeq_project>PRJNA633987</GBSeq_project>
+    <GBSeq_keywords>
+      <GBKeyword>WGS</GBKeyword>
+    </GBSeq_keywords>
+    <GBSeq_source>mitochondrion Homo sapiens (human)</GBSeq_source>
+    <GBSeq_organism>Homo sapiens</GBSeq_organism>
+    <GBSeq_taxonomy>Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini; Catarrhini; Hominidae; Homo</GBSeq_taxonomy>
+    <GBSeq_references>
+      <GBReference>
+        <GBReference_reference>1</GBReference_reference>
+        <GBReference_position>1..16561</GBReference_position>
+        <GBReference_authors>
+          <GBAuthor>Wohlers,I.</GBAuthor>
+        </GBReference_authors>
+        <GBReference_title>An integrated personal and population-based Egyptian genome reference</GBReference_title>
+        <GBReference_journal>Unpublished</GBReference_journal>
+      </GBReference>
+      <GBReference>
+        <GBReference_reference>2</GBReference_reference>
+        <GBReference_position>1..16561</GBReference_position>
+        <GBReference_authors>
+          <GBAuthor>Wohlers,I.</GBAuthor>
+        </GBReference_authors>
+        <GBReference_title>Direct Submission</GBReference_title>
+        <GBReference_journal>Submitted (07-MAY-2020) Medical Systems Biology, University of Luebeck, Ratzeburger Allee 160, Luebeck 23562, Germany</GBReference_journal>
+      </GBReference>
+    </GBSeq_references>
+    <GBSeq_comment>This assembly version is an alternative assembly to the EGYPT assembly (MSB_human_2), in JABMBW000000000. Altogether, there are three versions, EGYPT (MSB_human_2) JABMBW000000000, EGYPT_wtdbg2 (MSB_human_1a) JABMBX000000000 and EGYPT_falcon (MSB_human_1b) JABMBY000000000. The EGYPT_wtdbg2 (i.e. MSB_human_1a) assembly has been assembled with WTDBG2 using PacBio reads at 99x coverage and subsequently been polished using Illumina paired-end reads at 90x. Contigs of this assembly and of alternative assembly EGYPT_falcon (i.e. MSB_human_1b) JABMBY000000000 have been used for constructing a combined, improved assembly EGYPT (i.e. MSB_human_2) JABMBW000000000.. For details, please refer to the publication.; ; ##Genome-Assembly-Data-START## ; Assembly Method :: WTDBG2 v. 2.3 ; Assembly Name :: MSB_human_1a ; Genome Representation :: Full ; Expected Final Version :: Yes ; Genome Coverage :: 190.0x ; Sequencing Technology :: PacBio; Illumina ; ##Genome-Assembly-Data-END##</GBSeq_comment>
+    <GBSeq_feature-table>
+      <GBFeature>
+        <GBFeature_key>source</GBFeature_key>
+        <GBFeature_location>1..16561</GBFeature_location>
+        <GBFeature_intervals>
+          <GBInterval>
+            <GBInterval_from>1</GBInterval_from>
+            <GBInterval_to>16561</GBInterval_to>
+            <GBInterval_accession>CM023664.1</GBInterval_accession>
+          </GBInterval>
+        </GBFeature_intervals>
+        <GBFeature_quals>
+          <GBQualifier>
+            <GBQualifier_name>organism</GBQualifier_name>
+            <GBQualifier_value>Homo sapiens</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>organelle</GBQualifier_name>
+            <GBQualifier_value>mitochondrion</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>mol_type</GBQualifier_name>
+            <GBQualifier_value>genomic DNA</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>isolate</GBQualifier_name>
+            <GBQualifier_value>EgyptRef1</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>isolation_source</GBQualifier_name>
+            <GBQualifier_value>peripheral blood leukocytes</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>db_xref</GBQualifier_name>
+            <GBQualifier_value>taxon:9606</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>sex</GBQualifier_name>
+            <GBQualifier_value>male</GBQualifier_value>
+          </GBQualifier>
+        </GBFeature_quals>
+      </GBFeature>
+    </GBSeq_feature-table>
+    <GBSeq_contig>join(JABMBX010001419.1:1..16561)</GBSeq_contig>
+    <GBSeq_xrefs>
+      <GBXref>
+        <GBXref_dbname>BioProject</GBXref_dbname>
+        <GBXref_id>PRJNA633987</GBXref_id>
+      </GBXref>
+      <GBXref>
+        <GBXref_dbname>BioSample</GBXref_dbname>
+        <GBXref_id>SAMN14558220</GBXref_id>
+      </GBXref>
+    </GBSeq_xrefs>
+  </GBSeq>
+
+</GBSet>

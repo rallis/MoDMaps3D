@@ -378,7 +378,8 @@
 					cur_modmap.toOfflineComputation();
 					return;
 				}
-
+				console.log("here");
+				console.log(cur_modmap.dist_matrix);
 
 				let step3A = new Date().getTime();
 				await cur_modmap.multidimensional_scaling();

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE GBSet PUBLIC "-//NCBI//NCBI GBSeq/EN" "https://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.dtd">
+<GBSet>
+  <GBSeq>
+
+    <GBSeq_locus>CM001971</GBSeq_locus>
+    <GBSeq_length>16562</GBSeq_length>
+    <GBSeq_strandedness>double</GBSeq_strandedness>
+    <GBSeq_moltype>DNA</GBSeq_moltype>
+    <GBSeq_topology>circular</GBSeq_topology>
+    <GBSeq_division>CON</GBSeq_division>
+    <GBSeq_update-date>25-OCT-2016</GBSeq_update-date>
+    <GBSeq_create-date>14-JUN-2013</GBSeq_create-date>
+    <GBSeq_definition>Homo sapiens mitochondrion, complete sequence, whole genome shotgun sequence</GBSeq_definition>
+    <GBSeq_primary-accession>CM001971</GBSeq_primary-accession>
+    <GBSeq_accession-version>CM001971.1</GBSeq_accession-version>
+    <GBSeq_other-seqids>
+      <GBSeqid>gb|CM001971.1|</GBSeqid>
+      <GBSeqid>gnl|WGS:AMYH|chrM</GBSeqid>
+      <GBSeqid>gi|512322367</GBSeqid>
+    </GBSeq_other-seqids>
+    <GBSeq_secondary-accessions>
+      <GBSecondary-accn>AMYH02000000</GBSecondary-accn>
+    </GBSeq_secondary-accessions>
+    <GBSeq_project>PRJNA176729</GBSeq_project>
+    <GBSeq_keywords>
+      <GBKeyword>WGS</GBKeyword>
+    </GBSeq_keywords>
+    <GBSeq_source>mitochondrion Homo sapiens (human)</GBSeq_source>
+    <GBSeq_organism>Homo sapiens</GBSeq_organism>
+    <GBSeq_taxonomy>Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini; Catarrhini; Hominidae; Homo</GBSeq_taxonomy>
+    <GBSeq_references>
+      <GBReference>
+        <GBReference_reference>1</GBReference_reference>
+        <GBReference_position>1..16562</GBReference_position>
+        <GBReference_authors>
+          <GBAuthor>Steinberg,K.M.</GBAuthor>
+          <GBAuthor>Schneider,V.A.</GBAuthor>
+          <GBAuthor>Graves-Lindsay,T.A.</GBAuthor>
+          <GBAuthor>Fulton,R.S.</GBAuthor>
+          <GBAuthor>Agarwala,R.</GBAuthor>
+          <GBAuthor>Huddleston,J.</GBAuthor>
+          <GBAuthor>Shiryev,S.A.</GBAuthor>
+          <GBAuthor>Morgulis,A.</GBAuthor>
+          <GBAuthor>Surti,U.</GBAuthor>
+          <GBAuthor>Warren,W.C.</GBAuthor>
+          <GBAuthor>Church,D.M.</GBAuthor>
+          <GBAuthor>Eichler,E.E.</GBAuthor>
+          <GBAuthor>Wilson,R.K.</GBAuthor>
+        </GBReference_authors>
+        <GBReference_title>Single haplotype assembly of the human genome from a hydatidiform mole</GBReference_title>
+        <GBReference_journal>Genome Res. 24 (12), 2066-2076 (2014)</GBReference_journal>
+        <GBReference_xref>
+          <GBXref>
+            <GBXref_dbname>doi</GBXref_dbname>
+            <GBXref_id>10.1101/gr.180893.114</GBXref_id>
+          </GBXref>
+        </GBReference_xref>
+        <GBReference_pubmed>25373144</GBReference_pubmed>
+      </GBReference>
+      <GBReference>
+        <GBReference_reference>2</GBReference_reference>
+        <GBReference_position>1..16562</GBReference_position>
+        <GBReference_authors>
+          <GBAuthor>Wilson,R.K.</GBAuthor>
+          <GBAuthor>Fulton,L.L.</GBAuthor>
+          <GBAuthor>Fulton,R.S.</GBAuthor>
+          <GBAuthor>Graves,T.A.</GBAuthor>
+          <GBAuthor>Minx,P.</GBAuthor>
+          <GBAuthor>Warren,W.C.</GBAuthor>
+          <GBAuthor>Agarwala,R.</GBAuthor>
+          <GBAuthor>Church,D.M.</GBAuthor>
+          <GBAuthor>Morgulis,A.</GBAuthor>
+          <GBAuthor>Thibaud-Nissen,F.</GBAuthor>
+          <GBAuthor>Schneider,V.A.</GBAuthor>
+          <GBAuthor>Shiryev,S.A.</GBAuthor>
+          <GBAuthor>Eichler,E.E.</GBAuthor>
+          <GBAuthor>Surti,U.</GBAuthor>
+        </GBReference_authors>
+        <GBReference_title>Direct Submission</GBReference_title>
+        <GBReference_journal>Submitted (16-OCT-2012) NCBI, NIH, Bethesda, MD 20892, USA</GBReference_journal>
+      </GBReference>
+      <GBReference>
+        <GBReference_reference>3</GBReference_reference>
+        <GBReference_position>1..16562</GBReference_position>
+        <GBReference_authors>
+          <GBAuthor>Wilson,R.K.</GBAuthor>
+          <GBAuthor>Fulton,L.L.</GBAuthor>
+          <GBAuthor>Fulton,R.S.</GBAuthor>
+          <GBAuthor>Graves,T.A.</GBAuthor>
+          <GBAuthor>Minx,P.</GBAuthor>
+          <GBAuthor>Warren,W.C.</GBAuthor>
+          <GBAuthor>Agarwala,R.</GBAuthor>
+          <GBAuthor>Church,D.M.</GBAuthor>
+          <GBAuthor>Morgulis,A.</GBAuthor>
+          <GBAuthor>Thibaud-Nissen,F.</GBAuthor>
+          <GBAuthor>Schneider,V.A.</GBAuthor>
+          <GBAuthor>Shiryev,S.A.</GBAuthor>
+          <GBAuthor>Eichler,E.E.</GBAuthor>
+          <GBAuthor>Surti,U.</GBAuthor>
+        </GBReference_authors>
+        <GBReference_title>Direct Submission</GBReference_title>
+        <GBReference_journal>Submitted (11-JUN-2013) Washington University School of Medicine, abcd, St. Louis, MO, USA</GBReference_journal>
+      </GBReference>
+    </GBSeq_references>
+    <GBSeq_comment>Reference-guided assembly based on human assembly GRCh37. Reads were aligned to human GRCh37 primary assembly, excluding Y chromosome, using SRPRISM version 2.4.28-alpha. ARGO, a reference-guided assembler developed at NCBI, was used to produce an initial assembly. BAC clone sequences for 400 clones for CHM1 were aligned to the initial assembly. Decisions for the best location to incorporate 382 out of 400 clones could be made manually to produce the submitted assembly, CHM1_1.1.; ; ##Genome-Assembly-Data-START## ; Assembly Date :: JUN-2013 ; Assembly Method :: SRPRISM v. 2.4.28-alpha; ARGO v. 0.1 ; Assembly Name :: CHM1_1.1 ; Reference-guided Assembly :: GRCh37 ; Genome Coverage :: 38x ; Sequencing Technology :: Illumina HiSeq2000 ; ##Genome-Assembly-Data-END##</GBSeq_comment>
+    <GBSeq_feature-table>
+      <GBFeature>
+        <GBFeature_key>source</GBFeature_key>
+        <GBFeature_location>1..16562</GBFeature_location>
+        <GBFeature_intervals>
+          <GBInterval>
+            <GBInterval_from>1</GBInterval_from>
+            <GBInterval_to>16562</GBInterval_to>
+            <GBInterval_accession>CM001971.1</GBInterval_accession>
+          </GBInterval>
+        </GBFeature_intervals>
+        <GBFeature_quals>
+          <GBQualifier>
+            <GBQualifier_name>organism</GBQualifier_name>
+            <GBQualifier_value>Homo sapiens</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>organelle</GBQualifier_name>
+            <GBQualifier_value>mitochondrion</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>mol_type</GBQualifier_name>
+            <GBQualifier_value>genomic DNA</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>isolate</GBQualifier_name>
+            <GBQualifier_value>CHM1</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>db_xref</GBQualifier_name>
+            <GBQualifier_value>taxon:9606</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>cell_line</GBQualifier_name>
+            <GBQualifier_value>CHM1htert</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>tissue_type</GBQualifier_name>
+            <GBQualifier_value>hydatidiform mole</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>note</GBQualifier_name>
+            <GBQualifier_value>haploid cell line</GBQualifier_value>
+          </GBQualifier>
+        </GBFeature_quals>
+      </GBFeature>
+    </GBSeq_feature-table>
+    <GBSeq_contig>join(AMYH02040906.1:1..16562)</GBSeq_contig>
+    <GBSeq_xrefs>
+      <GBXref>
+        <GBXref_dbname>BioProject</GBXref_dbname>
+        <GBXref_id>PRJNA176729</GBXref_id>
+      </GBXref>
+      <GBXref>
+        <GBXref_dbname>BioSample</GBXref_dbname>
+        <GBXref_id>SAMN02205338</GBXref_id>
+      </GBXref>
+    </GBSeq_xrefs>
+  </GBSeq>
+
+</GBSet>

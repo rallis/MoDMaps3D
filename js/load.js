@@ -933,7 +933,12 @@ function initGraphics(){
 				var op = [intersectedPoint.x, intersectedPoint.y, intersectedPoint.z];
 				var im = new THREE.Matrix4();
 				im.getInverse(meshes[0].matrixWorld);
-				im.applyToVector3Array(op);
+
+				console.log("900 line");
+				im.applyToBufferAttribute(op);
+
+//				op.applyMatrix4(im);
+
 				op = {x:op[0], y:op[1], z:op[2]};
 				if(dbg){console.log(op);}
 
@@ -1001,7 +1006,12 @@ function initGraphics(){
 					var op = [intersectedPoint.x, intersectedPoint.y, intersectedPoint.z];
 					var im = new THREE.Matrix4();
 					im.getInverse(meshes[0].matrixWorld);
-					im.applyToVector3Array(op);
+
+                    console.log("1000 line");
+                    im.applyToBufferAttribute(op);
+
+//					op.applyMatrix4(im);
+
 					op = {x:op[0], y:op[1], z:op[2]};
 					if(dbg){console.log(op);}
 

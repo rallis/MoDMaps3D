@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE GBSet PUBLIC "-//NCBI//NCBI GBSeq/EN" "https://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.dtd">
+<GBSet>
+  <GBSeq>
+
+    <GBSeq_locus>CM021592</GBSeq_locus>
+    <GBSeq_length>16570</GBSeq_length>
+    <GBSeq_strandedness>double</GBSeq_strandedness>
+    <GBSeq_moltype>DNA</GBSeq_moltype>
+    <GBSeq_topology>circular</GBSeq_topology>
+    <GBSeq_division>CON</GBSeq_division>
+    <GBSeq_update-date>04-MAR-2020</GBSeq_update-date>
+    <GBSeq_create-date>04-MAR-2020</GBSeq_create-date>
+    <GBSeq_definition>Homo sapiens isolate NA24385 mitochondrion, complete sequence, whole genome shotgun sequence</GBSeq_definition>
+    <GBSeq_primary-accession>CM021592</GBSeq_primary-accession>
+    <GBSeq_accession-version>CM021592.1</GBSeq_accession-version>
+    <GBSeq_other-seqids>
+      <GBSeqid>gb|CM021592.1|</GBSeqid>
+      <GBSeqid>gnl|WGS:JAAKGM|chrM</GBSeqid>
+      <GBSeqid>gi|1818444985</GBSeqid>
+    </GBSeq_other-seqids>
+    <GBSeq_secondary-accessions>
+      <GBSecondary-accn>JAAKGM010000000</GBSecondary-accn>
+    </GBSeq_secondary-accessions>
+    <GBSeq_project>PRJNA607914</GBSeq_project>
+    <GBSeq_keywords>
+      <GBKeyword>WGS</GBKeyword>
+    </GBSeq_keywords>
+    <GBSeq_source>mitochondrion Homo sapiens (human)</GBSeq_source>
+    <GBSeq_organism>Homo sapiens</GBSeq_organism>
+    <GBSeq_taxonomy>Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini; Catarrhini; Hominidae; Homo</GBSeq_taxonomy>
+    <GBSeq_references>
+      <GBReference>
+        <GBReference_reference>1</GBReference_reference>
+        <GBReference_position>1..16570</GBReference_position>
+        <GBReference_authors>
+          <GBAuthor>Salzberg,S.L.</GBAuthor>
+          <GBAuthor>Puiu,D.</GBAuthor>
+          <GBAuthor>Sherman,R.M.</GBAuthor>
+          <GBAuthor>Shumante,A.</GBAuthor>
+          <GBAuthor>Pertea,M.</GBAuthor>
+          <GBAuthor>Varabyou,A.</GBAuthor>
+          <GBAuthor>Zimin,A.V.</GBAuthor>
+        </GBReference_authors>
+        <GBReference_title>Assembly and Annotation of the Ashkenazi Human Reference Genome</GBReference_title>
+        <GBReference_journal>Unpublished</GBReference_journal>
+      </GBReference>
+      <GBReference>
+        <GBReference_reference>2</GBReference_reference>
+        <GBReference_position>1..16570</GBReference_position>
+        <GBReference_authors>
+          <GBAuthor>Salzberg,S.L.</GBAuthor>
+          <GBAuthor>Puiu,D.</GBAuthor>
+          <GBAuthor>Sherman,R.M.</GBAuthor>
+          <GBAuthor>Shumante,A.</GBAuthor>
+          <GBAuthor>Pertea,M.</GBAuthor>
+          <GBAuthor>Varabyou,A.</GBAuthor>
+          <GBAuthor>Zimin,A.V.</GBAuthor>
+        </GBReference_authors>
+        <GBReference_title>Direct Submission</GBReference_title>
+        <GBReference_journal>Submitted (21-FEB-2020) The Center for Computational Biology, Johns Hopkins University, 3100 Wyman Park Dr, Baltimore, MD 21211, USA</GBReference_journal>
+      </GBReference>
+      <GBReference>
+        <GBReference_reference>3</GBReference_reference>
+        <GBReference_position>1..16570</GBReference_position>
+        <GBReference_authors>
+          <GBAuthor>Salzberg,S.L.</GBAuthor>
+          <GBAuthor>Puiu,D.</GBAuthor>
+          <GBAuthor>Sherman,R.M.</GBAuthor>
+          <GBAuthor>Shumante,A.</GBAuthor>
+          <GBAuthor>Pertea,M.</GBAuthor>
+          <GBAuthor>Varabyou,A.</GBAuthor>
+          <GBAuthor>Zimin,A.V.</GBAuthor>
+        </GBReference_authors>
+        <GBReference_title>Direct Submission</GBReference_title>
+        <GBReference_journal>Submitted (04-MAR-2020) The Center for Computational Biology, Johns Hopkins University, 3100 Wyman Park Dr, Baltimore, MD 21211, USA</GBReference_journal>
+      </GBReference>
+    </GBSeq_references>
+    <GBSeq_comment>##Genome-Assembly-Data-START## ; Assembly Method :: MaSuRCA v. 3.1.1 ; Assembly Name :: Ash1.7 ; Genome Representation :: Full ; Expected Final Version :: No ; Genome Coverage :: 123.0x ; Sequencing Technology :: Illumina HiSeq; Oxford Nanopore MinION; PacBio Sequel ; ##Genome-Assembly-Data-END##</GBSeq_comment>
+    <GBSeq_feature-table>
+      <GBFeature>
+        <GBFeature_key>source</GBFeature_key>
+        <GBFeature_location>1..16570</GBFeature_location>
+        <GBFeature_intervals>
+          <GBInterval>
+            <GBInterval_from>1</GBInterval_from>
+            <GBInterval_to>16570</GBInterval_to>
+            <GBInterval_accession>CM021592.1</GBInterval_accession>
+          </GBInterval>
+        </GBFeature_intervals>
+        <GBFeature_quals>
+          <GBQualifier>
+            <GBQualifier_name>organism</GBQualifier_name>
+            <GBQualifier_value>Homo sapiens</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>organelle</GBQualifier_name>
+            <GBQualifier_value>mitochondrion</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>mol_type</GBQualifier_name>
+            <GBQualifier_value>genomic DNA</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>isolate</GBQualifier_name>
+            <GBQualifier_value>NA24385</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>bio_material</GBQualifier_name>
+            <GBQualifier_value>CORIELL:NA24385</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>db_xref</GBQualifier_name>
+            <GBQualifier_value>taxon:9606</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>sex</GBQualifier_name>
+            <GBQualifier_value>male</GBQualifier_value>
+          </GBQualifier>
+          <GBQualifier>
+            <GBQualifier_name>tissue_type</GBQualifier_name>
+            <GBQualifier_value>B-Lymphocyte</GBQualifier_value>
+          </GBQualifier>
+        </GBFeature_quals>
+      </GBFeature>
+    </GBSeq_feature-table>
+    <GBSeq_contig>join(JAAKGM010000025.1:1..16570)</GBSeq_contig>
+    <GBSeq_xrefs>
+      <GBXref>
+        <GBXref_dbname>BioProject</GBXref_dbname>
+        <GBXref_id>PRJNA607914</GBXref_id>
+      </GBXref>
+      <GBXref>
+        <GBXref_dbname>BioSample</GBXref_dbname>
+        <GBXref_id>SAMN03283347</GBXref_id>
+      </GBXref>
+    </GBSeq_xrefs>
+  </GBSeq>
+
+</GBSet>
